@@ -1,5 +1,5 @@
 (function(){
-  var app = angular.module('garages', [ ]); app.js
+  var app = angular.module('garages', ['ngMap']); app.js
 
   app.controller('GaragesController', function(){
     this.mechanics = garages;
