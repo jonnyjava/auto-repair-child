@@ -1,0 +1,50 @@
+.filters input {
+  display: none;
+}
+.filters .icon {
+  text-align: center;
+  display: inline-block;
+}
+.filters .icon .fa {
+  visibility: hidden;
+}
+.filters input:checked + .icon .fa {
+  visibility: visible;
+  display: inline\9;
+}
+.filters .icon {
+  display: none\9;
+}
+
+.filters {
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  list-style: none;
+  display: inline-block;
+}
+.filters label {
+  cursor: pointer;
+}
+.filters input {
+  margin: 0 0.1em;
+}
+.filters .icon {
+  background: #fcf4d2;
+  border: 1px solid;
+  border-color: #cac3a8 #f9f0c2 #f9f0c2 #cac3a8;
+  border-radius: 0.3em;
+  text-align: center;
+  font-size: 1.5em;
+  color: #666;
+  margin: 0.1em;
+  height: 1em;
+  width: 1em;
+  padding: 0;
+  line-height: 1em;
+}
+.filters li {
+  display: inline-block;
+  margin-right: 0.3em;
+}

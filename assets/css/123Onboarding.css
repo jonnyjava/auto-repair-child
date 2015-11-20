@@ -1,0 +1,67 @@
+.onboarding_container{
+  font-family: Nunito;
+  background-color: transparent;
+  background: url(http://auto-repair.demo.vamtam.com/wp-content/uploads/2014/11/bg_slider_1.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+}
+input, select{
+  width: 100%;
+  text-align: center;
+  border: 1px solid #666666 !important;
+  background-color: white;
+}
+select{
+  font-family: Calibri, Roboto, Arial;
+}
+span{
+  width: 100%;
+}
+label {
+  display: block;
+  line-height: 2em;
+  margin: 0;
+  color: #ffffff;
+}
+optgroup{
+  font-size: 1.75rem;
+  font-weight: bolder;
+}
+.row {
+  margin: 1.5em 0;
+}
+.nogutter {
+  padding: 0;
+  margin: 0;
+}
+.halfgutter {
+  padding: 0 0.2em;
+  margin: 0;
+}
+.col-xs-4{
+  padding: 0 inherit;
+}
+.js_second_step{
+  display: none;
+}
+.js_services{
+  display: none;
+}
+/*typeahead customization*/
+.tt-menu{
+  width: 100%;
+  text-align: center;
+  color: #000000;
+  cursor: pointer;
+  background-color: white;
+}
+.custom_input{
+  background-color: white !important;
+  padding: 0;
+}
+.tt-suggestion:hover{
+  background-color: gray;
+}
