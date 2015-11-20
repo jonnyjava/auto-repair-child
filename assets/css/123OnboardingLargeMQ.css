@@ -2,17 +2,24 @@
   body {
     font-size: 16px;
   }
-  .onboarding_container{
-    height: 83vh;
-    min-height: 790px;
-    display: inline-block;
-  }
   label {
     font-size: 1.5rem;
   }
   input{
     font-size: 2rem;
     height: 2.25em;
+  }
+  optgroup{
+    font-size: 1.75rem;
+    font-weight: bolder;
+  }
+  .onboarding_container{
+    height: 83vh;
+    min-height: 790px;
+    display: inline-block;
+  }
+  .fs-title {
+    font-size: 4rem;
   }
   .tt-menu{
    font-size: 1.75rem;
@@ -28,18 +35,29 @@
     font-size: 1.5rem;
     height: 3em;
   }
-  .btn-sep {
-    padding: 0.75em 0.125em;
+  .progressbar li {
+    font-size: 1em;
+  }
+  .progressbar li:before {
+    font-size: 4rem;
+  }
+  .progressbar li:after {
+    height: 2px;
+    top: 3.5rem;
+  }
+  .msform .action-button {
+    width: 25%;
   }
   .btn {
     font-size: 1.4rem;
   }
   .btn-sep {
+    padding: 0.75em 0.125em;
     padding: 20px;
     padding-left: 70px;
     margin: 0.75em 0;
   }
- .service_row{
+  .service_row{
     margin-bottom: 1em;
   }
   .services_buttons, .my_car_fields, .service_details_fields, .basic_fields, .user_fields{
