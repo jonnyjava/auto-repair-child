@@ -20,7 +20,7 @@
   width: 25%;
   background: #E67500;
   font-weight: bold;
-  color: white;
+  color: white !important;
   border: 0 none;
   border-radius: 1px;
   cursor: pointer;
@@ -28,8 +28,11 @@
   margin: 10px 5px;
   font-size: 1.5em;
 }
+.msform .go_next {
+  background: #E67500 !important;
+}
 .msform .previous {
-  background: #666666;
+  background: #666666 !important;
 }
 .msform .action-button:hover, .msform .action-button:focus {
   box-shadow: 0 0 0 2px white, 0 0 0 3px #E67500;
@@ -64,15 +67,18 @@
 .progressbar li:before {
   content: counter(step);
   counter-increment: step;
-  width: 1.6em;
+  width: 1.8em;
   display: block;
   font-family: 'Palanquin Dark';
-  font-size: 2.4em;
+  font-size: 4rem;
   color: #666666;
   background: white;
   border-radius: 50%;
   margin: 0 auto 10px auto;
-  padding-bottom: 0.125em
+  line-height: 1.5em;
+  padding-bottom: 0.2em;
+  position: relative;
+  z-index: 1;
 }
 .progressbar li:after {
   content: '';
@@ -81,8 +87,8 @@
   background: #ffffff;
   position: absolute;
   left: -50%;
-  top: 3rem;
-  z-index: -1; /*put it behind the numbers*/
+  top: 3.5rem;
+  z-index: 0; /*put it behind the numbers*/
 }
 .progressbar li:first-child:after {
   content: none;

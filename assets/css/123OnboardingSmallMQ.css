@@ -3,8 +3,8 @@
     font-size: 24px;
   }
   .onboarding_container{
-    /*height: 85vh;
-    min-height: 70vh;*/
+    height: 85vh;
+    min-height: 440px;
   }
   label {
     font-size: 3.5rem;

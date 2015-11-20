@@ -1,5 +1,6 @@
 <?php /* Template Name: home-with-onboarding-form */ ?>
 <?php get_header(); ?>
+
 </div>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="UTF-8">
@@ -14,7 +15,7 @@
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123progressform.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingSmallMQ.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingLargeMQ.css">
-<div class="onboarding_container">
+<div class="onboarding_container" id="js_onboarding_container" data-partial-url="<?php echo bloginfo('stylesheet_directory'); ?>">
   <form class="msform">
   <ul class="progressbar" id="progressbar">
     <li class="active">¿Que necesitas?</li>
@@ -165,7 +166,7 @@
     <h1 class="fs-title">Que coche tienes?</h1>
     <span id="js_dynamic_form"></span>
     <input type="button" name="previous" class="previous action-button" value="Anterior">
-    <input type="button" name="next" class="next action-button" data-fieldset="step_2" value="Siguente">
+    <input type="button" name="next" class="next go_next action-button" data-fieldset="step_2" value="Siguente">
   </fieldset>
   <fieldset id="step_3">
     <h1 class="fs-title">Tu mecanico, YA!</h1>
@@ -206,7 +207,7 @@
       </div>
     </div>
     <input type="button" name="previous" class="previous action-button" value="Anterior" />
-    <input type="button" name="submit" class="submit action-button js_saver" data-fieldset="step_3" value="Enviar" />
+    <input type="button" name="submit" class="go_next action-button js_saver" data-fieldset="step_3" value="Enviar" />
   </fieldset>
   </form>
 
