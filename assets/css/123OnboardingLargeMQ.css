@@ -3,6 +3,7 @@
     font-size: 16px;
   }
   label {
+    color: #000000;
     font-size: 1.5rem;
   }
   input{
@@ -64,31 +65,6 @@
     background-color: rgba(0,0,0,0.5);
     margin: 2.25em 0 3em 0;
     padding: 0 0 1em 0;
-  }
-  .basic_fields:before{
-    content: 'Podemos ayudarte?';
-  }
-  .services_buttons:before{
-    content: 'Elije tu servicio';
-  }
-  .my_car_fields:before{
-    content: 'Mi coche';
-  }
-  .service_details_fields:before{
-    content: 'Detalles del servicio';
-  }
-  .user_fields:before{
-    content: 'Tus datos de contacto';
-  }
-  .services_buttons:before, .my_car_fields:before, .service_details_fields:before, .basic_fields:before, .user_fields:before{
-    color: white;
-    position: relative;
-    top: -1.5em;
-    left: 0px;
-    font-size: 2rem;
-    background-color: rgba(0,0,0,0.5);
-    padding: 0 1em;
-    line-height: 1.5em;
   }
   .icon-car:before {
     content: "";

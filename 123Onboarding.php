@@ -26,20 +26,19 @@
   <fieldset id="step_1">
     <h1 class="fs-title">¿Que necesitas?</h1>
     <div class="row basic_fields">
-      <div class="col-md-6 text-center">
+      <div class="col-md-6">
         <label for="city">Tu ciudad</label>
-        <span class="twitter-typeahead" style="position: relative; display: inline-block;">
-        <input type="text" id="city" placeholder="Por ejemplo: Valencia" class="custom_input" autocomplete="off" autocomplete="false" spellcheck="false" dir="auto" style="position: relative; vertical-align: top;">
+        <input type="text" id="city" name="city" placeholder="Por ejemplo: Valencia" tabindex=1>
         <div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;">
           <div class="tt-dataset tt-dataset-spanish_cities"></div>
         </div>
         </span>
       </div>
       <div class="col-md-6 text-center">
-        <label for="service_type">¿Que necesitas?</label>
+        <label for="service_type">Elige un servicio</label>
         <div class="custom-dropdown">
-          <select id="service_type">
-            <option value="" disabled="" selected="">Elige un servicio</option>
+          <select id="service_type" tabindex=2>
+            <option value="" disabled="" selected=""></option>
             <option value="js_s0">Diagnósticos</option>
             <option value="js_s1">Batería</option>
             <option value="js_s2">Neumáticos</option>
@@ -59,7 +58,6 @@
             <option value="js_s10">Aire Acondicionado</option>
             <option value="js_s11">Otros</option></div>
           </select>
-          <input type="hidden" id="service_detail" name="service_detail" value=""/>
         </div>
       </div>
     </div>
@@ -214,7 +212,8 @@
 
   <script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
   <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
-  <script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/typeahead.bundle.js"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123autocomplete.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123services_fields.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123car_selector.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123cars.js" type="text/javascript"></script>
