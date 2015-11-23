@@ -1,22 +1,23 @@
-@media only screen and (min-width : 300px) and (max-width : 800px){
-  body {
-    font-size: 12px;
+@media only screen and (min-width : 300px) and (max-width : 599px){
+  .sm-bottom-gutter{
+    margin-bottom: 1em;
   }
-  label {
-    font-size: 1.5rem;
+  .orange-label{
+    line-height: 2em;
+    font-size: 1.25rem;
+    width: 100%;
   }
   input[type=text]{
-    height: 1em;
-    font-size: 1.25rem !important;
-    margin: 0 !important;
-    padding: 1em 0 !important;
-  }
-  optgroup{
+    line-height: 2em;
     font-size: 1.25rem;
-    font-weight: bolder;
+  }
+  select{
+    font-size: 1.25rem;
+    height: 2em;
+    padding: 0;
   }
   .onboarding_container{
-    min-height: 700px;
+    min-height: 400px;
     display: inline-block;
   }
   .row {
@@ -24,16 +25,7 @@
   }
   .fs-title {
     font-size: 2rem;
-  }
-  .custom-dropdown {
-    line-height: 1em;
-  }
-  .custom-dropdown select {
-    font-size: 1.25rem;
-    line-height: 1em;
-  }
-  .custom-dropdown option {
-    font-size: 1rem;
+    margin: 0;
   }
   .progressbar li {
     font-size: 1rem;
@@ -54,7 +46,8 @@
   .btn-sep {
     padding: 0.125em;
   }
+  /*typeahead customization*/
   .tt-menu{
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 }

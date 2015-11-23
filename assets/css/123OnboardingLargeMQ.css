@@ -1,21 +1,25 @@
-@media screen and (min-width : 60rem){
+@media screen and (min-width : 1200px){
+  .no-lg-right-gutter{
+    padding-right: 0;
+    margin-right: 0;
+  }
+  .no-lg-left-gutter{
+    padding-left: 0;
+    margin-left: 0;
+  }
+  .orange-label{
+    line-height: 2.7em;
+    font-size: 1.6rem;
+    width: 100%;
+  }
   input[type=text]{
     line-height: 2.5em !important;
     font-size: 1.75rem !important;
-    padding: 0 0 0 2rem !important;
-    margin: 0 !important;
-
   }
   select{
     font-size: 1.75rem;
-    padding: 0 0 0 2rem;
     height: 2.55em;
-  }
-  .orange-label{
-    width: 25%;
-    line-height: 2.5em;
-    font-size: 1.75rem;
-    float:left;
+    padding: 0 0 0 2rem !important;
   }
   .onboarding_container{
     height: 83vh;
@@ -25,10 +29,6 @@
   .fs-title {
     font-size: 4rem;
     margin: 1em 0 1.5em 0;
-  }
-  .tt-menu{
-    font-size: 1.75rem;
-    top: 2.5em !important;
   }
   .col-md-4 input, .col-md-3 input, .col-md-4 select, .col-md-3 select{
     font-size: 1.5rem;
@@ -59,7 +59,7 @@
   .service_row{
     margin-bottom: 1em;
   }
-  .services_buttons, .my_car_fields, .service_details_fields, .user_fields{
+  .my_car_fields, .service_details_fields, .user_fields{
     background-color: rgba(0,0,0,0.5);
     margin: 2.25em 0 3em 0;
     padding: 0 0 1em 0;
@@ -117,5 +117,10 @@
     background-repeat: no-repeat;
     background-position: 0.35em 1.5em;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAALCAMAAAAKlC7mAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABVlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAyrY4yAAAAcHRSTlMAFTZMX36dxewbSML0tpODcmFQQA0vTjkcBDBzXFW49g/95smieT8qrsse/GoMGIis3OAZw3xgbKvxKemGWVd905mktY/vTfoOvwKCOHWMMvi36rvXmDQld7JY7iJRCu2wJhN/A3aguo1xhZCzzGcR0qQq3AAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAEOSURBVCjPY2AAAUYmZhZWNnYOTgbiABc3TwEU8PLxCwgKCYugyIuyiIlLSCKLSEnLyMrKFSABeQUkaU4OsJiikrKKKhfULDUGBnUNZB0FmsgmaiHLaLPr6DIw6LHpGyii6CgwxKkFCIyMGdihTBNTM3MLiF5LZC1WIBFrG1s7ewcg7ejk7MLgCrGRBSzv5g7meSBpUQPyPcECXt4Fij4MDL4M3GBFfFAFfmCeP5IWu4KCAD0oO7AgKFgjhCEUrCgMKhgO5rEhaYkoKIiEsaMKCqJFYxhiwZESBxONB+tJSIRykwSDCgr8YJJhBQXJIDolUSzVFx5TacFgkJ6RGRGRlZ2TCwJ58CgssMxnYAAARx1j8yr8xzQAAAAASUVORK5CYII=);
+  }
+  /*typeahead customization*/
+  .tt-menu{
+    font-size: 1.75rem;
+    top: 2.5em !important;
   }
 }
