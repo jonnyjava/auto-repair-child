@@ -30,27 +30,28 @@
           <label for="service_type" class="orange-label">Elige un servicio</label>
           </div>
           <div class="col-lg-4 no-lg-left-gutter sm-bottom-gutter">
-            <select id="service_type" tabindex="1">
-              <option value="" disabled="" selected=""></option>
-              <option value="js_s0">Diagnósticos</option>
-              <option value="js_s1">Batería</option>
-              <option value="js_s2">Neumáticos</option>
-              <option value="js_s3">Mantenimientos y aceite</option>
-              <optgroup label="Chapa y Lunas">
-                <option value="js_s41">Sustituciones</option>
-                <option value="js_s42">Reparaciones</option>
-              </optgroup>
-              <option value="js_s5">Frenado</option>
-              <optgroup label="Iluminación y electricidad">
-                <option value="js_s61">Comfort</option>
-                <option value="js_s62">Audio y multimedia</option>
-              </optgroup>
-              <option value="js_s7">Motor</option>
-              <option value="js_s8">Escapes</option>
-              <option value="js_s9">Trenes y Suspensión</option>
-              <option value="js_s10">Aire Acondicionado</option>
-              <option value="js_s11">Otros</option>
-            </select>
+
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              <span class="dropdown-value js_value" id="service_type"></span>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu js_dropdown_menu" data-parent-id="service_type">
+              <li data-value="js_s0">Diagnósticos</li>
+              <li data-value="js_s1">Batería</li>
+              <li data-value="js_s2">Neumáticos</li>
+              <li data-value="js_s3">Mantenimientos y aceite</li>
+              <li data-value="js_s4">Chapa y Lunas</li>
+              <li data-value="js_s5">Frenado</li>
+              <li data-value="js_s61">Iluminación y electricidad</li>
+              <li data-value="js_s62">Audio y multimedia</li>
+              <li data-value="js_s7">Motor</li>
+              <li data-value="js_s8">Escapes</li>
+              <li data-value="js_s9">Trenes y Suspensión</li>
+              <li data-value="js_s10">Aire Acondicionado</li>
+              <li data-value="js_s11">Otros</li>
+            </ul>
+          </div>
         </div>
         <div class="col-lg-2 no-lg-right-gutter">
           <label for="city" class="orange-label">Tu ciudad</label>
@@ -85,13 +86,11 @@
         <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car next js_servicename" data-car-fields='brand,model,year,vin_number,cilindrata,letras_del_motor' data-service-fields='change_filter,comment' data-fieldset="step_1">Cambio de aceite</button></div>
         <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car next js_servicename" data-car-fields='brand,model,year' data-service-fields='comment' data-fieldset="step_1">Liquido refrigerante</button></div>
       </div>
-      <div class="row js_services js_s41">
+      <div class="row js_services js_s4">
         <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car next js_servicename" data-car-fields='brand,model,year' data-service-fields='comment' data-fieldset="step_1">Escobillas</button></div>
         <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car next js_servicename" data-car-fields='brand,model,year,vin_number,cilindrata,letras_del_motor' data-service-fields='glass_type,comment' data-fieldset="step_1">Luna</button></div>
         <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car next js_servicename" data-car-fields='brand,model,year,vin_number,cilindrata,letras_del_motor' data-service-fields='rearview,comment' data-fieldset="step_1">Retrovisor</button></div>
         <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car next js_servicename" data-car-fields='brand,model,year,vin_number,cilindrata,letras_del_motor' data-service-fields='bumper,comment' data-fieldset="step_1">Parachoques</button></div>
-      </div>
-      <div class="row js_services js_s42">
         <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car next js_servicename" data-car-fields='brand,model,year' data-service-fields='comment' data-fieldset="step_1">Reparacion de luna</button></div>
         <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car next js_servicename" data-car-fields='brand,model,year,vin_number,cilindrata,letras_del_motor' data-service-fields='car_color,comment' data-fieldset="step_1">Reparacion de un golpe</button></div>
       </div>
@@ -210,8 +209,10 @@
 
   <script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
   <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/bootstrap.min.js"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/typeahead.bundle.js"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123autocomplete.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123dropdowns.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123services_fields.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123car_selector.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123cars.js" type="text/javascript"></script>

@@ -64,6 +64,15 @@ span{
   border-color: #E67500;
   border-width: 0 1px 1px 1px;
 }
+.tt-suggestion{
+  font-family: Lato;
+  font-size: 1.6rem;
+  padding: 0 0.5em;
+  line-height: 2em;
+  cursor: pointer;
+  text-align: left;
+}
 .tt-suggestion:hover{
-  background-color: gray;
+  background-color: #E67500;
+  color: white;
 }

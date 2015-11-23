@@ -15,11 +15,48 @@
   input[type=text]{
     line-height: 2.5em !important;
     font-size: 1.75rem !important;
+    color: #666666 !important;
   }
-  select{
-    font-size: 1.75rem;
-    height: 2.55em;
-    padding: 0 0 0 2rem !important;
+  .dropdown-toggle, .dropdown{
+    background-color: white !important;
+    height: 3.2em;
+    margin: 0;
+    border-radius: 0;
+  }
+  .dropdown-toggle:hover{
+    background-color: white;
+  }
+  .dropdown-menu{
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    border-color: white;
+    border-style: solid;
+    border-width: 0 1px;
+    width: 100%;
+  }
+  .dropdown-menu li{
+    font-family: Lato;
+    font-size: 1.6rem;
+    padding: 0 0.5em;
+    line-height: 2em;
+    cursor: pointer;
+  }
+  .dropdown-menu li:hover{
+    background-color: #E67500;
+    color: #ffffff;
+  }
+  .dropdown-value{
+    color: #666666;
+    font-size: 1.6rem;
+    text-align: left;
+    display: block;
+    text-transform: capitalize;
+  }
+  .caret{
+    position: absolute;
+    right: 0.5em;
+    top: 1.5em;
   }
   .onboarding_container{
     height: 83vh;

@@ -1,10 +1,4 @@
 $('div').removeAttr("tabindex");
-$('#service_type').change(function () {
-  var animation_time = 400;
-  $('.js_services').fadeOut(animation_time);
-  $('.' + $(this).val()).delay(animation_time).fadeIn();
-});
-
 var current_fs, next_fs, previous_fs;
 var left, opacity, scale;
 var animating;
