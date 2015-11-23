@@ -12,7 +12,6 @@
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123Onboarding.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123buttons.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123checkbox.css">
-<link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123dropdowns.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123progressform.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingSmallMQ.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingLargeMQ.css">
@@ -25,19 +24,10 @@
   </ul>
   <fieldset id="step_1">
     <h1 class="fs-title">¿Que necesitas?</h1>
-    <div class="row basic_fields">
+    <div class="row">
       <div class="col-md-6">
-        <label for="city">Tu ciudad</label>
-        <input type="text" id="city" name="city" placeholder="Por ejemplo: Valencia" tabindex=1>
-        <div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;">
-          <div class="tt-dataset tt-dataset-spanish_cities"></div>
-        </div>
-        </span>
-      </div>
-      <div class="col-md-6 text-center">
-        <label for="service_type">Elige un servicio</label>
-        <div class="custom-dropdown">
-          <select id="service_type" tabindex=2>
+        <label for="service_type" class="orange-label">Elige un servicio</label>
+          <select id="service_type" tabindex="1">
             <option value="" disabled="" selected=""></option>
             <option value="js_s0">Diagnósticos</option>
             <option value="js_s1">Batería</option>
@@ -56,9 +46,12 @@
             <option value="js_s8">Escapes</option>
             <option value="js_s9">Trenes y Suspensión</option>
             <option value="js_s10">Aire Acondicionado</option>
-            <option value="js_s11">Otros</option></div>
+            <option value="js_s11">Otros</option>
           </select>
-        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="city" class="orange-label">Tu ciudad</label>
+        <input type="text" id="city" name="city" placeholder="Por ejemplo: Valencia" tabindex="2">
       </div>
     </div>
     <div class="row services_buttons js_services js_s0">

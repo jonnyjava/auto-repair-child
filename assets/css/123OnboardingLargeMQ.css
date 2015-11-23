@@ -1,18 +1,21 @@
 @media screen and (min-width : 60rem){
-  body {
-    font-size: 16px;
+  input[type=text]{
+    line-height: 2.5em !important;
+    font-size: 1.75rem !important;
+    padding: 0 0 0 2rem !important;
+    margin: 0 !important;
+
   }
-  label {
-    color: #000000;
-    font-size: 1.5rem;
-  }
-  input{
-    font-size: 2rem;
-    height: 2.25em;
-  }
-  optgroup{
+  select{
     font-size: 1.75rem;
-    font-weight: bolder;
+    padding: 0 0 0 2rem;
+    height: 2.55em;
+  }
+  .orange-label{
+    width: 25%;
+    line-height: 2.5em;
+    font-size: 1.75rem;
+    float:left;
   }
   .onboarding_container{
     height: 83vh;
@@ -21,16 +24,11 @@
   }
   .fs-title {
     font-size: 4rem;
+    margin: 1em 0 1.5em 0;
   }
   .tt-menu{
-   font-size: 1.75rem;
-  }
-  .custom-dropdown select {
     font-size: 1.75rem;
-    height: 2.5em;
-  }
-  .custom-dropdown option {
-    font-size: 1.75rem;
+    top: 2.5em !important;
   }
   .col-md-4 input, .col-md-3 input, .col-md-4 select, .col-md-3 select{
     font-size: 1.5rem;
@@ -61,7 +59,7 @@
   .service_row{
     margin-bottom: 1em;
   }
-  .services_buttons, .my_car_fields, .service_details_fields, .basic_fields, .user_fields{
+  .services_buttons, .my_car_fields, .service_details_fields, .user_fields{
     background-color: rgba(0,0,0,0.5);
     margin: 2.25em 0 3em 0;
     padding: 0 0 1em 0;

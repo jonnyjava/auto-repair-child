@@ -9,22 +9,23 @@
   width: 100%;
 }
 input, select{
-  width: 100%;
-  text-align: center;
-  border: 1px solid #666666 !important;
-  background-color: white;
+  background-color: white !important;
+  border: 1px solid white !important;
+  width: 75% !important;
+  display: inline;
 }
-select{
-  font-family: Calibri, Roboto, Arial;
+select option[disabled] {
+  font-style: italic;
 }
 span{
   width: 100%;
 }
-label {
-  display: block;
-  line-height: 2em;
-  margin: 0;
+.orange-label{
+  background-color: #E67500;
+  border: 1px solid #E67500;
   color: #ffffff;
+  padding: 0;
+  margin: 0;
 }
 .row {
   margin: 1.5em 0;
@@ -47,16 +48,21 @@ label {
   display: none;
 }
 /*typeahead customization*/
+.twitter-typeahead{
+  display: inline !important;
+}
+.Typeahead-hint{
+  display: none;
+}
 .tt-menu{
   width: 100%;
   text-align: center;
   color: #000000;
   cursor: pointer;
   background-color: white;
-}
-.custom_input{
-  background-color: white !important;
-  padding: 0;
+  border-style: solid ;
+  border-color: #E67500;
+  border-width: 0 1px 1px 1px;
 }
 .tt-suggestion:hover{
   background-color: gray;
