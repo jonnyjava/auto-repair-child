@@ -67,7 +67,7 @@
   .service_row{
     margin-bottom: 1em;
   }
-  .my_car_fields, .service_details_fields, .user_fields{
+  .service_details_fields, .user_fields{
     background-color: rgba(0,0,0,0.5);
     margin: 2.25em 0 3em 0;
     padding: 0 0 1em 0;

@@ -1,7 +1,8 @@
 $(document).ready(function(){
   $('.js_servicename').click(function(){
-      var fields = $(this).data('car-fields').split(',');
       var absolute_url = $('#js_onboarding_container').data('partial-url');
+
+      var fields = $(this).data('car-fields').split(',');
       var content = "";
       if (fields.length > 0){
         content += build_fixed_colums_row(fields, absolute_url);
@@ -12,6 +13,7 @@ $(document).ready(function(){
         content += build_row(fields, absolute_url);
       }
       $('#js_dynamic_form').html(content);
+      $(".js_dropdown_menu > li").bind("click", fill_dropdown_with_selected_option);
       car_selector();
   });
 
@@ -40,11 +42,10 @@ $(document).ready(function(){
     var content = "";
     for(var i = 0; i <fields.length; i++){
       if (fields[i] != ""){
-        var partial = $.ajax({type: "GET", url: absolute_url+"/partials/_"+fields[i]+".html", async: false}).responseText;
-        content += "<div class='col-md-4 text-center service_row'>"+partial+"</div>";
+        content += $.ajax({type: "GET", url: absolute_url+"/partials/_"+fields[i]+".html", async: false}).responseText;
       }
     }
-    content = "<div class='row my_car_fields'>"+content+"</div>";
+    content = "<div class='row'>"+content+"</div>";
     return content;
   }
 });

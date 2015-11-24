@@ -20,6 +20,9 @@ input{
 span{
   width: 100%;
 }
+.hint{
+  font-style: italic;
+}
 .orange-label{
   background-color: #E67500;
   border: 1px solid #E67500;

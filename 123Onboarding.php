@@ -29,15 +29,14 @@
       <div class="row">
         <div class="col-lg-2 no-lg-right-gutter">
           <label for="service_type" class="orange-label">Elige un servicio</label>
-          </div>
-          <div class="col-lg-4 no-lg-left-gutter sm-bottom-gutter">
-
+        </div>
+        <div class="col-lg-4 no-lg-left-gutter sm-bottom-gutter">
           <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
               <span class="dropdown-value js_value" id="service_type"></span>
               <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu js_dropdown_menu" data-parent-id="service_type">
+            <ul class="dropdown-menu js_dropdown_menu" data-parent-id="service_type" id="service_type_dropdown">
               <li data-value="js_s0">Diagnósticos</li>
               <li data-value="js_s1">Batería</li>
               <li data-value="js_s2">Neumáticos</li>
