@@ -1,4 +1,8 @@
 @media only screen and (min-width : 300px) and (max-width : 599px){
+  .onboarding_container{
+    min-height: 400px;
+    display: inline-block;
+  }
   .sm-bottom-gutter{
     margin-bottom: 1em;
   }
@@ -11,14 +15,17 @@
     line-height: 2em;
     font-size: 1.25rem;
   }
-  select{
-    font-size: 1.25rem;
+  .dropdown-toggle, .dropdown{
     height: 2em;
-    padding: 0;
   }
-  .onboarding_container{
-    min-height: 400px;
-    display: inline-block;
+  .dropdown-menu li{
+    font-size: 1.25rem;
+  }
+  .dropdown-value{
+    font-size: 1.25rem;
+  }
+  .caret{
+    top: 1em;
   }
   .row {
     margin: 0.5em 0;
@@ -48,6 +55,9 @@
   }
   /*typeahead customization*/
   .tt-menu{
+    font-size: 1.25rem;
+  }
+  .tt-suggestion{
     font-size: 1.25rem;
   }
 }

@@ -15,7 +15,7 @@ input, select{
   margin: 0 !important;
 }
 input{
-  padding: 0 0 0 2rem !important;
+  padding: 0 0 0 1rem !important;
 }
 span{
   width: 100%;
@@ -47,10 +47,6 @@ span{
 .js_services{
   display: none;
 }
-/*typeahead customization*/
-.twitter-typeahead{
-  display: inline !important;
-}
 .Typeahead-hint{
   display: none;
 }
@@ -66,7 +62,6 @@ span{
 }
 .tt-suggestion{
   font-family: Lato;
-  font-size: 1.6rem;
   padding: 0 0.5em;
   line-height: 2em;
   cursor: pointer;
