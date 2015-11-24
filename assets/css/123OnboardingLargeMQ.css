@@ -1,7 +1,14 @@
 @media screen and (min-width : 1200px){
+  .small-and-medium-view{
+    display: none;
+  }
+  .large-view{
+    display: block;
+  }
+
   .onboarding_container{
     height: 83vh;
-    min-height: 790px;
+    min-height: 990px;
     display: inline-block;
   }
   .no-lg-right-gutter{
@@ -13,8 +20,8 @@
     margin-left: 0;
   }
   .orange-label{
-    line-height: 2.7em;
-    font-size: 1.6rem;
+    line-height: 3.1em;
+    font-size: 1.4rem;
     width: 100%;
   }
   input[type=text]{
@@ -24,6 +31,9 @@
   }
   .extra_info_textarea{
     font-size: 1.6rem;
+  }
+  .checkbox_and_radio_container{
+    height: 3.2em;
   }
   .dropdown-toggle, .dropdown{
     height: 3.2em;
@@ -40,6 +50,10 @@
   .fs-title {
     font-size: 4rem;
     margin: 1em 0 1.5em 0;
+  }
+  .car-details-row {
+    margin-top: 3em;
+    margin-bottom: 3em;
   }
   .col-md-4 input, .col-md-3 input, .col-md-4 select, .col-md-3 select{
     font-size: 1.5rem;

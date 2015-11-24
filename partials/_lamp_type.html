@@ -1,8 +1,34 @@
-<label for="car_light">Tipo de faro</label>
-<div class="custom-dropdown" id="car_light">
-  <select>
-    <option value="" disabled="" selected="">Elige el tipo de faro</option>
-    <option>Antinebla</option>
-    <option>piloto trasero</option>
-  </select>
+<div class="col-lg-2 no-lg-right-gutter">
+  <label class="orange-label">Faro</label>
 </div>
+<div class="col-lg-6 no-lg-left-gutter bottom-gutter small-and-medium-view">
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <span class="dropdown-value js_value" id="lamp_type"></span>
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu js_dropdown_menu" data-parent-id="lamp_type" id="lamp_type_dropdown">
+      <li data-value="todas">Todos</li>
+      <li data-value="antinebla">Antinebla</li>
+      <li data-value="piloto trasero">Piloto trasero</li>
+    </ul>
+  </div>
+</div>
+<div class="col-lg-6 no-lg-left-gutter checkbox_and_radio_container large-view">
+  <label class="custom_radiobutton">
+    <div class="radio-option-label">Antinebla</div>
+    <input type="radio" name="lamp_type_option"/>
+    <span class="radiobuttonify icon"><i class="fa fa-check"></i></span>
+  </label>
+  <label class="custom_radiobutton">
+    <div class="radio-option-label">Piloto trasero</div>
+    <input type="radio" name="lamp_type_option"/>
+    <span class="radiobuttonify icon"><i class="fa fa-check"></i></span>
+  </label>
+  <label class="custom_radiobutton">
+    <div class="radio-option-label">Todos</div>
+    <input type="radio" name="lamp_type_option"/>
+    <span class="radiobuttonify icon"><i class="fa fa-check"></i></span>
+  </label>
+</div>
+<div class="col-lg-4"></div>

@@ -1,8 +1,34 @@
-<label for="wheel_shock_absorber_type">Tipo de amortiguadores</label>
-<div class="custom-dropdown" id="wheel_shock_absorber_type">
-  <select>
-    <option value="" disabled="" selected="">Elige el amortiguador</option>
-    <option>Delantero</option>
-    <option>Trasero</option>
-  </select>
+<div class="col-lg-2 no-lg-right-gutter">
+  <label class="orange-label">Escape</label>
 </div>
+<div class="col-lg-6 no-lg-left-gutter bottom-gutter small-and-medium-view">
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <span class="dropdown-value js_value" id="wheel_shock_absorber_type"></span>
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu js_dropdown_menu" data-parent-id="wheel_shock_absorber_type" id="wheel_shock_absorber_type_dropdown">
+      <li data-value="ambos">Ambos</li>
+      <li data-value="delantero">Delantero</li>
+      <li data-value="trasero">Trasero</li>
+    </ul>
+  </div>
+</div>
+<div class="col-lg-6 no-lg-left-gutter checkbox_and_radio_container large-view">
+  <label class="custom_radiobutton">
+    <div class="radio-option-label">Delantero</div>
+    <input type="radio" name="wheel_shock_absorber_type_option"/>
+    <span class="radiobuttonify icon"><i class="fa fa-check"></i></span>
+  </label>
+  <label class="custom_radiobutton">
+    <div class="radio-option-label">Trasero</div>
+    <input type="radio" name="wheel_shock_absorber_type_option"/>
+    <span class="radiobuttonify icon"><i class="fa fa-check"></i></span>
+  </label>
+  <label class="custom_radiobutton">
+    <div class="radio-option-label">Ambos</div>
+    <input type="radio" name="wheel_shock_absorber_type_option"/>
+    <span class="radiobuttonify icon"><i class="fa fa-check"></i></span>
+  </label>
+</div>
+<div class="col-lg-4"></div>

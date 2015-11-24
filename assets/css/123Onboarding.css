@@ -23,6 +23,24 @@ span{
 .hint{
   font-style: italic;
 }
+.uppercased_content{
+  text-transform: uppercase;
+}
+.checkbox_and_radio_container{
+  background-color: white;
+  display: inline-block;
+  padding: 0;
+}
+.vertical-aligned-radiolabel{
+  position: relative;
+  top: -0.8em;
+}
+.transparent-label{
+  color: #ffffff;
+  padding: 0;
+  margin: 0;
+  text-align: left
+}
 .orange-label{
   background-color: #E67500;
   border: 1px solid #E67500;
@@ -38,9 +56,7 @@ span{
   width: 100%;
   height: 2.5em;
   max-height: 5em;
-}
-.row {
-  margin: 1.5em 0;
+  color: #666666 !important;
 }
 .nogutter {
   padding: 0;

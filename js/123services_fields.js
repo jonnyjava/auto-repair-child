@@ -4,12 +4,18 @@ $(document).ready(function(){
 
       var fields = $(this).data('car-fields').split(',');
       var content = "";
-      if (fields.length > 0){
-        content += build_fixed_colums_row(fields, absolute_url);
+      if (fields.length > 1){
+        content += build_fixed_colums_row(fields, absolute_url, 'row');
+      }
+
+      fields = $(this).data('car-details-fields').split(',');
+      if (fields.length > 1){
+        content += build_fixed_colums_row(fields, absolute_url, 'row car-details-row');
       }
 
       fields = $(this).data('service-fields').split(',');
-      if (fields.length > 0){
+      if (fields[0].length > 0){
+        console.log(fields.length)
         content += build_row(fields, absolute_url);
       }
       $('#js_dynamic_form').html(content);
@@ -23,29 +29,20 @@ $(document).ready(function(){
     for(var i = 0; i <fields_count; i++){
       if (fields[i] != ""){
         var page_to_load = absolute_url+"/partials/_"+fields[i]+".html";
-        var partial = $.ajax({type: "GET", url: page_to_load, async: false}).responseText;
-        var colsize = 4
-        if (fields_count < 3){ colsize = Math.round(12/fields_count); }
-        if (fields_count == 4){ colsize = 3; }
-        else{
-          if((fields_count > 4) && (i>2)){
-            colsize = Math.round(12/(fields_count-3));
-          }
-        }
-        content += "<div class='col-md-"+colsize+" text-center service_row'>"+partial+"</div>";
+        content += $.ajax({type: "GET", url: page_to_load, async: false}).responseText;
       }
     }
-    content = "<div class='row'>"+content+"</div>";
+    content = "<div class='row car-details-row'>"+content+"</div>";
     return content;
   }
-  function build_fixed_colums_row(fields, absolute_url){
+  function build_fixed_colums_row(fields, absolute_url, row_class){
     var content = "";
     for(var i = 0; i <fields.length; i++){
       if (fields[i] != ""){
         content += $.ajax({type: "GET", url: absolute_url+"/partials/_"+fields[i]+".html", async: false}).responseText;
       }
     }
-    content = "<div class='row'>"+content+"</div>";
+    content = "<div class='"+row_class+"'>"+content+"</div>";
     return content;
   }
 });

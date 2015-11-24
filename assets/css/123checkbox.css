@@ -1,22 +1,46 @@
-.filters input {
-  display: none;
-}
-.filters .icon {
+.custom_radiobutton .icon, .custom_checkbox .icon {
   text-align: center;
   display: inline-block;
 }
-.filters .icon .fa {
+.custom_radiobutton .icon .fa, .custom_checkbox .icon .fa {
   visibility: hidden;
 }
-.filters input:checked + .icon .fa {
+.custom_radiobutton input:checked + .icon .fa, .custom_checkbox input:checked + .icon .fa {
   visibility: visible;
   display: inline\9;
 }
-.filters .icon {
+.custom_radiobutton .icon, .custom_checkbox .icon {
   display: none\9;
 }
-
-.filters {
+.checkboxify{
+  border: 1px solid #666666 !important;
+  border-radius: 0 !important;
+  position: relative;
+  left: -2px%;
+  top: 0.15em;
+  line-height: 1em;
+}
+.radiobuttonify{
+  border: 1px solid #666666 !important;
+  border-radius: 50% !important;
+  position: relative;
+  top: 0.6em;
+  left: -5px;
+  transform: scale(0.8);
+}
+.radio-option-label{
+  color: #666666;
+  text-align: right;
+  position: relative;
+  top: 15%;
+  display: inline;
+}
+.custom_radiobutton{
+  min-width: 5.5em;
+  max-width: 16em;
+}
+.custom_checkbox{
+  width: 2em;
   user-select: none;
   -ms-user-select: none;
   -moz-user-select: none;
@@ -24,27 +48,56 @@
   list-style: none;
   display: inline-block;
 }
-.filters label {
+.custom_checkbox li {
+  display: inline-block;
+  margin-right: 0.5em;
+}
+.custom_checkbox label {
   cursor: pointer;
+  left: -0.25em;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
-.filters input {
-  margin: 0 0.1em;
+.custom_radiobutton, .custom_checkbox{
+  height: 3.25em;
+  float: left;
 }
-.filters .icon {
+.col-lg-2 .custom_radiobutton{
+  padding-left: 2px;
+}
+.col-lg-3 .custom_radiobutton{
+  margin: 0 0 0 10%;
+}
+.col-lg-4 .custom_radiobutton{
+  margin: 0 0 0 5%;
+}
+.col-lg-6 .custom_radiobutton{
+  margin: 0 0 0 4%;
+}
+.col-lg-8 .custom_radiobutton{
+  margin: 0 0 0 0.75em;
+}
+.col-lg-11 .custom_radiobutton{
+  margin: 0 0 0 1%;
+}
+.custom_radiobutton .icon, .custom_checkbox .icon {
   background: #fcf4d2;
   border: 1px solid;
   border-color: #cac3a8 #f9f0c2 #f9f0c2 #cac3a8;
   border-radius: 0.3em;
   text-align: center;
   font-size: 1.5em;
-  color: #666;
-  margin: 0.1em;
+  color: #666666;
   height: 1em;
   width: 1em;
   padding: 0;
-  line-height: 1em;
 }
-.filters li {
-  display: inline-block;
-  margin-right: 0.3em;
+.custom_radiobutton input, .custom_checkbox input {
+  display: none;
+}
+.custom_radiobutton input[type="radio", .custom_checkbox input[type="check"]{
+  left: 45%;
+  position: relative;
+  top: -3em;
 }

@@ -1,31 +1,45 @@
 @media only screen and (min-width : 600px) and (max-width : 1199px){
+  .large-view{
+    display: none;
+  }
+  .small-and-medium-view{
+    display: block;
+  }
   .onboarding_container{
-    min-height: 600px;
+    min-height: 1200px;
     display: inline-block;
   }
-  .sm-bottom-gutter{
+  .bottom-gutter{
     margin-bottom: 1.5em;
   }
   .orange-label{
-    line-height: 2.5em;
+    line-height: 1.5em;
     font-size: 1.75rem;
     width: 100%;
   }
+  .label-text-align{
+    position:relative;
+    top: 0.5em;
+  }
   input[type=text]{
-    line-height: 2.5em;
+    line-height: 2em;
     font-size: 1.75rem;
   }
   .dropdown-toggle, .dropdown{
-    height: 3.2em;
+    height: 2.5em;
   }
   .dropdown-menu li{
-    font-size: 1.6rem;
+    font-size: 1.75rem;
   }
   .dropdown-value{
-    font-size: 1.6rem;
+    font-size: 1.75rem;
   }
   .caret{
-    top: 1.5em;
+    top: 1em;
+  }
+  .car-details-row {
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
   .progressbar li {
     font-size: 1.5rem;
@@ -36,6 +50,13 @@
   .progressbar li:after {
     height: 2px;
     top: 2.5rem;
+  }
+  .custom_checkbox {
+    height: 2em;
+  }
+  .checkboxify {
+    top: 0.25em;
+    left: -2px;
   }
   /*typeahead customization*/
   .tt-menu{

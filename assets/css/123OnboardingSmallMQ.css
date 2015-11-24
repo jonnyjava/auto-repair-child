@@ -1,9 +1,15 @@
 @media only screen and (min-width : 300px) and (max-width : 599px){
+  .small-and-medium-view{
+    display: block;
+  }
+  .large-view{
+    display: none;
+  }
   .onboarding_container{
-    min-height: 400px;
+    min-height: 800px;
     display: inline-block;
   }
-  .sm-bottom-gutter{
+  .bottom-gutter{
     margin-bottom: 1em;
   }
   .orange-label{
@@ -11,9 +17,16 @@
     font-size: 1.25rem;
     width: 100%;
   }
+  .label-text-align{
+    position:relative;
+    top: 0.25em;
+  }
   input[type=text]{
     line-height: 2em;
     font-size: 1.25rem;
+  }
+  .checkbox_and_radio_container{
+    height: 2.35em;
   }
   .dropdown-toggle, .dropdown{
     height: 2em;
@@ -52,6 +65,9 @@
   }
   .btn-sep {
     padding: 0.125em;
+  }
+  .filters {
+    top: 0em;
   }
   /*typeahead customization*/
   .tt-menu{
