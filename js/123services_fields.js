@@ -35,7 +35,7 @@ $(document).ready(function(){
         content += "<div class='col-md-"+colsize+" text-center service_row'>"+partial+"</div>";
       }
     }
-    content = "<div class='row service_details_fields'>"+content+"</div>";
+    content = "<div class='row'>"+content+"</div>";
     return content;
   }
   function build_fixed_colums_row(fields, absolute_url){

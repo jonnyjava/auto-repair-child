@@ -22,6 +22,9 @@
     font-size: 1.75rem !important;
     color: #666666 !important;
   }
+  .extra_info_textarea{
+    font-size: 1.6rem;
+  }
   .dropdown-toggle, .dropdown{
     height: 3.2em;
   }
@@ -67,7 +70,7 @@
   .service_row{
     margin-bottom: 1em;
   }
-  .service_details_fields, .user_fields{
+  .user_fields{
     background-color: rgba(0,0,0,0.5);
     margin: 2.25em 0 3em 0;
     padding: 0 0 1em 0;
