@@ -1,14 +1,27 @@
-$('div').removeAttr("tabindex");
-
+$(document).ready(function(){
+  $('div').removeAttr("tabindex");
+  $('.submit').click(function () {
+    return false;
+  });
+});
 var current_fs, next_fs, previous_fs;
 var left, opacity, scale;
 var animating;
-$('.next').click(function (event) {
-  event.preventDefault();
+$(document).ready(function(){
+  $('.next').click(function (event) {
+    event.preventDefault();
+    animate_to_next($(this));
+  });
+  $('.previous').click(function () {
+    animate_to_previous($(this));
+  });
+});
+
+function animate_to_next(clicked_button){
   if (animating)
       return false;
   animating = true;
-  fs_id = $(this).data('fieldset');
+  fs_id = clicked_button.data('fieldset');
   current_fs = $('#' + fs_id);
   next_fs = $('#' + fs_id).next();
   $('#progressbar li').eq($('fieldset').index(next_fs)).addClass('active');
@@ -31,13 +44,14 @@ $('.next').click(function (event) {
       },
       easing: 'easeInOutBack'
   });
-});
-$('.previous').click(function () {
+}
+
+function animate_to_previous(clicked_button){
   if (animating)
       return false;
   animating = true;
-  current_fs = $(this).parent();
-  previous_fs = $(this).parent().prev();
+  current_fs = clicked_button.parent();
+  previous_fs = clicked_button.parent().prev();
   $('#progressbar li').eq($('fieldset').index(current_fs)).removeClass('active');
   previous_fs.show();
   current_fs.animate({ opacity: 0 }, {
@@ -58,7 +72,4 @@ $('.previous').click(function () {
       },
       easing: 'easeInOutBack'
   });
-});
-$('.submit').click(function () {
-  return false;
-});
+}

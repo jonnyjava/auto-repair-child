@@ -1,5 +1,6 @@
 $(document).ready(function(){
-  $('.js_servicename').click(function(){
+  $('.js_servicename').click(function(event){
+      event.preventDefault();
       var absolute_url = $('#js_onboarding_container').data('partial-url');
 
       var fields = $(this).data('car-fields').split(',');
@@ -15,12 +16,12 @@ $(document).ready(function(){
 
       fields = $(this).data('service-fields').split(',');
       if (fields[0].length > 0){
-        console.log(fields.length)
         content += build_row(fields, absolute_url);
       }
       $('#js_dynamic_form').html(content);
       $(".js_dropdown_menu > li").bind("click", fill_dropdown_with_selected_option);
       car_selector();
+      animate_to_next($(this));
   });
 
   function build_row(fields, absolute_url){
@@ -46,3 +47,5 @@ $(document).ready(function(){
     return content;
   }
 });
+
+
