@@ -167,40 +167,58 @@
     </fieldset>
     <fieldset id="step_3">
       <h1 class="fs-title">Tu mecanico, YA!</h1>
-      <div class="row user_fields">
-        <div class="col-md-12 text-center">
-          <label for="name_and_surname">Nombre y apellidos</label>
-          <input type="text" id="name_and_surname" placeholder="Jane Doe">
+      <div class="row car-details-row">
+        <div class="col-lg-4 no-lg-right-gutter">
+          <label for="name_and_surname" class="orange-label">Nombre y apellidos</label>
         </div>
-        <div class="col-md-6 text-center">
-          <label for="phone">Telefono</label>
-          <input type="text" id="phone" placeholder="Jane Doe">
+        <div class="col-lg-8 no-lg-left-gutter bottom-gutter">
+          <input type="text" id="name_and_surname" name="name_and_surname" class="uppercased_content" >
         </div>
-        <div class="col-md-6 text-center">
-          <label for="email">Email</label>
-          <input type="text" id="email" placeholder="Jane Doe">
+      </div>
+      <div class="row car-details-row">
+        <div class="col-lg-2 no-lg-right-gutter">
+          <label for="phone" class="orange-label">Telefono</label>
         </div>
-        <div class="col-md-6">
-          <ul class="filters">
-            <li>
-              <label>
-                YES, i'm interested for home maintenance<br/>
-                <input type="checkbox">
-                <span class="icon"><i class="fa fa-check"></i></span>
-              </label>
-            </li>
-          </ul>
+        <div class="col-lg-4 no-lg-left-gutter bottom-gutter">
+          <input type="text" id="phone" name="phone" class="uppercased_content" >
         </div>
-        <div class="col-md-6">
-          <ul class="filters">
-            <li>
-              <label>
-                Validation of legal aspects<br/>
-                <input type="checkbox">
-                <span class="icon"><i class="fa fa-check"></i></span>
-              </label>
-            </li>
-          </ul>
+        <div class="col-lg-2 no-lg-right-gutter">
+          <label for="email" class="orange-label">Email</label>
+        </div>
+        <div class="col-lg-4 no-lg-left-gutter bottom-gutter">
+          <input type="text" id="email" name="email" class="uppercased_content" >
+        </div>
+      </div>
+      <div class="row car-details-row">
+        <div class="col-lg-6 bottom-gutter">
+          <label class="orange-label">
+          <span class="label-text-align">Quiero recibir la newsletter</span>
+            <div class="checkbox_and_radio_container pull-right">
+              <ul class="custom_checkbox">
+                <li>
+                  <label>
+                    <input type="checkbox">
+                    <span class="checkboxify icon"><i class="fa fa-check"></i></span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </label>
+        </div>
+        <div class="col-lg-6 bottom-gutter">
+          <label class="orange-label">
+          <span class="label-text-align">Acepto las condiciones</span>
+            <div class="checkbox_and_radio_container pull-right">
+              <ul class="custom_checkbox">
+                <li>
+                  <label>
+                    <input type="checkbox">
+                    <span class="checkboxify icon"><i class="fa fa-check"></i></span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </label>
         </div>
       </div>
       <input type="button" name="previous" class="previous action-button" value="Anterior" />
