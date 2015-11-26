@@ -21,7 +21,8 @@ function animate_to_next(clicked_button){
   if (animating)
       return false;
   animating = true;
-  fs_id = clicked_button.data('fieldset');
+
+  var fs_id = clicked_button.data('fieldset');
   current_fs = $('#' + fs_id);
   next_fs = $('#' + fs_id).next();
   $('#progressbar li').eq($('fieldset').index(next_fs)).addClass('active');
@@ -50,8 +51,10 @@ function animate_to_previous(clicked_button){
   if (animating)
       return false;
   animating = true;
-  current_fs = clicked_button.parent();
-  previous_fs = clicked_button.parent().prev();
+  var current_fs_id = clicked_button.data('current-fieldset');
+  current_fs = $('#' + current_fs_id);
+  previous_fs = $('#' + current_fs_id).prev();
+
   $('#progressbar li').eq($('fieldset').index(current_fs)).removeClass('active');
   previous_fs.show();
   current_fs.animate({ opacity: 0 }, {

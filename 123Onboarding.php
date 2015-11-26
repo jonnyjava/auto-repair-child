@@ -161,9 +161,16 @@
           <textarea id="extra_info" class="extra_info_textarea" placeholder="Quieres contarnos algo más?"></textarea>
         </div>
       </div>
-
-      <input type="button" name="previous" class="previous action-button" value="Anterior">
-      <input type="button" name="next" class="next go_next action-button" data-fieldset="step_2" value="Siguente">
+      <div class="row">
+        <div class="col-lg-3 col-xs-0"></div>
+        <div class="col-lg-3 col-xs-6">
+          <input type="button" class="previous animation-button" data-current-fieldset="step_2" value="Atrás">
+        </div>
+        <div class="col-lg-3 col-xs-6">
+        <input type="button" class="next go_next animation-button" data-fieldset="step_2" value="Continuar">
+        </div>
+        <div class="col-lg-3 col-xs-0"></div>
+      </div>
     </fieldset>
     <fieldset id="step_3">
       <h1 class="fs-title">Tu mecanico, YA!</h1>
@@ -221,11 +228,18 @@
           </label>
         </div>
       </div>
-      <input type="button" name="previous" class="previous action-button" value="Anterior" />
-      <input type="button" name="submit" class="go_next action-button js_saver" data-fieldset="step_3" value="Enviar" />
+      <div class="row">
+        <div class="col-lg-3 col-xs-0"></div>
+        <div class="col-lg-3 col-xs-6">
+          <input type="button" class="previous animation-button" data-current-fieldset="step_3" value="Atrás">
+        </div>
+        <div class="col-lg-3 col-xs-6">
+        <input type="button" name="submit" class="go_next animation-button js_saver" data-fieldset="step_3" value="Enviar" />
+        </div>
+        <div class="col-lg-3 col-xs-0"></div>
+      </div>
     </fieldset>
   </form>
-
   <script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
   <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123Onboarding.js" type="text/javascript"></script>

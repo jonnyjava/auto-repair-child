@@ -51,6 +51,11 @@
     height: 2px;
     top: 2.5rem;
   }
+  .animation-button{
+    line-height: 2em !important;
+    margin-top: 0.75em !important;
+    font-size: 2rem !important;
+  }
   .custom_checkbox {
     height: 2em;
   }
