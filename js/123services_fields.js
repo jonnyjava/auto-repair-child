@@ -11,7 +11,7 @@ $(document).ready(function(){
 
       fields = $(this).data('car-details-fields').split(',');
       if (fields.length > 1){
-        content += build_fixed_colums_row(fields, absolute_url, 'row car-details-row');
+        content += build_fixed_colums_row(fields, absolute_url, 'row car-details-row bottom-gutter');
       }
 
       fields = $(this).data('service-fields').split(',');

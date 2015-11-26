@@ -10,7 +10,7 @@
     display: inline-block;
   }
   .bottom-gutter{
-    margin-bottom: 1em;
+    margin-bottom: 1em !important;
   }
   .orange-label{
     line-height: 2em;
@@ -39,9 +39,6 @@
   }
   .caret{
     top: 1em;
-  }
-  .row {
-    margin: 0.5em 0;
   }
   .fs-title {
     font-size: 2rem;
