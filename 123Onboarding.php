@@ -20,9 +20,9 @@
 <div class="onboarding_container" id="js_onboarding_container" data-partial-url="<?php echo bloginfo('stylesheet_directory'); ?>">
   <form class="msform">
     <ul class="progressbar" id="progressbar">
-      <li class="active">Tu problema</li>
-      <li>Tu coche</li>
-      <li>Tu mecanico, YA!</li>
+      <li class="active">Tu problema<br/><i class="hint" id="problem_breadcrumb"></i></li>
+      <li>Tu coche<br/><i class="hint" id="car_breadcrumb"></i></li>
+      <li>Tu mecanico</li>
     </ul>
     <fieldset id="step_1">
       <h1 class="fs-title">¿Que necesitas?</h1>
@@ -164,10 +164,10 @@
       <div class="row">
         <div class="col-lg-3 col-xs-0"></div>
         <div class="col-lg-3 col-xs-6">
-          <input type="button" class="previous animation-button" data-current-fieldset="step_2" value="Atrás">
+          <input type="button" class="previous animation-button js_undo_problem_breadcrumb" data-current-fieldset="step_2" value="Atrás">
         </div>
         <div class="col-lg-3 col-xs-6">
-        <input type="button" class="next go_next animation-button" data-fieldset="step_2" value="Continuar">
+        <input type="button" class="next go_next animation-button js_car_breadcrumb" data-fieldset="step_2" value="Continuar">
         </div>
         <div class="col-lg-3 col-xs-0"></div>
       </div>
@@ -231,7 +231,7 @@
       <div class="row">
         <div class="col-lg-3 col-xs-0"></div>
         <div class="col-lg-3 col-xs-6">
-          <input type="button" class="previous animation-button" data-current-fieldset="step_3" value="Atrás">
+          <input type="button" class="previous animation-button js_undo_car_breadcrumb" data-current-fieldset="step_3" value="Atrás">
         </div>
         <div class="col-lg-3 col-xs-6">
         <input type="button" name="submit" class="go_next animation-button js_saver" data-fieldset="step_3" value="Enviar" />
@@ -242,10 +242,11 @@
   </form>
   <script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
   <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123Onboarding.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/bootstrap.min.js"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123Onboarding.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/typeahead.bundle.js"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123autocomplete.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123breadcrumbs.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123dropdowns.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123services_fields.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123car_selector.js" type="text/javascript"></script>

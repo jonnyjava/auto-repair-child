@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
   $('.js_servicename').click(function(event){
       event.preventDefault();
       var absolute_url = $('#js_onboarding_container').data('partial-url');
@@ -22,6 +23,7 @@ $(document).ready(function(){
       $(".js_dropdown_menu > li").bind("click", fill_dropdown_with_selected_option);
       car_selector();
       animate_to_next($(this));
+      fill_problem_breadcrumb($(this).text());
   });
 
   function build_row(fields, absolute_url){
@@ -36,6 +38,7 @@ $(document).ready(function(){
     content = "<div class='row car-details-row'>"+content+"</div>";
     return content;
   }
+
   function build_fixed_colums_row(fields, absolute_url, row_class){
     var content = "";
     for(var i = 0; i <fields.length; i++){
@@ -47,5 +50,3 @@ $(document).ready(function(){
     return content;
   }
 });
-
-

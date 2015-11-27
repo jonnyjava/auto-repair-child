@@ -63,7 +63,7 @@
     font-size: 1em;
   }
   .progressbar li:before {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
   .progressbar li:after {
     height: 2px;
