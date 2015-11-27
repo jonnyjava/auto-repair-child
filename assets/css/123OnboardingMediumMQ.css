@@ -25,6 +25,9 @@
     line-height: 2em;
     font-size: 1.75rem;
   }
+  li > .hint{
+    display: none;
+  }
   .dropdown-toggle, .dropdown{
     height: 2.5em;
   }
