@@ -48,7 +48,7 @@ function undo_car_breadcrumb(){
 function show_breadcrumb(breadcrumb){
   breadcrumb.animate({
     opacity: 1,
-    left: "1em"
+    left: "1px"
   }, 600, function() {  });
 }
 function hide_breadcrumb(breadcrumb){

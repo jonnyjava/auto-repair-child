@@ -28,17 +28,23 @@
       <h1 class="fs-title">¿Que necesitas?</h1>
       <div class="row">
         <div class="col-lg-2 no-lg-right-gutter">
+          <label for="city" class="orange-label">Tu ciudad</label>
+        </div>
+        <div class="col-lg-4 no-lg-left-gutter">
+          <input type="text" id="city" name="city" placeholder="Por ejemplo: Valencia" tabindex="2"/>
+        </div>
+        <div class="col-lg-2 no-lg-right-gutter">
           <label for="service_type" class="orange-label">Elige un servicio</label>
         </div>
         <div class="col-lg-4 no-lg-left-gutter bottom-gutter">
           <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-              <span class="dropdown-value js_value" id="service_type"></span>
+              <span class="dropdown-value js_value" id="service_type"><i class="hint">Por ejemplo: diagnósticos</i></span>
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu js_dropdown_menu" data-parent-id="service_type" id="service_type_dropdown">
-              <li data-value="js_s0">Diagnósticos</li>
-              <li class="js_servicename" data-car-fields='brand,model,year' data-car-details-fields='vin_number,cilindrata,letras_del_motor' data-service-fields='budget' data-fieldset="step_1">Batería</li>
+              <li data-value="js_s0">Diagnósticos y control</li>
+              <li class="js_servicename" data-car-fields='brand,model,year' data-car-details-fields='vin_number,cilindrata,letras_del_motor' data-service-fields='budget' data-fieldset="step_1">Sustitución de la batería</li>
               <li data-value="js_s2">Neumáticos</li>
               <li data-value="js_s3">Mantenimientos y aceite</li>
               <li data-value="js_s4">Chapa y Lunas</li>
@@ -52,12 +58,6 @@
               <li class="js_servicename" data-car-fields='brand,model,year' data-car-details-fields='vin_number,cilindrata,letras_del_motor' data-service-fields='' data-fieldset="step_1">Otros servicios</li>
             </ul>
           </div>
-        </div>
-        <div class="col-lg-2 no-lg-right-gutter">
-          <label for="city" class="orange-label">Tu ciudad</label>
-        </div>
-        <div class="col-lg-4 no-lg-left-gutter">
-          <input type="text" id="city" name="city" placeholder="Por ejemplo: Valencia" tabindex="2">
         </div>
       </div>
       <div class="row js_services js_s0">
