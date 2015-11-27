@@ -31,6 +31,9 @@
   .extra_info_textarea{
     font-size: 1.6rem;
   }
+  .help{
+    font-size: 1.25rem;
+  }
   .checkbox_and_radio_container{
     height: 3.25em;
   }
@@ -48,6 +51,12 @@
   }
   .caret{
     top: 1.5em;
+  }
+  .modal{
+    margin-top: 8em;
+  }
+  .modal_embedded_images{
+    height: 10em;
   }
   .fs-title {
     font-size: 4rem;

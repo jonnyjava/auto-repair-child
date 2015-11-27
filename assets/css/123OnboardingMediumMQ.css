@@ -17,6 +17,9 @@
     font-size: 1.75rem;
     width: 100%;
   }
+  .help{
+    font-size: 1.5rem;
+  }
   .label-text-align{
     position:relative;
     top: 0.5em;
@@ -42,6 +45,18 @@
   }
   .caret{
     top: 1em;
+  }
+  .modal{
+    margin-top: 8em;
+  }
+  .modal-title{
+    font-size: 2rem;
+  }
+  .modal-body{
+    font-size: 1.5rem;
+  }
+  .modal_embedded_images{
+    height: 10em;
   }
   .car-details-row {
     margin-top: 1em;

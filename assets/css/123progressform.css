@@ -22,6 +22,7 @@
   border: 0 none !important;
   border-radius: 0 !important;
   cursor: pointer !important;
+  width: 100% !important;
 }
 .msform .go_next {
   background: #E67500 !important;

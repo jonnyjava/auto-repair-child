@@ -16,6 +16,9 @@
     font-size: 1.25rem;
     width: 100%;
   }
+  .help{
+    font-size: 1.25rem;
+  }
   .label-text-align{
     position:relative;
     top: 0.25em;
@@ -44,6 +47,25 @@
   }
   .caret{
     top: 1em;
+  }
+  .modal{
+    margin-top: 4em;
+  }
+  .modal-header{
+    padding: 0.75em;
+  }
+  .modal-title{
+    font-size: 1.25rem;
+  }
+  .modal-body{
+    font-size: 1rem;
+    padding 0 5px;
+    line-height: 1.5rem;
+  }
+  .modal_embedded_images{
+    background-position-x: -6em !important;
+    background-position-y: -6em !important;
+    height: 7em;
   }
   .fs-title {
     font-size: 2rem;

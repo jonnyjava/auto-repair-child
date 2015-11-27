@@ -1,3 +1,6 @@
+body{
+  padding: 0 !important;
+}
 .onboarding_container{
   font-family: Nunito;
   background-color: transparent;
@@ -65,6 +68,35 @@ li > .hint{
   max-height: 5em;
   color: #666666 !important;
 }
+.help{
+  color: white;
+  text-align: right;
+  display: block;
+  margin-left:-11em;
+  cursor:pointer;
+}
+.help:before{
+  font-family: "Glyphicons Halflings";
+  content: "\e085";
+  margin-right: 0.5rem;
+  text-decoration: none;
+}
+.help:hover, .help:focus{
+  text-decoration: underline;
+}
+.modal-backdrop{
+  display: none;
+}
+.modal-content{
+  border-radius: 0;
+}
+.modal_embedded_images{
+  width: 100%;
+  border: 1px dashed #666666;
+}
+.modal-body ul li{
+  padding: 0;
+}
 .nogutter {
   padding: 0;
   margin: 0;
@@ -82,6 +114,7 @@ li > .hint{
 .js_services{
   display: none;
 }
+/*typeahead customisations*/
 .Typeahead-hint{
   display: none;
 }

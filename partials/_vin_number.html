@@ -3,4 +3,41 @@
 </div>
 <div class="col-lg-2 no-lg-left-gutter bottom-gutter">
   <input type="text" id="vin_number" name="vin_number" class="uppercased_content" >
+  <div class="help" data-toggle="modal" data-target="#vin_number_help"><i>Donde encuentro mi numero de bastidor?</i></div>
 </div>
+
+
+<div class="modal fade" id="vin_number_help" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Donde encontrar tu numero de bastidor</h4>
+      </div>
+      <div class="modal-body text-left">
+      Se trata de una secuencia de 17 dígitos y letras que permite identificar cualquier vehículo; es posible encontrarlo:
+      <ul>
+        <li>En la documentación del vehículo</li>
+        <ul>
+          <li>bien en la parte superior de la ficha técnica del vehículo</li>
+          <li>bien en el apartado <kbd>E</kbd> del permiso de circulación</li>
+        </ul>
+      </ul>
+      <ul>
+        <li>En el vano motor, lo más normal es que esté grabado en la parte frontal (encima del radiador) aunque también puede estar en la zona más próxima al parabrisas.</li>
+        <li>En la puerta del conductor</li>
+      </ul>
+      <div id="vin_img" class="modal_embedded_images"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="go_next animation-button" data-dismiss="modal">Entendido</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    var url = $('#js_onboarding_container').data('partial-url');
+    $('#vin_img').css('background', 'url('+url+'/assets/img/ficha_coche.jpg'+')');
+  });
+</script>

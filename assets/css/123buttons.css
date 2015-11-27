@@ -24,17 +24,6 @@
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-.btn:before {
-  font-family: 'FontAwesome';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  position: relative;
-  -webkit-font-smoothing: antialiased;
-}
 .btn-sep{
   padding: 0.125em;
 }
