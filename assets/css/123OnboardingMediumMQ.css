@@ -31,6 +31,9 @@
   .dropdown-toggle, .dropdown{
     height: 2.5em;
   }
+  .dropdown-menu{
+    max-height: 18em;
+  }
   .dropdown-menu li{
     font-size: 1.75rem;
   }

@@ -15,6 +15,7 @@
   border-width: 0 1px;
   width: 100%;
   min-width: 4.85em;
+  overflow-y: scroll;
 }
 .dropdown-menu li{
   line-height: 2em;

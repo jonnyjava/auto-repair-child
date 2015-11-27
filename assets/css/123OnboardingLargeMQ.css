@@ -5,7 +5,6 @@
   .large-view{
     display: block;
   }
-
   .onboarding_container{
     height: 83vh;
     min-height: 990px;
@@ -37,6 +36,9 @@
   }
   .dropdown-toggle, .dropdown{
     height: 3.225em;
+  }
+  .dropdown-menu{
+    max-height: 18em;
   }
   .dropdown-menu li{
     font-size: 1.6rem;
