@@ -1,7 +1,10 @@
 <div class="col-lg-2 no-lg-right-gutter">
-  <label for="engine_letters" class="orange-label">Letras del motor</label>
+  <label for="engine_letters" class="orange-label disabled-element" id="car_engine_letters_disabled_label">Letras del motor</label>
 </div>
 <div class="col-lg-2 no-lg-left-gutter">
-  <input type="text" id="engine_letters" name="engine_letters" class="uppercased_content">
+  <div class="disabled-element">
+    <i class="hint" id="car_engine_letters_disabled_hint"><b>Letras del motor</b>: elige un motor</i>
+    <input type="text" id="car_engine_letters_dropdown" name="engine_letters" class="uppercased_content">
+  </div>
   <div class="help">Que son las letras del motor?</div>
 </div>

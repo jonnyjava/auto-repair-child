@@ -84,6 +84,14 @@
     top: 0.25em;
     left: -2px;
   }
+  label.disabled-element{
+    display: none;
+  }
+  .disabled-element .hint{
+    font-size: 1.75rem;
+    line-height: 2em;
+    left: 0.75em;
+  }
   /*typeahead customization*/
   .tt-menu{
     font-size: 1.75rem;

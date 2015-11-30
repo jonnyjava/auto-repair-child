@@ -100,6 +100,16 @@
   .service_row{
     margin-bottom: 1em;
   }
+  .disabled-element .hint{
+    line-height: 2.9em;
+    font-size: 1.5rem;
+  }
+  .col-lg-3 .disabled-element .hint{
+    right: 25%;
+  }
+  .col-lg-2 .disabled-element .hint{
+    right: 90%;
+  }
   .icon-car:before {
     content: "";
     background-repeat: no-repeat;

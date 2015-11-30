@@ -1,5 +1,5 @@
 .dropdown-toggle, .dropdown{
-  background-color: white !important;
+  background-color: white;
   margin: 0;
   border-radius: 0;
 }
@@ -15,7 +15,7 @@
   border-width: 0 1px;
   width: 100%;
   min-width: 4.85em;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .dropdown-menu li{
   line-height: 2em;
@@ -37,4 +37,20 @@
 .caret{
   position: absolute;
   right: 0.5em;
+}
+.disabled-element{
+  cursor: no-drop;
+  background-color: #666666;
+  border: 1px solid #666666;
+  color: #666666;
+  text-align: left;
+}
+.disabled-element ul, .disabled-element button, .disabled-element input{
+  display: none;
+}
+.disabled-element .hint{
+  color: #ffffff;
+  display: inline-block;
+  position: relative;
+  white-space: pre;
 }
