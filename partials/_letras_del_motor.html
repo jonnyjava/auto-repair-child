@@ -6,5 +6,33 @@
     <i class="hint" id="car_engine_letters_disabled_hint"><b>Letras del motor</b>: elige un motor</i>
     <input type="text" id="car_engine_letters_dropdown" name="engine_letters" class="uppercased_content">
   </div>
-  <div class="help">Que son las letras del motor?</div>
+  <div class="help" data-toggle="modal" data-target="#engine_letters_help">Que son las letras del motor?</div>
 </div>
+
+<div class="modal fade" id="engine_letters_help" tabindex="-1" role="dialog" aria-labelledby="engine_letters_help">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Donde encontrar tus letras del motor</h4>
+      </div>
+      <div class="modal-body text-left">
+        <ul>
+          <li>En la ficha técnica del vehículo aparecen las letras del código motor, precedidas por la letra <kbd>D</kbd>, que indica que el vehículo es diesel o por la letra <kbd>G</kbd> que indica que el motor es de gasolina.</li>
+          <li>La fila inferior indica el número de cilindros y la cilindrada del vehículo; la fila debajo indica la potencia del vehículo expresada en KW.</li>
+          <li>También se puenden encontrar en el libro de mantenimiento</li>
+        </ul>
+        <div id="engine_letters_img" class="modal_embedded_images engine_letters"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="go_next animation-button" data-dismiss="modal">Entendido</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    var url = $('#js_onboarding_container').data('partial-url');
+    $('#engine_letters_img').css('background', 'url('+url+'/assets/img/ficha_coche.jpg'+')');
+  });
+</script>

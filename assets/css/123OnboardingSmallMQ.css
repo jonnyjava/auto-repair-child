@@ -63,9 +63,17 @@
     line-height: 1.5rem;
   }
   .modal_embedded_images{
+    height: 7em;
+  }
+  .vin_number{
     background-position-x: -6em !important;
     background-position-y: -6em !important;
-    height: 7em;
+    background-position: -6em -6em !important;
+  }
+  .engine_letters{
+    background-position-x: -30em !important;
+    background-position-y: -33em !important;
+    background-position: -30em -33em !important;
   }
   .fs-title {
     font-size: 2rem;

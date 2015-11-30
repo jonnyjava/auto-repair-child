@@ -58,6 +58,11 @@
   .modal_embedded_images{
     height: 10em;
   }
+  .engine_letters{
+    background-position-x: 0 !important;
+    background-position-y: -19em !important;
+    background-position: 0 -19em !important;
+  }
   .fs-title {
     font-size: 4rem;
     margin: 1em 0 1.5em 0;

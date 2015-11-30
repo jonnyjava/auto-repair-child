@@ -58,6 +58,12 @@
   .modal_embedded_images{
     height: 10em;
   }
+  .engine_letters{
+    background-position-x: -35em !important;
+    background-position-y: -40em !important;
+    background-position: -35em -40em !important;
+    background-size: 200% !important;
+  }
   .car-details-row {
     margin-top: 1em;
     margin-bottom: 1em;
