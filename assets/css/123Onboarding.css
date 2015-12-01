@@ -84,11 +84,14 @@ li > .hint{
 .help:hover, .help:focus{
   text-decoration: underline;
 }
-.modal-backdrop{
-  display: none;
+.modal-dialog{
+  font-family: Nunito;
 }
 .modal-content{
   border-radius: 0;
+}
+.modal-title{
+  text-align: center;
 }
 .modal_embedded_images{
   width: 100%;
@@ -96,6 +99,9 @@ li > .hint{
 }
 .modal-body ul li{
   padding: 0;
+}
+.modal-footer .animation-button{
+  background-color: #E67500;
 }
 .nogutter {
   padding: 0;
