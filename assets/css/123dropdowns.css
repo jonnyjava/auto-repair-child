@@ -33,6 +33,7 @@
   text-align: left;
   display: block;
   text-transform: capitalize;
+  overflow: hidden;
 }
 .caret{
   position: absolute;
