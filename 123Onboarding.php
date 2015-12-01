@@ -44,7 +44,7 @@
             </button>
             <ul class="dropdown-menu js_dropdown_menu" data-parent-id="service_type" id="service_type_dropdown">
               <li data-value="js_s0">Diagnósticos y control</li>
-              <li class="js_servicename" data-car-fields='brand,model,year' data-car-details-fields='vin_number,cilindrata,letras_del_motor' data-service-fields='budget' data-fieldset="step_1">Sustitución de la batería</li>
+              <li data-value="js_s1" class="js_servicename" data-car-fields='brand,model,year' data-car-details-fields='vin_number,cilindrata,letras_del_motor' data-service-fields='budget' data-fieldset="step_1">Sustitución de la batería</li>
               <li data-value="js_s2">Neumáticos</li>
               <li data-value="js_s3">Mantenimientos y aceite</li>
               <li data-value="js_s4">Chapa y Lunas</li>
@@ -55,7 +55,7 @@
               <li data-value="js_s8">Escapes</li>
               <li data-value="js_s9">Trenes y Suspensión</li>
               <li data-value="js_s10">Aire Acondicionado</li>
-              <li class="js_servicename" data-car-fields='brand,model,year' data-car-details-fields='vin_number,cilindrata,letras_del_motor' data-service-fields='' data-fieldset="step_1">Otros servicios</li>
+              <li data-value="js_s11" class="js_servicename" data-car-fields='brand,model,year' data-car-details-fields='vin_number,cilindrata,letras_del_motor' data-service-fields='' data-fieldset="step_1">Otros servicios</li>
             </ul>
           </div>
         </div>
@@ -70,6 +70,11 @@
         <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Control de emisiones</button></div>
         <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Pre-ITV</button></div>
         <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Otro diagnóstico</button></div>
+      </div>
+      <div class="row js_services js_s1">
+        <div class="col-md-3"></div>
+        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-details-fields='vin_number,cilindrata,letras_del_motor' data-car-fields='brand,model,year' data-service-fields='budget' data-fieldset="step_1">Sustitución de la batería</button></div>
+        <div class="col-md-3"></div>
       </div>
       <div class="row js_services js_s2">
         <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='' data-car-details-fields='' data-service-fields='mounting_tyres' data-fieldset="step_1">Montaje</button></div>
@@ -149,7 +154,7 @@
       </div>
       <div class="row js_services js_s11">
         <div class="col-md-3"></div>
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Seguir</button></div>
+        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='vin_number,cilindrata,letras_del_motor' data-service-fields='' data-fieldset="step_1">Otros servicios</button></div>
         <div class="col-md-3"></div>
       </div>
     </fieldset>
