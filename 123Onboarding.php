@@ -39,7 +39,7 @@
         <div class="col-lg-4 no-lg-left-gutter">
           <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-              <span class="dropdown-value js_value" id="service_type"><i class="hint">Por ejemplo: diagnósticos</i></span>
+              <span class="dropdown-value" id="service_type"><i class="hint">Por ejemplo: diagnósticos</i></span>
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu js_dropdown_menu" data-parent-id="service_type" id="service_type_dropdown">
