@@ -25,12 +25,14 @@ function car_model_selector(){
     $('#car_year').html('<i class="hint">Tu año:</i>');
 
     var model_selected = $(this).data('value').split(',');
-    console.log("---"+model_selected);
     var i = model_selected[0];
     var j = model_selected[1];
     var options = '';
     for(var k = 1; k < cardb[i][j].length; k++){
       options += "<li data-value='"+i+","+j+","+k+"'>"+cardb[i][j][k][0]+"</li>";
+    }
+    if(options.length == 0){
+      options = "<li data-value='0'>cualquiera</li>"
     }
     enable_field('year', options);
     car_year_selector();
@@ -52,6 +54,9 @@ function car_year_selector(){
     var options = '';
     for(var w = 1; w < cardb[i][j][k][1].length; w++){
       options += "<li data-value='"+i+","+j+","+k+","+w+"'>"+cardb[i][j][k][1][w]+"</li>";
+    }
+    if(options.length == 0){
+      options = "<li data-value='0'>cualquiera</li>"
     }
     enable_field('engine', options);
     car_engine_selector();
