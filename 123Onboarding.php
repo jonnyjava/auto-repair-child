@@ -34,11 +34,11 @@
           <input type="text" id="city" name="city" placeholder="Por ejemplo: Valencia" tabindex="2"/>
         </div>
         <div class="col-lg-2 no-lg-right-gutter">
-          <label for="service_type" class="orange-label">Elige un servicio</label>
+          <label data-dropdown-name="service_type_dropdown" class="orange-label js_dropdown_opener">Elige un servicio</label>
         </div>
         <div class="col-lg-4 no-lg-left-gutter">
           <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <button class="btn dropdown-toggle js_dropdown_opener" data-dropdown-name="service_type_dropdown">
               <span class="dropdown-value" id="service_type"><i class="hint">Por ejemplo: diagnósticos</i></span>
               <span class="caret"></span>
             </button>

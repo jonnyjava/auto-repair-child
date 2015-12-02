@@ -21,9 +21,11 @@ $(document).ready(function(){
       }
       $('#js_dynamic_form').html(content);
       $(".js_dropdown_menu > li").bind("click", fill_dropdown_with_selected_option);
+      activate_dropdown_toggle();
       car_selector();
       animate_to_next($(this));
       fill_problem_breadcrumb($(this).text());
+      prevent_unwanted_submits();
   });
 
   function build_row(fields, absolute_url){
