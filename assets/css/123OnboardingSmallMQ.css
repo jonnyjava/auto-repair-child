@@ -6,8 +6,9 @@
     display: none;
   }
   .onboarding_container{
-    min-height: 800px;
+    min-height: 25em;
     display: inline-block;
+    margin-bottom: -3em;
   }
   .bottom-gutter{
     margin-bottom: 1em !important;
@@ -79,6 +80,9 @@
     font-size: 2rem;
     margin: 0 0 0.5em 0;
   }
+  .progressbar {
+    margin-top: -1.5em;
+  }
   .progressbar li {
     font-size: 1rem;
   }
@@ -110,7 +114,8 @@
   }
   .disabled-element .hint{
     left: 0.75em;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    top: 0.25rem;
   }
   /*typeahead customization*/
   .tt-menu{

@@ -6,8 +6,9 @@
     display: block;
   }
   .onboarding_container{
-    min-height: 1200px;
+    min-height: 40em;
     display: inline-block;
+    margin-bottom: -2.5em;
   }
   .bottom-gutter{
     margin-bottom: 1.5em;

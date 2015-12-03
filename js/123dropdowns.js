@@ -6,7 +6,16 @@ $(document).ready(function(){
     var animation_time = 300;
     var selected_service_category = $(this).data('value');
     $('.js_services').fadeOut(animation_time);
-    $('.'+selected_service_category).delay(animation_time).fadeIn();
+    $('.'+selected_service_category).delay(animation_time).fadeIn(
+      {
+        duration: animation_time,
+        start: function(){
+          if((selected_service_category != 'js_s1' ) && (selected_service_category != 'js_s11')){
+            animate_container_height($('#step_1'), animation_time);
+          }
+        }
+      }
+    );
     $('#service_type').data('value', selected_service_category);
   });
 });

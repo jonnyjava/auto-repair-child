@@ -81,6 +81,7 @@ function enable_field(name, options){
   $('#car_'+name+'_dropdown').parent().removeClass('disabled-element');
   $('#car_'+name+'_disabled_label').removeClass('disabled-element');
   $('#car_'+name+'_disabled_hint').hide();
+  animate_container_height($('#step_2'), 300);
 }
 
 function disable_field(name){
