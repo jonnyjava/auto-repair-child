@@ -17,7 +17,6 @@ function car_selector(){
     disable_field('engine_letters');
     autoclick_if_one_option('model');
     activate_dropdown_toggle();
-    prevent_unwanted_submits();
   });
 }
 
@@ -42,7 +41,6 @@ function car_model_selector(){
     disable_field('engine_letters');
     autoclick_if_one_option('year');
     activate_dropdown_toggle();
-    prevent_unwanted_submits();
   });
 }
 
@@ -67,7 +65,6 @@ function car_year_selector(){
     disable_field('engine_letters');
     autoclick_if_one_option('engine');
     activate_dropdown_toggle();
-    prevent_unwanted_submits();
   });
 }
 

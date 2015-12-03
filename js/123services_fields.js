@@ -25,7 +25,6 @@ $(document).ready(function(){
       car_selector();
       animate_to_next($(this));
       fill_problem_breadcrumb($(this).text());
-      prevent_unwanted_submits();
   });
 
   function build_row(fields, absolute_url){

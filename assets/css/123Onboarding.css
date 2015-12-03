@@ -79,15 +79,17 @@ li > .hint{
   text-align: right;
   display: block;
   margin-left:-11em;
+}
+.with-modal{
   cursor:pointer;
 }
-.help:before{
+.with-modal:before{
   font-family: "Glyphicons Halflings";
   content: "\e085";
   margin-right: 0.5rem;
   text-decoration: none;
 }
-.help:hover, .help:focus{
+.with-modal:hover, .with-modal:focus{
   text-decoration: underline;
 }
 .modal-dialog{
@@ -126,7 +128,7 @@ li > .hint{
 .js_services{
   display: none;
 }
-/*typeahead customisations*/
+/*typeahead customizations*/
 .Typeahead-hint{
   display: none;
 }

@@ -4,8 +4,10 @@ $(document).ready(function(){
   $('#service_type_dropdown > li').click(function(){
     var dropdown = $(this).parent();
     var animation_time = 300;
+    var selected_service_category = $(this).data('value');
     $('.js_services').fadeOut(animation_time);
-    $('.' + $(this).data('value')).delay(animation_time).fadeIn();
+    $('.'+selected_service_category).delay(animation_time).fadeIn();
+    $('#service_type').data('value', selected_service_category);
   });
 });
 

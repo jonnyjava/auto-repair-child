@@ -3,7 +3,6 @@ $(document).ready(function(){
   $('.submit').click(function () {
     return false;
   });
-  prevent_unwanted_submits();
 });
 var current_fs, next_fs, previous_fs;
 var left, opacity, scale;
@@ -75,12 +74,5 @@ function animate_to_previous(clicked_button){
           animating = false;
       },
       easing: 'easeInOutBack'
-  });
-}
-
-function prevent_unwanted_submits(){
-  $('button').click(function(event) {
-    event.preventDefault();
-    return false;
   });
 }
