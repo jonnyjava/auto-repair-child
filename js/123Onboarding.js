@@ -1,5 +1,7 @@
 $(document).ready(function(){
   $('div').removeAttr("tabindex");
+  $('input').attr('autocomplete', 'false');
+  $('input').attr('autofill', 'false');
   $('.submit').click(function () {
     return false;
   });

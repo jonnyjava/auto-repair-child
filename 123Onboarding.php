@@ -18,7 +18,7 @@
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingMediumMQ.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingLargeMQ.css">
 <div class="onboarding_container" id="js_onboarding_container" data-partial-url="<?php echo bloginfo('stylesheet_directory'); ?>">
-  <form class="msform" id="onboarding_form">
+  <form class="msform" id="onboarding_form" autocomplete="false" autofill="false">
     <ul class="progressbar" id="progressbar">
       <li class="active">Tu problema<br/><i class="hint" id="problem_breadcrumb"></i></li>
       <li>Tu coche<br/><i class="hint" id="car_breadcrumb"></i></li>
@@ -31,9 +31,10 @@
           <label for="city" class="orange-label">Tu ciudad</label>
         </div>
         <div class="col-lg-4 no-lg-left-gutter bottom-gutter">
-          <input type="text" id="city" name="city" placeholder="Por ejemplo: Valencia" tabindex="2"/>
-          <div class="help"><i>indica tu ciudad o tu codigo postal</i></div>
-        </div>
+          <input type="text" name="city" style="display:none;"/>
+          <input type="text" id="user_city" name="user_city" placeholder="Por ejemplo: Valencia" tabindex="2" autocomplete="false" autofill="false"/>
+          <div class="help"><i>indica tu ciudad o tu codigo postal</i></div >
+        </div >
         <div class="col-lg-2 no-lg-right-gutter">
           <label data-dropdown-name="service_type_dropdown" class="orange-label disabled-element js_dropdown_opener" id="service_type_disabled_label">Elige un servicio</label>
         </div>
