@@ -51,6 +51,9 @@
   .caret{
     top: 1.5em;
   }
+  .btn-sep{
+    padding: 0.125em;
+  }
   .modal{
     margin-top: 8em;
   }

@@ -101,7 +101,10 @@
     font-size: 1rem;
   }
   .btn-sep {
-    padding: 0.125em;
+    padding: 0.25em 0.125em;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0
   }
   .filters {
     top: 0em;

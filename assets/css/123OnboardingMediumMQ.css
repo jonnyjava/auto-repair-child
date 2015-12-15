@@ -47,6 +47,11 @@
   .caret{
     top: 1em;
   }
+  .btn-sep {
+    padding: 0.5em;
+    margin-left: 0;
+    margin-right: 0;
+  }
   .modal{
     margin-top: 8em;
   }
