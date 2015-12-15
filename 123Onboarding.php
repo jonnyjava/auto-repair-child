@@ -247,8 +247,8 @@
       </div>
     </fieldset>
   </form>
-  <script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
-  <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery.easing.min.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/bootstrap.min.js"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123Onboarding.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/typeahead.bundle.js"></script>
