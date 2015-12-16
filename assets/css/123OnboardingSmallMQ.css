@@ -13,7 +13,7 @@
   .bottom-gutter{
     margin-bottom: 1em !important;
   }
-  .orange-label{
+  .gray-label, .orange-label{
     font-size: 1.25rem;
     width: 100%;
   }

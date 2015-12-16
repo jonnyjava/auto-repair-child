@@ -17,7 +17,7 @@
     padding-left: 0;
     margin-left: 0;
   }
-  .orange-label{
+  .gray-label, .orange-label{
     line-height: 3.1em;
     font-size: 1.4rem;
     width: 100%;
@@ -37,7 +37,7 @@
     height: 3.25em;
   }
   .dropdown-toggle, .dropdown{
-    height: 3.225em;
+    height: 3.23em;
   }
   .dropdown-menu{
     max-height: 18em;
