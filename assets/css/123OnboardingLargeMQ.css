@@ -195,27 +195,43 @@
     background-position: 0.35em 1.25em;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAALCAMAAAAKlC7mAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABVlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAyrY4yAAAAcHRSTlMAFTZMX36dxewbSML0tpODcmFQQA0vTjkcBDBzXFW49g/95smieT8qrsse/GoMGIis3OAZw3xgbKvxKemGWVd905mktY/vTfoOvwKCOHWMMvi36rvXmDQld7JY7iJRCu2wJhN/A3aguo1xhZCzzGcR0qQq3AAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAEOSURBVCjPY2AAAUYmZhZWNnYOTgbiABc3TwEU8PLxCwgKCYugyIuyiIlLSCKLSEnLyMrKFSABeQUkaU4OsJiikrKKKhfULDUGBnUNZB0FmsgmaiHLaLPr6DIw6LHpGyii6CgwxKkFCIyMGdihTBNTM3MLiF5LZC1WIBFrG1s7ewcg7ejk7MLgCrGRBSzv5g7meSBpUQPyPcECXt4Fij4MDL4M3GBFfFAFfmCeP5IWu4KCAD0oO7AgKFgjhCEUrCgMKhgO5rEhaYkoKIiEsaMKCqJFYxhiwZESBxONB+tJSIRykwSDCgr8YJJhBQXJIDolUSzVFx5TacFgkJ6RGRGRlZ2TCwJ58CgssMxnYAAARx1j8yr8xzQAAAAASUVORK5CYII=);
   }
-  /*confirmation page ovverrides*/
+  /*confirmation page overrides*/
   h4{
-    font-size: 1.5em;
+    font-size: 2em;
+    top: -0.35em;
+    padding-left: 0.5em;
   }
   .success {
-    width: 2.5em;
-    height: 2.5em;
+    width: 3.5em;
+    height: 3.5em;
   }
   .success span {
-    font-size: 2.25em;
-    top: 2px;
+    font-size: 3em;
+    top: -12px;
+  }
+  .list-group:first-child{
+    padding-top: 0.5em;
   }
   .list-group-item {
     padding: 0.25em 0.25em 0.25em 1em;
+    line-height: 2.275em;
   }
-  .list-group-item p{
+  .list-group-item div{
     padding: 1em 0 0 3.5em;
   }
   .horizontal_list_header {
-    padding-left: 3.5em;
-    width: 20em;
+    width: 15em;
+  }
+  .confirmation_header{
+    min-width: 33%;
+  }
+  .comments{
+    padding-left: 15.25em;
+    top: -2.25em;
+  }
+  /*bootstrap overrides*/
+  .confirmation_header > .dropdown-toggle, .confirmation_header > .dropdown {
+    height: 5em;
   }
   /*typeahead customization*/
   .tt-menu{

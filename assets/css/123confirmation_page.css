@@ -1,18 +1,13 @@
 h4{
   display: inline-block;
-  padding-left: 0.25em;
   position: relative;
-  color: #000000;
+  color: #666666;
 }
-.list-group-item{
-  line-height: 1.5em;
-  border: none;
+ol, .panel-body{
+  color: #666666;
 }
-.list-group-item p{
-  color: #000000;
-}
-.list-group-item:last-child{
-  padding-bottom: 1em;
+.confirmation_page{
+  background-color: #FFFFFF;
 }
 .success {
   background: #E67500;
@@ -22,7 +17,7 @@ h4{
   display: inline-block;
 }
 .success span {
-  color: #ffffff;
+  color: #FFFFFF;
   font-weight: normal;
   position: relative;
 }
@@ -39,10 +34,45 @@ h4{
 }
 .comments{
   display: inline-block;
-  padding-left: 20.25em;
   position: relative;
-  top: -1.5em;
 }
 .dashed_line{
   border-bottom: 2px dashed #666666;
+}
+/*bootstrap overrides*/
+.panel{
+  border: none;
+  padding: 1em 0 0 1em;
+  margin: 0;
+}
+.panel-default{
+  box-shadow: none;
+}
+.list-group-item{
+  border: none;
+}
+.list-group-item:last-child{
+  padding-bottom: 1em;
+}
+.confirmation_page > .nav-tabs > li.active > a{
+  border: none;
+  border-radius: 0;
+}
+li.confirmation_header .success{
+  background-color: #666666;
+}
+.confirmation_page > .nav-tabs > li.active > a .success{
+  background-color: #E67500;
+}
+.confirmation_page > .nav-tabs > li.active > a h4{
+  color: #E67500;
+}
+.confirmation_page > .nav-tabs > li > a:hover{
+  background-color: #E67500;
+}
+.confirmation_page > .nav-tabs > li > a:hover .success{
+  background-color: #666666;
+}
+.confirmation_page > .nav-tabs > li > a:hover h4{
+  color: #FFFFFF;
 }

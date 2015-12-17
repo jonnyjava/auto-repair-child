@@ -1,6 +1,6 @@
 @media only screen and (min-width : 600px) and (max-width : 1199px){
   .large-view{
-    display: none;
+    display: none !important;
   }
   .small-and-medium-view{
     display: block;
@@ -105,38 +105,35 @@
     left: 0.75em;
   }
   /*confirmation page ovverrides*/
-  .confirmation_page{
-    padding: 0;
-  }
   h4{
-    font-size: 1.5em;
-    top: 0.15em;
+    font-size: 1.25em;
+    top: -0.35em;
+    padding-left: 0.125em;
   }
-  .success{
-    margin-left: 0.9em;
+  .success {
     width: 2.5em;
     height: 2.5em;
   }
   .success span {
     font-size: 2em;
-    top: 0.1em;
+    top: -6px;
   }
-  .list-group-item {
-    padding: 0.25em;
+  .confirmation_page > .nav{
+    margin-left: 0.5em;
   }
-  .list-group-item p{
-    padding: 1em 0 0 1em;
-    font-size: 1.125em;
+  .nav > .confirmation_header > a{
+    padding-left: 5px;
   }
-  .horizontal_list_header {
-    padding-left: 1em;
-    width: 12em;
+  /*bootstrap overrides*/
+  .confirmation_header > .dropdown-toggle, .confirmation_header > .dropdown {
+    height: 3.5em;
   }
-  .horizontal_list_content {
-    display: inline-block;
-    word-break: break-word;
-    overflow: hidden;
-    max-width: 22em;
+  .panel-body{
+    padding: 0 0.75em 0 0;
+  }
+  .list-group-item{
+    padding-left: 0;
+    padding-right: 0;
   }
   /*typeahead customization*/
   .tt-menu{

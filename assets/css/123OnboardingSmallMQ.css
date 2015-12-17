@@ -3,7 +3,7 @@
     display: block;
   }
   .large-view{
-    display: none;
+    display: none !important;
   }
   .onboarding_container{
     min-height: 30em;
@@ -125,26 +125,17 @@
     padding: 0;
   }
   h4{
-    font-size: 1.25em;
-    top: 0.125em;
+    font-size: 0.9em;
+    top: -0.25em;
+    left: -0.25em;
   }
   .success{
-    margin-left: 1em;
-    width: 2em;
-    height: 2em;
+    width: 1.5em;
+    height: 1.5em;
   }
   .success span {
-    font-size: 1.5em;
-    top: 1px;
-  }
-  .list-group{
-    margin: 0;
-  }
-  .list-group-item{
-    padding: 0;
-  }
-  .list-group-item p{
-    padding: 1em 1em 0em 1em;
+    font-size: 1.25em;
+    top: -4px;
   }
   .horizontal_list_header{
     padding-left: 1em;
@@ -153,6 +144,27 @@
     padding-left: 1em;
     display: block;
     word-break: break-word;
+  }
+  /*bootstrap overrides*/
+  .list-group{
+    margin: 0;
+  }
+  .list-group-item{
+    padding: 0;
+    font-size: 0.8em;
+  }
+  .list-group-item div{
+    padding: 1em 1em 0em 1em;
+  }
+  .panel-body{
+    padding: 0 0.75em 0 0;
+    font-size: 0.8em;
+  }
+  .confirmation_page > .nav{
+    margin-left: 0.75em;
+  }
+  .nav > .confirmation_header > a{
+    padding: 0;
   }
   /*typeahead customization*/
   .tt-menu{
