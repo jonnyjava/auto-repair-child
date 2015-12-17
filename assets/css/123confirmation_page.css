@@ -1,0 +1,48 @@
+h4{
+  display: inline-block;
+  padding-left: 0.25em;
+  position: relative;
+  color: #000000;
+}
+.list-group-item{
+  line-height: 1.5em;
+  border: none;
+}
+.list-group-item p{
+  color: #000000;
+}
+.list-group-item:last-child{
+  padding-bottom: 1em;
+}
+.success {
+  background: #E67500;
+  border-radius: 50%;
+  text-align: center;
+  font-family: 'Palanquin Dark';
+  display: inline-block;
+}
+.success span {
+  color: #ffffff;
+  font-weight: normal;
+  position: relative;
+}
+.horizontal_list_header{
+  display: inline-block;
+  font-weight: bolder;
+  vertical-align: top;
+}
+.horizontal_list_content{
+  color: #666666;
+}
+.horizontal_list_content:first-letter{
+  text-transform: capitalize;
+}
+.comments{
+  display: inline-block;
+  padding-left: 20.25em;
+  position: relative;
+  top: -1.5em;
+}
+.dashed_line{
+  border-bottom: 2px dashed #666666;
+}

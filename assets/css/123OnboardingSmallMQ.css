@@ -120,6 +120,40 @@
     font-size: 1.25rem;
     top: 0.25rem;
   }
+  /*confirmation page ovverrides*/
+  .confirmation_page{
+    padding: 0;
+  }
+  h4{
+    font-size: 1.25em;
+    top: 0.125em;
+  }
+  .success{
+    margin-left: 1em;
+    width: 2em;
+    height: 2em;
+  }
+  .success span {
+    font-size: 1.5em;
+    top: 1px;
+  }
+  .list-group{
+    margin: 0;
+  }
+  .list-group-item{
+    padding: 0;
+  }
+  .list-group-item p{
+    padding: 1em 1em 0em 1em;
+  }
+  .horizontal_list_header{
+    padding-left: 1em;
+  }
+  .horizontal_list_content {
+    padding-left: 1em;
+    display: block;
+    word-break: break-word;
+  }
   /*typeahead customization*/
   .tt-menu{
     font-size: 1.25rem;

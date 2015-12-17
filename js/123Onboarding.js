@@ -2,7 +2,15 @@ $(document).ready(function(){
   $('div').removeAttr("tabindex");
   $('input').attr('autocomplete', 'false');
   $('input').attr('autofill', 'false');
-  $('.submit').click(function () {
+  $('.js_saver').click(function () {
+    var absolute_url = $('#js_onboarding_container').data('partial-url');
+    var page_to_load = absolute_url+"/partials/_confirmation_page.php";
+    var confirmation_page = $.ajax({type: "GET", url: page_to_load, async: false}).responseText;
+    $('#confirmation_page').html(confirmation_page);
+    animate_to_next($(this));
+    $('#progressbar').fadeOut(300, function(){
+      animate_container_height($('#step_4'), 400);
+    });
     return false;
   });
 });
@@ -47,10 +55,8 @@ function animate_to_next(clicked_button){
           animating = false;
         },
       easing: 'easeInOutBack'
-
   });
 }
-
 function animate_to_previous(clicked_button){
   if (animating)
       return false;
@@ -82,7 +88,6 @@ function animate_to_previous(clicked_button){
       easing: 'easeInOutBack'
   });
 }
-
 function animate_container_height(current_step, animation_time){
   var step_height = current_step.outerHeight();
   var form_height = $('#onboarding_form').height();

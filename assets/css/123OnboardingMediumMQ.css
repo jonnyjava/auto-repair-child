@@ -104,6 +104,40 @@
     line-height: 2em;
     left: 0.75em;
   }
+  /*confirmation page ovverrides*/
+  .confirmation_page{
+    padding: 0;
+  }
+  h4{
+    font-size: 1.5em;
+    top: 0.15em;
+  }
+  .success{
+    margin-left: 0.9em;
+    width: 2.5em;
+    height: 2.5em;
+  }
+  .success span {
+    font-size: 2em;
+    top: 0.1em;
+  }
+  .list-group-item {
+    padding: 0.25em;
+  }
+  .list-group-item p{
+    padding: 1em 0 0 1em;
+    font-size: 1.125em;
+  }
+  .horizontal_list_header {
+    padding-left: 1em;
+    width: 12em;
+  }
+  .horizontal_list_content {
+    display: inline-block;
+    word-break: break-word;
+    overflow: hidden;
+    max-width: 22em;
+  }
   /*typeahead customization*/
   .tt-menu{
     font-size: 1.75rem;

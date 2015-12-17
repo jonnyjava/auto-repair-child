@@ -12,6 +12,7 @@
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123Onboarding.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123buttons.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123checkbox.css">
+<link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123confirmation_page.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123dropdowns.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123progressform.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingSmallMQ.css">
@@ -242,10 +243,13 @@
           <input type="button" class="previous animation-button js_undo_car_breadcrumb" data-current-fieldset="step_3" value="Atrás">
         </div>
         <div class="col-lg-3 col-xs-6">
-        <input type="button" name="submit" class="go_next animation-button js_saver" data-fieldset="step_3" value="Enviar" />
+        <input type="button" class="next go_next animation-button js_saver" data-fieldset="step_3" value="Enviar" />
         </div>
         <div class="col-lg-3 col-xs-0"></div>
       </div>
+    </fieldset>
+    <fieldset id="step_4">
+      <div id="confirmation_page"></div>
     </fieldset>
   </form>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery-1.9.1.min.js" type="text/javascript"></script>
