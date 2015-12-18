@@ -266,13 +266,8 @@
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123cars.js" type="text/javascript"></script>
 </div>
 <div class="limit-wrapper">
+
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-
-<?php the_content(); ?>
-<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'twentyten' ), 'after' => '' ) ); ?>
-<?php edit_post_link( __( 'Edit', 'twentyten' ), '', '' ); ?>
-
-<?php s_template( '', true ); ?>
-
+  <?php the_content(); ?>
 <?php endwhile; ?>
 <?php get_footer(); ?>
