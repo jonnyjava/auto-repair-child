@@ -8,7 +8,7 @@
 <meta content='width=device-width, initial-scale=1' name='viewport'>
 <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Nunito:400,300,700|Palanquin+Dark:400,500,600,700">
 <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/bootstrap-3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/bootstrap-3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123Onboarding.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123buttons.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123checkbox.css">
@@ -252,18 +252,18 @@
       <div id="confirmation_page"></div>
     </fieldset>
   </form>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery-1.9.1.min.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery.easing.min.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/bootstrap.min.js"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123Onboarding.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/typeahead.bundle.js"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123autocomplete.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123breadcrumbs.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123dropdowns.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123services_fields.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123summary.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123car_selector.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/123cars.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/jquery.easing.min.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/bootstrap.min.js"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/typeahead.bundle.js"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123Onboarding.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123autocomplete.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123breadcrumbs.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123dropdowns.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123services_fields.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123summary.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123car_selector.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123cars.js" type="text/javascript"></script>
 </div>
 <div class="limit-wrapper">
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>

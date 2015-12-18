@@ -44,10 +44,10 @@
       </tr>
     </table>
     <script language="javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true&v=3"></script>
-    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/angular.min.js"></script>
-    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/ng-map.min.js"></script>
-    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/app.js"></script>
-    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/bootstrap-3.3.5/css/bootstrap.min.css">
+    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/angular.min.js"></script>
+    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/ng-map.min.js"></script>
+    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/app.js"></script>
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/bootstrap-3.3.5/css/bootstrap.min.css">
   </div>
 </div>
 
