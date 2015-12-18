@@ -8,16 +8,16 @@
     <div class="panel panel-default">
       <div class="panel-body">
         Hemos recibido tu demanda y está siendo examinada por nuestros expertos, gracias por tu confianza!<br/>
-        Aquí te detallamos cual son los próximos pasos :
+        Aquí te detallamos cuales serán los próximos pasos:
         <ol>
-          <li>Hemos elegido los mejores talleres por tu demanda en tu zona y  los hemos mandado tu demanda</li>
-          <li>Estos talleres van a estudiar tu demanda</li>
-          <li>Dentro de 5 días, vas a recibir emails de estos talleres con sus presupuestos (Recuérdate de comprobar tu carpeta de spam)</li>
-          <li>A recibir, puedes elegir el taller que prefiera, y después de haber elegido uno, debes llamarlo para definir una fecha de intervención.</li>
+          <li>Hemos elegido los mejores talleres para tu demanda en tu zona y les hemos mandado tu demanda</li>
+          <li>Estos talleres la estudiarán</li>
+          <li>Dentro de 5 días, recibirás unos emails desde estos talleres con sus presupuestos (Recuérdate de comprobar tu carpeta de spam!)</li>
+          <li>A recibirlos, podrás elegir el taller que prefieras, y después de haber elegido uno, deberás llamarlo para definir una fecha de intervención.</li>
           <li>Durante la intervención, pagaras directamente el taller por su trabajo.</li>
         </ol>
-        Si tienes alguna duda, contactanos a esta dirección: contact@123mecanico.es, te contestáramos muy rápidamente.<br/>
-        También puedes visitar nuestra página web aquí: http://123mecanico.es/como-funciona/ para tener respuestas a tus dudas.
+        Si tienes alguna duda, contactanos a esta dirección: <a href="mailto:contact@123mecanico.es" class="link">contact@123mecanico.es</a>, te contestáramos lo más rápidamente posible.<br/>
+        También puedes visitar nuestra web la página: <a href="http://123mecanico.es/como-funciona/" target="blank" class="link">como funciona</a> para encontrar respuestas a tus dudas.
       </div>
     </div>
   </div>
