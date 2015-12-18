@@ -1,6 +1,6 @@
 @media only screen and (min-width : 600px) and (max-width : 1199px){
   .large-view{
-    display: none;
+    display: none !important;
   }
   .small-and-medium-view{
     display: block;
@@ -13,7 +13,7 @@
   .bottom-gutter{
     margin-bottom: 1.5em;
   }
-  .orange-label{
+  .gray-label, .orange-label{
     line-height: 1.5em;
     font-size: 1.75rem;
     width: 100%;
@@ -103,6 +103,37 @@
     font-size: 1.75rem;
     line-height: 2em;
     left: 0.75em;
+  }
+  /*confirmation page ovverrides*/
+  h4{
+    font-size: 1.25em;
+    top: -0.35em;
+    padding-left: 0.125em;
+  }
+  .success {
+    width: 2.5em;
+    height: 2.5em;
+  }
+  .success span {
+    font-size: 2em;
+    top: -6px;
+  }
+  .confirmation_page > .nav{
+    margin-left: 0.5em;
+  }
+  .nav > .confirmation_header > a{
+    padding-left: 5px;
+  }
+  /*bootstrap overrides*/
+  .confirmation_header > .dropdown-toggle, .confirmation_header > .dropdown {
+    height: 3.5em;
+  }
+  .panel-body{
+    padding: 0 0.75em 0 0;
+  }
+  .list-group-item{
+    padding-left: 0;
+    padding-right: 0;
   }
   /*typeahead customization*/
   .tt-menu{

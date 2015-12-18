@@ -2,22 +2,27 @@ $(document).ready(function(){
 
   $('.js_servicename').click(function(event){
       event.preventDefault();
-      var absolute_url = $('#js_onboarding_container').data('partial-url');
-
+      var has_details = $(this).data('car-details-fields');
       var fields = $(this).data('car-fields').split(',');
       var content = "";
-      if (fields.length > 1){
-        content += build_row(fields, absolute_url, 'row');
+      var js_toggling_class = "";
+
+      if (has_details){
+        js_toggling_class = "js_toggle_details"
+        content += build_row(['vin_number'], 'row car-details-row bottom-gutter');
       }
 
-      fields = $(this).data('car-details-fields').split(',');
       if (fields.length > 1){
-        content += build_row(fields, absolute_url, 'row car-details-row bottom-gutter');
+        content += build_row(fields, 'row '+js_toggling_class);
+      }
+
+      if (has_details){
+        content += build_row(['engine','engine_letters'], 'row car-details-row bottom-gutter '+js_toggling_class);
       }
 
       fields = $(this).data('service-fields').split(',');
       if (fields[0].length > 0){
-        content += build_row(fields, absolute_url, 'row car-details-row');
+        content += build_row(fields, 'row car-details-row');
       }
       $('#js_dynamic_form').html(content);
       $(".js_dropdown_menu > li").bind("click", fill_dropdown_with_selected_option);
@@ -25,9 +30,13 @@ $(document).ready(function(){
       car_selector();
       animate_to_next($(this));
       fill_problem_breadcrumb($(this).text());
+      if (has_details){
+        animate_details(600);
+      }
   });
 
-  function build_row(fields, absolute_url, row_class){
+  function build_row(fields, row_class){
+    var absolute_url = $('#js_onboarding_container').data('partial-url');
     var content = "";
     for(var i = 0; i <fields.length; i++){
       if (fields[i] != ""){

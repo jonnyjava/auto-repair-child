@@ -51,9 +51,15 @@ li > .hint{
   margin: 0;
   text-align: left
 }
+.gray-label{
+  background-color: #666666;
+  border: 1px solid #666666;
+}
 .orange-label{
   background-color: #E67500;
   border: 1px solid #E67500;
+}
+.gray-label, .orange-label{
   color: #ffffff;
   padding: 0;
   margin: 0;
@@ -122,10 +128,15 @@ li > .hint{
 .col-xs-4{
   padding: 0 inherit;
 }
+.link, .link:hover, .link:focus, .link:visited{
+  color: #E67500;
+  text-decoration: none;
+  cursor: pointer;
+}
 .js_second_step{
   display: none;
 }
-.js_services{
+.js_services, .js_toggle_details{
   display: none;
 }
 /*typeahead customizations*/

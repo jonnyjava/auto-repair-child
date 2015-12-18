@@ -1,0 +1,78 @@
+h4{
+  display: inline-block;
+  position: relative;
+  color: #666666;
+}
+ol, .panel-body{
+  color: #666666;
+}
+.confirmation_page{
+  background-color: #FFFFFF;
+}
+.success {
+  background: #E67500;
+  border-radius: 50%;
+  text-align: center;
+  font-family: 'Palanquin Dark';
+  display: inline-block;
+}
+.success span {
+  color: #FFFFFF;
+  font-weight: normal;
+  position: relative;
+}
+.horizontal_list_header{
+  display: inline-block;
+  font-weight: bolder;
+  vertical-align: top;
+}
+.horizontal_list_content{
+  color: #666666;
+}
+.horizontal_list_content:first-letter{
+  text-transform: capitalize;
+}
+.comments{
+  display: inline-block;
+  position: relative;
+}
+.dashed_line{
+  border-bottom: 2px dashed #666666;
+}
+/*bootstrap overrides*/
+.panel{
+  border: none;
+  padding: 1em 0 0 1em;
+  margin: 0;
+}
+.panel-default{
+  box-shadow: none;
+}
+.list-group-item{
+  border: none;
+}
+.list-group-item:last-child{
+  padding-bottom: 1em;
+}
+.confirmation_page > .nav-tabs > li.active > a{
+  border: none;
+  border-radius: 0;
+}
+li.confirmation_header .success{
+  background-color: #666666;
+}
+.confirmation_page > .nav-tabs > li.active > a .success{
+  background-color: #E67500;
+}
+.confirmation_page > .nav-tabs > li.active > a h4{
+  color: #E67500;
+}
+.confirmation_page > .nav-tabs > li > a:hover{
+  background-color: #E67500;
+}
+.confirmation_page > .nav-tabs > li > a:hover .success{
+  background-color: #666666;
+}
+.confirmation_page > .nav-tabs > li > a:hover h4{
+  color: #FFFFFF;
+}
