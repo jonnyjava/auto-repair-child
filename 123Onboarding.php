@@ -19,7 +19,7 @@
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingMediumMQ.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingLargeMQ.css">
 <div class="onboarding_container" id="js_onboarding_container" data-partial-url="<?php echo bloginfo('stylesheet_directory'); ?>">
-  <form class="msform" id="onboarding_form" autocomplete="false" autofill="false">
+  <form class="msform" id="onboarding_form" autocomplete="false" autofill="false" action="<?php echo bloginfo('stylesheet_directory'); ?>/controllers/demand_controller.php" method="post">
     <ul class="progressbar" id="progressbar">
       <li class="active">Tu problema<br/><i class="hint" id="problem_breadcrumb"></i></li>
       <li>Tu coche<br/><i class="hint" id="car_breadcrumb"></i></li>
@@ -185,10 +185,10 @@
       <h1 class="fs-title">Tu mecanico, YA!</h1>
       <div class="row car-details-row">
         <div class="col-lg-4 no-lg-right-gutter">
-          <label for="name_and_surname" class="orange-label">Nombre y apellidos</label>
+          <label for="name_and_surnames" class="orange-label">Nombre y apellidos</label>
         </div>
         <div class="col-lg-8 no-lg-left-gutter bottom-gutter">
-          <input type="text" id="name_and_surname" name="name_and_surname" class="uppercased_content" >
+          <input type="text" id="name_and_surnames" name="name_and_surnames" class="uppercased_content" >
         </div>
       </div>
       <div class="row car-details-row">

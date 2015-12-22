@@ -2,17 +2,7 @@ $(document).ready(function(){
   $('div').removeAttr("tabindex");
   $('input').attr('autocomplete', 'false');
   $('input').attr('autofill', 'false');
-  $('.js_saver').click(function () {
-    var absolute_url = $('#js_onboarding_container').data('partial-url');
-    var page_to_load = absolute_url+"/partials/_confirmation_page.php";
-    var confirmation_page = $.ajax({type: "GET", url: page_to_load, async: false}).responseText;
-    $('#confirmation_page').html(confirmation_page);
-    animate_to_next($(this));
-    $('#progressbar').fadeOut(300, function(){
-      animate_container_height($('#step_4'), 400);
-    });
-    return false;
-  });
+  submit_form();
 });
 var current_fs, next_fs, previous_fs;
 var left, opacity, scale;
@@ -111,4 +101,31 @@ function animate_details(animation_time){
     $(this).fadeOut(animation_time);
     animate_container_height($('#step_2'), animation_time)
   });
+}
+function submit_form(){
+  $('.js_saver').click(function () {
+    var submitted_form = $(this).closest("form")
+    var my_destination = submitted_form.attr("action");
+    var submitted_datas = submitted_form.serialize();
+    $.ajax({type: "POST", data: submitted_datas, url: my_destination, async: true}).success(function(data){
+      load_ok(data);
+    }).error(function(data){
+      load_ko(data);
+    });
+    return false;
+  });
+}
+function load_ok(data){
+  console.log(data);
+  var absolute_url = $('#js_onboarding_container').data('partial-url');
+  var page_to_load = absolute_url+"/partials/_confirmation_page.php";
+  var confirmation_page = $.ajax({type: "GET", url: page_to_load, async: false}).responseText;
+  $('#confirmation_page').html(confirmation_page);
+  animate_to_next($(this));
+  $('#progressbar').fadeOut(300, function(){
+    animate_container_height($('#step_4'), 400);
+  });
+}
+function load_ko(){
+  console.log("cacca per tutti, redirect to error page");
 }
