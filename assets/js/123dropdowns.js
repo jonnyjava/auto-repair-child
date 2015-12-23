@@ -5,6 +5,7 @@ $(document).ready(function(){
     var dropdown = $(this).parent();
     var animation_time = 300;
     var selected_service_category = $(this).data('value');
+
     $('.js_services').fadeOut(animation_time);
     $('.'+selected_service_category).delay(animation_time).fadeIn(
       {
@@ -24,6 +25,7 @@ function fill_dropdown_with_selected_option(){
   var choosen_option = $(this).text();
   var parentId = $(this).parent().data('parent-id');
   $('#'+parentId).text(choosen_option);
+  $('#'+parentId+'_id').val(choosen_option);
 }
 
 function activate_dropdown_toggle(){

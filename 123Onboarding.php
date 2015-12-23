@@ -62,6 +62,8 @@
               <li data-value="js_s11" class="js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Otros servicios</li>
             </ul>
           </div>
+          <input type="hidden" name="service_category_id" id="service_category_id" value="0"/>
+          <input type="hidden" name="service_id" id="service_id" value="0"/>
         </div>
       </div>
       <div class="row js_services js_s0">

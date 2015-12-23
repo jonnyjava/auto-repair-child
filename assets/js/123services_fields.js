@@ -6,6 +6,7 @@ $(document).ready(function(){
       var fields = $(this).data('car-fields').split(',');
       var content = "";
       var js_toggling_class = "";
+      $('#service_id').val($(this).html());
 
       if (has_details){
         js_toggling_class = "js_toggle_details"
