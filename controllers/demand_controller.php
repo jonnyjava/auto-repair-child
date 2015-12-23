@@ -23,7 +23,7 @@ $demand->email = raw_homemade_sanitize($_POST['email']);
 $demand->wants_newsletter = raw_homemade_sanitize($_POST['wants_newsletter']);
 $demand->accepts_privacy = raw_homemade_sanitize($_POST['accepts_privacy']);
 $demand->comments = raw_homemade_sanitize($_POST['comments']);
-$demand->demand_details = raw_homemade_sanitize($_POST['demand_details']);
+$demand->demand_details = details_as_json($_POST);
 
 if ($demand->is_valid()){
   $table_name = $wpdb->prefix . "demands";
@@ -45,7 +45,6 @@ if ($demand->is_valid()){
     'comments' => $demand->comments,
     'demand_details' => $demand->demand_details)
   );
-  $response = 'tutto bene';
 }
 else{
   $response = $demand->errorMessages;
@@ -70,4 +69,16 @@ function raw_dirty_replace($input){
   return $input;
 }
 
+function details_as_json($inputs){
+  $details = [];
+  $basic_values = array("city", "user_city", "service_category_id", "service_id", "vin_number", "brand", "model", "year", "engine", "engine_letters", "name_and_surnames", "phone", "email", "wants_newsletter", "accepts_privacy", "comments");
+  foreach ($_POST as $key => $value) {
+    if( !(in_array($key, $basic_values)) ){
+      $details[$key] = raw_dirty_replace($value);
+    }
+  }
+  return json_encode($details);
+}
 ?>
+
+
