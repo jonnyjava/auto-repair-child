@@ -37,16 +37,16 @@
           <div class="help"><i>indica tu ciudad o tu codigo postal</i></div >
         </div >
         <div class="col-lg-2 no-lg-right-gutter">
-          <label data-dropdown-name="service_type_dropdown" class="orange-label disabled-element js_dropdown_opener" id="service_type_disabled_label">Elige un servicio</label>
+          <label data-dropdown-name="service_category_dropdown" class="orange-label disabled-element js_dropdown_opener" id="service_category_disabled_label">Elige un servicio</label>
         </div>
         <div class="col-lg-4 no-lg-left-gutter">
           <div class="dropdown disabled-element">
-            <i class="hint" id="service_type_disabled_hint"><b>Servicios</b> disponibles en tu ciudad</i>
-            <button type="button" class="btn dropdown-toggle js_dropdown_opener" data-dropdown-name="service_type_dropdown">
-              <span class="dropdown-value" id="service_type" data-value=""><i class="hint">Por ejemplo: diagnósticos</i></span>
+            <i class="hint" id="service_category_disabled_hint"><b>Servicios</b> disponibles en tu ciudad</i>
+            <button type="button" class="btn dropdown-toggle js_dropdown_opener" data-dropdown-name="service_category_dropdown">
+              <span class="dropdown-value" id="service_category" data-value=""><i class="hint">Por ejemplo: diagnósticos</i></span>
               <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu js_dropdown_menu" data-parent-id="service_type" id="service_type_dropdown">
+            <ul class="dropdown-menu js_dropdown_menu" data-parent-id="service_category" id="service_category_dropdown">
               <li data-value="js_s0">Diagnósticos y control</li>
               <li data-value="js_s1" class="js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='budget' data-fieldset="step_1">Sustitución de la batería</li>
               <li data-value="js_s2">Neumáticos</li>
