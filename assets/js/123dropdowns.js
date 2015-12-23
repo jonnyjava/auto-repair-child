@@ -45,3 +45,9 @@ function dropdown_toggler(event){
   dropdown.toggle();
   dropdown.dropdown('toggle');
 }
+
+function fill_radio_with_selected_option(){
+    var parentId = $(this).data('parent-id');
+    var choosen_option = $(this).val();
+    $('#'+parentId+'_id').val(choosen_option);
+}
