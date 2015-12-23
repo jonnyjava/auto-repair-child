@@ -23,7 +23,7 @@
     <ul class="progressbar" id="progressbar">
       <li class="active">Tu problema<br/><i class="hint" id="problem_breadcrumb"></i></li>
       <li>Tu coche<br/><i class="hint" id="car_breadcrumb"></i></li>
-      <li>Tu mecanico</li>
+      <li>Tu mecanico, YA!</li>
     </ul>
     <fieldset id="step_1">
       <h1 class="fs-title">¿Que necesitas?</h1>
@@ -169,7 +169,7 @@
       <span id="js_dynamic_form"></span>
       <div class="row car-details-row">
         <div class="col-lg-12">
-          <textarea id="extra_info" class="extra_info_textarea" placeholder="Quieres contarnos algo más?"></textarea>
+          <textarea id="comments" name="comments" class="extra_info_textarea" placeholder="Quieres contarnos algo más?"></textarea>
         </div>
       </div>
       <div class="row">
