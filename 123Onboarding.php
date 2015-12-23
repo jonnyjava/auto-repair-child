@@ -214,8 +214,8 @@
             <div class="checkbox_and_radio_container pull-right">
               <ul class="custom_checkbox">
                 <li>
-                  <label>
-                    <input type="checkbox">
+                  <label for="wants_newsletter">
+                    <input type="checkbox" value="1" id="wants_newsletter" name="wants_newsletter">
                     <span class="checkboxify icon"><i class="fa fa-check"></i></span>
                   </label>
                 </li>
@@ -229,8 +229,8 @@
             <div class="checkbox_and_radio_container pull-right">
               <ul class="custom_checkbox">
                 <li>
-                  <label>
-                    <input type="checkbox">
+                  <label for="accepts_privacy">
+                    <input type="checkbox" value="1" id="accepts_privacy" name="accepts_privacy">
                     <span class="checkboxify icon"><i class="fa fa-check"></i></span>
                   </label>
                 </li>

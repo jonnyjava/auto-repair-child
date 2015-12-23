@@ -12,15 +12,16 @@ $demand->city = raw_homemade_sanitize($_POST['user_city']);
 $demand->service_category_id = raw_homemade_sanitize($_POST['service_category_id']);
 $demand->service_id = raw_homemade_sanitize($_POST['service_id']);
 $demand->vin_number = raw_homemade_sanitize($_POST['vin_number']);
-$demand->brand = raw_homemade_sanitize($_POST['brand']);
-$demand->model = raw_homemade_sanitize($_POST['model']);
-$demand->year = raw_homemade_sanitize($_POST['year']);
-$demand->engine = raw_homemade_sanitize($_POST['engine']);
+$demand->brand = raw_homemade_sanitize($_POST['car_brand_id']);
+$demand->model = raw_homemade_sanitize($_POST['car_model_id']);
+$demand->year = raw_homemade_sanitize($_POST['car_year_id']);
+$demand->engine = raw_homemade_sanitize($_POST['car_engine_id']);
 $demand->engine_letters = raw_homemade_sanitize($_POST['engine_letters']);
 $demand->name_and_surnames = raw_homemade_sanitize($_POST['name_and_surnames']);
 $demand->phone = raw_homemade_sanitize($_POST['phone']);
 $demand->email = raw_homemade_sanitize($_POST['email']);
 $demand->wants_newsletter = raw_homemade_sanitize($_POST['wants_newsletter']);
+$demand->accepts_privacy = raw_homemade_sanitize($_POST['accepts_privacy']);
 $demand->comments = raw_homemade_sanitize($_POST['comments']);
 $demand->demand_details = raw_homemade_sanitize($_POST['demand_details']);
 
@@ -40,6 +41,7 @@ if ($demand->is_valid()){
     'phone' => $demand->phone,
     'email' => $demand->email,
     'wants_newsletter' => $demand->wants_newsletter,
+    'accepts_privacy' => $demand->accepts_privacy,
     'comments' => $demand->comments,
     'demand_details' => $demand->demand_details)
   );
