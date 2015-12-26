@@ -85,7 +85,7 @@ Class Demand {
 
     switch($type){
       case 'city':
-        $this->errorMessages[] = array("city" => "La ciudad no puede estar vacia");
+        $this->errorMessages[] = array("user_city" => "La ciudad no puede estar vacia");
         break;
       case 'name_and_surnames':
         $this->errorMessages[] = array("name_and_surnames" => "Nombre y apellidos non validos");
