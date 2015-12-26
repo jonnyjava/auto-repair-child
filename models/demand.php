@@ -20,9 +20,9 @@ Class Demand {
   public function is_valid() {
     $object_is_valid = false;
     $object_is_valid = $this->validate_city();
-    $object_is_valid = $this->validate_name_and_surnames();
-    $object_is_valid = $this->validate_phone();
-    $object_is_valid = $this->validate_email();
+    $object_is_valid = $this->validate_name_and_surnames() && $object_is_valid;
+    $object_is_valid = $this->validate_phone() && $object_is_valid;
+    $object_is_valid = $this->validate_email() && $object_is_valid;
     return $object_is_valid;
   }
 
