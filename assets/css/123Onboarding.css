@@ -60,6 +60,7 @@ li > .hint{
   border: 1px solid #E67500;
 }
 .gray-label, .orange-label{
+  text-align: center;
   color: #ffffff;
   padding: 0;
   margin: 0;

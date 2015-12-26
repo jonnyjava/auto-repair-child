@@ -26,28 +26,11 @@ $demand->comments = raw_homemade_sanitize($_POST['comments']);
 $demand->demand_details = details_as_json($_POST);
 
 if ($demand->is_valid()){
-  $table_name = $wpdb->prefix . "demands";
-  $wpdb->insert( $table_name, array(
-    'city' => $demand->city,
-    'service_category_id' => $demand->service_category_id,
-    'service_id' => $demand->service_id,
-    'vin_number' => $demand->vin_number,
-    'brand' => $demand->brand,
-    'model' => $demand->model,
-    'year' => $demand->year,
-    'engine' => $demand->engine,
-    'engine_letters' => $demand->engine_letters,
-    'name_and_surnames' => $demand->name_and_surnames,
-    'phone' => $demand->phone,
-    'email' => $demand->email,
-    'wants_newsletter' => $demand->wants_newsletter,
-    'accepts_privacy' => $demand->accepts_privacy,
-    'comments' => $demand->comments,
-    'demand_details' => $demand->demand_details)
-  );
+  save($wpdb, $demand);
+  $response = json_encode(array('status' => 200, 'demand' => $demand));
 }
 else{
-  $response = $demand->errorMessages;
+  $response = json_encode(array('status' => 400, 'errors' => $demand->errorMessages));
 }
 echo $response;
 
@@ -79,6 +62,26 @@ function details_as_json($inputs){
   }
   return json_encode($details);
 }
+
+function save($wpdb, $demand){
+  $table_name = $wpdb->prefix . "demands";
+  $wpdb->insert( $table_name, array(
+    'city' => $demand->city,
+    'service_category_id' => $demand->service_category_id,
+    'service_id' => $demand->service_id,
+    'vin_number' => $demand->vin_number,
+    'brand' => $demand->brand,
+    'model' => $demand->model,
+    'year' => $demand->year,
+    'engine' => $demand->engine,
+    'engine_letters' => $demand->engine_letters,
+    'name_and_surnames' => $demand->name_and_surnames,
+    'phone' => $demand->phone,
+    'email' => $demand->email,
+    'wants_newsletter' => $demand->wants_newsletter,
+    'accepts_privacy' => $demand->accepts_privacy,
+    'comments' => $demand->comments,
+    'demand_details' => $demand->demand_details)
+  );
+}
 ?>
-
-

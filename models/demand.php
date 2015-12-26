@@ -1,6 +1,6 @@
 <?php
 Class Demand {
-  public $errorMessages = "";
+  public $errorMessages = [];
   public $city = "";
   public $service_category_id = "";
   public $service_id = "";
@@ -20,8 +20,6 @@ Class Demand {
   public function is_valid() {
     $object_is_valid = false;
     $object_is_valid = $this->validate_city();
-    $object_is_valid = $this->validate_service_category_id();
-    $object_is_valid = $this->validate_service_id();
     $object_is_valid = $this->validate_name_and_surnames();
     $object_is_valid = $this->validate_phone();
     $object_is_valid = $this->validate_email();
@@ -83,27 +81,20 @@ Class Demand {
     }
   }
 
-
   private function add_error_message($type){
 
     switch($type){
       case 'city':
-        $this->errorMessages .= "La ciudad no puede estar vacia;";
-        break;
-      case 'service_category_id':
-        $this->errorMessages .= "Es necesario indicar una categoria de servicios";
-        break;
-      case 'service_id':
-        $this->errorMessages .= "Es necesario indicar un servicio ";
+        $this->errorMessages[] = array("city" => "La ciudad no puede estar vacia");
         break;
       case 'name_and_surnames':
-        $this->errorMessages .= "Nombre y apellidos non validos";
+        $this->errorMessages[] = array("name_and_surnames" => "Nombre y apellidos non validos");
         break;
       case 'phone':
-        $this->errorMessages .= "Numero de telefono invalido";
+        $this->errorMessages[] = array("phone" => "Numero de telefono invalido");
         break;
       case 'email':
-        $this->errorMessages .= "Mail non valida";
+        $this->errorMessages[] = array("email" => "Mail non valida");
         break;
     }
   }

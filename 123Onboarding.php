@@ -33,9 +33,9 @@
         </div>
         <div class="col-lg-4 no-lg-left-gutter bottom-gutter">
           <input type="text" name="city" style="display:none;"/>
-          <input type="text" id="user_city" name="user_city" placeholder="Por ejemplo: Valencia" tabindex="2" autocomplete="false" autofill="false"/>
+          <input type="text" id="user_city" name="user_city" class="js_user_city_autocomplete" placeholder="Por ejemplo: Valencia" tabindex="2" autocomplete="false" autofill="false"/>
           <div class="help"><i>indica tu ciudad o tu codigo postal</i></div >
-        </div >
+        </div>
         <div class="col-lg-2 no-lg-right-gutter">
           <label data-dropdown-name="service_category_dropdown" class="orange-label disabled-element js_dropdown_opener" id="service_category_disabled_label">Elige un servicio</label>
         </div>
@@ -251,13 +251,14 @@
       </div>
     </fieldset>
     <fieldset id="step_4">
-      <div id="confirmation_page"></div>
+      <div id="submit_result"></div>
     </fieldset>
   </form>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/jquery-1.9.1.min.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/jquery.easing.min.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/bootstrap.min.js"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/typeahead.bundle.js"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/postalCodes.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123Onboarding.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123autocomplete.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123breadcrumbs.js" type="text/javascript"></script>
