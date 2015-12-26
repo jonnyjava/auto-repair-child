@@ -28,14 +28,7 @@
     <fieldset id="step_1">
       <h1 class="fs-title">¿Que necesitas?</h1>
       <div class="row">
-        <div class="col-lg-2 no-lg-right-gutter">
-          <label for="city" class="orange-label">Tu ciudad</label>
-        </div>
-        <div class="col-lg-4 no-lg-left-gutter bottom-gutter">
-          <input type="text" name="city" style="display:none;"/>
-          <input type="text" id="user_city" name="user_city" class="js_user_city_autocomplete" placeholder="Por ejemplo: Valencia" tabindex="2" autocomplete="false" autofill="false"/>
-          <div class="help"><i>indica tu ciudad o tu codigo postal</i></div >
-        </div>
+        <span id="js_dynamic_form_first_step"></span>
         <div class="col-lg-2 no-lg-right-gutter">
           <label data-dropdown-name="service_category_dropdown" class="orange-label disabled-element js_dropdown_opener" id="service_category_disabled_label">Elige un servicio</label>
         </div>

@@ -1,9 +1,3 @@
-$(document).ready(function(){
-  activate_city_autocomplete();
-  $('#user_city').bind('keypress', disable_service_dropdown);
-  $('#user_city').bind('typeahead:select', enable_service_dropdown);
-});
-
 function activate_city_autocomplete(){
   var substringMatcher = function (strs) {
     return function findMatches(q, cb) {
@@ -33,7 +27,6 @@ function activate_city_autocomplete(){
     source: substringMatcher(spanish_cities)
   });
 }
-
 function disable_service_dropdown(){
   $('.js_dropdown_opener').unbind('click', dropdown_toggler);
   $('#service_category_dropdown').parent().addClass('disabled-element');

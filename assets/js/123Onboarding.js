@@ -1,7 +1,16 @@
 $(document).ready(function(){
+
+  var content = build_row(['user_city'], '');
+  $('#js_dynamic_form_first_step').html(content);
+
   $('div').removeAttr("tabindex");
   $('input').attr('autocomplete', 'false');
   $('input').attr('autofill', 'false');
+
+  activate_city_autocomplete();
+  $('#user_city').bind('keypress', disable_service_dropdown);
+  $('#user_city').bind('typeahead:select', enable_service_dropdown);
+
   enable_form_submit();
 });
 var current_fs, next_fs, previous_fs;
