@@ -87,7 +87,7 @@ function translate(value){
   translations['keencap_type_id'] = "Rotula";
   translations['cup_type_id'] = "Copela";
   translations['bearing_type_id'] = "Rodamiento";
-  translations['air_conditioned_id'] = "pack de servicios";
+  translations['air_conditioned_id'] = "Pack de servicios";
   return translations[value] || value;
 }
 
