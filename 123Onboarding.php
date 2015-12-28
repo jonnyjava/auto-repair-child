@@ -19,51 +19,15 @@
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingMediumMQ.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingLargeMQ.css">
 <div class="onboarding_container" id="js_onboarding_container" data-partial-url="<?php echo bloginfo('stylesheet_directory'); ?>">
-  <form class="msform" id="onboarding_form" autocomplete="false" autofill="false">
+  <form class="msform" id="onboarding_form" autocomplete="false" autofill="false" action="<?php echo bloginfo('stylesheet_directory'); ?>/controllers/demand_controller.php" method="post">
     <ul class="progressbar" id="progressbar">
       <li class="active">Tu problema<br/><i class="hint" id="problem_breadcrumb"></i></li>
       <li>Tu coche<br/><i class="hint" id="car_breadcrumb"></i></li>
-      <li>Tu mecanico</li>
+      <li>Tu mecanico, YA!</li>
     </ul>
     <fieldset id="step_1">
       <h1 class="fs-title">¿Que necesitas?</h1>
-      <div class="row">
-        <div class="col-lg-2 no-lg-right-gutter">
-          <label for="city" class="orange-label">Tu ciudad</label>
-        </div>
-        <div class="col-lg-4 no-lg-left-gutter bottom-gutter">
-          <input type="text" name="city" style="display:none;"/>
-          <input type="text" id="user_city" name="user_city" placeholder="Por ejemplo: Valencia" tabindex="2" autocomplete="false" autofill="false"/>
-          <div class="help"><i>indica tu ciudad o tu codigo postal</i></div >
-        </div >
-        <div class="col-lg-2 no-lg-right-gutter">
-          <label data-dropdown-name="service_type_dropdown" class="orange-label disabled-element js_dropdown_opener" id="service_type_disabled_label">Elige un servicio</label>
-        </div>
-        <div class="col-lg-4 no-lg-left-gutter">
-          <div class="dropdown disabled-element">
-            <i class="hint" id="service_type_disabled_hint"><b>Servicios</b> disponibles en tu ciudad</i>
-            <button type="button" class="btn dropdown-toggle js_dropdown_opener" data-dropdown-name="service_type_dropdown">
-              <span class="dropdown-value" id="service_type" data-value=""><i class="hint">Por ejemplo: diagnósticos</i></span>
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu js_dropdown_menu" data-parent-id="service_type" id="service_type_dropdown">
-              <li data-value="js_s0">Diagnósticos y control</li>
-              <li data-value="js_s1" class="js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='budget' data-fieldset="step_1">Sustitución de la batería</li>
-              <li data-value="js_s2">Neumáticos</li>
-              <li data-value="js_s3">Mantenimientos y aceite</li>
-              <li data-value="js_s4">Chapa y Lunas</li>
-              <li data-value="js_s5">Frenado</li>
-              <li data-value="js_s61">Iluminación y electricidad</li>
-              <li data-value="js_s62">Audio y multimedia</li>
-              <li data-value="js_s7">Motor</li>
-              <li data-value="js_s8">Escapes</li>
-              <li data-value="js_s9">Trenes y Suspensión</li>
-              <li data-value="js_s10">Aire Acondicionado</li>
-              <li data-value="js_s11" class="js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Otros servicios</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <span id="js_dynamic_form_first_step"></span>
       <div class="row js_services js_s0">
         <div class="col-md-4"><button class="btn btn-2 btn-sep icon-wrench js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Avería en el motor</button></div>
         <div class="col-md-4"><button class="btn btn-2 btn-sep icon-brakes js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Frenos</button></div>
@@ -167,7 +131,7 @@
       <span id="js_dynamic_form"></span>
       <div class="row car-details-row">
         <div class="col-lg-12">
-          <textarea id="extra_info" class="extra_info_textarea" placeholder="Quieres contarnos algo más?"></textarea>
+          <textarea id="comments" name="comments" class="extra_info_textarea" placeholder="Quieres contarnos algo más?"></textarea>
         </div>
       </div>
       <div class="row">
@@ -183,28 +147,7 @@
     </fieldset>
     <fieldset id="step_3">
       <h1 class="fs-title">Tu mecanico, YA!</h1>
-      <div class="row car-details-row">
-        <div class="col-lg-4 no-lg-right-gutter">
-          <label for="name_and_surname" class="orange-label">Nombre y apellidos</label>
-        </div>
-        <div class="col-lg-8 no-lg-left-gutter bottom-gutter">
-          <input type="text" id="name_and_surname" name="name_and_surname" class="uppercased_content" >
-        </div>
-      </div>
-      <div class="row car-details-row">
-        <div class="col-lg-2 no-lg-right-gutter">
-          <label for="phone" class="orange-label">Telefono</label>
-        </div>
-        <div class="col-lg-4 no-lg-left-gutter bottom-gutter">
-          <input type="text" id="phone" name="phone" class="uppercased_content" >
-        </div>
-        <div class="col-lg-2 no-lg-right-gutter">
-          <label for="email" class="orange-label">Email</label>
-        </div>
-        <div class="col-lg-4 no-lg-left-gutter bottom-gutter">
-          <input type="text" id="email" name="email" class="uppercased_content" >
-        </div>
-      </div>
+      <span id="js_dynamic_form_third_step"></span>
       <div class="row car-details-row">
         <div class="col-lg-6 bottom-gutter">
           <label class="orange-label">
@@ -212,8 +155,8 @@
             <div class="checkbox_and_radio_container pull-right">
               <ul class="custom_checkbox">
                 <li>
-                  <label>
-                    <input type="checkbox">
+                  <label for="wants_newsletter">
+                    <input type="checkbox" value="1" id="wants_newsletter" name="wants_newsletter">
                     <span class="checkboxify icon"><i class="fa fa-check"></i></span>
                   </label>
                 </li>
@@ -227,8 +170,8 @@
             <div class="checkbox_and_radio_container pull-right">
               <ul class="custom_checkbox">
                 <li>
-                  <label>
-                    <input type="checkbox">
+                  <label for="accepts_privacy">
+                    <input type="checkbox" value="1" id="accepts_privacy" name="accepts_privacy">
                     <span class="checkboxify icon"><i class="fa fa-check"></i></span>
                   </label>
                 </li>
@@ -249,20 +192,22 @@
       </div>
     </fieldset>
     <fieldset id="step_4">
-      <div id="confirmation_page"></div>
+      <div id="submit_result"></div>
     </fieldset>
   </form>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/jquery-1.9.1.min.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/jquery.easing.min.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/bootstrap.min.js"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/typeahead.bundle.js"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123Onboarding.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/postalCodes.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123autocomplete.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123breadcrumbs.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123dropdowns.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123form_submit.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123services_fields.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123car_selector.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123cars.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123Onboarding.js" type="text/javascript"></script>
 </div>
 <div class="limit-wrapper">
 

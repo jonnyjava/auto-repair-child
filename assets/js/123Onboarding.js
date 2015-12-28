@@ -1,18 +1,24 @@
 $(document).ready(function(){
+  absolute_url = $('#js_onboarding_container').data('partial-url');
+
+  var content = build_row(['user_city', 'service_category'], 'row');
+  $('#js_dynamic_form_first_step').html(content);
+  activate_service_dropdown();
+  enable_service_buttons();
+
+  content = build_row(['name_and_surnames'], 'row car-details-row');
+  content += build_row(['phone', 'email'], 'row car-details-row');
+  $('#js_dynamic_form_third_step').html(content);
+
   $('div').removeAttr("tabindex");
   $('input').attr('autocomplete', 'false');
   $('input').attr('autofill', 'false');
-  $('.js_saver').click(function () {
-    var absolute_url = $('#js_onboarding_container').data('partial-url');
-    var page_to_load = absolute_url+"/partials/_confirmation_page.php";
-    var confirmation_page = $.ajax({type: "GET", url: page_to_load, async: false}).responseText;
-    $('#confirmation_page').html(confirmation_page);
-    animate_to_next($(this));
-    $('#progressbar').fadeOut(300, function(){
-      animate_container_height($('#step_4'), 400);
-    });
-    return false;
-  });
+
+  activate_city_autocomplete();
+  $('#user_city').bind('keypress', disable_service_dropdown);
+  $('#user_city').bind('typeahead:select', enable_service_dropdown);
+
+  enable_form_submit();
 });
 var current_fs, next_fs, previous_fs;
 var left, opacity, scale;
@@ -57,6 +63,7 @@ function animate_to_next(clicked_button){
       easing: 'easeInOutBack'
   });
 }
+
 function animate_to_previous(clicked_button){
   if (animating)
       return false;
@@ -88,6 +95,7 @@ function animate_to_previous(clicked_button){
       easing: 'easeInOutBack'
   });
 }
+
 function animate_container_height(current_step, animation_time){
   var step_height = current_step.outerHeight();
   var form_height = $('#onboarding_form').height();
@@ -105,6 +113,7 @@ function animate_container_height(current_step, animation_time){
     },animation_time);
   }
 }
+
 function animate_details(animation_time){
   $('.js_detail_toggler').click(function(){
     $('.js_toggle_details').fadeIn(animation_time);

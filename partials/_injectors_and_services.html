@@ -1,33 +1,34 @@
 <div class="col-lg-2 no-lg-right-gutter">
-  <label data-dropdown-name="injector_service_type_dropdown" class="orange-label js_dropdown_opener">Servicio</label>
+  <label data-dropdown-name="injector_service_category_dropdown" class="orange-label js_dropdown_opener">Servicio</label>
 </div>
 <div class="col-lg-6 no-lg-left-gutter bottom-gutter small-and-medium-view">
   <div class="dropdown">
-    <button type="button" class="btn dropdown-toggle js_dropdown_opener" data-dropdown-name="injector_service_type_dropdown">
-      <span class="dropdown-value" id="injector_service_type"><i class="hint">Por ejemplo: sustitución</i></span>
+    <button type="button" class="btn dropdown-toggle js_dropdown_opener" data-dropdown-name="injector_service_category_dropdown">
+      <span class="dropdown-value" id="injector_service_category"><i class="hint">Por ejemplo: sustitución</i></span>
       <span class="caret"></span>
     </button>
-    <ul class="dropdown-menu js_dropdown_menu" data-parent-id="injector_service_type" id="injector_service_type_dropdown">
+    <ul class="dropdown-menu js_dropdown_menu" data-parent-id="injector_service_category" id="injector_service_category_dropdown">
       <li data-value="sustitucion">Sustitución</li>
       <li data-value="reparacion">Reparación</li>
       <li data-value="limpieza">Limpieza</li>
     </ul>
+    <input type="hidden" name="injector_service_category_id" id="injector_service_category_id"  value=""/>
   </div>
 </div>
 <div class="col-lg-6 no-lg-left-gutter checkbox_and_radio_container large-view">
   <label class="custom_radiobutton">
     <div class="radio-option-label">Sustitución</div>
-    <input type="radio" name="glass_type_option"/>
+    <input type="radio" class="js_radiobutton" value="Sustitución" data-parent-id="injector_service_category" name="glass_type_option"/>
     <span class="radiobuttonify icon"><i class="fa fa-check"></i></span>
   </label>
   <label class="custom_radiobutton">
     <div class="radio-option-label">Reparación</div>
-    <input type="radio" name="glass_type_option"/>
+    <input type="radio" class="js_radiobutton" value="Reparación" data-parent-id="injector_service_category" name="glass_type_option"/>
     <span class="radiobuttonify icon"><i class="fa fa-check"></i></span>
   </label>
   <label class="custom_radiobutton">
     <div class="radio-option-label">Limpieza</div>
-    <input type="radio" name="glass_type_option"/>
+    <input type="radio" class="js_radiobutton" value="Limpieza" data-parent-id="injector_service_category" name="glass_type_option"/>
     <span class="radiobuttonify icon"><i class="fa fa-check"></i></span>
   </label>
 </div>
@@ -47,5 +48,6 @@
       <li data-value="3" class="text-right">3</li>
       <li data-value="4" class="text-right">4</li>
     </ul>
+    <input type="hidden" name="injector_quantity_id" id="injector_quantity_id"  value=""/>
   </div>
 </div>

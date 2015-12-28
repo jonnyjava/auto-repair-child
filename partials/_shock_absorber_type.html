@@ -1,5 +1,5 @@
 <div class="col-lg-2 no-lg-right-gutter">
-<label data-dropdown-name="wheel_shock_absorber_type_dropdown" class="orange-label js_dropdown_opener">Escape</label>
+<label data-dropdown-name="wheel_shock_absorber_type_dropdown" class="orange-label js_dropdown_opener">Amortiguador</label>
 </div>
 <div class="col-lg-6 no-lg-left-gutter bottom-gutter small-and-medium-view">
   <div class="dropdown">
@@ -12,22 +12,23 @@
       <li data-value="delantero">Delantero</li>
       <li data-value="trasero">Trasero</li>
     </ul>
+    <input type="hidden" name="wheel_shock_absorber_type_id" id="wheel_shock_absorber_type_id"  value=""/>
   </div>
 </div>
 <div class="col-lg-6 no-lg-left-gutter checkbox_and_radio_container large-view">
   <label class="custom_radiobutton">
     <div class="radio-option-label">Delantero</div>
-    <input type="radio" name="wheel_shock_absorber_type_option"/>
+    <input type="radio" class="js_radiobutton" value="Delantero" data-parent-id="wheel_shock_absorber_type" name="wheel_shock_absorber_type_option"/>
     <span class="radiobuttonify icon"><i class="fa fa-check"></i></span>
   </label>
   <label class="custom_radiobutton">
     <div class="radio-option-label">Trasero</div>
-    <input type="radio" name="wheel_shock_absorber_type_option"/>
+    <input type="radio" class="js_radiobutton" value="Trasero" data-parent-id="wheel_shock_absorber_type" name="wheel_shock_absorber_type_option"/>
     <span class="radiobuttonify icon"><i class="fa fa-check"></i></span>
   </label>
   <label class="custom_radiobutton">
     <div class="radio-option-label">Ambos</div>
-    <input type="radio" name="wheel_shock_absorber_type_option"/>
+    <input type="radio" class="js_radiobutton" value="Ambos" data-parent-id="wheel_shock_absorber_type" name="wheel_shock_absorber_type_option"/>
     <span class="radiobuttonify icon"><i class="fa fa-check"></i></span>
   </label>
 </div>

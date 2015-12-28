@@ -14,12 +14,12 @@ $(document).ready(function(){
 
 function fill_problem_breadcrumb(problem){
   var breadcrumb = $("#problem_breadcrumb");
-  var service_type = $('#service_type').text();
+  var service_category = $('#service_category').text();
   var service = "";
-  if (service_type != problem){
+  if (service_category != problem){
     service = " > " + problem;
   }
-  breadcrumb.text(service_type+service);
+  breadcrumb.text(service_category+service);
   show_breadcrumb(breadcrumb);
 }
 function fill_car_breadcrumb(){

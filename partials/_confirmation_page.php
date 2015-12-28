@@ -22,7 +22,6 @@
     </div>
   </div>
 </div>
-
 <div class="row">
   <div class="col-lg-12 confirmation_page text-left">
     <ul class="nav nav-tabs">
@@ -31,7 +30,7 @@
           <span class="success">
             <span>1</span>
           </span>
-          <h4>Tu demanda</h4>
+          <h4>Tu necesidad</h4>
         </a>
       </li>
       <li class="confirmation_header">
@@ -56,19 +55,16 @@
         <ul class="list-group">
           <li class="list-group-item">
             <span class="horizontal_list_header">Categoria:</span>
-            <span class="horizontal_list_content">Iluminación y electricidad</span>
+            <span class="horizontal_list_content" id="confirmation_service_category_id"></span>
           </li>
           <li class="list-group-item">
             <span class="horizontal_list_header">Servicio:</span>
-            <span class="horizontal_list_content">Cambio de cierre centralizado</span>
+            <span class="horizontal_list_content" id="confirmation_service_id"></span>
           </li>
-          <li class="list-group-item">
-            <span class="horizontal_list_header">La otra cosa dinamica:</span>
-            <span class="horizontal_list_content">El valor más largo que se pueda</span>
-          </li>
+          <span id ="confirmation_details"></span>
           <li class="list-group-item">
             <span class="horizontal_list_header large-view">Comentarios adicionales:</span>
-            <span class="horizontal_list_content large-view"><span class="comments">Two queen beds. Dining area with table and chairs. Walk-in closet. Wireless Internet access (surcharge). Satellite TV. Phone with voice mail. Kitchenette with refrigerator, two-burner stove, tableware, and cooking utensils. Private bathroom with hair dryer and shower/tub combination. Iron/ironing board available at the front desk. Air conditioning. Nonsmoking.</span></span>
+            <span class="horizontal_list_content large-view"><span class="comments" id="confirmation_comments"></span></span>
           </li>
         </ul>
       </div>
@@ -76,19 +72,19 @@
         <ul class="list-group">
           <li class="list-group-item">
             <span class="horizontal_list_header">Marca:</span>
-            <span class="horizontal_list_content"> VOLKSWAGEN</span>
+            <span class="horizontal_list_content" id="confirmation_brand"></span>
           </li>
           <li  class="list-group-item">
             <span class="horizontal_list_header">Modelo:</span>
-            <span class="horizontal_list_content"> CRAFTER 30-50 Camionnette</span>
+            <span class="horizontal_list_content" id="confirmation_model"></span>
           </li>
           <li  class="list-group-item">
             <span class="horizontal_list_header">Periodo:</span>
-            <span class="horizontal_list_content"> DEPUIS 04-2006</span>
+            <span class="horizontal_list_content" id="confirmation_year"></span>
           </li>
           <li  class="list-group-item">
             <span class="horizontal_list_header">Motor:</span>
-            <span class="horizontal_list_content"> salamadonna ABSDFS</span>
+            <span class="horizontal_list_content" id="confirmation_engine"></span>&nbsp;<span class="horizontal_list_content" id="confirmation_engine_letters"></span>
           </li>
         </ul>
       </div>
@@ -96,15 +92,15 @@
         <ul class="list-group">
           <li  class="list-group-item">
             <span class="horizontal_list_header">Nombre y apellidos:</span>
-            <span class="horizontal_list_content">Poldo de poldis ramirez hernandez de la fuente torres</span>
+            <span class="horizontal_list_content" id="confirmation_name_and_surnames"></span>
           </li>
           <li  class="list-group-item">
             <span class="horizontal_list_header">Telefono:</span>
-            <span class="horizontal_list_content">654654654</span>
+            <span class="horizontal_list_content" id="confirmation_phone"></span>
           </li>
           <li  class="list-group-item">
             <span class="horizontal_list_header">Email:</span>
-            <span class="horizontal_list_content">thelargestemailintheworld@superlargedomain.com </span>
+            <span class="horizontal_list_content" id="confirmation_email"></span>
           </li>
         </ul>
       </div>
