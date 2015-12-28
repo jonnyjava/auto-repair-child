@@ -178,28 +178,7 @@
     </fieldset>
     <fieldset id="step_3">
       <h1 class="fs-title">Tu mecanico, YA!</h1>
-      <div class="row car-details-row">
-        <div class="col-lg-4 no-lg-right-gutter">
-          <label for="name_and_surnames" class="orange-label">Nombre y apellidos</label>
-        </div>
-        <div class="col-lg-8 no-lg-left-gutter bottom-gutter">
-          <input type="text" id="name_and_surnames" name="name_and_surnames" class="uppercased_content" >
-        </div>
-      </div>
-      <div class="row car-details-row">
-        <div class="col-lg-2 no-lg-right-gutter">
-          <label for="phone" class="orange-label">Telefono</label>
-        </div>
-        <div class="col-lg-4 no-lg-left-gutter bottom-gutter">
-          <input type="text" id="phone" name="phone" class="uppercased_content" >
-        </div>
-        <div class="col-lg-2 no-lg-right-gutter">
-          <label for="email" class="orange-label">Email</label>
-        </div>
-        <div class="col-lg-4 no-lg-left-gutter bottom-gutter">
-          <input type="text" id="email" name="email" class="uppercased_content" >
-        </div>
-      </div>
+      <span id="js_dynamic_form_third_step"></span>
       <div class="row car-details-row">
         <div class="col-lg-6 bottom-gutter">
           <label class="orange-label">

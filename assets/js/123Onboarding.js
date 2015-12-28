@@ -1,7 +1,12 @@
 $(document).ready(function(){
+  absolute_url = $('#js_onboarding_container').data('partial-url');
 
   var content = build_row(['user_city'], '');
   $('#js_dynamic_form_first_step').html(content);
+
+  content = build_row(['name_and_surnames'], 'row car-details-row');
+  content += build_row(['phone', 'email'], 'row car-details-row');
+  $('#js_dynamic_form_third_step').html(content);
 
   $('div').removeAttr("tabindex");
   $('input').attr('autocomplete', 'false');

@@ -39,12 +39,10 @@ $(document).ready(function(){
 });
 
 function build_row(fields, row_class){
-  var absolute_url = $('#js_onboarding_container').data('partial-url');
   var content = "";
   for(var i = 0; i <fields.length; i++){
     if (fields[i] != ""){
-      var page_to_load = absolute_url+"/partials/_"+fields[i]+".html";
-      content += $.ajax({type: "GET", url: page_to_load, async: false}).responseText;
+      content += load_partial(fields[i]+".html");
     }
   }
   content = "<div class='"+row_class+"'>"+content+"</div>";
