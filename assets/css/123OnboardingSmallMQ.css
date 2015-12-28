@@ -24,7 +24,7 @@
     position:relative;
     top: 0.25em;
   }
-  input[type=text]{
+   input[type=text], input[type=email]{
     line-height: 2em;
     font-size: 1.25rem;
   }
