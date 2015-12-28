@@ -30,7 +30,65 @@ function load_review_page(data){
 
 function load_confirmation_page(data){
   $('#submit_result').html(load_partial('confirmation_page.php'));
+  $.each(data.demand, function(key, value){
+    $('#confirmation_'+key).html(value);
+  });
+
+  var details = jQuery.parseJSON(data.demand.demand_details);
+
+  var detail_content = "";
+  $.each(details, function(key, value){
+    if(key.indexOf("_option") == -1){
+      if(key.indexOf("car_") != -1){
+        $('#confirmation_'+key).html(value);
+      }
+      else{
+        detail_content += build_confirmation_details_row(key, value);
+      }
+    }
+  });
+  $('#confirmation_details').html(detail_content);
+
   animate_result($(this));
+}
+
+function build_confirmation_details_row(key, value){
+  var content = "";
+  content +="<li class='list-group-item'>";
+  content +="<span class='horizontal_list_header'>"+translate(key)+"</span>";
+  content +="<span class='horizontal_list_content'>"+value+"</span>";
+  content +="</li>";
+  return content;
+}
+
+function translate(value){
+  var translations = {};
+  translations['budget_optionid'] = "Rango de precios"
+  translations['tyre_budget_id'] = "Rango de precios"
+  translations['rim_type_id'] = "Tipo de llanta"
+  translations['tires_size_id'] = "Medida";
+  translations['number_of_tyres_id'] = "Cantidad";
+  translations['revision_by_brand'] = "Revision por el constructor";
+  translations['change_filter'] = "Sustitución del filtro";
+  translations['glass_type_id'] = "Tipo de luna";
+  translations['rearview_type_id'] = "Tipo de retrovisor";
+  translations['shock_absorber_type_id'] = "Parachoques";
+  translations['color'] = "Color";
+  translations['brakes_id'] = "Pastillas";
+  translations['brakes_disks_id'] = "Discos";
+  translations['electric_glass_close_id'] = "Elevalunas";
+  translations['lamp_type_id'] = "Faro";
+  translations['light_type_id'] = "Lampara";
+  translations['light_quantity_id'] = "Cantidad";
+  translations['injector_service_category_id'] = "Intervención";
+  translations['injector_quantity_id'] = "Cantidad";
+  translations['gas_tube_id'] = "Tipo de escape";
+  translations['wheel_shock_absorber_type_id'] = "Amortiguador";
+  translations['keencap_type_id'] = "Rotula";
+  translations['cup_type_id'] = "Copela";
+  translations['bearing_type_id'] = "Rodamiento";
+  translations['air_conditioned_id'] = "pack de servicios";
+  return translations[value] || value;
 }
 
 function load_ko(){
@@ -44,6 +102,7 @@ function animate_result(clicked_button){
     animate_container_height($('#step_4'), 400);
   });
 }
+
 function build_review_row(fields){
   var content = "";
   for(var i = 0; i <fields.length; i++){
