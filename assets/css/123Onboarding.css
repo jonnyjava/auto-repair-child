@@ -140,6 +140,24 @@ li > .hint{
 .js_services, .js_toggle_details{
   display: none;
 }
+/*error_number*/
+.error_number {
+  border-radius: 50%;
+  text-align: center;
+  font-family: 'Palanquin Dark';
+  display: inline-block;
+}
+.error_number.orange{
+  background: #E67500;
+}
+.error_number.gray{
+  background: #666666;
+}
+.error_number span {
+  color: #FFFFFF;
+  font-weight: normal;
+  position: relative;
+}
 /*typeahead customizations*/
 .Typeahead-hint{
   display: none;

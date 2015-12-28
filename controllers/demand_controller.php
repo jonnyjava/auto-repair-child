@@ -6,7 +6,6 @@ $demand_model = '../models/demand.php';
 require $demand_model;
 
 $response = '';
-
 $demand = new Demand();
 $demand->city = raw_homemade_sanitize($_POST['user_city']);
 $demand->service_category_id = raw_homemade_sanitize($_POST['service_category_id']);

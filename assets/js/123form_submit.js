@@ -12,7 +12,7 @@ function enable_form_submit(){
         load_confirmation_page(parsed_response);
       }
     }).error(function(parsed_response){
-      load_ko();
+      load_error_page();
     });
     return false;
   });
@@ -91,8 +91,8 @@ function translate(value){
   return translations[value] || value;
 }
 
-function load_ko(){
-  console.log("cacca per tutti, redirect to error page");
+function load_error_page(){
+  $('#submit_result').html(load_partial('error_page.html'));
   animate_result($(this));
 }
 

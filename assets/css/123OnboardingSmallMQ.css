@@ -120,6 +120,19 @@
     font-size: 1.25rem;
     top: 0.25rem;
   }
+  /*error page*/
+  .apologize_text, .link{
+    font-size: 1em;
+  }
+  .error_number {
+    width: 7em;
+    height: 7em;
+    margin-left: -1em;
+  }
+  .error_number span {
+    font-size: 6em;
+    top: 0.25em;
+  }
   /*confirmation page ovverrides*/
   .confirmation_page{
     padding: 0;
