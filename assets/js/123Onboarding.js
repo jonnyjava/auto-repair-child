@@ -1,8 +1,10 @@
 $(document).ready(function(){
   absolute_url = $('#js_onboarding_container').data('partial-url');
 
-  var content = build_row(['user_city'], '');
+  var content = build_row(['user_city', 'service_category'], 'row');
   $('#js_dynamic_form_first_step').html(content);
+  activate_service_dropdown();
+  enable_service_buttons();
 
   content = build_row(['name_and_surnames'], 'row car-details-row');
   content += build_row(['phone', 'email'], 'row car-details-row');
@@ -61,6 +63,7 @@ function animate_to_next(clicked_button){
       easing: 'easeInOutBack'
   });
 }
+
 function animate_to_previous(clicked_button){
   if (animating)
       return false;
@@ -92,6 +95,7 @@ function animate_to_previous(clicked_button){
       easing: 'easeInOutBack'
   });
 }
+
 function animate_container_height(current_step, animation_time){
   var step_height = current_step.outerHeight();
   var form_height = $('#onboarding_form').height();
@@ -109,6 +113,7 @@ function animate_container_height(current_step, animation_time){
     },animation_time);
   }
 }
+
 function animate_details(animation_time){
   $('.js_detail_toggler').click(function(){
     $('.js_toggle_details').fadeIn(animation_time);

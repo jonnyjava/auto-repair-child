@@ -1,4 +1,4 @@
-$(document).ready(function(){
+function activate_service_dropdown(){
   $(".js_dropdown_menu > li").bind("click", fill_dropdown_with_selected_option);
   activate_dropdown_toggle();
   $('#service_category_dropdown > li').click(function(){
@@ -19,7 +19,7 @@ $(document).ready(function(){
     );
     $('#service_category').data('value', selected_service_category);
   });
-});
+}
 
 function fill_dropdown_with_selected_option(){
   var choosen_option = $(this).text();

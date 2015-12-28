@@ -27,38 +27,7 @@
     </ul>
     <fieldset id="step_1">
       <h1 class="fs-title">¿Que necesitas?</h1>
-      <div class="row">
-        <span id="js_dynamic_form_first_step"></span>
-        <div class="col-lg-2 no-lg-right-gutter">
-          <label data-dropdown-name="service_category_dropdown" class="orange-label disabled-element js_dropdown_opener" id="service_category_disabled_label">Elige un servicio</label>
-        </div>
-        <div class="col-lg-4 no-lg-left-gutter">
-          <div class="dropdown disabled-element">
-            <i class="hint" id="service_category_disabled_hint"><b>Servicios</b> disponibles en tu ciudad</i>
-            <button type="button" class="btn dropdown-toggle js_dropdown_opener" data-dropdown-name="service_category_dropdown">
-              <span class="dropdown-value" id="service_category" data-value=""><i class="hint">Por ejemplo: diagnósticos</i></span>
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu js_dropdown_menu" data-parent-id="service_category" id="service_category_dropdown">
-              <li data-value="js_s0">Diagnósticos y control</li>
-              <li data-value="js_s1" class="js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='budget' data-fieldset="step_1">Sustitución de la batería</li>
-              <li data-value="js_s2">Neumáticos</li>
-              <li data-value="js_s3">Mantenimientos y aceite</li>
-              <li data-value="js_s4">Chapa y Lunas</li>
-              <li data-value="js_s5">Frenado</li>
-              <li data-value="js_s61">Iluminación y electricidad</li>
-              <li data-value="js_s62">Audio y multimedia</li>
-              <li data-value="js_s7">Motor</li>
-              <li data-value="js_s8">Escapes</li>
-              <li data-value="js_s9">Trenes y Suspensión</li>
-              <li data-value="js_s10">Aire Acondicionado</li>
-              <li data-value="js_s11" class="js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Otros servicios</li>
-            </ul>
-          </div>
-          <input type="hidden" name="service_category_id" id="service_category_id" value="0"/>
-          <input type="hidden" name="service_id" id="service_id" value="0"/>
-        </div>
-      </div>
+      <span id="js_dynamic_form_first_step"></span>
       <div class="row js_services js_s0">
         <div class="col-md-4"><button class="btn btn-2 btn-sep icon-wrench js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Avería en el motor</button></div>
         <div class="col-md-4"><button class="btn btn-2 btn-sep icon-brakes js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Frenos</button></div>
