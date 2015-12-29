@@ -1,21 +1,28 @@
 function enable_form_submit(){
   $('.js_saver').click(function () {
-    var submitted_form = $(this).closest("form")
-    var my_destination = submitted_form.attr("action");
-    var submitted_datas = submitted_form.serialize();
-    $.ajax({type: "POST", data: submitted_datas, url: my_destination, async: true}).success(function(response){
-      var parsed_response = jQuery.parseJSON(response);
-      if(parsed_response.status == 400){
-        load_review_page(parsed_response);
-      }
-      else{
-        load_confirmation_page(parsed_response);
-      }
-    }).error(function(parsed_response){
-      load_error_page();
-    });
-    return false;
+    if (content_for_step_is_valid($(this))){
+      submit_form($(this));
+    }
   });
+}
+
+function submit_form(clicked_button){
+  clicked_button = $('.js_saver');
+  var submitted_form = clicked_button.closest("form")
+  var my_destination = submitted_form.attr("action");
+  var submitted_datas = submitted_form.serialize();
+  $.ajax({type: "POST", data: submitted_datas, url: my_destination, async: true}).success(function(response){
+    var parsed_response = jQuery.parseJSON(response);
+    if(parsed_response.status == 400){
+      load_review_page(parsed_response);
+    }
+    else{
+      load_confirmation_page(parsed_response);
+    }
+  }).error(function(parsed_response){
+    load_error_page();
+  });
+  return false;
 }
 
 function load_review_page(data){
@@ -35,7 +42,6 @@ function load_confirmation_page(data){
   });
 
   var details = jQuery.parseJSON(data.demand.demand_details);
-
   var detail_content = "";
   $.each(details, function(key, value){
     if(key.indexOf("_option") == -1){
@@ -48,7 +54,6 @@ function load_confirmation_page(data){
     }
   });
   $('#confirmation_details').html(detail_content);
-
   animate_result($(this));
 }
 

@@ -23,15 +23,14 @@ $(document).ready(function(){
   $('#user_city').bind('typeahead:select', enable_service_dropdown);
 
   enable_form_submit();
-});
-var current_fs, next_fs, previous_fs;
-var left, opacity, scale;
-var animating;
-$(document).ready(function(){
+
   $('.next').click(function (event) {
     event.preventDefault();
-    animate_to_next($(this));
+    if (content_for_step_is_valid($(this))){
+      animate_to_next($(this));
+    }
   });
+
   $('.previous').click(function () {
     animate_to_previous($(this));
   });

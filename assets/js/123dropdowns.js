@@ -48,5 +48,6 @@ function dropdown_toggler(event){
 function fill_radio_with_selected_option(){
     var parentId = $(this).data('parent-id');
     var choosen_option = $(this).val();
+    $('#'+parentId).text(choosen_option);
     $('#'+parentId+'_id').val(choosen_option);
 }

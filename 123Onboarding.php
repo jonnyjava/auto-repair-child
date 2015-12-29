@@ -156,7 +156,7 @@
               <ul class="custom_checkbox">
                 <li>
                   <label for="wants_newsletter">
-                    <input type="checkbox" value="1" id="wants_newsletter" name="wants_newsletter">
+                    <input type="checkbox" value="" id="wants_newsletter" name="wants_newsletter">
                     <span class="checkboxify icon"><i class="fa fa-check"></i></span>
                   </label>
                 </li>
@@ -171,7 +171,7 @@
               <ul class="custom_checkbox">
                 <li>
                   <label for="accepts_privacy">
-                    <input type="checkbox" value="1" id="accepts_privacy" name="accepts_privacy">
+                    <input type="checkbox" value="Si" id="accepts_privacy" name="accepts_privacy" data-validation-type="mandatory_check">
                     <span class="checkboxify icon"><i class="fa fa-check"></i></span>
                   </label>
                 </li>
@@ -203,6 +203,7 @@
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123autocomplete.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123breadcrumbs.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123dropdowns.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123validations.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123form_submit.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123services_fields.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123car_selector.js" type="text/javascript"></script>
