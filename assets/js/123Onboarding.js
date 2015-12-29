@@ -1,3 +1,7 @@
+var current_fs, next_fs, previous_fs;
+var left, opacity, scale;
+var animating;
+
 $(document).ready(function(){
   absolute_url = $('#js_onboarding_container').data('partial-url');
 

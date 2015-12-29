@@ -1,6 +1,5 @@
 function activate_service_dropdown(){
   $(".js_dropdown_menu > li").bind("click", fill_dropdown_with_selected_option);
-  activate_dropdown_toggle();
   $('#service_category_dropdown > li').click(function(){
     var dropdown = $(this).parent();
     var animation_time = 300;
