@@ -1,65 +1,65 @@
-function content_for_step_is_valid(clickedButton){
-  var stepIsValid = true;
-  var fieldsetId = clickedButton.data('fieldset');
+function content_for_step_is_valid(clicked_button){
+  var step_is_valid = true;
+  var fieldset_id = clicked_button.data('fieldset');
 
-  var stepValues = $('#'+fieldsetId).serialize();
-  stepValues = serialize_unchecked(fieldsetId, stepValues);
-  stepValues = stepValues.split('&');
+  var step_values = $('#'+fieldset_id).serialize();
+  step_values = serialize_unchecked(fieldset_id, step_values);
+  step_values = step_values.split('&');
 
-  for( var i = 0; i < (stepValues.length); i++){
-    var keyValue = stepValues[i].split('=');
+  for( var i = 0; i < (step_values.length); i++){
+    var keyValue = step_values[i].split('=');
     if(keyValue[0] != 'comments'){
       var field = $('#'+keyValue[0]);
       var value = keyValue[1].trim();
-      stepIsValid = (perform_dedicate_validation(field, value) && stepIsValid);
+      step_is_valid = (perform_dedicate_validation(field, value) && step_is_valid);
     }
   }
-  return stepIsValid;
+  return step_is_valid;
 }
 
 function perform_dedicate_validation(field, value){
-  var fieldIsValid = true;
-  var validationType = field.data('validation-type');
-  var fieldId = field.attr('id');
-  switch(validationType) {
+  var field_is_valid = true;
+  var validation_type = field.data('validation-type');
+  var field_id = field.attr('id');
+  switch(validation_type) {
     case 'drop_or_radio':
-      fieldId = field.data('parent-id');
-      fieldIsValid = ($('#'+fieldId).text() == $('#'+fieldId+'_id').val());
+      field_id = field.data('parent-id');
+      field_is_valid = ($('#'+field_id).text() == $('#'+field_id+'_id').val());
       break;
     case 'only_letters':
-      fieldIsValid = (value.length >= 10) && (/^[a-z\+]+$/i.test(value) );
+      field_is_valid = (value.length >= 10) && (/^[a-z\+]+$/i.test(value) );
       break;
     case 'phone':
-      fieldIsValid = (value.length >= 8) && !(value.match(/[^0-9]+/gi));
+      field_is_valid = (value.length >= 8) && !(value.match(/[^0-9]+/gi));
       break;
     case 'email':
-      fieldIsValid =  (value.length >= 6) && is_valid_email_format(value);
+      field_is_valid =  (value.length >= 6) && is_valid_email_format(value);
       break;
     case 'mandatory_check':
-      fieldIsValid = (value == 'Si');
+      field_is_valid = (value == 'Si');
       break;
     default:
-      fieldIsValid = (value !== '');
+      field_is_valid = (value !== '');
   }
 
-  fieldIsValid ? $('#'+fieldId+'_tooltip').hide() : $('#'+fieldId+'_tooltip').show();
-  return fieldIsValid;
+  field_is_valid ? $('#'+field_id+'_tooltip').hide() : $('#'+field_id+'_tooltip').show();
+  return field_is_valid;
 }
 
-function serialize_unchecked(step, stepValues){
+function serialize_unchecked(step, step_values){
     $('#'+step+' input:checkbox:not(:checked)').each(function(){
-    stepValues += '&'+this.name+'=false';
-  })
-  return stepValues;
+    step_values += '&'+this.name+'=false';
+  });
+  return step_values;
 }
 
 function hide_tooltip(){
   $('.js_hide_tooltip').click(function(){
-    var tooltipId = $(this).data('parent-id')+'_tooltip';
-    $('#'+tooltipId).hide();
+    var tooltip_id = $(this).data('parent-id')+'_tooltip';
+    $('#'+tooltip_id).hide();
   });
 }
 
 function is_valid_email_format(value){
-  ((value.match(/[A-Z0-9._%+-]+%40[A-Z0-9.-]+\.[A-Z]{2,4}/gi)) !== null)
+  (value.match(/[A-Z0-9._%+-]+%40[A-Z0-9.-]+\.[A-Z]{2,4}/gi)) !== null;
 }

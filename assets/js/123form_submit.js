@@ -6,20 +6,20 @@ function enable_form_submit(){
   });
 }
 
-function submit_form(clickedButton){
-  clickedButton = $('.js_saver');
-  var submittedForm = clickedButton.closest("form")
-  var myDestination = submittedForm.attr("action");
-  var submittedDatas = submittedForm.serialize();
-  $.ajax({type: "POST", data: submittedDatas, url: myDestination, async: true}).success(function(response){
-    var parsedResponse = jQuery.parseJSON(response);
-    if(parsedResponse.status == 400){
-      load_review_page(parsedResponse);
+function submit_form(clicked_button){
+  clicked_button = $('.js_saver');
+  var submitted_form = clicked_button.closest("form")
+  var my_destination = submitted_form.attr("action");
+  var submitted_datas = submitted_form.serialize();
+  $.ajax({type: "POST", data: submitted_datas, url: my_destination, async: true}).success(function(response){
+    var parsed_response = jQuery.parseJSON(response);
+    if(parsed_response.status == 400){
+      load_review_page(parsed_response);
     }
     else{
-      load_confirmation_page(parsedResponse);
+      load_confirmation_page(parsed_response);
     }
-  }).error(function(parsedResponse){
+  }).error(function(parsed_response){
     load_error_page();
   });
   return false;
@@ -42,18 +42,18 @@ function load_confirmation_page(data){
   });
 
   var details = jQuery.parseJSON(data.demand.demand_details);
-  var detailContents = "";
+  var detail_contents = "";
   $.each(details, function(key, value){
     if(key.indexOf("_option") == -1){
       if(key.indexOf("car_") != -1){
         $('#confirmation_'+key).html(value);
       }
       else{
-        detailContents += build_confirmation_details_row(key, value);
+        detail_contents += build_confirmation_details_row(key, value);
       }
     }
   });
-  $('#confirmation_details').html(detailContents);
+  $('#confirmation_details').html(detail_contents);
   animate_result($(this));
 }
 
@@ -101,8 +101,8 @@ function load_error_page(){
   animate_result($(this));
 }
 
-function animate_result(clickedButton){
-  animate_to_next(clickedButton);
+function animate_result(clicked_button){
+  animate_to_next(clicked_button);
   $('#progressbar').fadeOut(300, function(){
     animate_container_height($('#step_4'), 400);
   });
@@ -133,6 +133,6 @@ function double_binding(fields){
 
 function load_partial(page){
   var url = absolute_url+"/partials/_"+page;
-  var loadedPage = $.ajax({type: "GET", url: url, async: false}).responseText;
-  return loadedPage;
+  var loaded_page = $.ajax({type: "GET", url: url, async: false}).responseText;
+  return loaded_page;
 }
