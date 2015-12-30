@@ -39,7 +39,7 @@ function perform_dedicate_validation(field, value){
       field_is_valid = (value == 'Si');
       break;
     default:
-      field_is_valid = (value !== '');
+      field_is_valid = true;
   }
 
   field_is_valid ? $('#'+field_id+'_tooltip').hide() : $('#'+field_id+'_tooltip').show();
@@ -61,5 +61,5 @@ function hide_tooltip(){
 }
 
 function is_valid_email_format(value){
-  (value.match(/[A-Z0-9._%+-]+%40[A-Z0-9.-]+\.[A-Z]{2,4}/gi)) !== null;
+  return (value.match(/[A-Z0-9._%+-]+%40[A-Z0-9.-]+\.[A-Z]{2,4}/gi) !== null);
 }
