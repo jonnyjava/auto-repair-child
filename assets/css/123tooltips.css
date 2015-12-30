@@ -26,9 +26,9 @@
 
 .normal_size{
   font-size: 1.25rem;
-  left: 0;
+  left: 5%;
   top: -3em;
-  width: 100%;
+  width: 90%;
   -webkit-animation-name: bouncer_for_bigs;
   -webkit-animation-duration: 1s;
   -webkit-animation-iteration-count: 3;

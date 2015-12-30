@@ -34,6 +34,8 @@ $(document).ready(function(){
   $('.previous').click(function () {
     animate_to_previous($(this));
   });
+
+  hide_tooltip();
 });
 
 function animate_to_next(clicked_button){

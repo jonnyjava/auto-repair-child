@@ -20,10 +20,11 @@ function content_for_step_is_valid(clicked_button){
 function perform_dedicate_validation(field, value){
   var field_is_valid = true;
   var validation_type = field.data('validation-type');
+  var field_id = field.attr('id');
   switch(validation_type) {
     case 'drop_or_radio':
-      var parentId = field.data('parent-id');
-      field_is_valid = ($('#'+parentId).text() == $('#'+parentId+'_id').val());
+      field_id = field.data('parent-id');
+      field_is_valid = ($('#'+field_id).text() == $('#'+field_id+'_id').val());
       break;
     case 'only_letters':
       field_is_valid = (value.length >= 10) && (/^[a-z\+]+$/i.test(value) );
@@ -41,8 +42,7 @@ function perform_dedicate_validation(field, value){
       field_is_valid = (value != '');
   }
 
-  field_is_valid ? $('#'+parentId+'_tooltip').hide() : $('#'+parentId+'_tooltip').show();
-
+  field_is_valid ? $('#'+field_id+'_tooltip').hide() : $('#'+field_id+'_tooltip').show();
   return field_is_valid;
 }
 
@@ -52,4 +52,11 @@ function serialize_unchecked(step, serialized){
     serialized += "&"+this.name+'=false';
   })
 return serialized
+}
+
+function hide_tooltip(){
+  $('.js_hide_tooltip').click(function(){
+    var tooltip_id = $(this).data('parent-id')+"_tooltip";
+    $('#'+tooltip_id).hide();
+  });
 }

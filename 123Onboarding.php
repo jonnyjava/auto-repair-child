@@ -166,7 +166,7 @@
           </label>
         </div>
         <div class="col-lg-6 bottom-gutter">
-          <label class="orange-label">
+          <label class="orange-label js_hide_tooltip" data-parent-id="accepts_privacy">
           <span class="label-text-align">Acepto las condiciones</span>
             <div class="checkbox_and_radio_container pull-right">
               <ul class="custom_checkbox">
@@ -179,6 +179,7 @@
               </ul>
             </div>
           </label>
+          <span id="accepts_privacy_tooltip" class="tooltips normal_size">Es necesario aceptar las condiciones de uso para seguir</span>
         </div>
       </div>
       <div class="row">
