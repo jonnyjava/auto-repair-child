@@ -40,6 +40,9 @@ function perform_dedicate_validation(field, value){
     default:
       field_is_valid = (value != '');
   }
+
+  field_is_valid ? $('#'+parentId+'_tooltip').hide() : $('#'+parentId+'_tooltip').show();
+
   return field_is_valid;
 }
 
