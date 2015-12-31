@@ -1,3 +1,7 @@
+var current_fs, next_fs, previous_fs;
+var left, opacity, scale;
+var animating;
+
 $(document).ready(function(){
   absolute_url = $('#js_onboarding_container').data('partial-url');
 
@@ -19,19 +23,31 @@ $(document).ready(function(){
   $('#user_city').bind('typeahead:select', enable_service_dropdown);
 
   enable_form_submit();
-});
-var current_fs, next_fs, previous_fs;
-var left, opacity, scale;
-var animating;
-$(document).ready(function(){
+
   $('.next').click(function (event) {
     event.preventDefault();
-    animate_to_next($(this));
+    if (content_for_step_is_valid($(this))){
+      animate_to_next($(this));
+    }
   });
+
   $('.previous').click(function () {
     animate_to_previous($(this));
   });
+
+  hide_tooltip();
+  phone_formatter();
+  disable_enter_key();
 });
+
+function disable_enter_key(){
+  $(document).keypress(
+    function(event){
+     if (event.which == '13') {
+        event.preventDefault();
+      }
+  });
+}
 
 function animate_to_next(clicked_button){
   if (animating)

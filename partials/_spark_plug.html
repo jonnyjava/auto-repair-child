@@ -6,6 +6,7 @@
     <button type="button" class="btn dropdown-toggle js_dropdown_opener" data-dropdown-name="injector_quantity_dropdown">
       <span class="dropdown-value" id="injector_quantity"><i class="hint">4</i></span>
       <span class="caret"></span>
+      <span id="injector_quantity_tooltip" class="tooltips normal_size">Cuantas bujias?</span>
     </button>
     <ul class="dropdown-menu js_dropdown_menu" data-parent-id="injector_quantity" id="injector_quantity_dropdown">
       <li data-value="1" class="text-right">1</li>
@@ -25,6 +26,6 @@
       <li data-value="15" class="text-right">15</li>
       <li data-value="16" class="text-right">16</li>
     </ul>
-    <input type="hidden" name="injector_quantity_id" id="injector_quantity_id"  value=""/>
+    <input type="hidden" name="injector_quantity_id" id="injector_quantity_id" data-parent-id="injector_quantity"  data-validation-type="drop_or_radio" value=""/>
   </div>
 </div>

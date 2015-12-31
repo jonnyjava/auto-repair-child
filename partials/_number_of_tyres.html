@@ -6,6 +6,7 @@
     <button type="button" class="btn dropdown-toggle js_dropdown_opener" data-dropdown-name="number_of_tyres_dropdown">
       <span class="dropdown-value" id="number_of_tyres"><i class="hint">Por ejemplo: 4</i></span>
       <span class="caret"></span>
+      <span id="number_of_tyres_tooltip" class="tooltips normal_size">Que cantidad quieres permutar?</span>
     </button>
     <ul class="dropdown-menu js_dropdown_menu" data-parent-id="number_of_tyres" id="number_of_tyres_dropdown">
       <li data-value="1" class="text-right">1</li>
@@ -14,6 +15,6 @@
       <li data-value="4" class="text-right">4</li>
       <li data-value="5" class="text-right">5</li>
     </ul>
-    <input type="hidden" name="number_of_tyres_id" id="number_of_tyres_id"  value=""/>
+    <input type="hidden" name="number_of_tyres_id" id="number_of_tyres_id" data-parent-id="number_of_tyres" data-validation-type="drop_or_radio" value=""/>
   </div>
 </div>

@@ -1,6 +1,6 @@
 <?php
-$path = $_SERVER['DOCUMENT_ROOT']."123mecanico";
-include_once $path . '/wp-load.php';
+$parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
+require_once( $parse_uri[0] . 'wp-load.php' );
 
 $demand_model = '../models/demand.php';
 require $demand_model;

@@ -1,7 +1,7 @@
 <div class="col-lg-2 no-lg-right-gutter">
   <label data-dropdown-name="light_type_dropdown" class="orange-label js_dropdown_opener">Lampara</label>
+  <span id="light_type_tooltip" class="tooltips over_big_radiobuttons_row">Que lampara necesitas?</span>
 </div>
-
 <div class="col-lg-8 no-lg-left-gutter bottom-gutter small-and-medium-view">
   <div class="dropdown">
     <button type="button" class="btn dropdown-toggle js_dropdown_opener" data-dropdown-name="light_type_dropdown">
@@ -16,7 +16,7 @@
       <li data-value="habitaculo">Habitaculo</li>
       <li data-value="trasera">Trasera</li>
     </ul>
-    <input type="hidden" name="light_type_id" id="light_type_id"  value=""/>
+    <input type="hidden" name="light_type_id" id="light_type_id" data-parent-id="light_type" data-validation-type="drop_or_radio" value=""/>
   </div>
 </div>
 <div class="col-lg-8 checkbox_and_radio_container large-view">
@@ -60,6 +60,7 @@
     <button type="button" class="btn dropdown-toggle js_dropdown_opener" data-dropdown-name="light_quantity_dropdown">
       <span class="dropdown-value" id="light_quantity"><i class="hint">1</i></span>
       <span class="caret"></span>
+      <span id="light_quantity_tooltip" class="tooltips small_size">Cuantas?</span>
     </button>
     <ul class="dropdown-menu js_dropdown_menu" data-parent-id="light_quantity" id="light_quantity_dropdown">
       <li data-value="1" class="text-right">1</li>
@@ -67,6 +68,6 @@
       <li data-value="3" class="text-right">3</li>
       <li data-value="4" class="text-right">4</li>
     </ul>
-    <input type="hidden" name="light_quantity_id" id="light_quantity_id"  value=""/>
+    <input type="hidden" name="light_quantity_id" id="light_quantity_id" data-parent-id="light_quantity" data-validation-type="drop_or_radio" value=""/>
   </div>
 </div>

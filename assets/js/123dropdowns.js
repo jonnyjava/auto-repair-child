@@ -1,6 +1,5 @@
 function activate_service_dropdown(){
   $(".js_dropdown_menu > li").bind("click", fill_dropdown_with_selected_option);
-  activate_dropdown_toggle();
   $('#service_category_dropdown > li').click(function(){
     var dropdown = $(this).parent();
     var animation_time = 300;
@@ -26,6 +25,7 @@ function fill_dropdown_with_selected_option(){
   var parentId = $(this).parent().data('parent-id');
   $('#'+parentId).text(choosen_option);
   $('#'+parentId+'_id').val(choosen_option);
+  $('#'+parentId+'_tooltip').hide();
 }
 
 function activate_dropdown_toggle(){
@@ -47,7 +47,9 @@ function dropdown_toggler(event){
 }
 
 function fill_radio_with_selected_option(){
-    var parentId = $(this).data('parent-id');
-    var choosen_option = $(this).val();
-    $('#'+parentId+'_id').val(choosen_option);
+  var parentId = $(this).data('parent-id');
+  var choosen_option = $(this).val();
+  $('#'+parentId).text(choosen_option);
+  $('#'+parentId+'_id').val(choosen_option);
+  $('#'+parentId+'_tooltip').hide();
 }

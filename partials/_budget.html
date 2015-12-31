@@ -1,5 +1,6 @@
 <div class="col-lg-4 no-lg-right-gutter">
   <label data-dropdown-name="budget_dropdown" class="orange-label js_dropdown_opener"> Rango de precios de la batería</label>
+  <span id="budget_tooltip" class="tooltips normal_size over_big_radiobuttons_row">Que precio prefieres?</span>
 </div>
 <div class="col-lg-8 no-lg-left-gutter bottom-gutter small-and-medium-view">
   <div class="dropdown">
@@ -12,7 +13,7 @@
       <li data-value="tyre_quality">Calidad</li>
       <li data-value="tyre_brand">Marca</li>
     </ul>
-    <input type="hidden" name="budget_id" id="budget_id"  value=""/>
+    <input type="hidden" name="budget_id" id="budget_id" data-parent-id="budget" data-validation-type="drop_or_radio" value=""/>
   </div>
 </div>
 <div class="col-lg-8 no-lg-left-gutter checkbox_and_radio_container large-view">

@@ -1,5 +1,6 @@
 <div class="col-lg-2 no-lg-right-gutter">
   <label data-dropdown-name="brakes_dropdown" class="orange-label js_dropdown_opener">Pastillas</label>
+  <span id="brakes_tooltip" class="tooltips over_medium_radiobuttons_row">Que pastillas quieres?</span>
 </div>
 <div class="col-lg-4 no-lg-left-gutter bottom-gutter small-and-medium-view">
   <div class="dropdown">
@@ -12,7 +13,7 @@
       <li data-value="delanteras">Delanteras</li>
       <li data-value="traseras">Traseras</li>
     </ul>
-    <input type="hidden" name="brakes_id" id="brakes_id"  value=""/>
+    <input type="hidden" name="brakes_id" id="brakes_id" data-parent-id="brakes" data-validation-type="drop_or_radio" value=""/>
   </div>
 </div>
 <div class="col-lg-4 no-lg-left-gutter checkbox_and_radio_container large-view">

@@ -22,6 +22,7 @@ function fill_problem_breadcrumb(problem){
   breadcrumb.text(service_category+service);
   show_breadcrumb(breadcrumb);
 }
+
 function fill_car_breadcrumb(){
   var breadcrumb = $("#car_breadcrumb");
   var car_brand = retrieve_text($('#car_brand'));
@@ -37,20 +38,24 @@ function fill_car_breadcrumb(){
   breadcrumb.text(breadcrumb_text);
   show_breadcrumb(breadcrumb);
 }
+
 function undo_problem_breadcrumb(){
   var breadcrumb = $("#problem_breadcrumb");
   hide_breadcrumb(breadcrumb);
 }
+
 function undo_car_breadcrumb(){
   var breadcrumb = $("#car_breadcrumb");
   hide_breadcrumb(breadcrumb);
 }
+
 function show_breadcrumb(breadcrumb){
   breadcrumb.animate({
     opacity: 1,
     left: "1px"
   }, 600, function() {  });
 }
+
 function hide_breadcrumb(breadcrumb){
   breadcrumb.animate({
     opacity: 0,
