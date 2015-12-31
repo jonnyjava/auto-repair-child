@@ -37,7 +37,17 @@ $(document).ready(function(){
 
   hide_tooltip();
   phone_formatter();
+  disable_enter_key();
 });
+
+function disable_enter_key(){
+  $(document).keypress(
+    function(event){
+     if (event.which == '13') {
+        event.preventDefault();
+      }
+  });
+}
 
 function animate_to_next(clicked_button){
   if (animating)
