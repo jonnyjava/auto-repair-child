@@ -36,6 +36,7 @@ $(document).ready(function(){
   });
 
   hide_tooltip();
+  phone_formatter();
 });
 
 function animate_to_next(clicked_button){
