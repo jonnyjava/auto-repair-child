@@ -68,9 +68,9 @@ function build_confirmation_details_row(key, value){
 
 function translate(value){
   var translations = {};
-  translations['budget_id'] = 'Rango de precios'
-  translations['tyre_budget_id'] = 'Rango de precios'
-  translations['rim_type_id'] = 'Tipo de llanta'
+  translations['budget_id'] = 'Rango de precios';
+  translations['tyre_budget_id'] = 'Rango de precios';
+  translations['rim_type_id'] = 'Tipo de llanta';
   translations['tires_size_id'] = 'Medida';
   translations['number_of_tyres_id'] = 'Cantidad';
   translations['revision_by_brand'] = 'Revision por el constructor';

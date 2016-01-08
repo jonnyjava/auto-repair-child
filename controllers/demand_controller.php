@@ -3,7 +3,9 @@ $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
 require_once( $parse_uri[0] . 'wp-load.php' );
 
 $demand_model = '../models/demand.php';
+$mail_model = '../models/123mailer.php';
 require $demand_model;
+require $mail_model;
 
 $response = '';
 $demand = new Demand();
@@ -26,7 +28,9 @@ $demand->demand_details = details_as_json($_POST);
 
 if ($demand->is_valid()){
   save($wpdb, $demand);
-  $response = json_encode(array('status' => 200, 'demand' => $demand));
+  $demand_mailer = new DemandMailer();
+  $res = $demand_mailer->send_demand_mail($demand);
+  $response = json_encode(array('status' => 200, 'demand' => $demand, 'result' => $res ));
 }
 else{
   $response = json_encode(array('status' => 400, 'errors' => $demand->errorMessages));

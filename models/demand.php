@@ -80,7 +80,6 @@ Class Demand {
       return true;
     }
   }
-
   private function add_error_message($type){
 
     switch($type){
