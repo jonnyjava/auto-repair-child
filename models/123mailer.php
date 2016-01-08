@@ -37,27 +37,29 @@ Class DemandMailer {
   }
 
   public function send_demand_mail($demand){
-    //$res = $this->send_mail_with_sendinblue_api($demand);
-    $mail = $this->build_demand_mail($demand);
-    $mail->send();
-    $res = true;
-    return $res;
+    $res = $this->send_mail_with_sendinblue_api($demand);
+    $result = $res['code'];
+    if ($result != 'success'){
+      $mail = $this->send_mail_with_gmail($demand);
+      $result = $mail->send();
+    }
+    return $result;
   }
 
   private function send_mail_with_sendinblue_api($demand){
-    $mailin = new Mailinblue("https://api.sendinblue.com/v2.0",$this->constants['API_key']);
-    $data = array( "to" => array($demand->email => $demand->name_and_surnames),
-      "from" => array('contacto@123mecanico.es', '123mecanico'),
-      "subject" => " Tu peticion de servicio en 123mecanico.es",
-      "html" =>  $this->build_html_content($demand)
+    $mailin = new Mailinblue("https://api.sendinblue.com/v2.0", $this->constants['API_key']);
+    $data = array(
+      "id" => 3,
+      "to" => $demand->email,
+      "attr" => array("USERNAME"=>$demand->name_and_surnames,"SUBJECT"=>"Tu peticion de servicio en 123mecanico.es", "CONTENT" => $this->build_html_content($demand))
     );
-    return $res = $mailin->send_email($data);
+    return $res = $mailin->send_transactional_template($data);
   }
 
-  private function build_demand_mail($demand){
+  private function send_mail_with_gmail($demand){
     $mail = new PHPMailer;
     $mail->isSMTP();
-    $mail->Port = 1025;
+    $mail->Port = 1025; //for mailcatcher
 
     $mail->SMTPAuth   = $this->constants['SMTPAuth'];
     $mail->SMTPSecure = $this->constants['SMTPSecure'];
@@ -77,7 +79,7 @@ Class DemandMailer {
   }
 
   private function build_html_content($demand){
-    $text = "<table style='font-family:Calibri,Roboto,Arial;font-size:1em;padding:5px'>";
+    $text = "<table style='font-family:Calibri,Roboto,Arial;font-size:0.8rem;padding:5px;color#000000;'>";
     $text .= $this->build_header();
     $text .= $this->build_separator();
     $text .= $this->build_step1($demand);
@@ -138,7 +140,7 @@ Class DemandMailer {
 
   private function build_step_header($step_name, $step_number){
     $text = "<tr><td style='line-height:2rem;vertical-align:middle;color:#666666;padding:0.5em;' colspan='2'>";
-    $text .= "<span style='background: #E67500;border-radius: 50%;text-align: center;display: inline-block;width:2.9em;height:2.25em'>";
+    $text .= "<span style='background: #E67500;border-radius: 50%;text-align: center;display: inline-block;width:42px;height:35px;padding-top:5px;'>";
     $text .= "<span style='color: #FFFFFF;font-weight:normal;position:relative;top:2px;font-size:1.75rem;font-weight:bolder;margin-top:2px;'>".$step_number."</span>";
     $text .= "</span>";
     $text .= "<b style='position:relative;top:-2px;left:1rem;font-size:1.25rem;'>&nbsp;".$step_name."</b>";
