@@ -3,6 +3,36 @@ require('../vendor/Mailin.php');
 require('../vendor/PHPMailer/PHPMailerAutoload.php');
 
 Class DemandMailer {
+
+  public function __construct(){
+    $this->translations = [];
+    $this->translations['budget_id'] = 'Rango de precios de la bateria';
+    $this->translations['tyre_budget_id'] = 'Rango de precios de los neumaticos';
+    $this->translations['rim_type_id'] = 'Tipo de llanta';
+    $this->translations['tires_size_id'] = 'Medida';
+    $this->translations['number_of_tyres_id'] = 'Cantidad';
+    $this->translations['revision_by_brand'] = 'Revision por el constructor';
+    $this->translations['change_filter'] = 'Sustitución del filtro';
+    $this->translations['glass_type_id'] = 'Tipo de luna';
+    $this->translations['rearview_type_id'] = 'Tipo de retrovisor';
+    $this->translations['shock_absorber_type_id'] = 'Parachoques';
+    $this->translations['color'] = 'Color';
+    $this->translations['brakes_id'] = 'Pastillas';
+    $this->translations['brakes_disks_id'] = 'Discos';
+    $this->translations['electric_glass_close_id'] = 'Elevalunas';
+    $this->translations['lamp_type_id'] = 'Faro';
+    $this->translations['light_type_id'] = 'Lampara';
+    $this->translations['light_quantity_id'] = 'Cantidad';
+    $this->translations['injector_service_category_id'] = 'Intervención';
+    $this->translations['injector_quantity_id'] = 'Cantidad';
+    $this->translations['gas_tube_id'] = 'Tipo de escape';
+    $this->translations['wheel_shock_absorber_type_id'] = 'Amortiguador';
+    $this->translations['keencap_type_id'] = 'Rotula';
+    $this->translations['cup_type_id'] = 'Copela';
+    $this->translations['bearing_type_id'] = 'Rodamiento';
+    $this->translations['air_conditioned_id'] = 'Pack de servicios';
+  }
+
   public function send_demand_mail($demand){
     //$res = $this->send_mail_with_sendinblue_api($demand);
     $mail = $this->build_demand_mail($demand);
@@ -102,7 +132,8 @@ Class DemandMailer {
   }
 
   private function build_step_row($key, $value){
-    $text = "<tr><td style='width:20%;padding:0.5em;font-weight:bolder;font-size:1rem;'>".$key."</td><td style='width:80%;padding:0.5em;font-size:0.75rem;'>".$value."</td></tr>";
+    $text = "<tr><td style='width:20%;padding:0.5em;font-weight:bolder;font-size:1rem;'>".$this->translate($key)."</td>";
+    $text.= "<td style='width:80%;padding:0.5em;font-size:0.75rem;'>".$value."</td></tr>";
     return $text;
   }
 
@@ -117,6 +148,11 @@ Class DemandMailer {
       }
     }
     return $text;
+  }
+
+  private function translate($value){
+    $translated = $this->translations[$value] != '' ? $this->translations[$value] : $value;
+    return $translated;
   }
 }
 ?>
