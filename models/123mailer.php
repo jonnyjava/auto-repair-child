@@ -11,8 +11,8 @@ Class DemandMailer {
     $this->translations['rim_type_id'] = 'Tipo de llanta';
     $this->translations['tires_size_id'] = 'Medida';
     $this->translations['number_of_tyres_id'] = 'Cantidad';
-    $this->translations['revision_by_brand'] = 'Revision por el constructor';
-    $this->translations['change_filter'] = 'Sustitución del filtro';
+    $this->translations['revision_by_brand'] = 'Revisi&oacute;n por el constructor';
+    $this->translations['change_filter'] = 'Sustituci&oacute;n del filtro';
     $this->translations['glass_type_id'] = 'Tipo de luna';
     $this->translations['rearview_type_id'] = 'Tipo de retrovisor';
     $this->translations['shock_absorber_type_id'] = 'Parachoques';
@@ -23,7 +23,7 @@ Class DemandMailer {
     $this->translations['lamp_type_id'] = 'Faro';
     $this->translations['light_type_id'] = 'Lampara';
     $this->translations['light_quantity_id'] = 'Cantidad';
-    $this->translations['injector_service_category_id'] = 'Intervención';
+    $this->translations['injector_service_category_id'] = 'Intervenci&oacute;n';
     $this->translations['injector_quantity_id'] = 'Cantidad';
     $this->translations['gas_tube_id'] = 'Tipo de escape';
     $this->translations['wheel_shock_absorber_type_id'] = 'Amortiguador';
@@ -76,23 +76,24 @@ Class DemandMailer {
     $text .= $this->build_step3($demand);
     $text .= $this->build_footer();
     $text .= "</table>";
+    $text = $this->replace_html_entities($text);
     return $text;
   }
 
   private function build_separator(){
-    return "<tr><td colspan='2'><hr style='border:0;border-bottom:1px dashed #FFFFFF;height:1px;line-height:1px;background:#666666;'/></td></tr>";
+    return "<tr><td colspan='2'><hr style='border:0;height:1px;line-height:1px;background:#666666;'/></td></tr>";
   }
 
   private function build_header(){
     $text = "<tr><td colspan='2' style='padding:0.5em;'>";
-    $text .= "Hemos recibido tu demanda y está siendo examinada por nuestros expertos, gracias por tu confianza!<br/>";
-    $text .= "Aquí te detallamos cuales serán los próximos pasos:";
+    $text .= "Hemos recibido tu demanda y est&aacute; siendo examinada por nuestros expertos, gracias por tu confianza!<br/>";
+    $text .= "Aqu&iacute; te detallamos cuales ser&aacute;n los pr&oacute;ximos pasos:";
     $text .= "<ol>";
     $text .= "<li>Hemos elegido los mejores talleres para tu demanda en tu zona y les hemos mandado tu demanda</li>";
-    $text .= "<li>Estos talleres la estudiarán</li>";
-    $text .= "<li>Dentro de 5 días, recibirás unos emails desde estos talleres con sus presupuestos (Recuérdate de comprobar tu carpeta de spam!)</li>";
-    $text .= "<li>A recibirlos, podrás elegir el taller que prefieras, y después de haber elegido uno, deberás llamarlo para definir una fecha de intervención.</li>";
-    $text .= "<li>Durante la intervención, pagaras directamente el taller por su trabajo.</li>";
+    $text .= "<li>Estos talleres la estudiar&aacute;n</li>";
+    $text .= "<li>Dentro de 5 d&iacute;as, recibir&aacute;s unos emails desde estos talleres con sus presupuestos (Recu&eacute;rdate de comprobar tu carpeta de spam!)</li>";
+    $text .= "<li>A recibirlos, podr&aacute;s elegir el taller que prefieras, y despu&eacute;s de haber elegido uno, deber&aacute;s llamarlo para definir una fecha de intervenci&oacute;n.</li>";
+    $text .= "<li>Durante la intervenci&oacute;n, pagaras directamente el taller por su trabajo.</li>";
     $text .= "</ol>";
     $text .= "</td></tr>";
     return $text;
@@ -126,17 +127,17 @@ Class DemandMailer {
 
   private function build_step_header($step_name, $step_number){
     $text = "<tr><td style='line-height:2rem;vertical-align:middle;color:#666666;padding:0.5em;' colspan='2'>";
-    $text .= "<span style='background: #E67500;border-radius: 50%;text-align: center;display: inline-block;width:2.25em;height:2.25em'>";
-    $text .= "<span style='color: #FFFFFF;font-weight: normal;position: relative;top:2px;font-size:1.75rem;font-weight:bolder;'>".$step_number."</span>";
+    $text .= "<span style='background: #E67500;border-radius: 50%;text-align: center;display: inline-block;width:2.9em;height:2.25em'>";
+    $text .= "<span style='color: #FFFFFF;font-weight:normal;position:relative;top:2px;font-size:1.75rem;font-weight:bolder;margin-top:2px;'>".$step_number."</span>";
     $text .= "</span>";
-    $text .= "<b style='position:relative;top:-2px;left:1rem;font-size:1.25rem;'>".$step_name."</b>";
+    $text .= "<b style='position:relative;top:-2px;left:1rem;font-size:1.25rem;'>&nbsp;".$step_name."</b>";
     $text .= "</td></tr>";
     return $text;
   }
 
   private function build_step_row($key, $value){
-    $text = "<tr><td style='width:20%;padding:0.5em;font-weight:bolder;font-size:1rem;'>".$this->translate($key)."</td>";
-    $text.= "<td style='width:80%;padding:0.5em;font-size:0.75rem;'>".$value."</td></tr>";
+    $text = "<tr><td style='width:30%;padding:0.5em;font-weight:bolder;font-size:0.85rem;'>".$this->translate($key)."</td>";
+    $text.= "<td style='width:70%;padding:0.5em;font-size:0.75rem;'>".$value."</td></tr>";
     return $text;
   }
 
@@ -155,8 +156,8 @@ Class DemandMailer {
 
   private function build_footer(){
     $text = "<tr><td colspan='2' style='padding:0.5em;'>";
-    $text .= "Si tienes alguna duda, contactanos a esta dirección: <a href='mailto:contact@123mecanico.es' style=' color: #E67500;text-decoration: none;cursor: pointer;'>contact@123mecanico.es</a>, te contestáramos lo más rápidamente posible.<br/>";
-    $text .= "También puedes visitar nuestra web la página: <a href='http://123mecanico.es/como-funciona/' target='blank' style=' color: #E67500;text-decoration: none;cursor: pointer;'>como funciona</a> para encontrar respuestas a tus dudas.";
+    $text .= "Si tienes alguna duda, contactanos a esta direcci&oacute;n: <a href='mailto:contact@123mecanico.es' style=' color: #E67500;text-decoration: none;cursor: pointer;'>contact@123mecanico.es</a>, te contest&aacute;ramos lo m&aacute;s r&aacute;pidamente posible.<br/>";
+    $text .= "Tambi&eacute;n puedes visitar nuestra web la p&aacute;gina: <a href='http://123mecanico.es/como-funciona/' target='blank' style=' color: #E67500;text-decoration: none;cursor: pointer;'>como funciona</a> para encontrar respuestas a tus dudas.";
     $text .= "<br/><br/>El equipo de 123Mecanico.es";
     $text .= "</td></tr>";
     return $text;
@@ -164,6 +165,32 @@ Class DemandMailer {
   private function translate($value){
     $translated = $this->translations[$value] != '' ? $this->translations[$value] : $value;
     return $translated;
+  }
+
+  private function replace_html_entities($text){
+    $text = str_replace("á", "&aacute;", $text);
+    $text = str_replace("é", "&eacute;", $text);
+    $text = str_replace("í", "&iacute;", $text);
+    $text = str_replace("ó", "&oacute;", $text);
+    $text = str_replace("ú", "&uacute;", $text);
+    $text = str_replace("Á", "&Aacute;", $text);
+    $text = str_replace("É", "&Eacute;", $text);
+    $text = str_replace("Í", "&Iacute;", $text);
+    $text = str_replace("Ó", "&Oacute;", $text);
+    $text = str_replace("Ú", "&Uacute;", $text);
+    $text = str_replace("à", "&agrave;", $text);
+    $text = str_replace("è", "&egrave;", $text);
+    $text = str_replace("ì", "&igrave;", $text);
+    $text = str_replace("ò", "&ograve;", $text);
+    $text = str_replace("ù", "&ugrave;", $text);
+    $text = str_replace("À", "&Agrave;", $text);
+    $text = str_replace("È", "&Egrave;", $text);
+    $text = str_replace("Ì", "&Igrave;", $text);
+    $text = str_replace("Ò", "&Ograve;", $text);
+    $text = str_replace("Ù", "&Ugrave;", $text);
+    $text = str_replace("ñ", "&ntilde;", $text);
+    $text = str_replace("Ñ", "&Ntilde;", $text);
+    return $text;
   }
 }
 ?>
