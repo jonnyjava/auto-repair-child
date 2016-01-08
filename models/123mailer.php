@@ -74,7 +74,7 @@ Class DemandMailer {
     $mail->isHTML(true);
     $mail->Subject = ' Tu peticion de servicio en 123mecanico.es';
     $mail->Body    = $this->build_html_content($demand);
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+    $mail->AltBody = $this->build_plain_text_content($demand);
     return $mail;
   }
 
@@ -89,7 +89,6 @@ Class DemandMailer {
     $text .= $this->build_step3($demand);
     $text .= $this->build_footer();
     $text .= "</table>";
-    $text = $this->replace_html_entities($text);
     return $text;
   }
 
@@ -106,7 +105,7 @@ Class DemandMailer {
     $text .= "<li>Estos talleres la estudiar&aacute;n</li>";
     $text .= "<li>Dentro de 5 d&iacute;as, recibir&aacute;s unos emails desde estos talleres con sus presupuestos (Recu&eacute;rdate de comprobar tu carpeta de spam!)</li>";
     $text .= "<li>A recibirlos, podr&aacute;s elegir el taller que prefieras, y despu&eacute;s de haber elegido uno, deber&aacute;s llamarlo para definir una fecha de intervenci&oacute;n.</li>";
-    $text .= "<li>Durante la intervenci&oacute;n, pagaras directamente el taller por su trabajo.</li>";
+    $text .= "<li>Durante la intervenci&oacute;n, pag&aacute;ras directamente el taller por su trabajo.</li>";
     $text .= "</ol>";
     $text .= "</td></tr>";
     return $text;
@@ -131,7 +130,7 @@ Class DemandMailer {
   }
 
   private function build_step3($demand){
-    $text = $this->build_step_header('Tus datos',3);
+    $text = $this->build_step_header('Tus datos de contacto',3);
     $text .= $this->build_step_row('Nombre y apellidos', $demand->name_and_surnames);
     $text .= $this->build_step_row('Telefono', $demand->phone);
     $text .= $this->build_step_row('Email', $demand->email);
@@ -149,8 +148,8 @@ Class DemandMailer {
   }
 
   private function build_step_row($key, $value){
-    $text = "<tr><td style='width:30%;padding:0.5em;font-weight:bolder;font-size:0.85rem;'>".$this->translate($key)."</td>";
-    $text.= "<td style='width:70%;padding:0.5em;font-size:0.75rem;'>".$value."</td></tr>";
+    $text = "<tr><td style='width:30%;padding:0.5em;font-weight:bolder;font-size:0.85rem;'>".htmlentities($this->translate($key))."</td>";
+    $text.= "<td style='width:70%;padding:0.5em;font-size:0.75rem;'>".htmlentities($value)."</td></tr>";
     return $text;
   }
 
@@ -176,34 +175,94 @@ Class DemandMailer {
     return $text;
   }
 
+
+  private function build_plain_text_content($demand){
+    $text = "Hemos recibido tu demanda y est&aacute; siendo examinada por nuestros expertos, gracias por tu confianza!\r\n";
+    $text .= "Aqu&iacute; te detallamos cuales ser&aacute;n los pr&oacute;ximos pasos:\r\n";
+    $text .= "Hemos elegido los mejores talleres para tu demanda en tu zona y les hemos mandado tu demanda\r\n";
+    $text .= "Estos talleres la estudiar&aacute;n\r\n";
+    $text .= "Dentro de 5 d&iacute;as, recibir&aacute;s unos emails desde estos talleres con sus presupuestos (Recu&eacute;rdate de comprobar tu carpeta de spam!)\r\n";
+    $text .= "A recibirlos, podr&aacute;s elegir el taller que prefieras, y despu&eacute;s de haber elegido uno, deber&aacute;s llamarlo para definir una fecha de intervenci&oacute;n.\r\n";
+    $text .= "Durante la intervenci&oacute;n, pagaras directamente el taller por su trabajo.\r\n";
+    $text .= "\r\nTu necesidad\r\n";
+    $text .= "Categoria: ". $demand->service_category_id."\r\n";
+    $text .= "Servicio: ".$demand->service_id."\r\n";
+    $details = json_decode($demand->demand_details, true);
+    foreach($details as $key => $value) {
+      $pos_car = strpos($key, 'car_');
+      $pos_option = strpos($key, '_option');
+      if(($pos_car === false)&&($pos_option === false)){
+        $text .=  $this->translate($key).": ". $this->translate($value)."\r\n";
+      }
+    }
+    $text .= "Comentarios adicionales: ".$demand->comments."\r\n";
+    $text .= "\r\nTu coche\r\n";
+    $text .= "Marca: ".$demand->brand."\r\n";
+    $text .= "Modelo: ".$demand->model."\r\n";
+    $text .= "Periodo: ".$demand->year."\r\n";
+    $text .= "Motor: ".$demand->engine." ".$demand->engine_letters."\r\n";
+    $text .= "\r\nTus datos de contacto\r\n";
+    $text .= "Nombre y apellidos: ".$demand->name_and_surnames."\r\n";
+    $text .= "Telefono: ".$demand->phone."\r\n";
+    $text .= "Email: ".$demand->email."\r\n";
+    $text .= "\r\nSi tienes alguna duda, contactanos a esta direcci&oacute;n: contact@123mecanico.es, te contest&aacute;ramos lo m&aacute;s r&aacute;pidamente posible.\r\n";
+    $text .= "Tambi&eacute;n puedes visitar nuestra web la p&aacute;gina: como funciona para encontrar respuestas a tus dudas.\r\n";
+    $text .= "\r\nEl equipo de 123Mecanico.es";
+
+    $text = $this->replace_html_entities($text);
+    return $text;
+  }
+
   private function translate($value){
     $translated = $this->translations[$value] != '' ? $this->translations[$value] : $value;
     return $translated;
   }
 
   private function replace_html_entities($text){
-    $text = str_replace("á", "&aacute;", $text);
-    $text = str_replace("é", "&eacute;", $text);
-    $text = str_replace("í", "&iacute;", $text);
-    $text = str_replace("ó", "&oacute;", $text);
-    $text = str_replace("ú", "&uacute;", $text);
-    $text = str_replace("Á", "&Aacute;", $text);
-    $text = str_replace("É", "&Eacute;", $text);
-    $text = str_replace("Í", "&Iacute;", $text);
-    $text = str_replace("Ó", "&Oacute;", $text);
-    $text = str_replace("Ú", "&Uacute;", $text);
-    $text = str_replace("à", "&agrave;", $text);
-    $text = str_replace("è", "&egrave;", $text);
-    $text = str_replace("ì", "&igrave;", $text);
-    $text = str_replace("ò", "&ograve;", $text);
-    $text = str_replace("ù", "&ugrave;", $text);
-    $text = str_replace("À", "&Agrave;", $text);
-    $text = str_replace("È", "&Egrave;", $text);
-    $text = str_replace("Ì", "&Igrave;", $text);
-    $text = str_replace("Ò", "&Ograve;", $text);
-    $text = str_replace("Ù", "&Ugrave;", $text);
-    $text = str_replace("ñ", "&ntilde;", $text);
-    $text = str_replace("Ñ", "&Ntilde;", $text);
+    $text = str_replace("á", "a", $text);
+    $text = str_replace("é", "e", $text);
+    $text = str_replace("í", "i", $text);
+    $text = str_replace("ó", "o", $text);
+    $text = str_replace("ú", "u", $text);
+    $text = str_replace("Á", "A", $text);
+    $text = str_replace("É", "E", $text);
+    $text = str_replace("Í", "I", $text);
+    $text = str_replace("Ó", "O", $text);
+    $text = str_replace("Ú", "U", $text);
+    $text = str_replace("à", "a", $text);
+    $text = str_replace("è", "e", $text);
+    $text = str_replace("ì", "i", $text);
+    $text = str_replace("ò", "o", $text);
+    $text = str_replace("ù", "u", $text);
+    $text = str_replace("À", "A", $text);
+    $text = str_replace("È", "E", $text);
+    $text = str_replace("Ì", "I", $text);
+    $text = str_replace("Ò", "O", $text);
+    $text = str_replace("Ù", "U", $text);
+    $text = str_replace("ñ", "n", $text);
+    $text = str_replace("Ñ", "N", $text);
+    $text = str_replace("&aacute;", "a", $text);
+    $text = str_replace("&eacute;", "e", $text);
+    $text = str_replace("&iacute;", "i", $text);
+    $text = str_replace("&oacute;", "o", $text);
+    $text = str_replace("&uacute;", "u", $text);
+    $text = str_replace("&Aacute;", "A", $text);
+    $text = str_replace("&Eacute;", "E", $text);
+    $text = str_replace("&Iacute;", "I", $text);
+    $text = str_replace("&Oacute;", "O", $text);
+    $text = str_replace("&Uacute;", "U", $text);
+    $text = str_replace("&agrave;", "a", $text);
+    $text = str_replace("&egrave;", "e", $text);
+    $text = str_replace("&igrave;", "i", $text);
+    $text = str_replace("&ograve;", "o", $text);
+    $text = str_replace("&ugrave;", "u", $text);
+    $text = str_replace("&Agrave;", "A", $text);
+    $text = str_replace("&Egrave;", "E", $text);
+    $text = str_replace("&Igrave;", "I", $text);
+    $text = str_replace("&Ograve;", "O", $text);
+    $text = str_replace("&Ugrave;", "U", $text);
+    $text = str_replace("&ntilde;", "n", $text);
+    $text = str_replace("&Ntilde;", "N", $text);
     return $text;
   }
 }
