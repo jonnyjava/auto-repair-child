@@ -1,10 +1,13 @@
 <?php
 require('../vendor/Mailin.php');
 require('../vendor/PHPMailer/PHPMailerAutoload.php');
+require('../private/constants.php');
 
 Class DemandMailer {
 
   public function __construct(){
+    $this->constants = get_costants();
+
     $this->translations = [];
     $this->translations['budget_id'] = 'Rango de precios de la bateria';
     $this->translations['tyre_budget_id'] = 'Rango de precios de los neumaticos';
@@ -42,7 +45,7 @@ Class DemandMailer {
   }
 
   private function send_mail_with_sendinblue_api($demand){
-    $mailin = new Mailinblue("https://api.sendinblue.com/v2.0","rtzF60DEsBNXa7kx");
+    $mailin = new Mailinblue("https://api.sendinblue.com/v2.0",$this->constants['API_key']);
     $data = array( "to" => array($demand->email => $demand->name_and_surnames),
       "from" => array('contacto@123mecanico.es', '123mecanico'),
       "subject" => " Tu peticion de servicio en 123mecanico.es",
@@ -55,6 +58,14 @@ Class DemandMailer {
     $mail = new PHPMailer;
     $mail->isSMTP();
     $mail->Port = 1025;
+
+    $mail->SMTPAuth   = $this->constants['SMTPAuth'];
+    $mail->SMTPSecure = $this->constants['SMTPSecure'];
+    $mail->Host       = $this->constants['Host'];
+    $mail->Port       = $this->constants['Port'];
+    $mail->Username   = $this->constants['Username'];
+    $mail->Password   = $this->constants['Password'];
+
     $mail->setFrom('contact@123mecanico.com', '123Mecanico');
     $mail->addAddress($demand->email, $demand->name_and_surnames);
     $mail->addReplyTo('contact@123mecanico.com', '123Mecanico');
@@ -162,6 +173,7 @@ Class DemandMailer {
     $text .= "</td></tr>";
     return $text;
   }
+
   private function translate($value){
     $translated = $this->translations[$value] != '' ? $this->translations[$value] : $value;
     return $translated;
