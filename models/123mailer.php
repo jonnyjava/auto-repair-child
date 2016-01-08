@@ -69,12 +69,16 @@ Class DemandMailer {
     $text = "<table style='font-family:Calibri,Roboto,Arial;font-size:1em;padding:5px'>";
     $text .= $this->build_intro();
     $text .= $this->build_step1($demand);
-    $text .= "<tr><td colspan='2'><hr/></td></tr>";
+    $text .= $this->build_separator();
     $text .= $this->build_step2($demand);
-    $text .= "<tr><td colspan='2'><hr/></td></tr>";
+    $text .= $this->build_separator();
     $text .= $this->build_step3($demand);
     $text .= "</table>";
     return $text;
+  }
+
+  private function build_separator(){
+    return "<tr><td colspan='2'><hr style='border:0;border-bottom:1px dashed #FFFFFF;height:1px;line-height:1px;background:#666666;'/></td></tr>";
   }
 
   private function build_intro(){
