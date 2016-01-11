@@ -44,6 +44,7 @@ function enable_service_buttons(){
     fill_problem_breadcrumb($(this).text());
     if (has_details){
       animate_details(600);
+      activate_vin_number_search();
     }
   });
 }
