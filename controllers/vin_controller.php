@@ -1,15 +1,23 @@
 <?php
-  $vin_number = $_POST['vin_number'];
-  $vin_is_cached = cache_vin_if_not_exists($vin_number);
-  if ($vin_is_cached){
-    $response = build_json_response($vin_number);
+$vin_number = $_POST['vin_number'];
+echo get_car_details($vin_number);
+
+function get_car_details($vin_number){
+  if (isset($vin_number)) {
+    $vin_is_cached = cache_vin_if_not_exists($vin_number);
+    if ($vin_is_cached){
+      $response = ok_response($vin_number);
+    }
+    else{
+      $response = error_response();
+    }
   }
   else{
-    $errors = [];
-    $errors['server_answer'] = 'La pagina no responde, no existe o no contiene nada';
-    $response = json_encode(array('status' => 400, 'errors' => json_encode($errors) ));
+    $response = error_response();
   }
-echo $response;
+  return $response;
+}
+
 
 function cache_vin_if_not_exists($vin_number){
   $allok = true;
@@ -28,7 +36,7 @@ function cache_vin_if_not_exists($vin_number){
   return $allok;
 }
 
-function build_json_response($vin_number){
+function ok_response($vin_number){
   $doc = new DOMDocument();
   $doc->loadHTMLFile("../vin_cache/".$vin_number.".html");
   $doc->validateOnParse = true;
@@ -52,6 +60,12 @@ function build_json_response($vin_number){
     }
   }
   $response = json_encode(array('status' => 200, 'car_details' =>json_encode($car_details) ));
+  return $response;
+}
+
+function error_response(){
+  $errors['server_answer'] = 'La pagina no responde, no existe o no contiene nada';
+  $response = json_encode(array('status' => 400, 'errors' => json_encode($errors) ));
   return $response;
 }
 ?>

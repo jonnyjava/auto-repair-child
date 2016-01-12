@@ -1,13 +1,13 @@
 function activate_vin_number_search(){
   $('#vin_number_searcher').click(function(){
-    get_car_details();
+    get_car_details($(this));
   });
 }
 
-function get_car_details(){
+function get_car_details(clicked_button){
   var vin_number = $('#vin_number').val().toUpperCase();
   var serialized_datas = 'vin_number='+vin_number;
-  var my_destination = $('#onboarding_form').attr('action');
+  var my_destination = $('#onboarding_form').attr('action')+"/controllers/vin_controller.php";
   $.ajax({type: 'POST', data: serialized_datas, url: my_destination, async: true}).success(function(response){
     var parsed_response = jQuery.parseJSON(response);
     console.log(parsed_response);
