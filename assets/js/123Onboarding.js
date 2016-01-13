@@ -130,10 +130,14 @@ function animate_container_height(current_step, animation_time){
   }
 }
 
-function animate_details(animation_time){
+function activate_details_animation(animation_time){
   $('.js_detail_toggler').click(function(){
-    $('.js_toggle_details').fadeIn(animation_time);
-    $(this).fadeOut(animation_time);
-    animate_container_height($('#step_2'), animation_time)
+    animate_details($(this), animation_time)
   });
+}
+
+function animate_details(clicked_button, animation_time){
+  $('.js_toggle_details').fadeIn(animation_time);
+  $('.js_vin_search_toggler').fadeOut(animation_time);
+  animate_container_height($('#step_2'), animation_time)
 }
