@@ -21,7 +21,7 @@ function enable_service_buttons(){
     if (has_details){
       js_toggling_class = "js_toggle_details"
       content += build_row(['vin_number'], 'row car-details-row bottom-gutter');
-      content += build_row(['car_details_message'], 'row car-details-row bottom-gutter');
+      content += build_row(['car_details_message'], 'row car-details-row bottom-gutter js_toggle_details js_car_details_message_box');
     }
 
     if (fields.length > 1){

@@ -137,10 +137,16 @@ li > .hint{
 .js_second_step{
   display: none;
 }
-.js_services, .js_toggle_details{
+.js_services, .js_toggle_details, .js_car_details_message, .js_car_details_message_box{
   display: none;
 }
-/*filling feedback*/
+ /*vin number feedback*/
+.car_details_message_box{
+  border-radius: 0;
+  background-color: #E67500;
+  color: #ffffff;
+  font-weight: bolder;
+ }
 .filling_feedback{
   color: #666666;
   position: relative;
