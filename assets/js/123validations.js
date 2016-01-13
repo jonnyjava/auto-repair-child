@@ -29,6 +29,9 @@ function perform_dedicate_validation(field, value){
     case 'only_letters':
       field_is_valid = (value.length >= 10) && (/^[a-z\+]+$/i.test(value) );
       break;
+    case 'vin_number':
+      field_is_valid =/^[^\WIOQÑioqñ]{17}$/.test(value);//IOQÑ are not allowed
+      break;
     case 'phone':
       field_is_valid = (value.length >= 8) && !(value.match(/[^0-9]+/gi));
       break;

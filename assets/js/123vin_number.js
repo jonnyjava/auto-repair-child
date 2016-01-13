@@ -1,6 +1,12 @@
 function activate_vin_number_search(){
   $('#vin_number_searcher').click(function(){
-    get_car_details($(this));
+    reset_car_detail_fields();
+    var field = $('#vin_number');
+    var value = field.val();
+    var vin_is_valid = perform_dedicate_validation(field, value);
+    if(vin_is_valid){
+      get_car_details($(this));
+    }
   });
 }
 
