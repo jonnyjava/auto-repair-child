@@ -138,6 +138,12 @@ function activate_details_animation(animation_time){
 
 function animate_details(clicked_button, animation_time){
   $('.js_toggle_details').fadeIn(animation_time);
-  $('.js_vin_search_toggler').fadeOut(animation_time);
-  animate_container_height($('#step_2'), animation_time)
+  $('.js_vin_search_toggler').animate({
+    opacity: 0,
+    height: "toggle"
+  }, animation_time/2, function() {
+    $('.js_vin_search_toggler').hide();
+    animate_container_height($('#step_2'), animation_time);
+    disable_vin_validation();
+  });
 }

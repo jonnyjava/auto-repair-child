@@ -242,6 +242,11 @@
     padding-left: 15.25em;
     top: -2.25em;
   }
+  .filling_feedback{
+    top: -2.25em;
+    left: 45%;
+    font-size: 1.5rem;
+  }
   /*bootstrap overrides*/
   .confirmation_header > .dropdown-toggle, .confirmation_header > .dropdown {
     height: 5em;

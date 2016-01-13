@@ -140,6 +140,11 @@ li > .hint{
 .js_services, .js_toggle_details{
   display: none;
 }
+/*filling feedback*/
+.filling_feedback{
+  color: #666666;
+  position: relative;
+}
 /*error_number*/
 .error_number {
   border-radius: 50%;

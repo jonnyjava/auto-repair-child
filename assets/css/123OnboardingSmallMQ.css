@@ -133,6 +133,12 @@
     font-size: 6em;
     top: 0.25em;
   }
+  /*filling feedback*/
+  .filling_feedback{
+    top: -2em;
+    left: 40%;
+    font-size: 1.25rem;
+  }
   /*confirmation page ovverrides*/
   .confirmation_page{
     padding: 0;
@@ -186,13 +192,12 @@
   .tt-suggestion{
     font-size: 1.25rem;
   }
-
   /*tooltips*/
   .normal_size{
-    left: 0%;
-    width: 100%;
+    left: 5%;
+    width: 90%;
     font-size: 1.25rem;
-    top: -3em;
+    top: -2.75em;
   }
   .small_size{
     font-size: 1rem;

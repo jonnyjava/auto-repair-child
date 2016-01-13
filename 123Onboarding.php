@@ -179,7 +179,7 @@
               </ul>
             </div>
           </label>
-          <span id="accepts_privacy_tooltip" class="tooltips normal_size">Es necesario aceptar las condiciones de uso para seguir</span>
+          <span id="accepts_privacy_tooltip" class="tooltips normal_size">La aceptación es obligatoria</span>
         </div>
       </div>
       <div class="row">

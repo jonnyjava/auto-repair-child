@@ -1,3 +1,10 @@
+function activate_vin_number_char_counter(){
+  $('#vin_number').keyup(function(){
+    $('#vin_number_filled_chars').text($(this).val().length);
+    $('#vin_number_tooltip').hide();
+  });
+}
+
 function activate_vin_number_search(){
   $('#vin_number_searcher').click(function(){
     reset_car_detail_fields();
@@ -67,4 +74,8 @@ function reset_car_detail_fields(){
   disable_field('year');
   disable_field('engine');
   disable_field('engine_letters');
+}
+
+function disable_vin_validation(){
+  $('#vin_number').data('validation-type', '');
 }

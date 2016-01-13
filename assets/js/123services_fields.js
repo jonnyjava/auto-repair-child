@@ -46,6 +46,7 @@ function enable_service_buttons(){
     if (has_details){
       activate_details_animation(600);
       activate_vin_number_search();
+      activate_vin_number_char_counter();
     }
   });
 }
