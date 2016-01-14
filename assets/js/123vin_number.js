@@ -23,29 +23,36 @@ function get_car_details(clicked_button){
   $.ajax({type: 'POST', data: serialized_datas, url: my_destination, async: true}).success(function(response){
     var parsed_response = jQuery.parseJSON(response);
     if(parsed_response.status == 400){
-      show_message('car_not_found');
-      reset_car_detail_fields();
+      vin_not_found();
     }
     else{
-      var parsed_car_details = jQuery.parseJSON(parsed_response.car_details);
-      if (parsed_car_details.length != 0){
-        autofill_car_details_dropdowns(parsed_car_details);
-        show_message('car_found');
-        activate_reset_car_details_by_user();
-      }
-      else{
-        show_message('car_not_found');
-        reset_car_detail_fields();
-      }
+      vin_found(parsed_response);
     }
-  }).error(function(parsed_response){
-    show_message('car_not_found');
+  }).error(function(){
+    vin_not_found();
   });
+}
+
+function vin_found(parsed_response){
+  var parsed_car_details = jQuery.parseJSON(parsed_response.car_details);
+  if (parsed_car_details.length != 0){
+    autofill_car_details_dropdowns(parsed_car_details);
+    show_message('car_found');
+    activate_reset_car_details_by_user();
+  }
+  else{
+    vin_not_found();
+  }
+}
+
+function vin_not_found(){
+  show_message('car_not_found');
+  $('#car_detail_wrong').hide();
+  reset_car_detail_fields();
 }
 
 function show_message(message_type){
   animate_details(600);
-  $('.js_car_details_message').hide();
   $('#'+message_type).show();
   $('.js_car_details_message_box').show();
 }

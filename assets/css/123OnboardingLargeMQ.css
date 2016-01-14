@@ -245,6 +245,7 @@
   .car_details_message_box{
     font-size: 1.4rem;
     line-height: 3.1em;
+    margin-left: 1em;
   }
   .filling_feedback{
     top: -3.75em;

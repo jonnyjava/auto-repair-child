@@ -133,6 +133,5 @@ function animate_container_height(current_step, animation_time){
 function activate_details_animation(animation_time){
   $('.js_detail_toggler').click(function(){
     animate_details(animation_time);
-    $('.js_car_details_message_box').hide();
   });
 }

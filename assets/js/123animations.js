@@ -8,6 +8,7 @@ function animate_details(animation_time){
     animate_container_height($('#step_2'), animation_time);
     disable_vin_validation();
   });
+  $('.js_car_details_message_box').hide();
 }
 
 function animate_car_details_message_box(){
