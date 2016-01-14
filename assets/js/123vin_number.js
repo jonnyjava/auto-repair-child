@@ -37,7 +37,8 @@ function vin_found(parsed_response){
   var parsed_car_details = jQuery.parseJSON(parsed_response.car_details);
   if (parsed_car_details.length != 0){
     autofill_car_details_dropdowns(parsed_car_details);
-    show_message('car_found');
+    var animation_time = 300;
+    animate_details('car_found', animation_time);
     activate_reset_car_details_by_user();
   }
   else{
@@ -46,15 +47,7 @@ function vin_found(parsed_response){
 }
 
 function vin_not_found(){
-  show_message('car_not_found');
-  $('#car_detail_wrong').hide();
-  reset_car_detail_fields();
-}
-
-function show_message(message_type){
-  animate_details(600);
-  $('#'+message_type).show();
-  $('.js_car_details_message_box').show();
+  animate_details('car_not_found', 300);
 }
 
 function autofill_car_details_dropdowns(car_details){
@@ -86,8 +79,9 @@ function reset_car_detail_fields(){
 }
 
 function activate_reset_car_details_by_user(){
-  $('#car_detail_wrong').click(function(){
-    animate_car_details_message_box();
+  $('.js_car_detail_wrong').show();
+  $('.js_car_detail_wrong').click(function(){
+    hide_message_line(300);
     reset_car_detail_fields();
   });
 }
