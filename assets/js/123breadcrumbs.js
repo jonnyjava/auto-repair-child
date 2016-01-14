@@ -1,4 +1,4 @@
-$(document).ready(function(){
+function activate_breadcrumbs(){
   $('.js_undo_problem_breadcrumb').click(function(){
     undo_problem_breadcrumb();
   });
@@ -10,7 +10,7 @@ $(document).ready(function(){
   $('.js_undo_car_breadcrumb').click(function(){
     undo_car_breadcrumb();
   });
-});
+}
 
 function fill_problem_breadcrumb(problem){
   var breadcrumb = $("#problem_breadcrumb");
