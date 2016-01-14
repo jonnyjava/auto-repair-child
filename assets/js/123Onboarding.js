@@ -42,8 +42,9 @@ function build_third_step(){
 function activate_animation_to_next_step(){
   $('.next').click(function (event) {
     event.preventDefault();
-    if (content_for_step_is_valid($(this))){
-      animate_to_next($(this));
+    var clicked_button = $(this);
+    if (content_for_step_is_valid(clicked_button)){
+      animate_to_next(clicked_button);
     }
   });
 }
@@ -55,11 +56,10 @@ function activate_animation_to_previous_step(){
 }
 
 function disable_enter_key(){
-  $(document).keypress(
-    function(event){
-     if (event.which == '13') {
-        event.preventDefault();
-      }
+  $(document).keypress(function(event){
+    if (event.which == '13') {
+      event.preventDefault();
+    }
   });
 }
 

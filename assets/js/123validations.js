@@ -1,7 +1,6 @@
 function content_for_step_is_valid(clicked_button){
   var step_is_valid = true;
   var fieldset_id = clicked_button.data('fieldset');
-
   var step_values = $('#'+fieldset_id).serialize();
   step_values = serialize_unchecked(fieldset_id, step_values);
   step_values = step_values.split('&');

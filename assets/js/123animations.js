@@ -87,6 +87,7 @@ function animate_details(message_type, animation_time){
 }
 
 function hide_vin_line(animation_time){
+  disable_vin_validation();
   $('.js_vin_search_toggler').animate({
     opacity: 0,
     height: 0
