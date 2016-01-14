@@ -29,14 +29,18 @@ function fill_dropdown_with_selected_option(){
 }
 
 function activate_dropdown_toggle(){
+  deactivate_dropdown_toggle()
   $('.js_dropdown_opener').each(function(){
-    $(this).unbind('click', dropdown_toggler);
     $(this).bind('click', { dropdown_id: $(this).data('dropdown-name') }, dropdown_toggler);
   });
   $('.js_dropdown_menu > li').each(function(){
-    $(this).unbind('click', dropdown_toggler);
     $(this).bind('click', { dropdown_id: $(this).parent().attr('id') }, dropdown_toggler);
   });
+}
+
+function deactivate_dropdown_toggle(){
+  $('.js_dropdown_opener').unbind('click', dropdown_toggler);
+  $('.js_dropdown_menu > li').unbind('click', dropdown_toggler);
 }
 
 function dropdown_toggler(event){

@@ -45,6 +45,7 @@ function vin_found(parsed_response){
     var animation_time = 300;
     animate_details('car_found', animation_time);
     activate_reset_car_details_by_user();
+    deactivate_dropdown_toggle();
   }
   else{
     vin_not_found();
@@ -88,6 +89,7 @@ function activate_reset_car_details_by_user(){
   $('.js_car_detail_wrong').click(function(){
     hide_message_line(300);
     reset_car_detail_fields();
+    activate_dropdown_toggle();
   });
 }
 
