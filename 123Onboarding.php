@@ -141,7 +141,7 @@
           <input type="button" class="previous animation-button js_undo_problem_breadcrumb" data-current-fieldset="step_2" value="Atrás">
         </div>
         <div class="col-lg-3 col-xs-6">
-        <input type="button" class="next go_next animation-button js_car_breadcrumb" data-fieldset="step_2" value="Continuar">
+        <input type="button" class="next go_next animation-button js_car_breadcrumb js_vin_numer_search_fallback" data-fieldset="step_2" value="Continuar">
         </div>
         <div class="col-lg-3 col-xs-0"></div>
       </div>

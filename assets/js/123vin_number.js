@@ -6,14 +6,19 @@ function activate_vin_number_char_counter(){
 }
 
 function activate_vin_number_search(){
+  $('.js_vin_numer_search_fallback').bind("click", search_by_vin_number);
   $('#vin_number_searcher').click(function(){
-    var vin_field = $('#vin_number');
-    var vin_value = vin_field.val();
-    var vin_is_valid = perform_dedicate_validation(vin_field, vin_value);
-    if(vin_is_valid){
-      get_car_details($(this));
-    }
+    search_by_vin_number();
   });
+}
+
+function search_by_vin_number(){
+  var vin_field = $('#vin_number');
+  var vin_value = vin_field.val();
+  var vin_is_valid = perform_dedicate_validation(vin_field, vin_value);
+  if(vin_is_valid){
+    get_car_details($(this));
+  }
 }
 
 function get_car_details(clicked_button){
@@ -87,6 +92,7 @@ function activate_reset_car_details_by_user(){
 }
 
 function disable_vin_validation(){
+  $('.js_vin_numer_search_fallback').unbind("click", search_by_vin_number);
   $('#vin_number').data('validation-type', '');
 }
 
