@@ -9,7 +9,7 @@ function enable_form_submit(){
 function submit_form(clicked_button){
   clicked_button = $('.js_saver');
   var submitted_form = clicked_button.closest('form')
-  var my_destination = submitted_form.attr('action');
+  var my_destination = submitted_form.attr('action')+"/controllers/demand_controller.php";
   var submitted_datas = submitted_form.serialize();
   $.ajax({type: 'POST', data: submitted_datas, url: my_destination, async: true}).success(function(response){
     var parsed_response = jQuery.parseJSON(response);

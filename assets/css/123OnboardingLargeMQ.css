@@ -70,8 +70,7 @@
     margin: 0.5em 0 1em 0;
   }
   .car-details-row {
-    margin-top: 3em;
-    margin-bottom: 3em;
+    padding-bottom: 3em;
   }
   .col-md-4 input, .col-md-3 input, .col-md-4 select, .col-md-3 select{
     font-size: 1.5rem;
@@ -241,6 +240,16 @@
   .comments{
     padding-left: 15.25em;
     top: -2.25em;
+  }
+  .car_details_message_box{
+    font-size: 1.4rem;
+    line-height: 3.1em;
+    margin-left: 1em;
+  }
+  .filling_feedback{
+    top: -3.75em;
+    left: 45%;
+    font-size: 1.5rem;
   }
   /*bootstrap overrides*/
   .confirmation_header > .dropdown-toggle, .confirmation_header > .dropdown {

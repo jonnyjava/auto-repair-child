@@ -1,7 +1,6 @@
 function content_for_step_is_valid(clicked_button){
   var step_is_valid = true;
   var fieldset_id = clicked_button.data('fieldset');
-
   var step_values = $('#'+fieldset_id).serialize();
   step_values = serialize_unchecked(fieldset_id, step_values);
   step_values = step_values.split('&');
@@ -28,6 +27,9 @@ function perform_dedicate_validation(field, value){
       break;
     case 'only_letters':
       field_is_valid = (value.length >= 10) && (/^[a-z\+]+$/i.test(value) );
+      break;
+    case 'vin_number':
+      field_is_valid = /^[^\WIOQÑioqñ]{17}$/.test(value);//IOQÑ are not allowed
       break;
     case 'phone':
       field_is_valid = (value.length >= 8) && !(value.match(/[^0-9]+/gi));

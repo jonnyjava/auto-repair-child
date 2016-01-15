@@ -117,6 +117,20 @@
     font-size: 6em;
     top: 0.325em;
   }
+   /*vin number feedback*/
+   .car_details_message_box{
+    line-height: 2em;
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+    width: 94%;
+    position: relative;
+    left: 3%;
+   }
+  .filling_feedback{
+    top: -3.5em;
+    left: 45%;
+    font-size: 1.5rem;
+  }
   /*confirmation page ovverrides*/
   h4{
     font-size: 1.25em;
@@ -157,8 +171,8 @@
   }
   /*tooltips*/
   .normal_size{
-    left: 0%;
-    width: 100%;
+    left: 3%;
+    width: 94%;
     font-size: 1.5rem;
     top: -2em;
   }

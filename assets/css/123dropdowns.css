@@ -39,8 +39,10 @@
   position: absolute;
   right: 0.5em;
 }
-.disabled-element{
+.disabled-field, .disabled-element{
   cursor: no-drop;
+}
+.disabled-element{
   background-color: #666666;
   border: 1px solid #666666;
   color: #666666;

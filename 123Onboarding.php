@@ -20,7 +20,7 @@
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingMediumMQ.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingLargeMQ.css">
 <div class="onboarding_container" id="js_onboarding_container" data-partial-url="<?php echo bloginfo('stylesheet_directory'); ?>">
-  <form class="msform" id="onboarding_form" autocomplete="false" autofill="false" action="<?php echo bloginfo('stylesheet_directory'); ?>/controllers/demand_controller.php" method="post">
+  <form class="msform" id="onboarding_form" autocomplete="false" autofill="false" action="<?php echo bloginfo('stylesheet_directory');?>" method="post">
     <ul class="progressbar" id="progressbar">
       <li class="active">Tu problema<br/><i class="hint" id="problem_breadcrumb"></i></li>
       <li>Tu coche<br/><i class="hint" id="car_breadcrumb"></i></li>
@@ -141,7 +141,7 @@
           <input type="button" class="previous animation-button js_undo_problem_breadcrumb" data-current-fieldset="step_2" value="Atrás">
         </div>
         <div class="col-lg-3 col-xs-6">
-        <input type="button" class="next go_next animation-button js_car_breadcrumb" data-fieldset="step_2" value="Continuar">
+        <input type="button" class="next go_next animation-button js_car_breadcrumb js_vin_numer_search_fallback" data-fieldset="step_2" value="Continuar">
         </div>
         <div class="col-lg-3 col-xs-0"></div>
       </div>
@@ -179,7 +179,7 @@
               </ul>
             </div>
           </label>
-          <span id="accepts_privacy_tooltip" class="tooltips normal_size">Es necesario aceptar las condiciones de uso para seguir</span>
+          <span id="accepts_privacy_tooltip" class="tooltips normal_size">La aceptación es obligatoria</span>
         </div>
       </div>
       <div class="row">
@@ -202,12 +202,14 @@
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/bootstrap.min.js"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/typeahead.bundle.js"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/postalCodes.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123animations.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123autocomplete.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123breadcrumbs.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123dropdowns.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123validations.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123form_submit.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123services_fields.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123vin_number.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123row_ajax_builder.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123car_selector.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123cars.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123Onboarding.js" type="text/javascript"></script>
