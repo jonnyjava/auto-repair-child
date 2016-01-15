@@ -1,8 +1,12 @@
 function activate_vin_number_char_counter(){
-  $('#vin_number').keyup(function(){
-    $('#vin_number_filled_chars').text($(this).val().length);
-    $('#vin_number_tooltip').hide();
+  $('#vin_number').on('blur keyup', function(){
+    count_vin_number_chars($(this));
   });
+}
+
+function count_vin_number_chars(filled_field){
+  $('#vin_number_filled_chars').text(filled_field.val().length);
+    $('#vin_number_tooltip').hide();
 }
 
 function activate_vin_number_search(){
