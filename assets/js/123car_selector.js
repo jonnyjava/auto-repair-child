@@ -1,9 +1,10 @@
 function car_selector(){
   $('#car_brand_dropdown > li').click(function(){
-    var cardb_name = $(this).data('value')
+    var cardb_name = $(this).data('value');
     var cardb = eval(cardb_name);
-    $('#car_brand').data('car-db', cardb_name)
     var options = '';
+
+    $('#car_brand').data('car-db', cardb_name);
     $('#car_model').html('<i class="hint">Tu modelo:</i>');
     for(var i = 1; i<  cardb.length; i++){
       for (var j = 1; j < cardb[i].length; j++ ){
@@ -24,17 +25,17 @@ function car_selector(){
 function car_model_selector(){
   $('#car_model_dropdown > li').click(function(){
     var cardb = eval($('#car_brand').data('car-db'));
-    $('#car_year').html('<i class="hint">Tu año:</i>');
-
     var model_selected = $(this).data('value').split(',');
     var i = model_selected[0];
     var j = model_selected[1];
     var options = '';
+
+    $('#car_year').html('<i class="hint">Tu año:</i>');
     for(var k = 1; k < cardb[i][j].length; k++){
       options += "<li data-value='"+i+","+j+","+k+"'>"+cardb[i][j][k][0]+"</li>";
     }
     if(options.length == 0){
-      options = "<li data-value='0'>cualquiera</li>"
+      options = "<li data-value='0'>cualquiera</li>";
     }
     enable_field('year', options);
     $('#car_model_tooltip').hide();
@@ -49,13 +50,13 @@ function car_model_selector(){
 function car_year_selector(){
   $('#car_year_dropdown > li').click(function(){
     var cardb = eval($('#car_brand').data('car-db'));
-    $('#car_engine').html('<i class="hint">Tu cilindrada:</i>');
-
     var year_selected = $(this).data('value').split(',');
     var i = year_selected[0];
     var j = year_selected[1];
     var k = year_selected[2];
     var options = '';
+
+    $('#car_engine').html('<i class="hint">Tu cilindrada:</i>');
     for(var w = 1; w < cardb[i][j][k][1].length; w++){
       options += "<li data-value='"+i+","+j+","+k+","+w+"'>"+cardb[i][j][k][1][w]+"</li>";
     }
@@ -86,10 +87,11 @@ function enable_field(name, options){
   $('#car_'+name+'_dropdown').parent().removeClass('disabled-element');
   $('#car_'+name+'_disabled_label').removeClass('disabled-element');
   $('#car_'+name+'_disabled_hint').hide();
-  animate_container_height($('#step_2'), 300);
+  animate_container_height($('#step_2'));
 }
 
 function disable_field(name){
+  $('#car_'+name).empty();
   $('#car_'+name+'_dropdown').empty();
   $('#car_'+name+'_dropdown').parent().addClass('disabled-element');
   $('#car_'+name+'_disabled_label').addClass('disabled-element');

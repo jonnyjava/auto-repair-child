@@ -194,6 +194,10 @@
     background-position: 0.35em 1.25em;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAALCAMAAAAKlC7mAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABVlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAyrY4yAAAAcHRSTlMAFTZMX36dxewbSML0tpODcmFQQA0vTjkcBDBzXFW49g/95smieT8qrsse/GoMGIis3OAZw3xgbKvxKemGWVd905mktY/vTfoOvwKCOHWMMvi36rvXmDQld7JY7iJRCu2wJhN/A3aguo1xhZCzzGcR0qQq3AAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAEOSURBVCjPY2AAAUYmZhZWNnYOTgbiABc3TwEU8PLxCwgKCYugyIuyiIlLSCKLSEnLyMrKFSABeQUkaU4OsJiikrKKKhfULDUGBnUNZB0FmsgmaiHLaLPr6DIw6LHpGyii6CgwxKkFCIyMGdihTBNTM3MLiF5LZC1WIBFrG1s7ewcg7ejk7MLgCrGRBSzv5g7meSBpUQPyPcECXt4Fij4MDL4M3GBFfFAFfmCeP5IWu4KCAD0oO7AgKFgjhCEUrCgMKhgO5rEhaYkoKIiEsaMKCqJFYxhiwZESBxONB+tJSIRykwSDCgr8YJJhBQXJIDolUSzVFx5TacFgkJ6RGRGRlZ2TCwJ58CgssMxnYAAARx1j8yr8xzQAAAAASUVORK5CYII=);
   }
+  /*review page*/
+  .review_panel{
+    margin-bottom: 4em;
+  }
   /*error page*/
   .apologize_text, .link{
     font-size: 1.5rem;
@@ -243,12 +247,21 @@
   }
   .car_details_message_box{
     font-size: 1.4rem;
-    line-height: 3.1em;
+    line-height: 3.15em;
     margin-left: 1em;
+  }
+  .wrong_car_details_button{
+    margin-left: 1em;
+  }
+  .col-lg-10.car_details_message_box{
+    width: 81%;
+  }
+  .col-lg-12.car_details_message_box{
+    width: 98%;
   }
   .filling_feedback{
     top: -3.75em;
-    left: 45%;
+    left: 43%;
     font-size: 1.5rem;
   }
   /*bootstrap overrides*/
