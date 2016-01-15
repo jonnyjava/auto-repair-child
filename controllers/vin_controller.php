@@ -29,8 +29,8 @@ function vin_number_is_valid($vin_number){
 function cache_vin_if_not_exists($vin_number){
   $allok = true;
   if (!file_exists("../vin_cache/".$vin_number.".html")) {
-    $vinrequest = file_get_contents("http://en.vindecoder.pl/".$vin_number);
-    if ($vinrequest != ""){
+    $vinrequest = get_remote_vin_page("http://en.vindecoder.pl/".$vin_number);
+    if ($vinrequest != ''){
         $myfile = fopen("../vin_cache/".$vin_number.".html", "w") or die("Unable to open file!");
         fwrite($myfile, $vinrequest);
         fclose($myfile);
@@ -41,6 +41,23 @@ function cache_vin_if_not_exists($vin_number){
     }
   }
   return $allok;
+}
+
+function get_remote_vin_page($url){
+  $ch = curl_init();
+  curl_setopt ($ch, CURLOPT_URL, $url);
+  curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, 5);
+  curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
+  $contents = curl_exec($ch);
+  if (curl_errno($ch)) {
+    $contents = '';
+  } else {
+    curl_close($ch);
+  }
+  if (!is_string($contents) || !strlen($contents)) {
+    $contents = '';
+  }
+  return $contents;
 }
 
 function ok_response($vin_number){
