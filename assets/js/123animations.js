@@ -1,3 +1,10 @@
+function animate_first_step(container){
+  container.animate({
+   opacity: 1,
+   left: "0px"
+  }, global_animation_time, function() { });
+}
+
 function animate_service_dropdowns(selected_option){
   var dropdown = selected_option.parent();
   var selected_service_category = selected_option.data('value');
@@ -121,4 +128,11 @@ function hide_message_line(){
   $('.js_car_details_message_box').slideToggle(global_animation_time, function(){
     animate_container_height($('#step_2'));
   });
+}
+
+function show_preloader(){
+  $('#preloader').fadeIn();
+}
+function hide_preloader(){
+  $('#preloader').fadeOut();
 }

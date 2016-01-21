@@ -14,12 +14,25 @@
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123checkbox.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123confirmation_page.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123dropdowns.css">
+<link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123preloader.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123progressform.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123tooltips.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingSmallMQ.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingMediumMQ.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingLargeMQ.css">
 <div class="onboarding_container" id="js_onboarding_container" data-partial-url="<?php echo bloginfo('stylesheet_directory'); ?>">
+<div id="preloader" class="preloader">
+  <span class="loader_circle one">
+     <span>1</span>
+    </span>
+    <span class="loader_circle two">
+      <span>2</span>
+    </span>
+    <span class="loader_circle three">
+      <span>3</span>
+    </span>
+    <div class="loader_text">Cargando...</div>
+  </div>
   <form class="msform" id="onboarding_form" autocomplete="false" autofill="false" action="<?php echo bloginfo('stylesheet_directory');?>" method="post">
     <ul class="progressbar" id="progressbar">
       <li class="active">Tu problema<br/><i class="hint" id="problem_breadcrumb"></i></li>
@@ -28,7 +41,7 @@
     </ul>
     <fieldset id="step_1">
       <h1 class="fs-title">¿Que necesitas?</h1>
-      <span id="js_dynamic_form_first_step"></span>
+      <span id="js_dynamic_form_first_step" class="first_step_container"></span>
       <div class="row js_services js_s0">
         <div class="col-md-4"><button class="btn btn-2 btn-sep icon-wrench js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Avería en el motor</button></div>
         <div class="col-md-4"><button class="btn btn-2 btn-sep icon-brakes js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Frenos</button></div>

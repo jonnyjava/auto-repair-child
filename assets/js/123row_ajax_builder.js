@@ -9,9 +9,22 @@ function build_row(fields, row_class){
   return content;
 }
 
+function load_partial(page){
+  var partial_folder_url = global_server_url + "/partials/_"+page;
+  var loaded_page = '';
+  $.ajax({type: 'GET', url: partial_folder_url, async: false}).done(
+    function(data){
+      loaded_page = data;
+    });
+  return loaded_page;
+}
+
+
 function build_first_step(){
+  var container = $('#js_dynamic_form_first_step');
   var content = build_row(['user_city', 'service_category'], 'row');
-  $('#js_dynamic_form_first_step').html(content);
+  container.html(content);
+  animate_first_step(container);
 }
 
 function build_third_step(){
