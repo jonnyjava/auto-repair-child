@@ -1,5 +1,4 @@
-function submit_form(clicked_button){
-  clicked_button = $('.js_saver');
+function submit_form(){
   var my_destination = global_server_url + "/controllers/demand_controller.php";
   var submitted_datas = $('#onboarding_form').serialize();
   $.ajax({type: 'POST', data: submitted_datas, url: my_destination, async: true}).done(function(response){
@@ -10,8 +9,10 @@ function submit_form(clicked_button){
     else{
       load_confirmation_page(parsed_response);
     }
-  }).error(function(parsed_response){
+  }).error(function(){
     load_error_page();
+  }).always(function(){
+    hide_preloader();
   });
   return false;
 }

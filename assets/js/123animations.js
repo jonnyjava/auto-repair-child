@@ -129,3 +129,10 @@ function hide_message_line(){
     animate_container_height($('#step_2'));
   });
 }
+
+function show_preloader(){
+  $('#preloader').fadeIn();
+}
+function hide_preloader(){
+  $('#preloader').fadeOut();
+}
