@@ -17,7 +17,7 @@ function get_car_details(clicked_button){
   var vin_number = $('#vin_number').val().toUpperCase();
   var serialized_datas = 'vin_number=' + vin_number;
   var my_destination = global_server_url + "/controllers/vin_controller.php";
-  $.ajax({type: 'POST', data: serialized_datas, url: my_destination, async: true}).success(function(response){
+  $.ajax({type: 'POST', data: serialized_datas, url: my_destination, async: true}).done(function(response){
     var parsed_response = jQuery.parseJSON(response);
     if(parsed_response.status == 400){
       show_vin_number_search_result('car_not_found');

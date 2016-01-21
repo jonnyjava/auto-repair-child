@@ -1,3 +1,10 @@
+function animate_first_step(container){
+  container.animate({
+   opacity: 1,
+   left: "0px"
+  }, global_animation_time, function() { });
+}
+
 function animate_service_dropdowns(selected_option){
   var dropdown = selected_option.parent();
   var selected_service_category = selected_option.data('value');

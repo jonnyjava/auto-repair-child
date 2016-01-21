@@ -2,7 +2,7 @@ function submit_form(clicked_button){
   clicked_button = $('.js_saver');
   var my_destination = global_server_url + "/controllers/demand_controller.php";
   var submitted_datas = $('#onboarding_form').serialize();
-  $.ajax({type: 'POST', data: submitted_datas, url: my_destination, async: true}).success(function(response){
+  $.ajax({type: 'POST', data: submitted_datas, url: my_destination, async: true}).done(function(response){
     var parsed_response = jQuery.parseJSON(response);
     if(parsed_response.status == 400){
       load_review_page(parsed_response);
@@ -121,10 +121,4 @@ function bind_review_field_with_original(fields, clicked_button){
       }
     });
   }
-}
-
-function load_partial(page){
-  var partial_folder_url = global_server_url + "/partials/_"+page;
-  var loaded_page = $.ajax({type: 'GET', url: partial_folder_url, async: false}).responseText;
-  return loaded_page;
 }
