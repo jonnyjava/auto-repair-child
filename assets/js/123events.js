@@ -62,7 +62,8 @@ function deactivate_dropdown_toggle(){
 function activate_form_submit(){
   $('.js_saver').click(function () {
     if (content_for_step_is_valid($(this))){
-      submit_form($(this));
+      show_preloader();
+      submit_form();
     }
   });
 }
