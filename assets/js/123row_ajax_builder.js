@@ -9,7 +9,31 @@ function build_row(fields, row_class){
   return content;
 }
 
-function enable_service_buttons(){
+function load_partial(page){
+  var partial_folder_url = global_server_url + "/partials/_"+page;
+  var loaded_page = '';
+  $.ajax({type: 'GET', url: partial_folder_url, async: false}).done(
+    function(data){
+      loaded_page = data;
+    });
+  return loaded_page;
+}
+
+
+function build_first_step(){
+  var container = $('#js_dynamic_form_first_step');
+  var content = build_row(['user_city', 'service_category'], 'row');
+  container.html(content);
+  animate_first_step(container);
+}
+
+function build_third_step(){
+  var content = build_row(['name_and_surnames'], 'row car-details-row');
+  content += build_row(['phone', 'email'], 'row car-details-row');
+  $('#js_dynamic_form_third_step').html(content);
+}
+
+function get_form_content(){
   $('.js_servicename').click(function(event){
     event.preventDefault();
     var has_details = $(this).data('car-details-fields');
@@ -44,19 +68,20 @@ function enable_service_buttons(){
     animate_to_next($(this));
     fill_problem_breadcrumb($(this).text());
     if (has_details){
-      activate_details_animation(300);
+      activate_details_animation();
       activate_vin_number_search();
       activate_vin_number_char_counter();
+      activate_undo_car_breadcrumb();
       append_examples();
     }
   });
 }
 
-function activate_details_animation(animation_time){
+function activate_details_animation(){
   $('.js_detail_toggler').click(function(){
-    hide_vin_line(animation_time);
-    $('.js_toggle_details').slideToggle(animation_time, function(){
-      animate_container_height($('#step_2'), animation_time);
+    hide_vin_line();
+    $('.js_toggle_details').slideToggle(global_animation_time, function(){
+      animate_container_height($('#step_2'));
     });
   });
 }

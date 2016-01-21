@@ -14,12 +14,25 @@
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123checkbox.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123confirmation_page.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123dropdowns.css">
+<link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123preloader.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123progressform.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123tooltips.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingSmallMQ.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingMediumMQ.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingLargeMQ.css">
 <div class="onboarding_container" id="js_onboarding_container" data-partial-url="<?php echo bloginfo('stylesheet_directory'); ?>">
+<div id="preloader" class="preloader">
+  <span class="loader_circle one">
+     <span>1</span>
+    </span>
+    <span class="loader_circle two">
+      <span>2</span>
+    </span>
+    <span class="loader_circle three">
+      <span>3</span>
+    </span>
+    <div class="loader_text">Cargando...</div>
+  </div>
   <form class="msform" id="onboarding_form" autocomplete="false" autofill="false" action="<?php echo bloginfo('stylesheet_directory');?>" method="post">
     <ul class="progressbar" id="progressbar">
       <li class="active">Tu problema<br/><i class="hint" id="problem_breadcrumb"></i></li>
@@ -28,7 +41,7 @@
     </ul>
     <fieldset id="step_1">
       <h1 class="fs-title">¿Que necesitas?</h1>
-      <span id="js_dynamic_form_first_step"></span>
+      <span id="js_dynamic_form_first_step" class="first_step_container"></span>
       <div class="row js_services js_s0">
         <div class="col-md-4"><button class="btn btn-2 btn-sep icon-wrench js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Avería en el motor</button></div>
         <div class="col-md-4"><button class="btn btn-2 btn-sep icon-brakes js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Frenos</button></div>
@@ -131,14 +144,14 @@
       <h1 class="fs-title">Que coche tienes?</h1>
       <span id="js_dynamic_form"></span>
       <div class="row car-details-row">
-        <div class="col-lg-12">
+        <div class="col-lg-12 no-lg-right-gutter">
           <textarea id="comments" name="comments" class="extra_info_textarea" placeholder="Quieres contarnos algo más?"></textarea>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-3 col-xs-0"></div>
         <div class="col-lg-3 col-xs-6">
-          <input type="button" class="previous animation-button js_undo_problem_breadcrumb" data-current-fieldset="step_2" value="Atrás">
+          <input type="button" class="previous animation-button js_undo_problem_breadcrumb js_undo_car_breadcrumb" data-current-fieldset="step_2" value="Atrás">
         </div>
         <div class="col-lg-3 col-xs-6">
         <input type="button" class="next go_next animation-button js_car_breadcrumb js_vin_numer_search_fallback" data-fieldset="step_2" value="Continuar">
@@ -188,7 +201,7 @@
           <input type="button" class="previous animation-button js_undo_car_breadcrumb" data-current-fieldset="step_3" value="Atrás">
         </div>
         <div class="col-lg-3 col-xs-6">
-        <input type="button" class="next go_next animation-button js_saver" data-fieldset="step_3" value="Enviar" />
+        <input type="button" class="go_next animation-button js_saver" id="submit_demand_button" data-fieldset="step_3" value="Enviar" />
         </div>
         <div class="col-lg-3 col-xs-0"></div>
       </div>
@@ -206,8 +219,10 @@
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123autocomplete.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123breadcrumbs.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123dropdowns.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123events.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123validations.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123form_submit.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123setup.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123vin_number.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123row_ajax_builder.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123car_selector.js" type="text/javascript"></script>

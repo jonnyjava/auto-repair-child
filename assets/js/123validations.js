@@ -66,15 +66,13 @@ function is_valid_email_format(value){
   return (value.match(/[A-Z0-9._%+-]+%40[A-Z0-9.-]+\.[A-Z]{2,4}/gi) !== null);
 }
 
-function phone_formatter(){
-  $('.js_phone_formatter').keyup(function(){
-    var value = $(this).val();
-    var cleaned_value = value.match(/[0-9]+/gi);
-    if (cleaned_value !== null){
-      $(this).val(cleaned_value);
-    }
-    else{
-      $(this).val('');
-    }
-  });
+function phone_autoformatter(filled_field){
+  var value = filled_field.val();
+  var cleaned_value = value.match(/[0-9]+/gi);
+  if (cleaned_value !== null){
+    filled_field.val(cleaned_value);
+  }
+  else{
+    filled_field.val('');
+  }
 }

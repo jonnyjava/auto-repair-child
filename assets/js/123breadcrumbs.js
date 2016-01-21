@@ -1,17 +1,3 @@
-function activate_breadcrumbs(){
-  $('.js_undo_problem_breadcrumb').click(function(){
-    undo_problem_breadcrumb();
-  });
-
-  $('.js_car_breadcrumb').click(function(){
-    fill_car_breadcrumb();
-  });
-
-  $('.js_undo_car_breadcrumb').click(function(){
-    undo_car_breadcrumb();
-  });
-}
-
 function fill_problem_breadcrumb(problem){
   var breadcrumb = $("#problem_breadcrumb");
   var service_category = $('#service_category').text();
@@ -53,14 +39,14 @@ function show_breadcrumb(breadcrumb){
   breadcrumb.animate({
     opacity: 1,
     left: "1px"
-  }, 600, function() {  });
+  }, global_slinding_time, function() {  });
 }
 
 function hide_breadcrumb(breadcrumb){
   breadcrumb.animate({
     opacity: 0,
     left: "-2000px"
-  }, 600, function() {  });
+  }, global_slinding_time, function() {  });
 }
 
 function retrieve_text(element){

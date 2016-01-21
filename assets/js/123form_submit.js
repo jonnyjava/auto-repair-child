@@ -1,17 +1,7 @@
-function enable_form_submit(){
-  $('.js_saver').click(function () {
-    if (content_for_step_is_valid($(this))){
-      submit_form($(this));
-    }
-  });
-}
-
-function submit_form(clicked_button){
-  clicked_button = $('.js_saver');
-  var submitted_form = clicked_button.closest('form')
-  var my_destination = submitted_form.attr('action')+"/controllers/demand_controller.php";
-  var submitted_datas = submitted_form.serialize();
-  $.ajax({type: 'POST', data: submitted_datas, url: my_destination, async: true}).success(function(response){
+function submit_form(){
+  var my_destination = global_server_url + "/controllers/demand_controller.php";
+  var submitted_datas = $('#onboarding_form').serialize();
+  $.ajax({type: 'POST', data: submitted_datas, url: my_destination, async: true}).done(function(response){
     var parsed_response = jQuery.parseJSON(response);
     if(parsed_response.status == 400){
       load_review_page(parsed_response);
@@ -19,42 +9,47 @@ function submit_form(clicked_button){
     else{
       load_confirmation_page(parsed_response);
     }
-  }).error(function(parsed_response){
+  }).error(function(){
     load_error_page();
+  }).always(function(){
+    hide_preloader();
   });
   return false;
 }
 
 function load_review_page(data){
-  $('#submit_result').html(load_partial('review_wrong_info.php'));
-  $('#wrong_fields_container').html( build_review_row(data.errors));
+  $('#submit_result').html(load_partial('review_wrong_info.html'));
+  $('#wrong_fields_container').html(build_review_row(data.errors));
 
   activate_city_autocomplete();
-  enable_form_submit();
-  animate_result($(this));
-  double_binding(data.errors);
+  activate_form_submit();
+  show_result();
+  activate_review_fields_and_original_binding(data.errors);
 }
 
 function load_confirmation_page(data){
-  $('#submit_result').html(load_partial('confirmation_page.php'));
+  $('#submit_result').html(load_partial('confirmation_page.html'));
   $.each(data.demand, function(key, value){
     $('#confirmation_'+key).html(value);
   });
+  parse_demand_details(data);
+  show_result();
+}
 
+function parse_demand_details(data){
   var details = jQuery.parseJSON(data.demand.demand_details);
-  var detail_contents = '';
+  var demand_details = '';
   $.each(details, function(key, value){
     if(key.indexOf('_option') == -1){
       if(key.indexOf('car_') != -1){
         $('#confirmation_'+key).html(value);
       }
       else{
-        detail_contents += build_confirmation_details_row(key, value);
+        demand_details += build_confirmation_details_row(key, value);
       }
     }
   });
-  $('#confirmation_details').html(detail_contents);
-  animate_result($(this));
+  $('#confirmation_details').html(demand_details);
 }
 
 function build_confirmation_details_row(key, value){
@@ -98,13 +93,13 @@ function translate(value){
 
 function load_error_page(){
   $('#submit_result').html(load_partial('error_page.html'));
-  animate_result($(this));
+  show_result();
 }
 
-function animate_result(clicked_button){
-  animate_to_next(clicked_button);
-  $('#progressbar').fadeOut(300, function(){
-    animate_container_height($('#step_4'), 400);
+function show_result(){
+  animate_to_next($('#submit_demand_button'));
+  $('#progressbar').fadeOut(global_animation_time, function(){
+    animate_container_height($('#step_4'));
   });
 }
 
@@ -118,21 +113,13 @@ function build_review_row(fields){
   return content;
 }
 
-function double_binding(fields){
-  $('.js_saver').click(function () {
-    for(var i = 0; i <fields.length; i++){
-      $.each(fields[i], function(key, value){
-        var doubled_field = $("[name='"+key+"'']");
-        if(doubled_field.length > 1){
-          doubled_field[0].value = doubled_field[1].value;
-        }
-      });
-    }
-  });
-}
-
-function load_partial(page){
-  var url = absolute_url+"/partials/_"+page;
-  var loaded_page = $.ajax({type: 'GET', url: url, async: false}).responseText;
-  return loaded_page;
+function bind_review_field_with_original(fields, clicked_button){
+  for(var i = 0; i <fields.length; i++){
+    $.each(fields[i], function(key, value){
+      var doubled_field = $("[name='"+key+"'']");
+      if(doubled_field.length > 1){
+        doubled_field[0].value = doubled_field[1].value;
+      }
+    });
+  }
 }

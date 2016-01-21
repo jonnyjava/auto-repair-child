@@ -1,19 +1,6 @@
-function activate_vin_number_char_counter(){
-  $('#vin_number').on('blur keyup', function(){
-    count_vin_number_chars($(this));
-  });
-}
-
 function count_vin_number_chars(filled_field){
   $('#vin_number_filled_chars').text(filled_field.val().length);
     $('#vin_number_tooltip').hide();
-}
-
-function activate_vin_number_search(){
-  $('.js_vin_numer_search_fallback').bind("click", search_by_vin_number);
-  $('#vin_number_searcher').click(function(){
-    search_by_vin_number();
-  });
 }
 
 function search_by_vin_number(){
@@ -21,24 +8,27 @@ function search_by_vin_number(){
   var vin_value = vin_field.val();
   var vin_is_valid = perform_dedicate_validation(vin_field, vin_value);
   if(vin_is_valid){
-    get_car_details($(this));
+    show_preloader();
+    get_car_details();
   }
 }
 
-function get_car_details(clicked_button){
+function get_car_details(){
   var vin_number = $('#vin_number').val().toUpperCase();
-  var serialized_datas = 'vin_number='+vin_number;
-  var my_destination = $('#onboarding_form').attr('action')+"/controllers/vin_controller.php";
-  $.ajax({type: 'POST', data: serialized_datas, url: my_destination, async: true}).success(function(response){
+  var serialized_datas = 'vin_number=' + vin_number;
+  var my_destination = global_server_url + "/controllers/vin_controller.php";
+  $.ajax({type: 'POST', data: serialized_datas, url: my_destination, async: true}).done(function(response){
     var parsed_response = jQuery.parseJSON(response);
     if(parsed_response.status == 400){
-      vin_not_found();
+      show_vin_number_search_result('car_not_found');
     }
     else{
       vin_found(parsed_response);
     }
   }).error(function(){
-    vin_not_found();
+    show_vin_number_search_result('car_not_found');
+  }).always(function(){
+    hide_preloader();
   });
 }
 
@@ -46,18 +36,13 @@ function vin_found(parsed_response){
   var parsed_car_details = jQuery.parseJSON(parsed_response.car_details);
   if (parsed_car_details.length != 0){
     autofill_car_details_dropdowns(parsed_car_details);
-    var animation_time = 300;
-    animate_details('car_found', animation_time);
+    show_vin_number_search_result('car_found');
     activate_reset_car_details_by_user();
     deactivate_dropdown_toggle();
   }
   else{
-    vin_not_found();
+    show_vin_number_search_result('car_not_found');
   }
-}
-
-function vin_not_found(){
-  animate_details('car_not_found', 300);
 }
 
 function autofill_car_details_dropdowns(car_details){
@@ -86,15 +71,6 @@ function reset_car_detail_fields(){
   disable_field('engine');
   disable_field('engine_letters');
   toggle_caret();
-}
-
-function activate_reset_car_details_by_user(){
-  $('.js_car_detail_wrong').show();
-  $('.js_car_detail_wrong').click(function(){
-    hide_message_line(300);
-    reset_car_detail_fields();
-    activate_dropdown_toggle();
-  });
 }
 
 function disable_vin_validation(){
