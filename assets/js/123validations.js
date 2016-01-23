@@ -4,7 +4,6 @@ function content_for_step_is_valid(clicked_button){
   var step_values = $('#'+fieldset_id).serialize();
   step_values = serialize_unchecked(fieldset_id, step_values);
   step_values = step_values.split('&');
-
   for( var i = 0; i < (step_values.length); i++){
     var keyValue = step_values[i].split('=');
     if(keyValue[0] != 'comments'){
@@ -24,6 +23,9 @@ function perform_dedicate_validation(field, value){
     case 'drop_or_radio':
       field_id = field.data('parent-id');
       field_is_valid = ($('#'+field_id).text() == $('#'+field_id+'_id').val());
+      break;
+    case 'address':
+      field_is_valid = (value.length >= 6) && ( /^[\+a-zA-Z0-9%]+$/i.test(value) );
       break;
     case 'only_letters':
       field_is_valid = (value.length >= 10) && (/^[a-z\+]+$/i.test(value) );
@@ -53,13 +55,6 @@ function serialize_unchecked(step, step_values){
     step_values += '&'+this.name+'=false';
   });
   return step_values;
-}
-
-function hide_tooltip(){
-  $('.js_hide_tooltip').click(function(){
-    var tooltip_id = $(this).data('parent-id')+'_tooltip';
-    $('#'+tooltip_id).hide();
-  });
 }
 
 function is_valid_email_format(value){

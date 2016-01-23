@@ -1,8 +1,9 @@
-<div class="col-lg-2 no-lg-right-gutter">
+<div class="col-lg-2 no-lg-right-gutter js_hide_tooltip" data-parent-id="user_city">
   <label for="city" class="orange-label">Tu ciudad</label>
 </div>
-<div class="col-lg-4 no-lg-left-gutter bottom-gutter">
+<div class="col-lg-4 no-lg-left-gutter bottom-gutter js_hide_tooltip" data-parent-id="user_city">
   <input type="text" name="city" style="display:none;"/>
-  <input type="text" id="user_city" name="user_city" class="js_user_city_autocomplete" placeholder="Por ejemplo: Valencia" tabindex="2" autocomplete="false" autofill="false"/>
+  <input type="text" id="user_city" name="user_city" class="js_user_city_autocomplete" data-validation-type="address" placeholder="Por ejemplo: Valencia" tabindex="2" autocomplete="false" autofill="false"/>
   <div class="help"><i>Indica tu ciudad o tu codigo postal</i></div >
+  <span id="user_city_tooltip" class="tooltips normal_size">Donde estás?</span>
 </div>
