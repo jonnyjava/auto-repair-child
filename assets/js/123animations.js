@@ -130,6 +130,11 @@ function hide_message_line(){
   });
 }
 
+function hide_tooltip(clicked_field){
+  var tooltip_id = clicked_field.data('parent-id')+'_tooltip';
+  $('#'+tooltip_id).hide();
+}
+
 function show_preloader(){
   $('#preloader').fadeIn();
 }
