@@ -145,7 +145,10 @@
       <span id="js_dynamic_form"></span>
       <div class="row car-details-row">
         <div class="col-lg-12 no-lg-right-gutter">
-          <textarea id="comments" name="comments" class="extra_info_textarea" placeholder="Quieres contarnos algo más?"></textarea>
+          <textarea id="comments" name="comments" class="extra_info_textarea js_char_countable" placeholder="Quieres contarnos algo más?" maxlength="255"></textarea>
+          <span class="textarea_filling_feedback">
+            <span id="comments_filled_chars">0</span>/255
+          </span>
         </div>
       </div>
       <div class="row">

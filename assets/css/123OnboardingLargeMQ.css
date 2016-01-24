@@ -259,9 +259,14 @@
   .col-lg-12.car_details_message_box{
     width: 98%;
   }
-  .filling_feedback{
+  .input_filling_feedback{
     top: -3.75em;
     left: 43%;
+    font-size: 1.5rem;
+  }
+  .textarea_filling_feedback{
+    top: -2em;
+    left: 48%;
     font-size: 1.5rem;
   }
   /*bootstrap overrides*/

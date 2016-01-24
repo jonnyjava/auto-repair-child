@@ -1,6 +1,9 @@
 function content_for_step_is_valid(clicked_button){
   var step_is_valid = true;
   var fieldset_id = clicked_button.data('fieldset');
+  strip_html_tags('comments');
+  strip_html_tags('name_and_surnames');
+  strip_html_tags('phone');
   var step_values = $('#'+fieldset_id).serialize();
   step_values = serialize_unchecked(fieldset_id, step_values);
   step_values = step_values.split('&');
@@ -70,4 +73,14 @@ function phone_autoformatter(filled_field){
   else{
     filled_field.val('');
   }
+}
+
+function strip_html_tags(field_name){
+  var dirty_input = $('#'+field_name).val();
+  var cleaned_input = '';
+  var tmp = document.createElement('DIV');
+  tmp.innerHTML = dirty_input.replace('src', '');
+  cleaned_input = (tmp.textContent || tmp.innerText  || '');
+  cleaned_input = cleaned_input.replace(/\W/gi, ' ').trim();
+  $('#'+field_name).val(cleaned_input);
 }

@@ -30,7 +30,7 @@ function car_model_selector(){
     var j = model_selected[1];
     var options = '';
 
-    $('#car_year').html('<i class="hint">Tu año:</i>');
+    $('#car_year').html("<i class='hint'>Tu año:</i>");
     for(var k = 1; k < cardb[i][j].length; k++){
       options += "<li data-value='"+i+","+j+","+k+"'>"+cardb[i][j][k][0]+"</li>";
     }
@@ -56,7 +56,7 @@ function car_year_selector(){
     var k = year_selected[2];
     var options = '';
 
-    $('#car_engine').html('<i class="hint">Tu cilindrada:</i>');
+    $('#car_engine').html("<i class='hint'>Tu cilindrada:</i>");
     for(var w = 1; w < cardb[i][j][k][1].length; w++){
       options += "<li data-value='"+i+","+j+","+k+","+w+"'>"+cardb[i][j][k][1][w]+"</li>";
     }

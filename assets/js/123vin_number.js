@@ -1,6 +1,7 @@
-function count_vin_number_chars(filled_field){
-  $('#vin_number_filled_chars').text(filled_field.val().length);
-    $('#vin_number_tooltip').hide();
+function count_chars(filled_field){
+  var field_id = filled_field.attr('id');
+  $('#'+field_id+'_filled_chars').text(filled_field.val().length);
+  $('#'+field_id+'_tooltip').hide();
 }
 
 function search_by_vin_number(){

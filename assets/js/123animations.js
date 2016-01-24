@@ -1,7 +1,7 @@
 function animate_first_step(container){
   container.animate({
    opacity: 1,
-   left: "0px"
+   left: '0px'
   }, global_animation_time, function() { });
 }
 

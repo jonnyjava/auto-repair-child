@@ -64,10 +64,10 @@ function get_form_content(event, clicked_button){
   car_selector();
   animate_to_next(clicked_button);
   fill_problem_breadcrumb(clicked_button.text());
+  activate_char_counter();
   if (has_details){
     activate_details_animation();
     activate_vin_number_search();
-    activate_vin_number_char_counter();
     activate_undo_car_breadcrumb();
     append_examples();
   }
