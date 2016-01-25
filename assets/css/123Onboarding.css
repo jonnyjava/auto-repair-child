@@ -152,7 +152,7 @@ li > .hint{
   color: #ffffff;
   font-weight: bolder;
  }
-.filling_feedback{
+.input_filling_feedback, .textarea_filling_feedback{
   color: #666666;
   position: relative;
 }

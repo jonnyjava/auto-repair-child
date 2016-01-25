@@ -140,8 +140,13 @@
     position: relative;
     left: 5%;
    }
-  .filling_feedback{
+  .input_filling_feedback{
     top: -3.85em;
+    left: 40%;
+    font-size: 1.25rem;
+  }
+  .textarea_filling_feedback{
+    top: -.55em;
     left: 40%;
     font-size: 1.25rem;
   }

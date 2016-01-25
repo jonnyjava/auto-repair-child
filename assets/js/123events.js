@@ -93,9 +93,9 @@ function activate_form_submit(){
   });
 }
 
-function activate_vin_number_char_counter(){
-  $('#vin_number').on('blur keyup', function(){
-    count_vin_number_chars($(this));
+function activate_char_counter(){
+  $('.js_char_countable').on('blur keyup', function(){
+    count_chars($(this));
   });
 }
 

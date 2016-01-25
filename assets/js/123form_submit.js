@@ -1,5 +1,5 @@
 function submit_form(){
-  var my_destination = global_server_url + "/controllers/demand_controller.php";
+  var my_destination = global_server_url + '/controllers/demand_controller.php';
   var submitted_datas = $('#onboarding_form').serialize();
   $.ajax({type: 'POST', data: submitted_datas, url: my_destination, async: true}).done(function(response){
     var parsed_response = jQuery.parseJSON(response);
@@ -104,7 +104,7 @@ function show_result(){
 }
 
 function build_review_row(fields){
-  var content = "";
+  var content = '';
   for(var i = 0; i <fields.length; i++){
     $.each(fields[i], function(key, value){
       content += "<div class='row car-details-row'>"+load_partial(key+'.html')+"</div>";

@@ -23,7 +23,7 @@ $demand->phone = raw_homemade_sanitize($_POST['phone']);
 $demand->email = raw_homemade_sanitize($_POST['email']);
 $demand->wants_newsletter = raw_homemade_sanitize($_POST['wants_newsletter']);
 $demand->accepts_privacy = raw_homemade_sanitize($_POST['accepts_privacy']);
-$demand->comments = raw_homemade_sanitize($_POST['comments']);
+$demand->comments = substr(raw_homemade_sanitize($_POST['comments']), 0, 255);
 $demand->demand_details = details_as_json($_POST);
 
 if ($demand->is_valid()){
