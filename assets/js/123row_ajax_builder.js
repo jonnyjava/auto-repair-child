@@ -1,7 +1,7 @@
 function build_row(fields, row_class){
   var content = '';
   for(var i = 0; i <fields.length; i++){
-    if (fields[i] != ''){
+    if (fields[i] !== ''){
       content += load_partial(fields[i]+'.html');
     }
   }

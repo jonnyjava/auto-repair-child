@@ -53,7 +53,8 @@ Class DemandMailer {
       "to" => $demand->email,
       "attr" => array("USERNAME"=>$demand->name_and_surnames,"SUBJECT"=>"Tu peticion de servicio en 123mecanico.es", "CONTENT" => $this->build_html_content($demand))
     );
-    return $res = $mailin->send_transactional_template($data);
+    $res = $mailin->send_transactional_template($data);
+    return $res;
   }
 
   private function send_mail_with_gmail($demand){
@@ -122,10 +123,22 @@ Class DemandMailer {
 
   private function build_step2($demand){
     $text = $this->build_step_header('Tu coche',2);
-    $text .= $this->build_step_row('Marca', $demand->brand);
-    $text .= $this->build_step_row('Modelo', $demand->model);
-    $text .= $this->build_step_row('Periodo', $demand->year);
-    $text .= $this->build_step_row('Motor', $demand->engine." ".$demand->engine_letters);
+    $brand = $demand->brand;
+    $model = $demand->model;
+    $year = $demand->year;
+    $engine = $demand->engine;
+
+    if(strlen($brand) <1){
+      $text .= $this->build_step_row('No necesitamos conocerlo.', '');
+    }
+    else{
+      $text .= $this->build_step_row('Marca', $brand);
+      $text .= $this->build_step_row('Modelo', $model);
+      $text .= $this->build_step_row('Periodo', $year);
+      if(strlen($engine) >1){
+        $text .= $this->build_step_row('Motor', $engine." ".$demand->engine_letters);
+      }
+    }
     return $text;
   }
 

@@ -9,7 +9,7 @@ function content_for_step_is_valid(clicked_button){
   step_values = step_values.split('&');
   for( var i = 0; i < (step_values.length); i++){
     var keyValue = step_values[i].split('=');
-    if(keyValue[0] != 'comments'){
+    if(keyValue[0] !== 'comments'){
       var field = $('#'+keyValue[0]);
       var value = keyValue[1].trim();
       step_is_valid = (perform_dedicate_validation(field, value) && step_is_valid);
@@ -25,7 +25,7 @@ function perform_dedicate_validation(field, value){
   switch(validation_type) {
     case 'drop_or_radio':
       field_id = field.data('parent-id');
-      field_is_valid = ($('#'+field_id).text() == $('#'+field_id+'_id').val());
+      field_is_valid = ($('#'+field_id).text() === $('#'+field_id+'_id').val());
       break;
     case 'address':
       field_is_valid = (value.length >= 6) && ( /^[\+a-zA-Z0-9%]+$/i.test(value) );
@@ -43,7 +43,7 @@ function perform_dedicate_validation(field, value){
       field_is_valid =  (value.length >= 6) && is_valid_email_format(value);
       break;
     case 'mandatory_check':
-      field_is_valid = (value == 'Si');
+      field_is_valid = (value === 'Si');
       break;
     default:
       field_is_valid = true;

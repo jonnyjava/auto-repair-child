@@ -12,7 +12,7 @@ function animate_service_dropdowns(selected_option){
   $('.'+selected_service_category).delay(global_animation_time).fadeIn({
     duration: global_animation_time,
     start: function(){
-      if((selected_service_category != 'js_s1' ) && (selected_service_category != 'js_s11')){
+      if((selected_service_category !== 'js_s1' ) && (selected_service_category !== 'js_s11')){
         animate_container_height($('#step_1'));
       }
     }
@@ -21,6 +21,7 @@ function animate_service_dropdowns(selected_option){
 }
 
 function animate_to_next(clicked_button){
+
   if (animating){ return false; }
   animating = true;
   var fs_id = clicked_button.data('fieldset');
@@ -30,7 +31,7 @@ function animate_to_next(clicked_button){
   next_fs.show();
   current_fs.animate({ opacity: 0 }, {
       step: function (now, mx) {
-          if(now == 1){animate_container_height(next_fs);}
+          if(now === 1){animate_container_height(next_fs);}
           scale = 1 - (1 - now) * 0.2;
           left = now * 50 + '%';
           opacity = 1 - now;
@@ -47,6 +48,7 @@ function animate_to_next(clicked_button){
         },
       easing: 'easeInOutBack'
   });
+  animate_to_top();
 }
 
 function animate_to_previous(clicked_button){
@@ -60,7 +62,7 @@ function animate_to_previous(clicked_button){
   previous_fs.show();
   current_fs.animate({ opacity: 0 }, {
       step: function (now, mx) {
-          if(now == 1){animate_container_height(previous_fs);}
+          if(now === 1){animate_container_height(previous_fs);}
           scale = 0.8 + (1 - now) * 0.2;
           left = (1 - now) * 50 + '%';
           opacity = 1 - now;
@@ -77,6 +79,11 @@ function animate_to_previous(clicked_button){
       },
       easing: 'easeInOutBack'
   });
+  animate_to_top();
+}
+
+function animate_to_top(){
+  $("html, body").animate({ scrollTop: 0 }, global_animation_time);
 }
 
 function animate_container_height(current_step){
@@ -86,11 +93,11 @@ function animate_container_height(current_step){
   var new_height = step_height + form_height + progressbar_height;
   var actual_height = $('.onboarding_container').height();
   var min_height = $('.onboarding_container').css('min-height')
-  min_height = parseInt(min_height.substring(0, min_height.length - 2));
+  min_height = parseInt(min_height.substring(0, min_height.length - 2), 10);
   if (new_height < min_height){
     new_height = min_height;
   }
-  if (new_height != actual_height){
+  if (new_height !== actual_height){
     $('.onboarding_container').animate({
       height: new_height
     }, global_animation_time);

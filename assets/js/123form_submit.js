@@ -3,7 +3,7 @@ function submit_form(){
   var submitted_datas = $('#onboarding_form').serialize();
   $.ajax({type: 'POST', data: submitted_datas, url: my_destination, async: true}).done(function(response){
     var parsed_response = jQuery.parseJSON(response);
-    if(parsed_response.status == 400){
+    if(parsed_response.status === 400){
       load_review_page(parsed_response);
     }
     else{
@@ -28,11 +28,26 @@ function load_review_page(data){
 }
 
 function load_confirmation_page(data){
+  var there_is_no_car = false;
+  var there_is_no_engine = false;
   $('#submit_result').html(load_partial('confirmation_page.html'));
   $.each(data.demand, function(key, value){
+    if(key === 'brand' && value === ''){
+      there_is_no_car = true;
+    }
+    if(key === 'engine' && value === ''){
+      there_is_no_engine = true;
+    }
     $('#confirmation_'+key).html(value);
   });
   parse_demand_details(data);
+  if(there_is_no_car){
+    var content = "<li class='list-group-item'><span class='horizontal_list_header'>No necesitamos conocerlo</span></li>";
+    $('#confirmation_car_details').html(content);
+  }
+  if(there_is_no_engine){
+    $('#confirmation_engine_section').empty();
+  }
   show_result();
 }
 

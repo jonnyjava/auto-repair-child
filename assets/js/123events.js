@@ -1,3 +1,10 @@
+function activate_keyboard_events(){
+  $(document).keypress(function(event){
+    disable_enter_key(event);
+    enable_esc_key_as_dropdown_closer(event);
+  });
+}
+
 function prevent_events_defaults(){
   $('button').click(function(event){
     event.preventDefault();
@@ -82,6 +89,12 @@ function activate_dropdown_toggle(){
 function deactivate_dropdown_toggle(){
   $('.js_dropdown_opener').unbind('click', dropdown_toggler);
   $('.js_dropdown_menu > li').unbind('click', dropdown_toggler);
+}
+
+function activate_dropdown_autoclose(){
+  $(document).click(function(event){
+    dropdown_autoclose(event);
+  });
 }
 
 function activate_form_submit(){

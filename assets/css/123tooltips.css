@@ -1,7 +1,8 @@
 .tooltips{
   position: absolute;
   color: #FFFFFF;
-  background: #E67500;
+  background: #666666;
+  text-shadow: 1px 1px 1px #000000;
   line-height: 3.25rem;
   text-align: center;
   display: none;
@@ -16,19 +17,19 @@
   width: 100%;
   -webkit-animation-name: bouncer_for_smalls;
   -webkit-animation-duration: 1s;
-  -webkit-animation-iteration-count: 3;
+  -webkit-animation-iteration-count: 5;
   animation-name: bouncer_for_smalls;
   animation-duration: 1s;
-  animation-iteration-count: 3;
+  animation-iteration-count: 5;
 }
 
 .normal_size{
   -webkit-animation-name: bouncer_for_bigs;
   -webkit-animation-duration: 1s;
-  -webkit-animation-iteration-count: 3;
+  -webkit-animation-iteration-count: 5;
   animation-name: bouncer_for_bigs;
   animation-duration: 1s;
-  animation-iteration-count: 3;
+  animation-iteration-count: 5;
 }
 
 .tooltips:after {
@@ -36,9 +37,9 @@
   position: absolute;
   top: 100%;
   left: 50%;
-  margin-left: -8px;
+  margin-left: -0.75em;
   width: 0; height: 0;
-  border-top: 8px solid #E67500;
-  border-right: 8px solid transparent;
-  border-left: 8px solid transparent;
+  border-top: 0.75em solid #666666;
+  border-right: 0.75em solid transparent;
+  border-left: 0.75em solid transparent;
 }

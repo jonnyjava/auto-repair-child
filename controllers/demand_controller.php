@@ -7,6 +7,8 @@ $mail_model = '../models/123mailer.php';
 require $demand_model;
 require $mail_model;
 
+$posted_values = $_POST;
+
 $response = '';
 $demand = new Demand();
 $demand->city = raw_homemade_sanitize($_POST['user_city']);
@@ -24,7 +26,7 @@ $demand->email = raw_homemade_sanitize($_POST['email']);
 $demand->wants_newsletter = raw_homemade_sanitize($_POST['wants_newsletter']);
 $demand->accepts_privacy = raw_homemade_sanitize($_POST['accepts_privacy']);
 $demand->comments = substr(raw_homemade_sanitize($_POST['comments']), 0, 255);
-$demand->demand_details = details_as_json($_POST);
+$demand->demand_details = details_as_json();
 
 if ($demand->is_valid()){
   save($wpdb, $demand);
@@ -33,7 +35,7 @@ if ($demand->is_valid()){
   $response = json_encode(array('status' => 200, 'demand' => $demand, 'result' => $res ));
 }
 else{
-  $response = json_encode(array('status' => 400, 'errors' => $demand->errorMessages));
+  $response = json_encode(array('status' => 400, 'errors' => $demand->error_messages));
 }
 echo $response;
 
@@ -49,16 +51,16 @@ function raw_homemade_sanitize($input) {
 function raw_dirty_replace($input){
   $suspicious_to_replace = array("DROP", "TABLE", "DATABASE", "ALTER", "CREATE", "SELECT", "UNION", "TRUNCATE", "DELETE", "JOIN","drop", "table", "database", "alter", "create", "select", "union", "truncate", "delete", "join");
   $input = str_replace($suspicious_to_replace, "", $input);
-  $undesired_chars_to_replace = array(":", ";", ")", "(", "'", "-");
-  $input = str_replace($undesired_chars_to_replace, "", $input);
+  $chars_to_replace = array(":", ";", ")", "(", "'", "-");
+  $input = str_replace($chars_to_replace, "", $input);
   $input = preg_replace('!\s+!', ' ', $input);
   return $input;
 }
 
-function details_as_json($inputs){
+function details_as_json(){
   $details = [];
   $basic_values = array("city", "user_city", "service_category_id", "service_id", "vin_number", "brand", "model", "year", "engine", "engine_letters", "name_and_surnames", "phone", "email", "wants_newsletter", "accepts_privacy", "comments");
-  foreach ($_POST as $key => $value) {
+  foreach ($posted_values as $key => $value) {
     if( !(in_array($key, $basic_values)) ){
       $details[$key] = raw_dirty_replace($value);
     }

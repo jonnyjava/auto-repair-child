@@ -14,7 +14,6 @@ $(document).ready(function(){
 function setup_form(){
   set_global_server_url();
   preload_car_database();
-  disable_enter_key();
   prevent_events_defaults();
   disable_google_autofill();
 }
@@ -25,6 +24,7 @@ function build_content(){
 }
 
 function run_activations(){
+  activate_keyboard_events();
   activate_hide_tooltip();
   activate_phone_autoformatter();
   activate_city_autocomplete();
@@ -34,4 +34,5 @@ function run_activations(){
   activate_service_dropdown();
   activate_breadcrumbs();
   activate_form_submit();
+  activate_dropdown_autoclose();
 }
