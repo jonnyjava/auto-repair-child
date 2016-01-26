@@ -21,6 +21,9 @@ function fill_car_breadcrumb(){
       breadcrumb_text += ' > ' +car_year;
     }
   }
+  if(breadcrumb_text.trim().length <1){
+    breadcrumb_text = "Cualquiera";
+  }
   breadcrumb.text(breadcrumb_text);
   show_breadcrumb(breadcrumb);
 }
