@@ -42,16 +42,17 @@ Class VinLookup {
     $car_details = [];
     $api_response = $this->api_connector->get_car_info($this->vin);
     if (isset($api_response)){
-      $raw_lookup = $this->api_parser->extract_raw_lookup($api_response, $this->vin);
-      $this->vin_db_connector->save_raw_lookup($raw_lookup, $this->vin);
-      $car_details = $this->api_parser->parse_api_response($api_response, $this->vin);
-      $this->delete_api_response();
+      $car_details = $this->api_parser->parse_api_response($this->vin);
       if (isset($car_details) && count($car_details) > 0 ){
+        $car_details = json_encode($car_details);
         $this->vin_db_connector->save_parsed_details($car_details, $this->vin);
+        $raw_lookup = $this->api_parser->extract_raw_lookup($this->vin);
+        $this->vin_db_connector->save_raw_lookup($raw_lookup, $this->vin);
       }
       else{
         $car_details = $this->retrieve_car_details_with_vin_number($this->vin);
       }
+      $this->delete_api_response();
     }
     else{
       $car_details = $this->retrieve_car_details_with_vin_number($this->vin);

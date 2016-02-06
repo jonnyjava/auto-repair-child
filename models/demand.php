@@ -29,13 +29,13 @@ Class Demand {
   }
 
   private function validate_city(){
-    $is_valid = true;
-    if($this->city == ''){
+    $is_valid = ($this->city != '');
+    if(!$is_valid){
       $this->add_error_message('city');
-      $is_valid = false;
     }
     return $is_valid;
   }
+
 
   private function validate_service_category_id(){
     $is_valid = true;
@@ -56,28 +56,25 @@ Class Demand {
   }
 
   private function validate_name_and_surnames(){
-    $is_valid = true;
-    if($this->name_and_surnames == ''){
+    $is_valid = ($this->name_and_surnames != '');
+    if(!$is_valid){
       $this->add_error_message('name_and_surnames');
-      $is_valid = false;
     }
     return $is_valid;
   }
 
   private function validate_phone(){
-    $is_valid = true;
-    if($this->phone == ''){
+    $is_valid = ($this->phone != '');
+    if(!$is_valid){
       $this->add_error_message('phone');
-      $is_valid = false;
     }
     return $is_valid;
   }
 
   private function validate_email(){
-    $is_valid = true;
-    if($this->email == ''){
+    $is_valid = ($this->email != '');
+    if(!$is_valid){
       $this->add_error_message('email');
-      $is_valid = false;
     }
     return $is_valid;
   }

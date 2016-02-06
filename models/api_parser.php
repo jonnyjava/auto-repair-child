@@ -1,7 +1,12 @@
 <?php
-Class ApiParser{
+require '../models/car.php';
 
-  public function extract_raw_lookup($api_response, $vin){
+Class ApiParser{
+  public function __construct(){
+    $this->car = New Car();
+  }
+
+  public function extract_raw_lookup($vin){
     $raw_info = [];
     $doc = new DOMDocument();
     $doc->preserveWhiteSpace = false;
@@ -14,34 +19,33 @@ Class ApiParser{
     return $raw_info;
   }
 
-  public function parse_api_response($api_response, $vin){
-    $car_details = [];
+  public function parse_api_response($vin){
     $doc = new DOMDocument();
     $doc->loadHTMLFile("../vin_cache/".$vin.".html");
     $doc->validateOnParse = true;
     $mytable = $doc->getElementsByTagName('table')[2];
+    $car_details = $this->extract_car_details_from_DOM($mytable);
+    return $car_details;
+  }
+
+  private function extract_car_details_from_DOM($mytable){
     foreach($mytable->childNodes as $nodename){
       switch ($nodename->childNodes[0]->nodeValue) {
         case 'Make':
-          $car_details['brand'] = $nodename->childNodes[1]->nodeValue;
+          $this->car->brand = $nodename->childNodes[1]->nodeValue;
           break;
         case 'Model':
-          $car_details['model'] = $nodename->childNodes[1]->nodeValue;
+          $this->car->model = $nodename->childNodes[1]->nodeValue;
           break;
         case 'Model year':
-          $car_details['year'] = $nodename->childNodes[1]->nodeValue;
+          $this->car->year = $nodename->childNodes[1]->nodeValue;
           break;
         case 'Engine type':
-          $car_details['engine'] = $nodename->childNodes[1]->nodeValue;
+          $this->car->engine = $nodename->childNodes[1]->nodeValue;
           break;
       }
     }
-    if (isset($car_details) && count($car_details) > 0 ){
-      $car_details = json_encode($car_details);
-    }
-    else{
-      $car_details = [];
-    }
+    $car_details = $this->car->details_as_array();
     return $car_details;
   }
 
@@ -49,14 +53,17 @@ Class ApiParser{
     $innerHTML = "";
     $children  = $element->childNodes;
     foreach ($children as $child){
-      $extracted_raw_Html = "";
-      $extracted_raw_Html = $element->ownerDocument->saveHTML($child);
-      $extracted_raw_Html = trim(strip_tags($extracted_raw_Html));
-      $extracted_raw_Html = preg_replace("/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/", "", $extracted_raw_Html);
-      $extracted_raw_Html = str_replace("\n", " - ", $extracted_raw_Html);
-      $innerHTML .= $extracted_raw_Html;
+      $raw_content = $element->ownerDocument->saveHTML($child);
+      $innerHTML .= $this->buildInnerHtml($raw_content);
     }
     return $innerHTML;
+  }
+
+  private function buildInnerHtml($raw_content){
+    $raw_content = trim(strip_tags($raw_content));
+    $raw_content = preg_replace("/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/", "", $raw_content);
+    $raw_content = str_replace("\n", " - ", $raw_content);
+    return $raw_content;
   }
 }
 ?>
