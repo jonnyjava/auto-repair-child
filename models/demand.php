@@ -1,6 +1,6 @@
 <?php
 Class Demand {
-  public $errorMessages = [];
+  public $error_messages = [];
   public $city = "";
   public $service_category_id = "";
   public $service_id = "";
@@ -20,6 +20,8 @@ Class Demand {
   public function is_valid() {
     $object_is_valid = false;
     $object_is_valid = $this->validate_city();
+    $object_is_valid = $this->validate_service_category_id() && $object_is_valid;
+    $object_is_valid = $this->validate_service_id() && $object_is_valid;
     $object_is_valid = $this->validate_name_and_surnames() && $object_is_valid;
     $object_is_valid = $this->validate_phone() && $object_is_valid;
     $object_is_valid = $this->validate_email() && $object_is_valid;
@@ -27,73 +29,70 @@ Class Demand {
   }
 
   private function validate_city(){
-    if($this->city == ''){
+    $is_valid = ($this->city != '');
+    if(!$is_valid){
       $this->add_error_message('city');
-      return false;
     }
-    else {
-      return true;
-    }
+    return $is_valid;
   }
+
+
   private function validate_service_category_id(){
+    $is_valid = true;
     if($this->service_category_id == '' || $this->service_category_id == '0'){
       $this->add_error_message('service_category_id');
-      return false;
+      $is_valid = false;
     }
-    else {
-      return true;
-    }
+    return $is_valid;
   }
+
   private function validate_service_id(){
+    $is_valid = true;
     if($this->service_id == '' || $this->service_id == '0'){
       $this->add_error_message('service_id');
-      return false;
+      $is_valid = false;
     }
-    else {
-      return true;
-    }
+    return $is_valid;
   }
+
   private function validate_name_and_surnames(){
-    if($this->name_and_surnames == ''){
+    $is_valid = ($this->name_and_surnames != '');
+    if(!$is_valid){
       $this->add_error_message('name_and_surnames');
-      return false;
     }
-    else {
-      return true;
-    }
+    return $is_valid;
   }
+
   private function validate_phone(){
-    if($this->phone == ''){
+    $is_valid = ($this->phone != '');
+    if(!$is_valid){
       $this->add_error_message('phone');
-      return false;
     }
-    else {
-      return true;
-    }
+    return $is_valid;
   }
+
   private function validate_email(){
-    if($this->email == ''){
+    $is_valid = ($this->email != '');
+    if(!$is_valid){
       $this->add_error_message('email');
-      return false;
     }
-    else {
-      return true;
-    }
+    return $is_valid;
   }
+
   private function add_error_message($type){
 
     switch($type){
       case 'city':
-        $this->errorMessages[] = array("user_city" => "La ciudad no puede estar vacia");
+        $this->error_messages[] = array("user_city" => "La ciudad no puede estar vacia");
         break;
       case 'name_and_surnames':
-        $this->errorMessages[] = array("name_and_surnames" => "Nombre y apellidos non validos");
+        $this->error_messages[] = array("name_and_surnames" => "Nombre y apellidos non validos");
         break;
       case 'phone':
-        $this->errorMessages[] = array("phone" => "Numero de telefono invalido");
+        $this->error_messages[] = array("phone" => "Numero de telefono invalido");
         break;
       case 'email':
-        $this->errorMessages[] = array("email" => "Mail non valida");
+        $this->error_messages[] = array("email" => "Mail non valida");
         break;
     }
   }

@@ -17,7 +17,7 @@ function car_selector(){
     disable_field('year');
     disable_field('engine');
     disable_field('engine_letters');
-    autoclick_if_one_option('model');
+    autoclick_if_one_option('brand', 'model');
     activate_dropdown_toggle();
   });
 }
@@ -42,7 +42,7 @@ function car_model_selector(){
     car_year_selector();
     disable_field('engine');
     disable_field('engine_letters');
-    autoclick_if_one_option('year');
+    autoclick_if_one_option('model', 'year');
     activate_dropdown_toggle();
   });
 }
@@ -60,14 +60,14 @@ function car_year_selector(){
     for(var w = 1; w < cardb[i][j][k][1].length; w++){
       options += "<li data-value='"+i+","+j+","+k+","+w+"'>"+cardb[i][j][k][1][w]+"</li>";
     }
-    if(options.length == 0){
+    if(options.length === 0){
       options = "<li data-value='0'>cualquiera</li>"
     }
     enable_field('engine', options);
     $('#car_year_tooltip').hide();
     car_engine_selector();
     disable_field('engine_letters');
-    autoclick_if_one_option('engine');
+    autoclick_if_one_option('year', 'engine');
     activate_dropdown_toggle();
   });
 }
@@ -98,8 +98,9 @@ function disable_field(name){
   $('#car_'+name+'_disabled_hint').show();
 }
 
-function autoclick_if_one_option(name){
-  if($('#car_'+name+'_dropdown > li').length == 1){
+function autoclick_if_one_option(ancestor_name, name){
+  if($('#car_'+name+'_dropdown > li').length === 1){
+    $('#car_'+ancestor_name+'_dropdown').addClass('untoggleable');
     $('#car_'+name+'_dropdown > li').first().click();
   }
 }

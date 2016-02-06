@@ -2,7 +2,7 @@ function fill_problem_breadcrumb(problem){
   var breadcrumb = $('#problem_breadcrumb');
   var service_category = $('#service_category').text();
   var service = '';
-  if (service_category != problem){
+  if (service_category !== problem){
     service = ' > ' + problem;
   }
   breadcrumb.text(service_category+service);
@@ -15,11 +15,14 @@ function fill_car_breadcrumb(){
   var car_model = retrieve_text($('#car_model'));
   var car_year = retrieve_text($('#car_year'));
   var breadcrumb_text = car_brand
-  if(car_model != ''){
+  if(car_model !== ''){
     breadcrumb_text += ' > ' +car_model;
-    if (car_year != ''){
+    if (car_year !== ''){
       breadcrumb_text += ' > ' +car_year;
     }
+  }
+  if(breadcrumb_text.trim().length <1){
+    breadcrumb_text = 'Cualquiera';
   }
   breadcrumb.text(breadcrumb_text);
   show_breadcrumb(breadcrumb);

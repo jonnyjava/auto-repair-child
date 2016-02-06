@@ -7,10 +7,18 @@ function fill_dropdown_with_selected_option(){
 }
 
 function dropdown_toggler(event){
-  var dropdown_name = event.data.dropdown_id;
-  var dropdown = $('#'+dropdown_name);
-  dropdown.toggle();
-  dropdown.dropdown('toggle');
+  event.stopPropagation();
+  var the_clicked_dropdown = $('#'+event.data.dropdown_id);
+  $('.js_dropdown_menu').each(function(){
+    if( $(this).is(the_clicked_dropdown) && !$(this).hasClass('untoggleable') ){
+      $(this).toggle();
+      $(this).dropdown('toggle');
+    }
+    else{
+      $(this).hide();
+    }
+    $(this).removeClass('untoggleable');
+  });
 }
 
 function fill_radio_with_selected_option(){
@@ -35,8 +43,16 @@ function enable_service_dropdown(){
   $('#service_category_disabled_label').removeClass('disabled-element');
   $('#service_category_disabled_hint').hide();
   var selected_service_category = $('#service_category').data('value');
-  if(selected_service_category != ''){
+  if(selected_service_category !== ''){
     $('.'+selected_service_category).delay(global_animation_time).fadeIn();
   }
   activate_dropdown_toggle();
+}
+
+function dropdown_autoclose(event){
+  clicked_element_classes = event.currentTarget.activeElement.attributes.class.nodeValue;
+  var is_a_dropdown_opener = /js_dropdown_opener/gi.test(clicked_element_classes);
+  if(!is_a_dropdown_opener){
+    $('.js_dropdown_menu').hide();
+  }
 }

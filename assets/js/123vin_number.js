@@ -20,7 +20,7 @@ function get_car_details(){
   var my_destination = global_server_url + "/controllers/vin_controller.php";
   $.ajax({type: 'POST', data: serialized_datas, url: my_destination, async: true}).done(function(response){
     var parsed_response = jQuery.parseJSON(response);
-    if(parsed_response.status == 400){
+    if(parsed_response.status === 400){
       show_vin_number_search_result('car_not_found');
     }
     else{
@@ -35,7 +35,7 @@ function get_car_details(){
 
 function vin_found(parsed_response){
   var parsed_car_details = jQuery.parseJSON(parsed_response.car_details);
-  if (parsed_car_details.length != 0){
+  if ((parsed_car_details !== null) && (parsed_car_details.length !== 0)){
     autofill_car_details_dropdowns(parsed_car_details);
     show_vin_number_search_result('car_found');
     activate_reset_car_details_by_user();
@@ -47,18 +47,32 @@ function vin_found(parsed_response){
 }
 
 function autofill_car_details_dropdowns(car_details){
+  var unknown_details = ['brand', 'model', 'year', 'engine'];
+
   $.each(car_details, function(key, value){
     var choosen_option = value;
     var parentId = $('#car_'+key+'_dropdown').data('parent-id');
-    if(key != 'brand'){
+    if(key !== 'brand'){
       enable_field(key, '');
     }
     $('#'+parentId).text(choosen_option);
     $('#'+parentId+'_id').val(choosen_option);
     $('#'+parentId+'_tooltip').hide();
+    unknown_details = remove_element(unknown_details, key);
   });
+
+  autofill_unknown_values(unknown_details);
   enable_field('engine_letters');
   toggle_caret();
+}
+
+function autofill_unknown_values(unknown_details){
+  for(var i = 0; i< unknown_details.length; i++){
+    var option = "<li data-value='0'>cualquiera</li>";
+    var detail_field_name = unknown_details[i];
+    enable_field(detail_field_name, option);
+    autoclick_if_one_option(detail_field_name);
+  }
 }
 
 function reset_car_detail_fields(){
