@@ -33,4 +33,9 @@ CREATE TABLE IF NOT EXISTS wp_vin_lookup (
   raw_info TEXT
 );
 
+CREATE TABLE IF NOT EXISTS wp_proxies (
+  ip VARCHAR(25) NOT NULL UNIQUE PRIMARY KEY,
+  times_down int(6) UNSIGNED DEFAULT 0
+);
+
 ```

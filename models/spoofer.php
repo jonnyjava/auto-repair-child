@@ -1,40 +1,54 @@
 <?php
+$parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
+require_once( $parse_uri[0] . 'wp-load.php' );
+
 Class Spoofer{
 
   function __construct(){
-    $this->proxies = $this->get_proxies_list();
+    global $wpdb;
+    $this->db = $wpdb;
   }
 
   public function get_proxy(){
-    $proxy = null;
-    if (isset($this->$proxies)) {
-      $proxy = $this->$proxies[array_rand($this->$proxies)];
-      //$proxy = check_proxy($proxy); move this task to a cron job to check once a day the proxy list
+    return $this->get_valid_proxy();
+  }
+
+  private function get_valid_proxy(){
+    $proxy = $this->get_proxy_from_db();
+    $proxy_ip = $proxy['ip'];
+    $proxy_is_up = $this->proxy_is_available($proxy_ip);
+    if (!$proxy_is_up){
+      $this->increment_proxy_down_counter($proxy);
+      $proxy_ip = $this->get_valid_proxy();
     }
+    return $proxy_ip;
+  }
+
+  private function get_proxy_from_db(){
+    $query = "select * from wp_proxies order by rand() limit 1";
+    $proxy = $this->db->get_row($query, ARRAY_A);
     return $proxy;
   }
 
-  private function check_proxy($proxy){
+  private function proxy_is_available($proxy){
     $ip = explode(":", $proxy)[0];
-    exec("ping -c 2 $ip", $output, $status);//only for linux server
-    if ($status != 0){ //this proxy is not available
-      $proxy = null;
+    $port = explode(":", $proxy)[1];
+    $proxy_is_up = true;
+    $socket = fSockOpen($ip, $port, $errno, $errstr, 10);
+    if (!$socket) {
+      $proxy_is_up = false;
     }
-    return $proxy;
+    else{
+      fclose($socket);
+    }
+    return $proxy_is_up;
   }
 
-  private function get_proxies_list(){
-    $proxies[] = '124.244.77.129:80';
-    $proxies[] = '218.106.96.200:80';
-    $proxies[] = '107.151.152.218:80';
-    $proxies[] = '220.226.188.171:80';
-    $proxies[] = '120.197.234.164:80';
-    $proxies[] = '218.106.96.194:80';
-    $proxies[] = '211.143.146.230:80';
-    $proxies[] = '117.135.250.138:80';
-    $proxies[] = '111.13.12.216:80';
-    $proxies[] = '202.167.248.186:80';
-    return $proxies;
+  private function increment_proxy_down_counter($proxy){
+    $table_name = $this->db->prefix . "proxies";
+    $data = array('times_down' => $proxy['times_down']+1);
+    $where = array('ip' => $proxy['ip']);
+    $this->db->update( $table_name, $data , $where );
   }
 }
 ?>
