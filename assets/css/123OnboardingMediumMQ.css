@@ -5,6 +5,14 @@
   .small-and-medium-view{
     display: block;
   }
+  .join_container{
+    min-height: 75em;
+    display: inline-block;
+    margin-bottom: -2.5em;
+  }
+  .join_button .next{
+    font-size: 3rem !important;
+  }
   .onboarding_container{
     min-height: 50em;
     display: inline-block;
@@ -25,7 +33,7 @@
     position:relative;
     top: 0.5em;
   }
-   input[type=text], input[type=email]{
+  input[type=text], input[type=password], input[type=email]{
     line-height: 2em;
     font-size: 1.75rem;
   }
@@ -47,7 +55,7 @@
   .caret{
     top: 1em;
   }
-  .btn-sep {
+  .btn-sep, .service_btn {
     padding: 0.5em;
     margin-left: 0;
     margin-right: 0;

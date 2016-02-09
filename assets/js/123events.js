@@ -101,14 +101,36 @@ function activate_form_submit(){
   $('.js_saver').click(function () {
     if (content_for_step_is_valid($(this))){
       show_preloader();
-      submit_form();
+      submit_onboarding_form();
     }
+  });
+}
+
+function activate_join_form_submit(){
+  $('.js_join_123mecanico').click(function () {
+    if (content_for_join_is_valid($(this))){
+      show_preloader();
+      submit_join_form();
+    }
+  });
+}
+
+function activate_update_garage_info_form_submit(){
+  $('.js_update_garage_info').click(function () {
+    show_preloader();
+    submit_update_garage_info_form();
   });
 }
 
 function activate_char_counter(){
   $('.js_char_countable').on('blur keyup', function(){
     count_chars($(this));
+  });
+}
+
+function activate_password_strength_checker(){
+  $('.js_password').on('blur keyup', function(){
+    password_strength_checker($(this).val());
   });
 }
 
@@ -140,5 +162,11 @@ function activate_details_animation(){
     $('.js_toggle_details').slideToggle(global_animation_time, function(){
       animate_container_height($('#step_2'));
     });
+  });
+}
+
+function activate_button_bar(){
+  $('.js_button_bar').click(function(){
+    toggle_button_in_bar($(this));
   });
 }

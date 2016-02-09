@@ -1,12 +1,31 @@
 function content_for_step_is_valid(clicked_button){
-  var step_is_valid = true;
+  strip_html_from_fields(['comments','name_and_surnames','phone']);
+  var step_values = serialize_for_validation(clicked_button);
+  return step_values_are_valid(step_values);
+}
+
+function content_for_join_is_valid(clicked_button){
+  strip_html_from_fields(['garage_name', 'tax_id', 'street', 'zip', 'phone']);
+  var step_values = serialize_for_validation(clicked_button);
+  return step_values_are_valid(step_values);
+}
+
+function strip_html_from_fields(fields){
+  fields.forEach(function(field) {
+    strip_html_tags(field);
+  });
+}
+
+function serialize_for_validation(clicked_button){
   var fieldset_id = clicked_button.data('fieldset');
-  strip_html_tags('comments');
-  strip_html_tags('name_and_surnames');
-  strip_html_tags('phone');
-  var step_values = $('#'+fieldset_id).serialize();
-  step_values = serialize_unchecked(fieldset_id, step_values);
-  step_values = step_values.split('&');
+  var serialized_values = $('#'+fieldset_id).serialize();
+  serialized_values = serialize_unchecked(fieldset_id, serialized_values);
+  serialized_values = serialized_values.split('&');
+  return serialized_values;
+}
+
+function step_values_are_valid(step_values){
+  var step_is_valid = true;
   for( var i = 0; i < (step_values.length); i++){
     var keyValue = step_values[i].split('=');
     if(keyValue[0] !== 'comments'){
@@ -45,6 +64,15 @@ function perform_dedicate_validation(field, value){
     case 'mandatory_check':
       field_is_valid = (value === 'Si');
       break;
+    case 'zip':
+      field_is_valid = (value.length === 5) && (/[0-9]{5}/.test(value)) ;
+      break;
+    case 'not_empty':
+      field_is_valid = (value.length >= 6);
+      break;
+    case 'tax_id':
+      field_is_valid = (value.length === 9) && is_valid_cif_or_nif_format(value);
+      break;
     default:
       field_is_valid = true;
   }
@@ -62,6 +90,11 @@ function serialize_unchecked(step, step_values){
 
 function is_valid_email_format(value){
   return (value.match(/[A-Z0-9._%+-]+%40[A-Z0-9.-]+\.[A-Z]{2,4}/gi) !== null);
+}
+
+function is_valid_cif_or_nif_format(value){
+  //found here http://regexlib.com/REDetails.aspx?regexp_id=997
+  return ( /^(X(-|\.)?0?\d{7}(-|\.)?[A-Z]|[A-Z](-|\.)?\d{7}(-|\.)?[0-9A-Z]|\d{8}(-|\.)?[A-Z])$/i.test(value) );
 }
 
 function phone_autoformatter(filled_field){

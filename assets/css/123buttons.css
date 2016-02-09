@@ -1,12 +1,29 @@
 .btn {
   border: none;
-  width: 100%;
-  font-family: 'Nunito';
   color: inherit;
   background: none;
-  cursor: pointer;
-  display: inline-block;
   margin: 5px;
+}
+.service_btn-group{
+  margin: 0 1rem;
+}
+.service_btn input[type=checkbox]{
+  visibility: hidden;
+}
+.service_btn-gray{
+  background-color: #666666;
+}
+.service_btn-selected{
+  background-color: #E67500;
+}
+.service_btn {
+  border: 0;
+  border-radius: 0;
+  color: #FFFFFF;
+  padding: 0.75em 0 0.75em 2em;
+  text-align: center;
+}
+.btn, .service_btn {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
@@ -15,8 +32,12 @@
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
+  width: 100%;
+  font-family: 'Nunito';
+  cursor: pointer;
+  display: inline-block;
 }
-.btn:after {
+.btn:after,.service_btn:after {
   content: '';
   position: absolute;
   z-index: -1;
@@ -24,26 +45,31 @@
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-.btn-sep:before {
-  background: rgba(0,0,0,0.15);
+.btn-sep:before, .service_btn-icon:before{
+  background: rgba(0,0,0,0.25);
 }
 .btn-2 {
   background: #666666;
   color: #fff;
 }
-.btn-2:hover {
+.btn-2:hover, .service_btn:hover {
   background: #E67500;
 }
-.btn-2:active {
+.btn-2:active, .service_btn:active {
   background: #27ae60;
   top: 2px;
 }
-.btn-2:before {
+.btn-2:before, .service_btn:before {
   position: absolute;
   height: 100%;
   left: 0;
   top: 0;
+  width: 60px;
+}
+.btn-2:before {
   line-height: 3;
   font-size: 140%;
-  width: 60px;
+}
+.service_btn:before {
+  line-height: 1;
 }

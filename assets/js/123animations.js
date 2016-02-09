@@ -21,7 +21,6 @@ function animate_service_dropdowns(selected_option){
 }
 
 function animate_to_next(clicked_button){
-
   if (animating){ return false; }
   animating = true;
   var fs_id = clicked_button.data('fieldset');
@@ -91,14 +90,14 @@ function animate_container_height(current_step){
   var form_height = $('#onboarding_form').height();
   var progressbar_height = $('#progressbar').outerHeight();
   var new_height = step_height + form_height + progressbar_height;
-  var actual_height = $('.onboarding_container').height();
-  var min_height = $('.onboarding_container').css('min-height')
+  var actual_height = $('.js_animatable_container').height();
+  var min_height = $('.js_animatable_container').css('min-height')
   min_height = parseInt(min_height.substring(0, min_height.length - 2), 10);
   if (new_height < min_height){
     new_height = min_height;
   }
   if (new_height !== actual_height){
-    $('.onboarding_container').animate({
+    $('.js_animatable_container').animate({
       height: new_height
     }, global_animation_time);
   }
@@ -145,6 +144,20 @@ function hide_tooltip(clicked_field){
 function show_preloader(){
   $('#preloader').fadeIn();
 }
+
 function hide_preloader(){
   $('#preloader').fadeOut();
+}
+
+
+function load_error_page(){
+  $('#submit_result').html(load_partial('error_page.html'));
+  show_result();
+}
+
+function show_result(){
+  animate_to_next($('#submit_button'));
+  $('#progressbar').fadeOut(global_animation_time, function(){
+    animate_container_height($('#step_4'));
+  });
 }

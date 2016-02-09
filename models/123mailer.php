@@ -47,7 +47,7 @@ Class DemandMailer {
   }
 
   private function send_mail_with_sendinblue_api($demand){
-    $mailin = new Mailinblue("https://api.sendinblue.com/v2.0", $this->constants['API_key']);
+    $mailin = new Mailinblue("https://api.sendinblue.com/v2.0", $this->constants['Sendinblue_API_key']);
     $data = array(
       "id" => 3,
       "to" => $demand->email,

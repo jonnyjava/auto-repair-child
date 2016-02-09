@@ -1,5 +1,18 @@
-function set_global_server_url(){
-  global_server_url = $('#onboarding_form').attr('action');
+function setup_globals(){
+  current_fs = null;
+  next_fs = null;
+  previous_fs = null;
+  left = null;
+  opacity = null;
+  scale = null;
+  animating = null;
+  global_animation_time = 300;
+  global_slinding_time = 650;
+  global_server_url = '';
+}
+
+function set_global_server_url(name){
+  global_server_url = $('#'+name+'_form').attr('action');
 }
 
 function disable_google_autofill(){

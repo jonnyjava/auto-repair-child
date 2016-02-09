@@ -1,4 +1,4 @@
-function submit_form(){
+function submit_onboarding_form(){
   var my_destination = global_server_url + '/controllers/demand_controller.php';
   var submitted_datas = $('#onboarding_form').serialize();
   $.ajax({type: 'POST', data: submitted_datas, url: my_destination, async: true}).done(function(response){
@@ -104,18 +104,6 @@ function translate(value){
   translations['bearing_type_id'] = 'Rodamiento';
   translations['air_conditioned_id'] = 'Pack de servicios';
   return translations[value] || value;
-}
-
-function load_error_page(){
-  $('#submit_result').html(load_partial('error_page.html'));
-  show_result();
-}
-
-function show_result(){
-  animate_to_next($('#submit_demand_button'));
-  $('#progressbar').fadeOut(global_animation_time, function(){
-    animate_container_height($('#step_4'));
-  });
 }
 
 function build_review_row(fields){

@@ -5,6 +5,17 @@
   .large-view{
     display: none !important;
   }
+  .join_container{
+    min-height: 57em;
+    display: inline-block;
+    margin-bottom: -3em;
+  }
+  .join_button{
+    margin-top: 1.5em;
+  }
+  .join_button .next{
+    font-size: 2rem !important;
+  }
   .onboarding_container{
     min-height: 30em;
     display: inline-block;
@@ -20,11 +31,14 @@
   .help{
     font-size: 1.25rem;
   }
+  .help_for_big{
+    display: none;
+  }
   .label-text-align{
     position:relative;
     top: 0.25em;
   }
-   input[type=text], input[type=email]{
+  input[type=text], input[type=password], input[type=email]{
     line-height: 2em;
     font-size: 1.25rem;
   }
@@ -97,10 +111,10 @@
     line-height: 2.25em !important;
     font-size: 1.25rem !important;
   }
-  .btn {
+  .btn, .service_btn {
     font-size: 1rem;
   }
-  .btn-sep {
+  .btn-sep, .service_btn {
     padding: 0.25em 0.125em;
     margin-left: 0;
     margin-right: 0;
