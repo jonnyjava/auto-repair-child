@@ -5,6 +5,10 @@
   .large-view{
     display: block;
   }
+  .join_container{
+    min-height: 48em;
+    display: inline-block;
+  }
   .onboarding_container{
     min-height: 40em;
     display: inline-block;
@@ -22,10 +26,9 @@
     font-size: 1.4rem;
     width: 100%;
   }
-   input[type=text], input[type=email]{
+  input[type=text], input[type=password], input[type=email]{
     line-height: 2.475em !important;
     font-size: 1.75rem !important;
-    color: #666666 !important;
   }
   .extra_info_textarea{
     font-size: 1.6rem;
@@ -50,6 +53,9 @@
   }
   .caret{
     top: 1.5em;
+  }
+  .service_btn {
+    font-size: 1em;
   }
   .btn-sep{
     padding: 0.125em;

@@ -20,10 +20,10 @@
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingSmallMQ.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingMediumMQ.css">
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123OnboardingLargeMQ.css">
-<div class="onboarding_container" id="js_onboarding_container" data-partial-url="<?php echo bloginfo('stylesheet_directory'); ?>">
-<div id="preloader" class="preloader">
-  <span class="loader_circle one">
-     <span>1</span>
+<div class="onboarding_container js_animatable_container" id="js_onboarding_container" data-partial-url="<?php echo bloginfo('stylesheet_directory'); ?>">
+  <div id="preloader" class="preloader">
+    <span class="loader_circle one">
+      <span>1</span>
     </span>
     <span class="loader_circle two">
       <span>2</span>
@@ -188,7 +188,7 @@
               <ul class="custom_checkbox">
                 <li>
                   <label for="accepts_privacy">
-                    <input type="checkbox" value="Si" id="accepts_privacy" name="accepts_privacy" data-validation-type="mandatory_check">
+                    <input type="checkbox" value="Si" id="accepts_privacy" name="accepts_privacy" data-validation-type="mandatory_check" />
                     <span class="checkboxify icon"><i class="fa fa-check"></i></span>
                   </label>
                 </li>
@@ -204,7 +204,7 @@
           <input type="button" class="previous animation-button js_undo_car_breadcrumb" data-current-fieldset="step_3" value="Atrás">
         </div>
         <div class="col-lg-3 col-xs-6">
-        <input type="button" class="go_next animation-button js_saver" id="submit_demand_button" data-fieldset="step_3" value="Enviar" />
+        <input type="button" class="go_next animation-button js_saver" id="submit_button" data-fieldset="step_3" value="Enviar" />
         </div>
         <div class="col-lg-3 col-xs-0"></div>
       </div>

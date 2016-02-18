@@ -1,7 +1,7 @@
 body{
   padding: 0 !important;
 }
-.onboarding_container{
+.onboarding_container, .join_container{
   font-family: Nunito;
   background-color: transparent;
   background: url(http://auto-repair.demo.vamtam.com/wp-content/uploads/2014/11/bg_slider_1.jpg) no-repeat center center fixed;
@@ -19,6 +19,12 @@ input, select{
 }
 input{
   padding: 0 0 0 1rem !important;
+}
+input[type=text], input[type=email]{
+  color: #666666 !important;
+}
+input[type=password]{
+  color: #E67500 !important;
 }
 span{
   width: 100%;
@@ -198,4 +204,8 @@ li > .hint{
 .tt-suggestion:hover{
   background-color: #E67500;
   color: white;
+}
+/*join us page*/
+.password_strength{
+  color: #E67500;
 }

@@ -1,18 +1,12 @@
-var current_fs, next_fs, previous_fs;
-var left, opacity, scale;
-var animating;
-var global_animation_time = 300;
-var global_slinding_time = 650;
-var global_server_url = '';
-
 $(document).ready(function(){
+  setup_globals();
   setup_form();
   build_content();
   run_activations();
 });
 
 function setup_form(){
-  set_global_server_url();
+  set_global_server_url('onboarding');
   preload_car_database();
   prevent_events_defaults();
   disable_google_autofill();
