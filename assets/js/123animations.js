@@ -89,9 +89,10 @@ function animate_container_height(current_step){
   var step_height = current_step.outerHeight();
   var form_height = $('#onboarding_form').height();
   var progressbar_height = $('#progressbar').outerHeight();
-  var new_height = step_height + form_height + progressbar_height;
+  var submit_button_height = $('.join_button').outerHeight();
+  var new_height = step_height + form_height + progressbar_height + submit_button_height;
   var actual_height = $('.js_animatable_container').height();
-  var min_height = $('.js_animatable_container').css('min-height')
+  var min_height = $('.js_animatable_container').css('min-height');
   min_height = parseInt(min_height.substring(0, min_height.length - 2), 10);
   if (new_height < min_height){
     new_height = min_height;

@@ -4,9 +4,6 @@
   background: none;
   margin: 5px;
 }
-.service_btn-group{
-  margin: 0 1rem;
-}
 .service_btn input[type=checkbox]{
   visibility: hidden;
 }

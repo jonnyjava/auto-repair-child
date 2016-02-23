@@ -6,12 +6,15 @@
     display: block;
   }
   .join_container{
-    min-height: 75em;
+    min-height: 25em;
     display: inline-block;
     margin-bottom: -2.5em;
   }
   .join_button .next{
     font-size: 3rem !important;
+  }
+  .service_btn-group{
+    margin: 0 2em 1em 2em;
   }
   .onboarding_container{
     min-height: 50em;
@@ -26,7 +29,7 @@
     font-size: 1.75rem;
     width: 100%;
   }
-  .help{
+  .help, .help_link{
     font-size: 1.5rem;
   }
   .label-text-align{
@@ -79,8 +82,7 @@
     background-size: 200% !important;
   }
   .car-details-row {
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin: 1em 0;
   }
   .progressbar li {
     font-size: 1.5rem;
@@ -144,7 +146,7 @@
     left: 45%;
     font-size: 1.5rem;
   }
-  /*confirmation page ovverrides*/
+  /*confirmation page overrides*/
   h4{
     font-size: 1.25em;
     top: -0.35em;
@@ -169,7 +171,11 @@
     height: 3.5em;
   }
   .panel-body{
-    padding: 0 0.75em 0 0;
+    padding: 0 0.5em;
+  }
+  .panel-body p{
+    font-size: 1.75rem;
+    padding: 0.25em 0.125em;
   }
   .list-group-item{
     padding-left: 0;
@@ -204,6 +210,19 @@
     animation-name: bouncer_for_smalls_when_dropdowns;
     animation-duration: 1s;
     animation-iteration-count: 5;
+  }
+  /* preloader ocustomizations */
+  .preloader{
+    padding-top: 20em;
+  }
+  .loader_circle {
+    width: 10em;
+    height: 10em;
+    margin-left: -3em;
+  }
+  .loader_circle span {
+    font-size: 15rem;
+    top: 0.25em;
   }
 
   @-webkit-keyframes bouncer_for_smalls{

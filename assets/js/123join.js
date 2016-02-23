@@ -2,6 +2,7 @@ $(document).ready(function(){
   setup_globals();
   setup_form();
   run_activations();
+  animate_container_height($('#step_1'));
 });
 
 function setup_form(){
