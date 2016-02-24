@@ -6,12 +6,12 @@
     display: none !important;
   }
   .join_container{
-    min-height: 57em;
+    min-height: 20em;
     display: inline-block;
     margin-bottom: -3em;
   }
-  .join_button{
-    margin-top: 1.5em;
+  .service_btn-group {
+    margin: 0 1rem 0.5em 1rem;
   }
   .join_button .next{
     font-size: 2rem !important;
@@ -28,8 +28,8 @@
     font-size: 1.25rem;
     width: 100%;
   }
-  .help{
-    font-size: 1.25rem;
+  .help, .help_link{
+    font-size: 1.25rem !important;
   }
   .help_for_big{
     display: none;
@@ -164,9 +164,13 @@
     left: 40%;
     font-size: 1.25rem;
   }
-  /*confirmation page ovverrides*/
+  /*confirmation page overrides*/
   .confirmation_page{
     padding: 0;
+  }
+  .recruiting_confirmation_page{
+    padding: 0;
+    margin: 0 1em;
   }
   h4{
     font-size: 0.9em;
@@ -201,8 +205,11 @@
     padding: 1em 1em 0 1em;
   }
   .panel-body{
-    padding: 0 0.75em 0 0;
+    padding: 0 0.5em;
     font-size: 0.8em;
+  }
+  .panel-body p{
+    font-size: 1.25rem;
   }
   .confirmation_page > .nav{
     margin-left: 0.75em;
@@ -252,7 +259,19 @@
     animation-duration: 1s;
     animation-iteration-count: 5;
   }
-
+  /* preloader ocustomizations */
+  .preloader{
+    padding-top: 10em;
+  }
+  .loader_circle {
+    width: 5em;
+    height: 5em;
+    margin-left: -1.5em;
+  }
+  .loader_circle span {
+    font-size: 5rem;
+    top: 0.35em;
+  }
   @-webkit-keyframes bouncer_for_smalls{
     0% {top: -2.5em;}
     50% {top: -1.5em;}

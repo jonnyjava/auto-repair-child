@@ -6,8 +6,11 @@
     display: block;
   }
   .join_container{
-    min-height: 48em;
+    min-height: 35em;
     display: inline-block;
+  }
+  .service_btn-group{
+    margin: 0 1rem 4em 1rem;
   }
   .onboarding_container{
     min-height: 40em;
@@ -33,8 +36,8 @@
   .extra_info_textarea{
     font-size: 1.6rem;
   }
-  .help{
-    font-size: 1.25rem;
+  .help, .help_link{
+    font-size: 1.25rem !important;
   }
   .checkbox_and_radio_container{
     height: 3.25em;
@@ -336,6 +339,20 @@
     animation-name: bouncer_for_smalls;
     animation-duration: 1s;
     animation-iteration-count: 5;
+  }
+
+  /* preloader ocustomizations */
+  .preloader{
+    padding-top: 20em;
+  }
+  .loader_circle {
+    width: 10em;
+    height: 10em;
+    margin-left: -3em;
+  }
+  .loader_circle span {
+    font-size: 15rem;
+    top: 0.25em;
   }
 
   @-webkit-keyframes bouncer_for_smalls{

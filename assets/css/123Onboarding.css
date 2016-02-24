@@ -12,8 +12,8 @@ body{
   width: 100%;
 }
 input, select{
-  background-color: white !important;
-  border: 1px solid white !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid #FFFFFF !important;
   display: inline;
   margin: 0 !important;
 }
@@ -48,7 +48,7 @@ li > .hint{
   text-transform: uppercase;
 }
 .checkbox_and_radio_container{
-  background-color: white;
+  background-color: #FFFFFF;
   display: inline-block;
   padding: 0;
 }
@@ -83,7 +83,7 @@ li > .hint{
   user-select: none;
 }
 .extra_info_textarea{
-  background-color: white;
+  background-color: #FFFFFF;
   font-family: Lato;
   font-weight: bolder;
   padding: 1rem;
@@ -93,10 +93,16 @@ li > .hint{
   color: #666666 !important;
 }
 .help{
-  color: white;
+  color: #FFFFFF;
   text-align: right;
   display: block;
-  margin-left:-11em;
+  margin-left: -11em;
+}
+.help_link, .help_link:visited {
+  color: #E67500;
+}
+.help_link:hover, .help_link:focus {
+  color: #FFFFFF;
 }
 .with-modal{
   cursor:pointer;
@@ -189,7 +195,7 @@ li > .hint{
   text-align: center;
   color: #000000;
   cursor: pointer;
-  background-color: white;
+  background-color: #FFFFFF;
   border-style: solid ;
   border-color: #E67500;
   border-width: 0 1px 1px 1px;
@@ -203,7 +209,7 @@ li > .hint{
 }
 .tt-suggestion:hover{
   background-color: #E67500;
-  color: white;
+  color: #FFFFFF;
 }
 /*join us page*/
 .password_strength{

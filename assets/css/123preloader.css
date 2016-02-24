@@ -3,7 +3,6 @@
   margin: auto;
   position: absolute;
   text-align: center;
-  padding-top: 20em;
   width: 100%;
   z-index: 1;
   height: 100%;
@@ -14,17 +13,12 @@
   text-align: center;
   font-family: 'Palanquin Dark';
   display: inline-block;
-  width: 10em;
-  height: 10em;
-  margin-left: -3em;
   background: #666666;
 }
 .loader_circle span {
   color: #FFFFFF;
   font-weight: normal;
   position: relative;
-  font-size: 15rem;
-  top: 0.25em;
 }
 .loader_text{
   text-transform: uppercase;
