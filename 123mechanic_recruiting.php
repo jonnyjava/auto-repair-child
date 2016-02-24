@@ -107,7 +107,7 @@
               </div>
             </label>
             <div class="help">
-              <a href="http://localhost/123mecanico/service-agreement/" target="blank" class="help_link">
+              <a href="<?php echo bloginfo('wpurl');?>/service-agreement/" target="blank" class="help_link">
                 <i>Terminos Y condiciones del servicio.</i>
               </a>
             </div>
