@@ -5,6 +5,18 @@
   include 'partials/shared/_header.php';
   require_once('helpers/html_helpers.php');
 ?>
+<?php $step1_above = get_field('mechanic_recruiting_c2a_step1_above'); ?>
+<?php $step1_below = get_field('mechanic_recruiting_c2a_step1_below'); ?>
+<?php $step2_above = get_field('mechanic_recruiting_c2a_step2_above'); ?>
+<?php $step2_below = get_field('mechanic_recruiting_c2a_step2_below'); ?>
+<?php $step3_above = get_field('mechanic_recruiting_c2a_step3_above'); ?>
+<?php $step3_below = get_field('mechanic_recruiting_c2a_step3_below'); ?>
+<div style="display:none;">
+  <span id="step_2_above"><?php if ($step2_above) { echo panel_inside_row($step2_above); }  ?></span>
+  <span id="step_2_below"><?php if ($step2_below) { echo panel_inside_row($step2_below); }  ?></span>
+  <span id="step_3_above"><?php if ($step3_above) { echo panel_inside_row($step3_above); }  ?></span>
+  <span id="step_3_below"><?php if ($step3_below) { echo panel_inside_row($step3_below); }  ?></span>
+</div>
 <div class="join_container js_animatable_container">
   <div id="preloader" class="preloader">
     <span class="loader_circle one">
