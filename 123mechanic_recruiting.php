@@ -59,7 +59,7 @@
             <label for="street" class="orange-label">Dirección</label>
           </div>
           <div class="col-lg-6 no-lg-left-gutter bottom-gutter js_hide_tooltip" data-parent-id="street">
-            <input type="text" id="street" name="street" class="uppercased_content" data-validation-type="address" />
+            <input type="text" id="street" name="street" class="uppercased_content js_autocompletable_address" data-validation-type="address" />
             <div class="help"><i>Pon la dirección completa<span class="help_for_big">, será más facil localizarte en el mapa</span></i></div>
             <span id="street_tooltip" class="tooltips normal_size">Esta dirección no es valida</span>
           </div>
@@ -143,16 +143,10 @@
       <div id="step_3_submit_result"></div>
     </fieldset>
   </div>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/jquery-1.9.1.min.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/bootstrap.min.js"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123animations.js" type="text/javascript"></script>
+  <?php include 'partials/shared/_footer.php'; ?>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123button_bar.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123events.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123registration_form_submit.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123password_checker.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123row_ajax_builder.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123setup.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123validations.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123join.js" type="text/javascript"></script>
 </div>
 <div class="limit-wrapper">

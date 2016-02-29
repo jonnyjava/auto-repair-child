@@ -197,21 +197,13 @@
       <div id="submit_result"></div>
     </fieldset>
   </form>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+  <?php include 'partials/shared/_footer.php'; ?>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/jquery.easing.min.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/bootstrap.min.js"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/typeahead.bundle.js"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/postalCodes.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123animations.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123autocomplete.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123breadcrumbs.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123dropdowns.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123events.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123validations.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123form_submit.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123setup.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123vin_number.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123row_ajax_builder.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123car_selector.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123cars.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123Onboarding.js" type="text/javascript"></script>
