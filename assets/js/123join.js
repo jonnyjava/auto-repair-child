@@ -14,4 +14,5 @@ function run_activations(){
   activate_join_form_submit();
   activate_hide_tooltip();
   activate_password_strength_checker();
+  activate_address_autocomplete();
 }

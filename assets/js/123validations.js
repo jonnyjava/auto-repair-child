@@ -47,7 +47,7 @@ function perform_dedicate_validation(field, value){
       field_is_valid = ($('#'+field_id).text() === $('#'+field_id+'_id').val());
       break;
     case 'address':
-      field_is_valid = (value.length >= 6) && ( /^[\+a-zA-Z0-9%]+$/i.test(value) );
+      field_is_valid = (value.length >= 6);
       break;
     case 'only_letters':
       field_is_valid = (value.length >= 10) && (/^[a-z\+]+$/i.test(value) );
@@ -114,6 +114,6 @@ function strip_html_tags(field_name){
   var tmp = document.createElement('DIV');
   tmp.innerHTML = dirty_input.replace('src', '');
   cleaned_input = (tmp.textContent || tmp.innerText  || '');
-  cleaned_input = cleaned_input.replace(/\W/gi, ' ').trim();
+  cleaned_input = cleaned_input.replace(/\(\w*\)|-|<|>/gi, '').trim();
   $('#'+field_name).val(cleaned_input);
 }
