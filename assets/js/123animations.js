@@ -89,7 +89,7 @@ function animate_container_height(current_step){
   var step_height = current_step.outerHeight();
   var form_height = $('#onboarding_form').height();
   var progressbar_height = $('#progressbar').outerHeight();
-  var submit_button_height = $('.join_button').outerHeight();
+  var submit_button_height = $('.js_saver').outerHeight();
   var new_height = step_height + form_height + progressbar_height + submit_button_height;
   var actual_height = $('.js_animatable_container').height();
   var min_height = $('.js_animatable_container').css('min-height');
@@ -150,15 +150,16 @@ function hide_preloader(){
   $('#preloader').fadeOut();
 }
 
-
 function load_error_page(){
-  $('#submit_result').html(load_partial('error_page.html'));
+  $('.js_submit_result_container').html(load_partial('error_page.html'));
   show_result();
 }
 
 function show_result(){
-  animate_to_next($('#submit_button'));
+  var clicked_button = $('.js_saver');
+  animate_to_next(clicked_button);
+  var next_step = clicked_button.data('next-fieldset');
   $('#progressbar').fadeOut(global_animation_time, function(){
-    animate_container_height($('#step_4'));
+    animate_container_height($('#'+next_step));
   });
 }

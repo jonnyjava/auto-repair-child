@@ -2,6 +2,8 @@
 $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
 require_once( $parse_uri[0] . 'wp-load.php' );
 
+require 'concerns/sanitization.php';
+
 $demand_model = '../models/demand.php';
 $mail_model = '../models/123mailer.php';
 require $demand_model;
@@ -38,24 +40,6 @@ else{
   $response = json_encode(array('status' => 400, 'errors' => $demand->error_messages));
 }
 echo $response;
-
-function raw_homemade_sanitize($input) {
-  $input = htmlspecialchars($input, ENT_IGNORE, 'utf-8');
-  $input = strip_tags($input);
-  $input = stripslashes($input);
-  $input = raw_dirty_replace($input);
-  $input = trim($input);
-  return $input;
-}
-
-function raw_dirty_replace($input){
-  $suspicious_to_replace = array("DROP", "TABLE", "DATABASE", "ALTER", "CREATE", "SELECT", "UNION", "TRUNCATE", "DELETE", "JOIN","drop", "table", "database", "alter", "create", "select", "union", "truncate", "delete", "join");
-  $input = str_replace($suspicious_to_replace, "", $input);
-  $chars_to_replace = array(":", ";", ")", "(", "'", "-");
-  $input = str_replace($chars_to_replace, "", $input);
-  $input = preg_replace('!\s+!', ' ', $input);
-  return $input;
-}
 
 function details_as_json(){
   $details = [];

@@ -38,4 +38,10 @@ CREATE TABLE IF NOT EXISTS wp_proxies (
   times_down int(6) UNSIGNED DEFAULT 0
 );
 
+CREATE TABLE IF NOT EXISTS wp_bouncing_feedback (
+  reason VARCHAR(80),
+  comments TEXT,
+  token VARCHAR(40)
+);
+
 ```

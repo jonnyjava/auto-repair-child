@@ -13,6 +13,7 @@ function setup_globals(){
 
 function set_global_server_url(name){
   global_server_url = $('#'+name+'_form').attr('action');
+  set_api_auth_token();
 }
 
 function disable_google_autofill(){
@@ -47,4 +48,18 @@ function remove_element(array, element){
     array.splice(element_index, 1);
   }
   return array;
+}
+
+function set_api_auth_token(){
+   $.ajax({
+    type: 'GET',
+    url: global_server_url + '/controllers/ewok_connection_controller.php',
+    async: false
+  }).done(function(response){
+    var parsed_response = jQuery.parseJSON(response);
+    api_url = parsed_response.url;
+    api_auth_token = parsed_response.token;
+  }).error(function(){
+    load_error_page();
+  });
 }

@@ -99,7 +99,7 @@ function is_valid_cif_or_nif_format(value){
 
 function phone_autoformatter(filled_field){
   var value = filled_field.val();
-  var cleaned_value = value.match(/[0-9]+/gi);
+  var cleaned_value = value.replace(/[^0-9]+/gi, '');
   if (cleaned_value !== null){
     filled_field.val(cleaned_value);
   }
@@ -114,6 +114,6 @@ function strip_html_tags(field_name){
   var tmp = document.createElement('DIV');
   tmp.innerHTML = dirty_input.replace('src', '');
   cleaned_input = (tmp.textContent || tmp.innerText  || '');
-  cleaned_input = cleaned_input.replace(/\(\w*\)|-|<|>/gi, '').trim();
+  cleaned_input = cleaned_input.replace(/[^a-zA-Z0-9:;,]+/gi, ' ').trim();
   $('#'+field_name).val(cleaned_input);
 }

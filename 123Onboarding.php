@@ -188,21 +188,19 @@
           <input type="button" class="previous animation-button js_undo_car_breadcrumb" data-current-fieldset="step_3" value="Atrás">
         </div>
         <div class="col-lg-3 col-xs-6">
-        <input type="button" class="go_next animation-button js_saver" id="submit_button" data-fieldset="step_3" value="Enviar" />
+        <input type="button" class="go_next animation-button js_saver" id="submit_button" data-fieldset="step_3" data-next-fieldset="step_4" value="Enviar" />
         </div>
         <div class="col-lg-3 col-xs-0"></div>
       </div>
     </fieldset>
     <fieldset id="step_4">
-      <div id="submit_result"></div>
+      <div id="submit_result" class="js_submit_result_container"></div>
     </fieldset>
   </form>
   <?php include 'partials/shared/_footer.php'; ?>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/jquery.easing.min.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123breadcrumbs.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123dropdowns.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123form_submit.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123setup.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123vin_number.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123car_selector.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123cars.js" type="text/javascript"></script>

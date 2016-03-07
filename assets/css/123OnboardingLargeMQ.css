@@ -9,6 +9,9 @@
     min-height: 35em;
     display: inline-block;
   }
+  .feedback_container{
+    height: 35em;
+  }
   .service_btn-group{
     margin: 0 1rem 4em 1rem;
   }
