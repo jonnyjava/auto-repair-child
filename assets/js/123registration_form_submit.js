@@ -1,7 +1,7 @@
 garage_id = null;
 
 function submit_join_form(){
-  var submitted_datas = $('#join_form').serialize();
+  var submitted_datas = $('#recruitable_form').serialize().replace(/recruitable_/gi, '');
   var submit_url = '/garage_registrations';
   send_to_api(submitted_datas, submit_url, 'POST', show_errors_or_continue, load_error_page);
   update_recruitable_status('recruited');
@@ -9,9 +9,11 @@ function submit_join_form(){
 
 function update_recruitable_status(status){
   var token = $('#token').val();
-  var submitted_datas = "token="+token+"&status="+status;
-  var submit_url = '/garage_recruitables/'+token;
-  send_to_api(submitted_datas, submit_url, 'PATCH', null, null);
+  if(token){
+    var submitted_datas = 'token='+token+'&status='+status;
+    var submit_url = '/garage_recruitables/'+token;
+    send_to_api(submitted_datas, submit_url, 'PATCH', null, null);
+  }
 }
 
 function submit_update_garage_info_form(){
@@ -67,12 +69,12 @@ function load_second_step_recruiting(response){
 }
 
 function show_errors_tooltips(errors){
-  for (var name in errors) {
-    if (errors.hasOwnProperty(name)) {
-      var tooltip_id = name+'_tooltip';
-      var tooltip_text = errors[name];
-      $('#'+tooltip_id).text(tooltip_text);
-      $('#'+tooltip_id).show();
+  for (var error_name in errors) {
+    if (errors.hasOwnProperty(error_name)) {
+      var tooltip_text = errors[error_name];
+      if (!error_name.match(/garage_/)){ error_name = 'recruitable_'+error_name; }
+      $('#'+error_name+'_tooltip').text(tooltip_text);
+      emphatize_error(error_name);
     }
   }
 }

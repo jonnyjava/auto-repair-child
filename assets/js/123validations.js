@@ -5,7 +5,7 @@ function content_for_step_is_valid(clicked_button){
 }
 
 function content_for_join_is_valid(clicked_button){
-  strip_html_from_fields(['garage_name', 'tax_id', 'street', 'zip', 'phone']);
+  strip_html_from_fields(['garage_name', 'recruitable_tax_id', 'recruitable_street', 'recruitable_zip', 'recruitable_phone']);
   var step_values = serialize_for_validation(clicked_button);
   return step_values_are_valid(step_values);
 }
@@ -76,8 +76,7 @@ function perform_dedicate_validation(field, value){
     default:
       field_is_valid = true;
   }
-
-  field_is_valid ? $('#'+field_id+'_tooltip').hide() : $('#'+field_id+'_tooltip').show();
+  field_is_valid ? deemphatize_error(field_id) : emphatize_error(field_id);
   return field_is_valid;
 }
 

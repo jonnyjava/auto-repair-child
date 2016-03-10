@@ -3,7 +3,6 @@
 </div>
 <?php include 'partials/shared/_header.php'; ?>
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123confirmation_page.css">
-<link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123dropdowns.css">
 <div class="onboarding_container js_animatable_container" id="js_onboarding_container" data-partial-url="<?php echo bloginfo('stylesheet_directory'); ?>">
   <div id="preloader" class="preloader">
     <span class="loader_circle one">
@@ -135,6 +134,14 @@
           </span>
         </div>
       </div>
+      <div class="row car-details-row js_feedback_panel">
+        <div class="col-lg-12 col-xs-12">
+            <div class="panel panel-default">
+              <div class="panel-body text-left js_form_error_list">
+              </div>
+            </div>
+        </div>
+      </div>
       <div class="row">
         <div class="col-lg-3 col-xs-0"></div>
         <div class="col-lg-3 col-xs-6">
@@ -182,6 +189,14 @@
           <span id="accepts_privacy_tooltip" class="tooltips normal_size">La aceptación es obligatoria</span>
         </div>
       </div>
+      <div class="row car-details-row js_feedback_panel">
+        <div class="col-lg-12 col-xs-12">
+            <div class="panel panel-default">
+              <div class="panel-body text-left js_form_error_list">
+              </div>
+            </div>
+        </div>
+      </div>
       <div class="row">
         <div class="col-lg-3 col-xs-0"></div>
         <div class="col-lg-3 col-xs-6">
@@ -200,7 +215,7 @@
   <?php include 'partials/shared/_footer.php'; ?>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/javascripts/jquery.easing.min.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123breadcrumbs.js" type="text/javascript"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123form_submit.js" type="text/javascript"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123onboarding_form_submit.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123vin_number.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123car_selector.js" type="text/javascript"></script>
   <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/123cars.js" type="text/javascript"></script>
