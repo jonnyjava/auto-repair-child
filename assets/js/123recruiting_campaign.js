@@ -12,10 +12,14 @@ function recruitable_lookup(data){
 
 function prefill_fields(data){
   $.each( data, function( key, value ) {
-    $('#'+key).val(value);
+    fill_field(key, value);
   });
 }
 
+function fill_field(key, value){
+  if (!key.match(/garage_/)){ key = 'recruitable_'+key; }
+  $('#'+key).val(value);
+}
 function delete_wrong_token(){
   $('#token').val('');
 }

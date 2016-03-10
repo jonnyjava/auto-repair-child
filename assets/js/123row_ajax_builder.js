@@ -58,6 +58,10 @@ function get_form_content(event, clicked_button){
     content += build_row(fields, 'row car-details-row');
   }
   $('#js_dynamic_form').html(content);
+  run_form_event_activations(clicked_button, has_details);
+}
+
+function run_form_event_activations(clicked_button, has_details){
   $('.js_dropdown_menu > li').bind('click', fill_dropdown_with_selected_option);
   $('.js_radiobutton').bind('change', fill_radio_with_selected_option);
   activate_dropdown_toggle();
@@ -65,6 +69,7 @@ function get_form_content(event, clicked_button){
   animate_to_next(clicked_button);
   fill_problem_breadcrumb(clicked_button.text());
   activate_char_counter();
+  activate_hide_tooltip();
   if (has_details){
     activate_details_animation();
     activate_vin_number_search();

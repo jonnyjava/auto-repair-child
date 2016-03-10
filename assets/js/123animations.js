@@ -138,8 +138,8 @@ function hide_message_line(){
 }
 
 function hide_tooltip(clicked_field){
-  var tooltip_id = clicked_field.data('parent-id')+'_tooltip';
-  $('#'+tooltip_id).hide();
+  var field_id = clicked_field.data('parent-id');
+  deemphatize_error(field_id);
 }
 
 function show_preloader(){
@@ -162,4 +162,17 @@ function show_result(){
   $('#progressbar').fadeOut(global_animation_time, function(){
     animate_container_height($('#'+next_step));
   });
+}
+
+function show_error_panel(container_id){
+  $('.js_feedback_panel').fadeIn();
+  animate_container_height($('#'+container_id));
+}
+
+function hide_error_panel_if_empty(container_id){
+  var error_list = $('.js_form_error_list');
+  if( ( error_list.length ) && ( error_list.html().trim() === '') ){
+    $('.js_feedback_panel').hide();
+    animate_container_height($('#'+container_id));
+  }
 }

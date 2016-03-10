@@ -5,7 +5,6 @@
   include 'partials/shared/_header.php';
   require_once('helpers/html_helpers.php');
 ?>
-<link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123dropdowns.css">
 <?php $step1_above = get_field('mechanic_recruiting_c2a_step1_above'); ?>
 <?php $step1_below = get_field('mechanic_recruiting_c2a_step1_below'); ?>
 <?php $step2_above = get_field('mechanic_recruiting_c2a_step2_above'); ?>
@@ -35,7 +34,7 @@
   </div>
   <?php if (isset($recruiting_token)) { ?>
     <div class="msform feedback_container js_feedback_form">
-      <form id="bouncing_feedback_form" action="<?php echo bloginfo('stylesheet_directory');?>" data-destination="<?php echo get_field('feedback_received');?>" method="post">
+      <form id="bouncing_feedback_form" autocomplete="false" autofill="false" action="<?php echo bloginfo('stylesheet_directory');?>" data-destination="<?php echo get_field('feedback_received');?>" method="post">
         <fieldset id="no_step">
           <?php echo panel_inside_row(get_field('no_te_interesa')); ?>
           <div class="row car-details-row">
@@ -84,7 +83,7 @@
 
   <div class="msform js_recruiting_form">
     <fieldset id="step_1">
-      <form id="join_form" method="post" class="js_form js_recruiting_fields" action="<?php echo bloginfo('stylesheet_directory');?>">
+      <form id="recruitable_form" method="post" autocomplete="false" autofill="false" class="js_form js_recruiting_fields" action="<?php echo bloginfo('stylesheet_directory');?>">
         <h1 class="fs-title">¡Unete a nosotros!</h1>
         <?php if ($step1_above) { echo panel_inside_row($step1_above); }  ?>
         <div class="row car-details-row">
@@ -92,61 +91,61 @@
             <label for="garage_name" class="orange-label">Taller</label>
           </div>
           <div class="col-lg-6 no-lg-left-gutter bottom-gutter js_hide_tooltip" data-parent-id="garage_name">
-            <input type="text" id="garage_name" name="garage_name" class="uppercased_content" data-validation-type="not_empty" />
+            <input type="text" id="garage_name" name="garage_name" data-validation-type="not_empty" />
             <div class="help"><i>Pon el nombre completo de tu taller</i></div>
             <span id="garage_name_tooltip" class="tooltips normal_size">Como se llama tu taller?</span>
           </div>
-          <div class="col-lg-2 no-lg-right-gutter js_hide_tooltip" data-parent-id="tax_id">
-            <label for="tax_id" class="orange-label">CIF/NIF</label>
+          <div class="col-lg-2 no-lg-right-gutter js_hide_tooltip" data-parent-id="recruitable_tax_id">
+            <label for="recruitable_tax_id" class="orange-label">CIF/NIF</label>
           </div>
-          <div class="col-lg-2 no-lg-left-gutter bottom-gutter js_hide_tooltip" data-parent-id="tax_id">
-            <input type="text" id="tax_id" name="tax_id" class="uppercased_content" maxlength="9" data-validation-type="tax_id" />
+          <div class="col-lg-2 no-lg-left-gutter bottom-gutter js_hide_tooltip" data-parent-id="recruitable_tax_id">
+            <input type="text" id="recruitable_tax_id" name="recruitable_tax_id" class="uppercased_content" maxlength="9" data-validation-type="tax_id" />
             <div class="help"><i>Los 9 digitos</i></div>
-            <span id="tax_id_tooltip" class="tooltips normal_size">Código invalido</span>
+            <span id="recruitable_tax_id_tooltip" class="tooltips normal_size">CIF/NIF invalido</span>
           </div>
         </div>
         <div class="row car-details-row">
-          <div class="col-lg-2 no-lg-right-gutter js_hide_tooltip" data-parent-id="street">
-            <label for="street" class="orange-label">Dirección</label>
+          <div class="col-lg-2 no-lg-right-gutter js_hide_tooltip" data-parent-id="recruitable_street">
+            <label for="recruitable_street" class="orange-label">Dirección</label>
           </div>
-          <div class="col-lg-6 no-lg-left-gutter bottom-gutter js_hide_tooltip" data-parent-id="street">
-            <input type="text" id="street" name="street" class="uppercased_content js_autocompletable_address" data-validation-type="address" />
+          <div class="col-lg-6 no-lg-left-gutter bottom-gutter js_hide_tooltip" data-parent-id="recruitable_street">
+            <input type="text" id="recruitable_street" name="recruitable_street" class="js_autocompletable_address" data-validation-type="address" />
             <div class="help"><i>Pon la dirección completa<span class="help_for_big">, será más facil localizarte en el mapa</span></i></div>
-            <span id="street_tooltip" class="tooltips normal_size">Esta dirección no es valida</span>
+            <span id="recruitable_street_tooltip" class="tooltips normal_size">Esta dirección no es valida</span>
           </div>
-          <div class="col-lg-2 no-lg-right-gutter js_hide_tooltip" data-parent-id="zip">
-            <label for="zip" class="orange-label">Código postal</label>
+          <div class="col-lg-2 no-lg-right-gutter js_hide_tooltip" data-parent-id="recruitable_zip">
+            <label for="recruitable_zip" class="orange-label">Código postal</label>
           </div>
-          <div class="col-lg-2 no-lg-left-gutter bottom-gutter js_hide_tooltip" data-parent-id="zip">
-            <input type="text" id="zip" name="zip" class="uppercased_content" maxlength="5" data-validation-type="zip" />
-            <span id="zip_tooltip" class="tooltips normal_size">CP incorrecto</span>
+          <div class="col-lg-2 no-lg-left-gutter bottom-gutter js_hide_tooltip" data-parent-id="recruitable_zip">
+            <input type="text" id="recruitable_zip" name="recruitable_zip" class="uppercased_content" maxlength="5" data-validation-type="zip" />
+            <span id="recruitable_zip_tooltip" class="tooltips normal_size">CP incorrecto</span>
           </div>
         </div>
         <div class="row car-details-row">
-          <div class="col-lg-2 no-lg-right-gutter js_hide_tooltip" data-parent-id="email">
-            <label for="email" class="orange-label">Email</label>
+          <div class="col-lg-2 no-lg-right-gutter js_hide_tooltip" data-parent-id="recruitable_email">
+            <label for="recruitable_email" class="orange-label">Email</label>
           </div>
-          <div class="col-lg-6 no-lg-left-gutter bottom-gutter js_hide_tooltip" data-parent-id="email">
-            <input type="text" id="email" name="email" class="uppercased_content" data-validation-type="email"/>
+          <div class="col-lg-6 no-lg-left-gutter bottom-gutter js_hide_tooltip" data-parent-id="recruitable_email">
+            <input type="text" id="recruitable_email" name="recruitable_email" data-validation-type="email"/>
             <div class="help"><i>es: tunombre@email.com</i></div>
-            <span id="email_tooltip" class="tooltips normal_size">Email invalida!</span>
+            <span id="recruitable_email_tooltip" class="tooltips normal_size">Email invalida!</span>
           </div>
 
-          <div class="col-lg-2 no-lg-right-gutter js_hide_tooltip" data-parent-id="phone">
-            <label for="phone" class="orange-label">Teléfono</label>
+          <div class="col-lg-2 no-lg-right-gutter js_hide_tooltip" data-parent-id="recruitable_phone">
+            <label for="recruitable_phone" class="orange-label">Teléfono</label>
           </div>
-          <div class="col-lg-2 no-lg-left-gutter bottom-gutter js_hide_tooltip" data-parent-id="phone">
-            <input type="text" id="phone" name="phone" class="uppercased_content js_phone_formatter" maxlength="12" data-validation-type="phone" />
+          <div class="col-lg-2 no-lg-left-gutter bottom-gutter js_hide_tooltip" data-parent-id="recruitable_phone">
+            <input type="text" id="recruitable_phone" name="recruitable_phone" class="uppercased_content js_phone_formatter" maxlength="12" data-validation-type="phone" />
             <div class="help"><i>Solo digitos, sin +34 ni espacios</i></div>
-            <span id="phone_tooltip" class="tooltips normal_size">Numero invalido!</span>
+            <span id="recruitable_phone_tooltip" class="tooltips normal_size">Telefono invalido!</span>
           </div>
         </div>
         <div class="row car-details-row">
-          <div class="col-lg-2 no-lg-right-gutter js_hide_tooltip" data-parent-id="password">
-            <label for="password" class="orange-label">Contraseña</label>
+          <div class="col-lg-2 no-lg-right-gutter js_hide_tooltip" data-parent-id="recruitable_password">
+            <label for="recruitable_password" class="orange-label">Contraseña</label>
           </div>
-          <div class="col-lg-6 no-lg-left-gutter bottom-gutter js_hide_tooltip" data-parent-id="password">
-            <input type="password" class="js_password" id="password" name="password" maxlength="20" data-validation-type="not_empty" />
+          <div class="col-lg-6 no-lg-left-gutter bottom-gutter js_hide_tooltip" data-parent-id="recruitable_password">
+            <input type="text" class="js_password" id="recruitable_password" name="recruitable_password" maxlength="20" data-validation-type="not_empty" />
             <div class="help"><i>Nivel de seguridad:</i>
               <i class="fa fa-circle-thin password_strength js_password_strength" id="js_password_strength_1"></i>
               <i class="fa fa-circle-thin password_strength js_password_strength" id="js_password_strength_2"></i>
@@ -155,7 +154,7 @@
               <i class="fa fa-circle-thin password_strength js_password_strength" id="js_password_strength_5"></i>
               <i class="fa fa-circle-thin password_strength js_password_strength" id="js_password_strength_6"></i>
             </div>
-            <span id="password_tooltip" class="tooltips normal_size">Minimo 6 caracteres</span>
+            <span id="recruitable_password_tooltip" class="tooltips normal_size">Minimo 6 caracteres</span>
           </div>
           <div class="col-lg-4 col-xs-12 js_hide_tooltip" data-parent-id="accepts_privacy">
             <label class="orange-label">
@@ -178,6 +177,14 @@
           </div>
         </div>
         <?php if ($step1_below) { echo panel_inside_row($step1_below); }  ?>
+        <div class="row js_feedback_panel">
+          <div class="col-lg-12 col-xs-12">
+              <div class="panel panel-default">
+                <div class="panel-body text-left js_form_error_list">
+                </div>
+              </div>
+          </div>
+        </div>
         <div class="row car-details-row">
           <div class="col-lg-2 col-xs-0"></div>
           <?php if (isset($recruiting_token)) {?>

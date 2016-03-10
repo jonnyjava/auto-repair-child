@@ -51,7 +51,7 @@ function autofill_car_details_dropdowns(car_details){
     }
     $('#'+parentId).text(choosen_option);
     $('#'+parentId+'_id').val(choosen_option);
-    $('#'+parentId+'_tooltip').hide();
+    deemphatize_error(parentId);
     unknown_details = remove_element(unknown_details, key);
   });
 
@@ -83,6 +83,7 @@ function reset_car_detail_fields(){
 }
 
 function disable_vin_validation(){
+  deemphatize_error('vin_number');
   $('.js_vin_numer_search_fallback').unbind("click", search_by_vin_number);
   $('#vin_number').data('validation-type', '');
 }
