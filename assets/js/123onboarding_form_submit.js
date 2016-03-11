@@ -1,6 +1,6 @@
 function submit_onboarding_form(){
-  var my_destination = global_server_url + '/controllers/demand_controller.php';
   var submitted_datas = $('#onboarding_form').serialize();
+  var my_destination = global_server_url + '/controllers/demand_controller.php';
   $.ajax({type: 'POST', data: submitted_datas, url: my_destination, async: true}).done(function(response){
     var parsed_response = jQuery.parseJSON(response);
     if(parsed_response.status === 400){

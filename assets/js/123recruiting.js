@@ -7,7 +7,7 @@ $(document).ready(function(){
 });
 
 function setup_form(){
-  set_global_server_url('join');
+  set_global_server_url('recruitable');
   prevent_events_defaults();
 }
 
