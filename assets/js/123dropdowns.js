@@ -3,7 +3,7 @@ function fill_dropdown_with_selected_option(){
   var parentId = $(this).parent().data('parent-id');
   $('#'+parentId).text(choosen_option);
   $('#'+parentId+'_id').val(choosen_option);
-  $('#'+parentId+'_tooltip').hide();
+  deemphatize_error(parentId);
 }
 
 function dropdown_toggler(event){
@@ -26,7 +26,7 @@ function fill_radio_with_selected_option(){
   var choosen_option = $(this).val();
   $('#'+parentId).text(choosen_option);
   $('#'+parentId+'_id').val(choosen_option);
-  $('#'+parentId+'_tooltip').hide();
+  deemphatize_error(parentId);
 }
 
 function disable_service_dropdown(){

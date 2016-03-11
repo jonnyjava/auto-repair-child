@@ -5,7 +5,7 @@ function content_for_step_is_valid(clicked_button){
 }
 
 function content_for_join_is_valid(clicked_button){
-  strip_html_from_fields(['garage_name', 'tax_id', 'street', 'zip', 'phone']);
+  strip_html_from_fields(['garage_name', 'recruitable_tax_id', 'recruitable_street', 'recruitable_zip', 'recruitable_phone']);
   var step_values = serialize_for_validation(clicked_button);
   return step_values_are_valid(step_values);
 }
@@ -76,8 +76,7 @@ function perform_dedicate_validation(field, value){
     default:
       field_is_valid = true;
   }
-
-  field_is_valid ? $('#'+field_id+'_tooltip').hide() : $('#'+field_id+'_tooltip').show();
+  field_is_valid ? deemphatize_error(field_id) : emphatize_error(field_id);
   return field_is_valid;
 }
 
@@ -99,7 +98,7 @@ function is_valid_cif_or_nif_format(value){
 
 function phone_autoformatter(filled_field){
   var value = filled_field.val();
-  var cleaned_value = value.match(/[0-9]+/gi);
+  var cleaned_value = value.replace(/[^0-9]+/gi, '');
   if (cleaned_value !== null){
     filled_field.val(cleaned_value);
   }
@@ -114,6 +113,6 @@ function strip_html_tags(field_name){
   var tmp = document.createElement('DIV');
   tmp.innerHTML = dirty_input.replace('src', '');
   cleaned_input = (tmp.textContent || tmp.innerText  || '');
-  cleaned_input = cleaned_input.replace(/\(\w*\)|-|<|>/gi, '').trim();
+  cleaned_input = cleaned_input.replace(/[^a-zA-Z0-9:;,]+/gi, ' ').trim();
   $('#'+field_name).val(cleaned_input);
 }

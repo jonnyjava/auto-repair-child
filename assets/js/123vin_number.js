@@ -1,9 +1,3 @@
-function count_chars(filled_field){
-  var field_id = filled_field.attr('id');
-  $('#'+field_id+'_filled_chars').text(filled_field.val().length);
-  $('#'+field_id+'_tooltip').hide();
-}
-
 function search_by_vin_number(){
   var vin_field = $('#vin_number');
   var vin_value = vin_field.val();
@@ -57,7 +51,7 @@ function autofill_car_details_dropdowns(car_details){
     }
     $('#'+parentId).text(choosen_option);
     $('#'+parentId+'_id').val(choosen_option);
-    $('#'+parentId+'_tooltip').hide();
+    deemphatize_error(parentId);
     unknown_details = remove_element(unknown_details, key);
   });
 
@@ -89,13 +83,7 @@ function reset_car_detail_fields(){
 }
 
 function disable_vin_validation(){
+  deemphatize_error('vin_number');
   $('.js_vin_numer_search_fallback').unbind("click", search_by_vin_number);
   $('#vin_number').data('validation-type', '');
-}
-
-function toggle_caret(){
-  $('.js_toggle_caret').each(function(){
-    $(this).toggle();
-    $(this).parent().toggleClass('disabled-field');
-  })
 }

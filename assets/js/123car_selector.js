@@ -12,7 +12,6 @@ function car_selector(){
       }
     }
     enable_field('model', options);
-    $('#car_brand_tooltip').hide();
     car_model_selector();
     disable_field('year');
     disable_field('engine');
@@ -38,7 +37,6 @@ function car_model_selector(){
       options = "<li data-value='0'>cualquiera</li>";
     }
     enable_field('year', options);
-    $('#car_model_tooltip').hide();
     car_year_selector();
     disable_field('engine');
     disable_field('engine_letters');
@@ -64,7 +62,6 @@ function car_year_selector(){
       options = "<li data-value='0'>cualquiera</li>"
     }
     enable_field('engine', options);
-    $('#car_year_tooltip').hide();
     car_engine_selector();
     disable_field('engine_letters');
     autoclick_if_one_option('year', 'engine');
@@ -75,12 +72,11 @@ function car_year_selector(){
 function car_engine_selector(){
   $('#car_engine_dropdown > li').click(function(){
     enable_field('engine_letters');
-    $('#car_engine_tooltip').hide();
   });
 }
 
 function enable_field(name, options){
-  $('#car_'+name+'_tooltip').hide();
+  deemphatize_error('car_'+name);
   $('#car_'+name+'_dropdown').empty();
   $('#car_'+name+'_dropdown').html(options);
   $('#car_'+name+'_dropdown > li').bind("click", fill_dropdown_with_selected_option);

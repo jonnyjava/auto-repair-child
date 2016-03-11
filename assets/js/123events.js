@@ -165,12 +165,6 @@ function activate_details_animation(){
   });
 }
 
-function activate_button_bar(){
-  $('.js_button_bar').click(function(){
-    toggle_button_in_bar($(this));
-  });
-}
-
 function activate_city_autocomplete(){
   $('.js_user_city_autocomplete').geocomplete({
     componentRestrictions: {country: 'es'}
@@ -178,8 +172,4 @@ function activate_city_autocomplete(){
     enable_service_dropdown();
   });
   $('.js_user_city_autocomplete').bind('keypress', disable_service_dropdown);
-}
-
-function activate_address_autocomplete(){
-  $('.js_autocompletable_address').geocomplete({ componentRestrictions: {country: 'es'} });
 }

@@ -43,3 +43,8 @@
   border-right: 0.75em solid transparent;
   border-left: 0.75em solid transparent;
 }
+
+.error_emphasis{
+  background-color: black !important;
+  text-shadow: 0px 0px 15px #ffffff;
+}
