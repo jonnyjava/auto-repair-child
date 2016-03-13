@@ -36,7 +36,12 @@
     <div class="msform feedback_container js_feedback_form">
       <form id="bouncing_feedback_form" autocomplete="false" autofill="false" action="<?php echo bloginfo('stylesheet_directory');?>" data-destination="<?php echo get_field('feedback_received');?>" method="post">
         <fieldset id="no_step">
-          <?php echo panel_inside_row(get_field('no_te_interesa')); ?>
+          <?php
+            $not_interested = get_field('no_te_interesa');
+            if ($not_interested){
+              echo panel_inside_row($not_interested);
+            }
+          ?>
           <div class="row car-details-row">
             <div class="col-lg-4 no-lg-right-gutter">
               <label data-dropdown-name="bouncing_feedback_dropdown" class="orange-label js_dropdown_opener">Porquè no te interesa?</label>

@@ -44,4 +44,15 @@ CREATE TABLE IF NOT EXISTS wp_bouncing_feedback (
   token VARCHAR(40)
 );
 
+CREATE TABLE IF NOT EXISTS wp_personal_config(
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  ewok_url VARCHAR(60),
+  ewok_token VARCHAR(60),
+  rollbar_server_token VARCHAR(60),
+  rollbar_client_token VARCHAR(60),
+  sendinblue_token VARCHAR(60),
+  environment VARCHAR(20)
+);
+INSERT INTO wp_personal_config (ewok_url, ewok_token, rollbar_server_token, rollbar_client_token, sendinblue_token, environment) VALUES('','','','','','development');
+
 ```

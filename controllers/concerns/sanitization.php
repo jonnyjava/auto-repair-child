@@ -14,7 +14,6 @@ function raw_dirty_replace($input){
   $input = str_replace($suspicious_to_replace, "", $input);
   $chars_to_replace = array(":", ";", ")", "(", "'", "-");
   $input = str_replace($chars_to_replace, "", $input);
-  $input = preg_replace('!\W+!', ' ', $input);
   return $input;
 }
 
