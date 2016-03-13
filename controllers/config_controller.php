@@ -1,8 +1,9 @@
 <?php
   require '../models/config.php';
+
   $config = new Config();
 
-  if(isset($_GET)){//this one is for JS
+  if(!is_null($_GET)){//this one is for JS
     echo get_ewok_config($config);
   }
 
@@ -28,8 +29,8 @@
 
   function get_ewok_config($config){
     $ewok_config = $config->get_ewok_connection();
-    $url = $ewok_config['url'];
-    $token = $ewok_config['token'];
+    $url = $ewok_config['ewok_url'];
+    $token = $ewok_config['ewok_token'];
     $response = json_encode(array('ewok_url' => $url, 'ewok_token' => $token ));
     return $response;
   }
@@ -37,4 +38,5 @@
   function redirect_to_origin(){
     header("Location: ".$_SERVER['HTTP_REFERER']);
   }
+
 ?>
