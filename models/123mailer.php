@@ -1,4 +1,5 @@
 <?php
+require('config.php');
 require('../vendor/Mailin.php');
 require('../vendor/PHPMailer/PHPMailerAutoload.php');
 require('../private/constants.php');
@@ -47,7 +48,9 @@ Class DemandMailer {
   }
 
   private function send_mail_with_sendinblue_api($demand){
-    $mailin = new Mailinblue("https://api.sendinblue.com/v2.0", $this->constants['Sendinblue_API_key']);
+    $config = new Config();
+    $sendinblue_token = $config->get_sendinblue_connection();
+    $mailin = new Mailinblue("https://api.sendinblue.com/v2.0", $sendinblue_token);
     $data = array(
       "id" => 3,
       "to" => $demand->email,

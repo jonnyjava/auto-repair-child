@@ -1,18 +1,22 @@
 <?php
+require_once(get_stylesheet_directory().'/models/config.php');
 require_once(dirname(__FILE__).'/../../private/constants.php');
 require_once(dirname(__FILE__).'/../../vendor/rollbar.php');
 $constants = get_costants();
+$config = new Config();
+$rollbar_config = $config->get_rollbar_connection();
+$environment = $config->get_environment();
 
-if ($constants['environment'] != 'development'){
-  Rollbar::init(array('access_token' => $constants['rollbar_server_token'],'environment' => $constants['environment']));
+if ($environment == 'production'){
+  Rollbar::init(array('access_token' => $rollbar_config['rollbar_server_token'],'environment' => $environment ));
 ?>
   <script>
   var _rollbarConfig = {
-    accessToken: "<?php echo $constants['rollbar_client_token']?>",
+    accessToken: "<?php echo $rollbar_config['rollbar_client_token']?>",
     captureUncaught: true,
     ignoreAjaxErrors: false,
     payload: {
-      environment: "<?php echo $constants['environment']?>"
+      environment: "<?php echo $environment ?>"
     }
   };
   </script>

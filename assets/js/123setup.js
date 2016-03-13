@@ -53,7 +53,7 @@ function remove_element(array, element){
 function set_api_auth_token(){
    $.ajax({
     type: 'GET',
-    url: global_server_url + '/controllers/ewok_connection_controller.php',
+    url: global_server_url + '/controllers/config_controller.php',
     async: false
   }).done(function(response){
     var parsed_response = jQuery.parseJSON(response);
