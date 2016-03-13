@@ -1,5 +1,10 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'].'/123mecanico/wp-load.php');
+$load_location = ($_SERVER['DOCUMENT_ROOT'].'/wp-load.php');
+if(!file_exists($load_location)){
+  $load_location = ($_SERVER['DOCUMENT_ROOT'].'/123mecanico/wp-load.php');
+}
+
+require $load_location;
 
 Class Config{
   function __construct(){
@@ -51,4 +56,5 @@ Class Config{
     $this->db->update( $this->table_name, $data, $this->where );
   }
 }
+
 ?>

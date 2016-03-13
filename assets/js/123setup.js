@@ -57,8 +57,8 @@ function set_api_auth_token(){
     async: false
   }).done(function(response){
     var parsed_response = jQuery.parseJSON(response);
-    api_url = parsed_response.url;
-    api_auth_token = parsed_response.token;
+    api_url = parsed_response.ewok_url;
+    api_auth_token = parsed_response.ewok_token;
   }).error(function(){
     load_error_page();
   });
