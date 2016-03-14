@@ -194,14 +194,14 @@
           <div class="col-lg-2 col-xs-0"></div>
           <?php if (isset($recruiting_token)) {?>
             <div class="col-lg-5 col-xs-12 join_button">
-              <input type="button" id="submit_step_1" class="next go_next animation-button js_join_123mecanico js_saver" data-fieldset="step_1" data-next-fieldset="step_2" value="UNIRME A 123MECANICO!">
+              <input type="button" id="submit_step_1" class="next go_next animation-button js_join_123mecanico js_saver" data-fieldset="step_1" data-next-fieldset="step_2" value="UNIRME!">
             </div>
             <div class="col-lg-3 col-xs-0">
               <input type="button" class="previous animation-button js_recruiting_bouncer" value="No me interesa">
             </div>
           <?php } else {?>
             <div class="col-lg-8 col-xs-12 join_button">
-              <input type="button" id="submit_step_1" class="next go_next animation-button js_join_123mecanico js_saver" data-fieldset="step_1" data-next-fieldset="step_2" value="UNIRME A 123MECANICO!">
+              <input type="button" id="submit_step_1" class="next go_next animation-button js_join_123mecanico js_saver" data-fieldset="step_1" data-next-fieldset="step_2" value="UNIRME!">
             </div>
           <?php } ?>
           <div class="col-lg-2 col-xs-0"></div>

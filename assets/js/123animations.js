@@ -88,7 +88,7 @@ function animate_to_top(){
 function animate_container_height(current_step){
   var step_height = current_step.outerHeight();
   var form_height = $('#onboarding_form').height();
-  var progressbar_height = $('#progressbar').outerHeight();
+  var progressbar_height = $('#progressbar').outerHeight() || 25;
   var submit_button_height = $('.js_saver').outerHeight();
   var new_height = step_height + form_height + progressbar_height + submit_button_height;
   var actual_height = $('.js_animatable_container').height();
