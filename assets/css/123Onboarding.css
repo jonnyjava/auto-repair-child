@@ -186,6 +186,18 @@ li > .hint{
   font-weight: normal;
   position: relative;
 }
+.error_explained{
+  color: #666666;
+  font-size: 1.125em;
+  margin: 0.5em 0;
+  font-weight: boder;
+}
+.error_explained:before{
+  font-family: "FontAwesome";
+  content: "\f071";
+  color: #E67500;
+  text-decoration: none;
+}
 /*typeahead customizations*/
 .Typeahead-hint{
   display: none;

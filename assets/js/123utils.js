@@ -36,7 +36,7 @@ function deemphatize_error(field_id){
 function build_error_message(tooltip){
   var error_name = 'js_error_'+tooltip.attr('id');
   if(!$('.'+error_name).length){
-    var error_message = '<div class="col-lg-4 col-xs-12 '+error_name+'">'+tooltip.text() + "</div>";
+    var error_message = '<div class="col-lg-4 col-xs-12 '+error_name+' error_explained">'+ tooltip.text() + '</div>';
     $('.js_form_error_list').append(error_message);
   }
 }

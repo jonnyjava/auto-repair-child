@@ -113,6 +113,6 @@ function strip_html_tags(field_name){
   var tmp = document.createElement('DIV');
   tmp.innerHTML = dirty_input.replace('src', '');
   cleaned_input = (tmp.textContent || tmp.innerText  || '');
-  cleaned_input = cleaned_input.replace(/[^a-zA-Z0-9:;,]+/gi, ' ').trim();
+  cleaned_input = cleaned_input.replace(/[^a-zA-Z0-9:;,àèìòùáéíóúäëïöüñçÀÈÌÒÙÁÉÍÓÚÄËÏÖÜÑÇ]+/gi, ' ').trim();
   $('#'+field_name).val(cleaned_input);
 }
