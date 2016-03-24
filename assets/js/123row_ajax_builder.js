@@ -37,7 +37,8 @@ function get_form_content(event, clicked_button){
   var fields = clicked_button.data('car-fields').split(',');
   var content = '';
   var js_toggling_class = '';
-  $('#service_id').val(clicked_button.html());
+  $('#service_id').val(clicked_button.attr('id'));
+  $('#service_name').val(clicked_button.html());
 
   if (has_details){
     js_toggling_class = 'js_toggle_details'

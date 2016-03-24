@@ -1,4 +1,37 @@
 function submit_onboarding_form(){
+  save_demand_remotely();
+  save_demand_locally();
+}
+
+function save_demand_remotely(){
+  var submitted_datas = {demand : build_demand_json()};
+  $.ajax({
+    type: 'POST',
+    data: JSON.stringify(submitted_datas),
+    contentType: 'application/json; charset=utf-8',
+    dataType: 'json',
+    headers: {
+      Authorization: 'Token token='+api_auth_token
+    },
+    url: api_url+'/demands',
+    async: true
+  }).always(function(response){
+    console.log(response);
+  });
+}
+
+function build_demand_json(){
+  var demand = {};
+  var form_content = $('#onboarding_form').serializeArray();
+  $.each(form_content, function(){
+    demand[this.name] = this.value;
+  });
+  demand['city'] = demand['user_city'];
+  demand['demand_details'] = $('#onboarding_form').serialize();
+  return demand;
+}
+
+function save_demand_locally(){
   var submitted_datas = $('#onboarding_form').serialize();
   var my_destination = global_server_url + '/controllers/demand_controller.php';
   $.ajax({type: 'POST', data: submitted_datas, url: my_destination, async: true}).done(function(response){
@@ -95,7 +128,7 @@ function translate(value){
   translations['lamp_type_id'] = 'Faro';
   translations['light_type_id'] = 'Lampara';
   translations['light_quantity_id'] = 'Cantidad';
-  translations['injector_service_category_id'] = 'Intervención';
+  translations['injector_service_category_name'] = 'Intervención';
   translations['injector_quantity_id'] = 'Cantidad';
   translations['gas_tube_id'] = 'Tipo de escape';
   translations['wheel_shock_absorber_type_id'] = 'Amortiguador';

@@ -8,8 +8,10 @@ This theme has been written to have our custom onboarding form.
 CREATE TABLE IF NOT EXISTS wp_demands (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 city VARCHAR(50),
-service_category_id VARCHAR(50),
-service_id VARCHAR(50),
+service_category_id INT(6) UNSIGNED,
+service_category_name VARCHAR(50),
+service_id INT(6) UNSIGNED,
+service_name VARCHAR(50),
 vin_number VARCHAR(17),
 brand VARCHAR(20),
 model VARCHAR(20),

@@ -176,3 +176,16 @@ function hide_error_panel_if_empty(container_id){
     animate_container_height($('#'+container_id));
   }
 }
+
+function show_quote_landing(clicked_button){
+  var title = clicked_button.data('title');
+  $('.js_quote_answer_page_title').text(title);
+}
+
+function hide_garage_data(){
+  $('.js_garage_data_landing').empty();
+}
+
+function hide_refuse_landing(){
+  $('.js_refused_landing').empty();
+}

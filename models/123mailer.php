@@ -27,7 +27,7 @@ Class DemandMailer {
     $this->translations['lamp_type_id'] = 'Faro';
     $this->translations['light_type_id'] = 'Lampara';
     $this->translations['light_quantity_id'] = 'Cantidad';
-    $this->translations['injector_service_category_id'] = 'Intervenci&oacute;n';
+    $this->translations['injector_service_category_name'] = 'Intervenci&oacute;n';
     $this->translations['injector_quantity_id'] = 'Cantidad';
     $this->translations['gas_tube_id'] = 'Tipo de escape';
     $this->translations['wheel_shock_absorber_type_id'] = 'Amortiguador';
@@ -117,8 +117,8 @@ Class DemandMailer {
 
   private function build_step1($demand){
     $text = $this->build_step_header('Tu necesidad',1);
-    $text .= $this->build_step_row('Categoria', $demand->service_category_id);
-    $text .= $this->build_step_row('Servicio', $demand->service_id);
+    $text .= $this->build_step_row('Categoria', $demand->service_category_name);
+    $text .= $this->build_step_row('Servicio', $demand->service_name);
     $text .= $this->build_details($demand);
     $text .= $this->build_step_row('Comentarios adicionales', $demand->comments);
     return $text;
@@ -201,8 +201,8 @@ Class DemandMailer {
     $text .= "A recibirlos, podr&aacute;s elegir el taller que prefieras, y despu&eacute;s de haber elegido uno, deber&aacute;s llamarlo para definir una fecha de intervenci&oacute;n.\r\n";
     $text .= "Durante la intervenci&oacute;n, pagaras directamente el taller por su trabajo.\r\n";
     $text .= "\r\nTu necesidad\r\n";
-    $text .= "Categoria: ". $demand->service_category_id."\r\n";
-    $text .= "Servicio: ".$demand->service_id."\r\n";
+    $text .= "Categoria: ". $demand->service_category_name."\r\n";
+    $text .= "Servicio: ".$demand->service_name."\r\n";
     $details = json_decode($demand->demand_details, true);
     foreach($details as $key => $value) {
       $pos_car = strpos($key, 'car_');

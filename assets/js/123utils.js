@@ -40,3 +40,21 @@ function build_error_message(tooltip){
     $('.js_form_error_list').append(error_message);
   }
 }
+
+function send_to_api(submitted_datas, destination_url, method, ok_callback, ko_callback){
+  $.ajax({
+    type: method,
+    data: submitted_datas,
+    headers: {
+      Authorization: 'Token token='+api_auth_token
+    },
+    url: api_url+destination_url,
+    async: true
+  }).done(function(response){
+    if(ok_callback){ok_callback(response);}
+  }).error(function(){
+    if(ko_callback){ko_callback();}
+  }).always(function(){
+    hide_preloader();
+  });
+}

@@ -15,7 +15,9 @@ $response = '';
 $demand = new Demand();
 $demand->city = raw_homemade_sanitize($_POST['user_city']);
 $demand->service_category_id = raw_homemade_sanitize($_POST['service_category_id']);
+$demand->service_category_name = raw_homemade_sanitize($_POST['service_category_name']);
 $demand->service_id = raw_homemade_sanitize($_POST['service_id']);
+$demand->service_name = raw_homemade_sanitize($_POST['service_name']);
 $demand->vin_number = raw_homemade_sanitize($_POST['vin_number']);
 $demand->brand = raw_homemade_sanitize($_POST['car_brand_id']);
 $demand->model = raw_homemade_sanitize($_POST['car_model_id']);
@@ -43,7 +45,7 @@ echo $response;
 
 function details_as_json(){
   $details = [];
-  $basic_values = array("city", "user_city", "service_category_id", "service_id", "vin_number", "brand", "model", "year", "engine", "engine_letters", "name_and_surnames", "phone", "email", "wants_newsletter", "accepts_privacy", "comments");
+  $basic_values = array("city", "user_city", "service_category_id", "service_category_name", "service_id", "service_name", "vin_number", "brand", "model", "year", "engine", "engine_letters", "name_and_surnames", "phone", "email", "wants_newsletter", "accepts_privacy", "comments");
   foreach ($posted_values as $key => $value) {
     if( !(in_array($key, $basic_values)) ){
       $details[$key] = raw_dirty_replace($value);
@@ -57,7 +59,8 @@ function save($wpdb, $demand){
   $wpdb->insert( $table_name, array(
     'city' => $demand->city,
     'service_category_id' => $demand->service_category_id,
-    'service_id' => $demand->service_id,
+    'service_category_name' => $demand->service_category_name,
+    'service_name' => $demand->service_name,
     'vin_number' => $demand->vin_number,
     'brand' => $demand->brand,
     'model' => $demand->model,

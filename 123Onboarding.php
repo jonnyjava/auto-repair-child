@@ -4,18 +4,7 @@
 <?php include 'partials/shared/_header.php'; ?>
 <link rel="stylesheet prefetch" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/123confirmation_page.css">
 <div class="onboarding_container js_animatable_container" id="js_onboarding_container" data-partial-url="<?php echo bloginfo('stylesheet_directory'); ?>">
-  <div id="preloader" class="preloader">
-    <span class="loader_circle one">
-      <span>1</span>
-    </span>
-    <span class="loader_circle two">
-      <span>2</span>
-    </span>
-    <span class="loader_circle three">
-      <span>3</span>
-    </span>
-    <div class="loader_text">Cargando...</div>
-  </div>
+  <?php include 'partials/shared/_preloader.php'; ?>
   <form class="msform" id="onboarding_form" autocomplete="false" autofill="false" action="<?php echo bloginfo('stylesheet_directory');?>" method="post">
     <ul class="progressbar" id="progressbar">
       <li class="active">Tu problema<br/><i class="hint" id="problem_breadcrumb"></i></li>
@@ -26,100 +15,100 @@
       <h1 class="fs-title">¿Que necesitas?</h1>
       <span id="js_dynamic_form_first_step" class="first_step_container"></span>
       <div class="row js_services js_s0">
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-wrench js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Avería en el motor</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-brakes js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Frenos</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-battery js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Bateria</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-insurance js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Electricidad</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-suspension js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Suspensión</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-tyre js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Dirección</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-engine js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Control de emisiones</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Pre-ITV</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-diagnostic js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Otro diagnóstico</button></div>
+        <div class="col-md-4"><button id="1" class="btn btn-2 btn-sep icon-wrench js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Avería en el motor</button></div>
+        <div class="col-md-4"><button id="2" class="btn btn-2 btn-sep icon-brakes js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Frenos</button></div>
+        <div class="col-md-4"><button id="3" class="btn btn-2 btn-sep icon-battery js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Bateria</button></div>
+        <div class="col-md-4"><button id="4" class="btn btn-2 btn-sep icon-insurance js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Electricidad</button></div>
+        <div class="col-md-4"><button id="5" class="btn btn-2 btn-sep icon-suspension js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Suspensión</button></div>
+        <div class="col-md-4"><button id="6" class="btn btn-2 btn-sep icon-tyre js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Dirección</button></div>
+        <div class="col-md-4"><button id="7" class="btn btn-2 btn-sep icon-engine js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Control de emisiones</button></div>
+        <div class="col-md-4"><button id="8" class="btn btn-2 btn-sep icon-car js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Pre-ITV</button></div>
+        <div class="col-md-4"><button id="9" class="btn btn-2 btn-sep icon-diagnostic js_servicename" data-car-details-fields='' data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Otro diagnóstico</button></div>
       </div>
       <div class="row js_services js_s1">
         <div class="col-md-3"></div>
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-battery js_servicename" data-car-details-fields='true' data-car-fields='brand,model,year' data-service-fields='budget' data-fieldset="step_1">Sustitución de la batería</button></div>
+        <div class="col-md-6"><button id="10" class="btn btn-2 btn-sep icon-battery js_servicename" data-car-details-fields='true' data-car-fields='brand,model,year' data-service-fields='budget' data-fieldset="step_1">Sustitución de la batería</button></div>
         <div class="col-md-3"></div>
       </div>
       <div class="row js_services js_s2">
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-tyre js_servicename" data-car-fields='' data-car-details-fields='' data-service-fields='mounting_tyres' data-fieldset="step_1">Montaje</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-tyre js_servicename" data-car-fields='' data-car-details-fields='' data-service-fields='reparing_tyres' data-fieldset="step_1">Reparación pinchazo</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-tyre js_servicename" data-car-fields='' data-car-details-fields='' data-service-fields='number_of_tyres' data-fieldset="step_1">Permutación</button></div>
+        <div class="col-md-4"><button id="11" class="btn btn-2 btn-sep icon-tyre js_servicename" data-car-fields='' data-car-details-fields='' data-service-fields='mounting_tyres' data-fieldset="step_1">Montaje</button></div>
+        <div class="col-md-4"><button id="12" class="btn btn-2 btn-sep icon-tyre js_servicename" data-car-fields='' data-car-details-fields='' data-service-fields='reparing_tyres' data-fieldset="step_1">Reparación pinchazo</button></div>
+        <div class="col-md-4"><button id="13" class="btn btn-2 btn-sep icon-tyre js_servicename" data-car-fields='' data-car-details-fields='' data-service-fields='number_of_tyres' data-fieldset="step_1">Permutación</button></div>
       </div>
       <div class="row js_services js_s3">
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-oil js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='revision_constructor' data-fieldset="step_1">Revisión completa</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-oil js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='change_filter' data-fieldset="step_1">Cambio de aceite</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-oil js_servicename" data-car-fields='brand,model,year' data-car-details-fields='' data-service-fields='' data-fieldset="step_1">Liquido refrigerante</button></div>
+        <div class="col-md-4"><button id="14" class="btn btn-2 btn-sep icon-oil js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='revision_constructor' data-fieldset="step_1">Revisión completa</button></div>
+        <div class="col-md-4"><button id="15" class="btn btn-2 btn-sep icon-oil js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='change_filter' data-fieldset="step_1">Cambio de aceite</button></div>
+        <div class="col-md-4"><button id="16" class="btn btn-2 btn-sep icon-oil js_servicename" data-car-fields='brand,model,year' data-car-details-fields='' data-service-fields='' data-fieldset="step_1">Liquido refrigerante</button></div>
       </div>
       <div class="row js_services js_s4">
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='' data-service-fields='' data-fieldset="step_1">Escobillas</button></div>
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='glass_type' data-fieldset="step_1">Luna</button></div>
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='rearview' data-fieldset="step_1">Retrovisor</button></div>
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='bumper' data-fieldset="step_1">Parachoques</button></div>
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='' data-service-fields='' data-fieldset="step_1">Reparacion de luna</button></div>
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='car_color' data-fieldset="step_1">Reparacion de un golpe</button></div>
+        <div class="col-md-6"><button id="17" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='' data-service-fields='' data-fieldset="step_1">Escobillas</button></div>
+        <div class="col-md-6"><button id="18" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='glass_type' data-fieldset="step_1">Luna</button></div>
+        <div class="col-md-6"><button id="19" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='rearview' data-fieldset="step_1">Retrovisor</button></div>
+        <div class="col-md-6"><button id="20" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='bumper' data-fieldset="step_1">Parachoques</button></div>
+        <div class="col-md-6"><button id="21" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='' data-service-fields='' data-fieldset="step_1">Reparacion de luna</button></div>
+        <div class="col-md-6"><button id="22" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='car_color' data-fieldset="step_1">Reparacion de un golpe</button></div>
       </div>
       <div class="row js_services js_s5">
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-brakes js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='brake_pads' data-fieldset="step_1">Pastillas de freno</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-brakes js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='pad_position' data-fieldset="step_1">Discos de freno</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-brakes js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='pad_position' data-fieldset="step_1">Discos y Pastillas</button></div>
+        <div class="col-md-4"><button id="23" class="btn btn-2 btn-sep icon-brakes js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='brake_pads' data-fieldset="step_1">Pastillas de freno</button></div>
+        <div class="col-md-4"><button id="24" class="btn btn-2 btn-sep icon-brakes js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='pad_position' data-fieldset="step_1">Discos de freno</button></div>
+        <div class="col-md-4"><button id="25" class="btn btn-2 btn-sep icon-brakes js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='pad_position' data-fieldset="step_1">Discos y Pastillas</button></div>
       </div>
       <div class="row js_services js_s61">
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='elevalunas' data-fieldset="step_1">Cambio de elevalunas eléctrico</button></div>
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Cambio de cierre centralizado</button></div>
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='lamp_type' data-fieldset="step_1">Cambio de faro</button></div>
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='light_type_and_number' data-fieldset="step_1">Cambio de lámpara</button></div>
+        <div class="col-md-6"><button id="26" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='elevalunas' data-fieldset="step_1">Cambio de elevalunas eléctrico</button></div>
+        <div class="col-md-6"><button id="27" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Cambio de cierre centralizado</button></div>
+        <div class="col-md-6"><button id="28" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='lamp_type' data-fieldset="step_1">Cambio de faro</button></div>
+        <div class="col-md-6"><button id="29" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='light_type_and_number' data-fieldset="step_1">Cambio de lámpara</button></div>
       </div>
       <div class="row js_services js_s62">
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Montaje amplificador</button></div>
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Montaje autoradio</button></div>
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Montaje altavoces</button></div>
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='hifi_type' data-fieldset="step_1">Montaje equipo multimedia</button></div>
+        <div class="col-md-6"><button id="30" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Montaje amplificador</button></div>
+        <div class="col-md-6"><button id="31" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Montaje autoradio</button></div>
+        <div class="col-md-6"><button id="32" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Montaje altavoces</button></div>
+        <div class="col-md-6"><button id="33" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='hifi_type' data-fieldset="step_1">Montaje equipo multimedia</button></div>
       </div>
       <div class="row js_services js_s7">
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Correa de distribucion</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Kit de distribución</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Bomba inyectora</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='injectors_and_services' data-fieldset="step_1">Inyectores</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Alternador</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Bomba de dirección</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Bomba de agua</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Embrague</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Radiador refrigerante</button></div>
+        <div class="col-md-4"><button id="34" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Correa de distribucion</button></div>
+        <div class="col-md-4"><button id="35" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Kit de distribución</button></div>
+        <div class="col-md-4"><button id="36" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Bomba inyectora</button></div>
+        <div class="col-md-4"><button id="37" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='injectors_and_services' data-fieldset="step_1">Inyectores</button></div>
+        <div class="col-md-4"><button id="38" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Alternador</button></div>
+        <div class="col-md-4"><button id="39" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Bomba de dirección</button></div>
+        <div class="col-md-4"><button id="40" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Bomba de agua</button></div>
+        <div class="col-md-4"><button id="41" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Embrague</button></div>
+        <div class="col-md-4"><button id="42" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Radiador refrigerante</button></div>
         <div class="col-md-2"></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Termostato</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='spark_plug' data-fieldset="step_1">Bujías</button></div>
+        <div class="col-md-4"><button id="43" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Termostato</button></div>
+        <div class="col-md-4"><button id="44" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='spark_plug' data-fieldset="step_1">Bujías</button></div>
         <div class="col-md-2"></div>
       </div>
       <div class="row js_services js_s8">
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Cambio de catalizador</button></div>
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='exaust_pipe' data-fieldset="step_1">Cambio de escape</button></div>
+        <div class="col-md-6"><button id="45" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Cambio de catalizador</button></div>
+        <div class="col-md-6"><button id="46" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='exaust_pipe' data-fieldset="step_1">Cambio de escape</button></div>
       </div>
       <div class="row js_services js_s9">
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Equilibrado de ruedas</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Alineación paralelo</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='shock_absorber_type' data-fieldset="step_1">Amortiguadores</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='keencap_type' data-fieldset="step_1">Rótulas de suspensión</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='cup_type' data-fieldset="step_1">Copelas de suspensión</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='bearing_assembly' data-fieldset="step_1">Rodamientos</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Bomba de dirección</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Rótulas de dirección</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Vástago de dirección</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Fuelles de dirección</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Cremallera de dirección</button></div>
-        <div class="col-md-4"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Cambio de trasmisión</button></div>
+        <div class="col-md-4"><button id="47" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Equilibrado de ruedas</button></div>
+        <div class="col-md-4"><button id="48" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Alineación paralelo</button></div>
+        <div class="col-md-4"><button id="49" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='shock_absorber_type' data-fieldset="step_1">Amortiguadores</button></div>
+        <div class="col-md-4"><button id="50" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='keencap_type' data-fieldset="step_1">Rótulas de suspensión</button></div>
+        <div class="col-md-4"><button id="51" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='cup_type' data-fieldset="step_1">Copelas de suspensión</button></div>
+        <div class="col-md-4"><button id="52" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='bearing_assembly' data-fieldset="step_1">Rodamientos</button></div>
+        <div class="col-md-4"><button id="53" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Bomba de dirección</button></div>
+        <div class="col-md-4"><button id="54" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Rótulas de dirección</button></div>
+        <div class="col-md-4"><button id="55" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Vástago de dirección</button></div>
+        <div class="col-md-4"><button id="56" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Fuelles de dirección</button></div>
+        <div class="col-md-4"><button id="57" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Cremallera de dirección</button></div>
+        <div class="col-md-4"><button id="58" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-service-fields='' data-fieldset="step_1">Cambio de trasmisión</button></div>
       </div>
       <div class="row js_services js_s10">
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='air_conditioned_maintenance_type' data-fieldset="step_1">Maintenimiento aire acondicionado</button></div>
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Cambio de filtro habitáculo</button></div>
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Cambio de compresor</button></div>
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Cambio de condensador</button></div>
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Cambio evaporador</button></div>
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Cambio de termostato</button></div>
+        <div class="col-md-6"><button id="59" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='air_conditioned_maintenance_type' data-fieldset="step_1">Maintenimiento aire acondicionado</button></div>
+        <div class="col-md-6"><button id="60" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Cambio de filtro habitáculo</button></div>
+        <div class="col-md-6"><button id="61" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Cambio de compresor</button></div>
+        <div class="col-md-6"><button id="62" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Cambio de condensador</button></div>
+        <div class="col-md-6"><button id="63" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Cambio evaporador</button></div>
+        <div class="col-md-6"><button id="64" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Cambio de termostato</button></div>
       </div>
       <div class="row js_services js_s11">
         <div class="col-md-3"></div>
-        <div class="col-md-6"><button class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Otros servicios</button></div>
+        <div class="col-md-6"><button id="65" class="btn btn-2 btn-sep icon-car js_servicename" data-car-fields='brand,model,year' data-car-details-fields='true' data-service-fields='' data-fieldset="step_1">Otros servicios</button></div>
         <div class="col-md-3"></div>
       </div>
     </fieldset>

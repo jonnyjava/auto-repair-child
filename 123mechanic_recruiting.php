@@ -20,18 +20,7 @@
 </div>
 
 <div class="join_container js_animatable_container">
-  <div id="preloader" class="preloader">
-    <span class="loader_circle one">
-      <span>1</span>
-    </span>
-    <span class="loader_circle two">
-      <span>2</span>
-    </span>
-    <span class="loader_circle three">
-      <span>3</span>
-    </span>
-    <div class="loader_text">Cargando...</div>
-  </div>
+  <?php include 'partials/shared/_preloader.php'; ?>
   <?php if (isset($recruiting_token)) { ?>
     <div class="msform feedback_container js_feedback_form">
       <form id="bouncing_feedback_form" autocomplete="false" autofill="false" action="<?php echo bloginfo('stylesheet_directory');?>" data-destination="<?php echo get_field('feedback_received');?>" method="post">
@@ -61,6 +50,7 @@
                   <li data-value="4">Odio internet que me roba los clientes</li>
                   <li data-value="5">Otra cosa</li>
                 </ul>
+                <input type="hidden" name="bouncing_feedback_name" id="bouncing_feedback_name" data-parent-id="bouncing_feedback" data-validation-type="drop_or_radio" value=""/>
                 <input type="hidden" name="bouncing_feedback_id" id="bouncing_feedback_id" data-parent-id="bouncing_feedback" data-validation-type="drop_or_radio" value=""/>
               </div>
             </div>

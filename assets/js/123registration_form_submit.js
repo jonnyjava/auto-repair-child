@@ -27,26 +27,8 @@ function get_selected_services(){
     return(this.value);
   }).get();
 
-  var garage_service_json = { "id": garage_id, "service_ids": garage_services };
+  var garage_service_json = { 'id': garage_id, 'service_categories_ids': garage_services };
   return garage_service_json;
-}
-
-function send_to_api(submitted_datas, destination_url, method, ok_callback, ko_callback){
-  $.ajax({
-    type: method,
-    data: submitted_datas,
-    headers: {
-      Authorization: 'Token token='+api_auth_token
-    },
-    url: api_url+destination_url,
-    async: true
-  }).done(function(response){
-    if(ok_callback){ok_callback(response);}
-  }).error(function(){
-    if(ko_callback){ko_callback();}
-  }).always(function(){
-    hide_preloader();
-  });
 }
 
 function show_errors_or_continue(response){

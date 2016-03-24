@@ -173,3 +173,11 @@ function activate_city_autocomplete(){
   });
   $('.js_user_city_autocomplete').bind('keypress', disable_service_dropdown);
 }
+
+function activate_quote_submit(){
+  $('.js_quote_answer').click(function () {
+    show_quote_landing($(this));
+    submit_quote_status($(this));
+    animate_to_next($(this));
+  });
+}

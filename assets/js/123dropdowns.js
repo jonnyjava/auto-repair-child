@@ -1,9 +1,8 @@
 function fill_dropdown_with_selected_option(){
-  var choosen_option = $(this).text();
-  var parentId = $(this).parent().data('parent-id');
-  $('#'+parentId).text(choosen_option);
-  $('#'+parentId+'_id').val(choosen_option);
-  deemphatize_error(parentId);
+  var choosen_option_text = $(this).text();
+  var parent_id = $(this).parent().data('parent-id');
+  fill_hidden_fields($(this), choosen_option_text, parent_id);
+  deemphatize_error(parent_id);
 }
 
 function dropdown_toggler(event){
@@ -22,11 +21,16 @@ function dropdown_toggler(event){
 }
 
 function fill_radio_with_selected_option(){
-  var parentId = $(this).data('parent-id');
-  var choosen_option = $(this).val();
-  $('#'+parentId).text(choosen_option);
-  $('#'+parentId+'_id').val(choosen_option);
-  deemphatize_error(parentId);
+  var parent_id = $(this).data('parent-id');
+  var choosen_option_text = $(this).val();
+  fill_hidden_fields($(this), choosen_option_text, parent_id);
+  deemphatize_error(parent_id);
+}
+
+function fill_hidden_fields(choosen_option, text, parent_id){
+  $('#'+parent_id).text(text);
+  $('#'+parent_id+'_name').val(text);
+  $('#'+parent_id+'_id').val(choosen_option.attr('id'));
 }
 
 function disable_service_dropdown(){

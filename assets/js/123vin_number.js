@@ -44,14 +44,14 @@ function autofill_car_details_dropdowns(car_details){
   var unknown_details = ['brand', 'model', 'year', 'engine'];
 
   $.each(car_details, function(key, value){
-    var choosen_option = value;
-    var parentId = $('#car_'+key+'_dropdown').data('parent-id');
+    var parent_id = $('#car_'+key+'_dropdown').data('parent-id');
+
     if(key !== 'brand'){
       enable_field(key, '');
     }
-    $('#'+parentId).text(choosen_option);
-    $('#'+parentId+'_id').val(choosen_option);
-    deemphatize_error(parentId);
+
+    fill_hidden_fields($(this), value, parent_id);
+    deemphatize_error(parent_id);
     unknown_details = remove_element(unknown_details, key);
   });
 

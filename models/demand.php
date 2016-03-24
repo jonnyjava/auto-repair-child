@@ -3,7 +3,9 @@ Class Demand {
   public $error_messages = [];
   public $city = "";
   public $service_category_id = "";
+  public $service_category_name = "";
   public $service_id = "";
+  public $service_name = "";
   public $vin_number = "";
   public $brand = "";
   public $model = "";
@@ -20,8 +22,8 @@ Class Demand {
   public function is_valid() {
     $object_is_valid = false;
     $object_is_valid = $this->validate_city();
-    $object_is_valid = $this->validate_service_category_id() && $object_is_valid;
-    $object_is_valid = $this->validate_service_id() && $object_is_valid;
+    $object_is_valid = $this->validate_service_category_name() && $object_is_valid;
+    $object_is_valid = $this->validate_service_name() && $object_is_valid;
     $object_is_valid = $this->validate_name_and_surnames() && $object_is_valid;
     $object_is_valid = $this->validate_phone() && $object_is_valid;
     $object_is_valid = $this->validate_email() && $object_is_valid;
@@ -37,19 +39,19 @@ Class Demand {
   }
 
 
-  private function validate_service_category_id(){
+  private function validate_service_category_name(){
     $is_valid = true;
-    if($this->service_category_id == '' || $this->service_category_id == '0'){
-      $this->add_error_message('service_category_id');
+    if($this->service_category_name == '' || $this->service_category_name == '0'){
+      $this->add_error_message('service_category_name');
       $is_valid = false;
     }
     return $is_valid;
   }
 
-  private function validate_service_id(){
+  private function validate_service_name(){
     $is_valid = true;
-    if($this->service_id == '' || $this->service_id == '0'){
-      $this->add_error_message('service_id');
+    if($this->service_name == '' || $this->service_name == '0'){
+      $this->add_error_message('service_name');
       $is_valid = false;
     }
     return $is_valid;
