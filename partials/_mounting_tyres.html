@@ -35,6 +35,7 @@
       <li data-value="345" class="text-right">345</li>
       <li data-value="355" class="text-right">355</li>
     </ul>
+    <input type="hidden" name="tires_size_name" id="tires_size_name" data-parent-id="tires_size" data-validation-type="drop_or_radio" value=""/>
     <input type="hidden" name="tires_size_id" id="tires_size_id" data-parent-id="tires_size" data-validation-type="drop_or_radio" value=""/>
   </div>
 </div>
@@ -50,21 +51,22 @@
       <span class="caret"></span>
     </button>
     <ul class="dropdown-menu js_dropdown_menu" data-parent-id="rim_type" id="rim_type_dropdown">
-      <li data-value="aluminio">Aluminio</li>
-      <li data-value="hierro">Hierro</li>
+      <li id="1" data-value="aluminio">Aluminio</li>
+      <li id="2" data-value="hierro">Hierro</li>
     </ul>
+    <input type="hidden" name="rim_type_name" id="rim_type_name" data-parent-id="rim_type" data-validation-type="drop_or_radio" value=""/>
     <input type="hidden" name="rim_type_id" id="rim_type_id" data-parent-id="rim_type" data-validation-type="drop_or_radio" value=""/>
   </div>
 </div>
 <div class="col-lg-2 no-lg-left-gutter checkbox_and_radio_container large-view">
   <label class="custom_radiobutton">
-    <div class="radio-option-label">Hierro</div>
-    <input type="radio" class="js_radiobutton" value="Hierro" data-parent-id="rim_type" name="rim_type_option"/>
+    <div class="radio-option-label">Aluminio</div>
+    <input id="1" type="radio" class="js_radiobutton" value="Aluminio" data-parent-id="rim_type" name="rim_type_option"/>
     <span class="radiobuttonify icon"><i class="fa fa-check"></i></span>
   </label>
   <label class="custom_radiobutton">
-    <div class="radio-option-label">Aluminio</div>
-    <input type="radio" class="js_radiobutton" value="Aluminio" data-parent-id="rim_type" name="rim_type_option"/>
+    <div class="radio-option-label">Hierro</div>
+    <input id="2" type="radio" class="js_radiobutton" value="Hierro" data-parent-id="rim_type" name="rim_type_option"/>
     <span class="radiobuttonify icon"><i class="fa fa-check"></i></span>
   </label>
 </div>
@@ -84,6 +86,7 @@
       <li data-value="tyre_quality">Calidad</li>
       <li data-value="tyre_brand">Marca</li>
     </ul>
+    <input type="hidden" name="tyre_budget_name" id="tyre_budget_name" data-parent-id="tyre_budget" data-validation-type="drop_or_radio" value=""/>
     <input type="hidden" name="tyre_budget_id" id="tyre_budget_id" data-parent-id="tyre_budget" data-validation-type="drop_or_radio" value=""/>
   </div>
 </div>
@@ -105,6 +108,7 @@
       <li data-value="4" class="text-right">4</li>
       <li data-value="5" class="text-right">5</li>
     </ul>
+    <input type="hidden" name="number_of_tyres_name" id="number_of_tyres_name" data-parent-id="number_of_tyres" data-validation-type="drop_or_radio" value=""/>
     <input type="hidden" name="number_of_tyres_id" id="number_of_tyres_id" data-parent-id="number_of_tyres" data-validation-type="drop_or_radio" value=""/>
   </div>
 </div>

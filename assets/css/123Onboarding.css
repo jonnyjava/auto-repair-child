@@ -1,7 +1,7 @@
 body{
   padding: 0 !important;
 }
-.onboarding_container, .join_container{
+.onboarding_container, .join_container, .quote_container{
   font-family: Nunito;
   background-color: transparent;
   background: url(http://auto-repair.demo.vamtam.com/wp-content/uploads/2014/11/bg_slider_1.jpg) no-repeat center center fixed;
@@ -169,19 +169,19 @@ li > .hint{
   position: relative;
 }
 /*error_number*/
-.error_number {
+.error_number, .round_number {
   border-radius: 50%;
   text-align: center;
   font-family: 'Palanquin Dark';
   display: inline-block;
 }
-.error_number.orange{
+.error_number.orange, .round_number.orange{
   background: #E67500;
 }
 .error_number.gray{
   background: #666666;
 }
-.error_number span {
+.error_number span, .round_number span {
   color: #FFFFFF;
   font-weight: normal;
   position: relative;

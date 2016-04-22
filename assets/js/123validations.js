@@ -44,13 +44,13 @@ function perform_dedicate_validation(field, value){
   switch(validation_type) {
     case 'drop_or_radio':
       field_id = field.data('parent-id');
-      field_is_valid = ($('#'+field_id).text() === $('#'+field_id+'_id').val());
+      field_is_valid = ($('#'+field_id).text() === $('#'+field_id+'_name').val());
       break;
     case 'address':
       field_is_valid = (value.length >= 6);
       break;
     case 'only_letters':
-      field_is_valid = (value.length >= 10) && (/^[a-z\+]+$/i.test(value) );
+      field_is_valid = (value.length >= 5) && (/^[a-z\+]+$/i.test(value) );
       break;
     case 'vin_number':
       field_is_valid = /^[^\WIOQÑioqñ]{17}$/.test(value);//IOQÑ are not allowed
