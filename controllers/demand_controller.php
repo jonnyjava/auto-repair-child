@@ -19,10 +19,10 @@ $demand->service_category_name = raw_homemade_sanitize($_POST['service_category_
 $demand->service_id = raw_homemade_sanitize($_POST['service_id']);
 $demand->service_name = raw_homemade_sanitize($_POST['service_name']);
 $demand->vin_number = raw_homemade_sanitize($_POST['vin_number']);
-$demand->brand = raw_homemade_sanitize($_POST['car_brand_id']);
-$demand->model = raw_homemade_sanitize($_POST['car_model_id']);
-$demand->year = raw_homemade_sanitize($_POST['car_year_id']);
-$demand->engine = raw_homemade_sanitize($_POST['car_engine_id']);
+$demand->brand = raw_homemade_sanitize($_POST['car_brand_name']);
+$demand->model = raw_homemade_sanitize($_POST['car_model_name']);
+$demand->year = raw_homemade_sanitize($_POST['car_year_name']);
+$demand->engine = raw_homemade_sanitize($_POST['car_engine_name']);
 $demand->engine_letters = raw_homemade_sanitize($_POST['engine_letters']);
 $demand->name_and_surnames = raw_homemade_sanitize($_POST['name_and_surnames']);
 $demand->phone = raw_homemade_sanitize($_POST['phone']);
@@ -33,7 +33,7 @@ $demand->comments = substr(raw_homemade_sanitize($_POST['comments']), 0, 255);
 $demand->demand_details = details_as_json();
 
 if ($demand->is_valid()){
-  save($wpdb, $demand);
+  save_demand($wpdb, $demand);
   $demand_mailer = new DemandMailer();
   $res = $demand_mailer->send_demand_mail($demand);
   $response = json_encode(array('status' => 200, 'demand' => $demand, 'result' => $res ));
@@ -54,7 +54,7 @@ function details_as_json(){
   return json_encode($details);
 }
 
-function save($wpdb, $demand){
+function save_demand($wpdb, $demand){
   $table_name = $wpdb->prefix . "demands";
   $wpdb->insert( $table_name, array(
     'city' => $demand->city,

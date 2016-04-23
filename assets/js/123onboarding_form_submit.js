@@ -1,23 +1,7 @@
 function submit_onboarding_form(){
-  save_demand_remotely();
-  save_demand_locally();
-}
-
-function save_demand_remotely(){
   var submitted_datas = {demand : build_demand_json()};
-  $.ajax({
-    type: 'POST',
-    data: JSON.stringify(submitted_datas),
-    contentType: 'application/json; charset=utf-8',
-    dataType: 'json',
-    headers: {
-      Authorization: 'Token token='+api_auth_token
-    },
-    url: api_url+'/demands',
-    async: true
-  }).always(function(response){
-    console.log(response);
-  });
+  send_to_api(submitted_datas, '/demands', 'POST', null, null)
+  save_demand_locally();
 }
 
 function build_demand_json(){
@@ -27,6 +11,10 @@ function build_demand_json(){
     demand[this.name] = this.value;
   });
   demand['city'] = demand['user_city'];
+  demand['brand'] = demand['car_brand_name'];
+  demand['model'] = demand['car_model_name'];
+  demand['year'] = demand['car_year_name'];
+  demand['engine'] = demand['car_engine_name'];
   demand['demand_details'] = $('#onboarding_form').serialize();
   return demand;
 }
