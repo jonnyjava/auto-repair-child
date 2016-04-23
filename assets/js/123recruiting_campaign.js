@@ -4,6 +4,9 @@ function prefill_form(){
     var destination_url = '/garage_recruitables/'+recruitable_token+'.json';
     send_to_api('', destination_url, 'GET', recruitable_lookup, delete_wrong_token);
   }
+  else{
+    delete_wrong_token();
+  }
 }
 
 function recruitable_lookup(data){
@@ -21,7 +24,7 @@ function fill_field(key, value){
   $('#'+key).val(value);
 }
 function delete_wrong_token(){
-  $('#token').val('');
+  $('.js_token').val('');
 }
 
 function load_already_registered_page(){
