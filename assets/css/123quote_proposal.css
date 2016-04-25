@@ -4,22 +4,10 @@
 .quote_container{
   height: 90em;
 }
-.round_number {
-  width: 4em;
-  height: 4em;
-}
-.round_number span {
-  font-size: 3em;
-  top: 0.25em;
-}
 .quote_section_title{
+  display: inline-block;
   color:#666666;
   position: relative;
-  left: -1em;
-  top: 0.2em;
-}
-.list-unstyled{
-  margin-left: -1em;
 }
 .list-info .list-icon {
   color: #E67500;
@@ -27,14 +15,11 @@
   width: 1.125em;
   text-align: center;
 }
-.list-info  li{
-  margin: 0 0 1em 0;
-}
-.list-info  li{
+.list-info li, .list-info{
   color: #666666;
   font-size: 1.3rem;
 }
-.list-info  label {
+.list-info label {
   font-size: 1.65rem;
   color: #666666;
   margin-right: 0.5em;
@@ -49,10 +34,8 @@
   vertical-align: middle;
   background-color #eaeaea;
   margin: 1.25px;
-  padding: 4px 7px;
   border: 1px solid #eaeaea;
   border-radius: 0px;
-  display: inline;
   cursor: pointer;
 }
 .file-button:hover{

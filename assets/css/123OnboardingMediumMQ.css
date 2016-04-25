@@ -166,6 +166,28 @@
   .nav > .confirmation_header > a{
     padding-left: 5px;
   }
+  /*quote proposal*/
+  .round_number {
+    width: 3em;
+    height: 3em;
+  }
+  .round_number span {
+    font-size: 2.5em;
+    top: 0.125em;
+  }
+  .list-unstyled{
+    padding: 0;
+    margin-bottom: 0;
+  }
+  .file-button{
+    display:block;
+    padding: 7px;
+  }
+  .quote_section_title{
+    font-size: 2em;
+    left: 0.25em;
+    top: 0.3em;
+  }
   /*bootstrap overrides*/
   .confirmation_header > .dropdown-toggle, .confirmation_header > .dropdown {
     height: 3.5em;

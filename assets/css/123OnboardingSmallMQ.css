@@ -193,6 +193,34 @@
     display: block;
     word-break: break-word;
   }
+  /*quote proposal*/
+  .round_number {
+    width: 3em;
+    height: 3em;
+  }
+  .round_number span {
+    font-size: 2.5em;
+    top: 0.125em;
+  }
+  .list-unstyled{
+    padding: 0;
+    margin-bottom: 0;
+  }
+  .list-info .list-icon {
+    display: none;
+  }
+  .list-info label{
+    display: block;
+  }
+  .file-button{
+    display:block;
+    padding: 7px;
+  }
+  .quote_section_title{
+    font-size: 2em;
+    left: 0.25em;
+    top: 0.3em;
+  }
   /*bootstrap overrides*/
   .list-group{
     margin: 0;

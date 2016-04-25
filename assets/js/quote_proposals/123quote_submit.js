@@ -11,4 +11,7 @@ function submit_quote_status(clicked_button){
   else{
    load_error_page();
   }
+  setTimeout(function(){
+    animate_container_height($('#step_2'));
+  }, global_animation_time);
 }
