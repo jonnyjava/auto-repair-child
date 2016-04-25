@@ -44,6 +44,7 @@ function build_error_message(tooltip){
 function send_to_api(submitted_datas, destination_url, method, ok_callback, ko_callback){
   $.ajax({
     type: method,
+    timeout:10000,
     data: submitted_datas,
     headers: {
       Authorization: 'Token token='+api_auth_token
