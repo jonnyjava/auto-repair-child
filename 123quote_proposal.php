@@ -17,11 +17,11 @@
       <fieldset id="step_1">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h1 class="fs-title">¡Tu presupuesto!<h1>
+            <h1 class="fs-title">¡Tu presupuesto!</h1>
           </div>
         </div>
         <div class="panel panel-default">
-          <div class="panel-body text-left">
+          <div class="panel-body">
             <div class="row text-left">
               <div class="col-lg-1"></div>
               <div class="col-lg-10">
@@ -29,13 +29,12 @@
               </div>
               <div class="col-lg-1"></div>
             </div>
+            <div class="row">&nbsp;</div>
             <div class="row text-left">
-              <div class="col-lg-1">
+              <div class="col-lg-12">
                 <span class="round_number orange">
                   <span>1</span>
                 </span>
-              </div>
-              <div class="col-lg-11">
                 <h4 class="quote_section_title">Tu solicitud</h4>
               </div>
             </div>
@@ -96,12 +95,10 @@
               <div class="col-lg-1"></div>
             </div>
             <div class="row text-left">
-              <div class="col-lg-1">
+              <div class="col-lg-12">
                 <span class="round_number orange">
                   <span>2</span>
                 </span>
-              </div>
-              <div class="col-lg-11">
                 <h4 class="quote_section_title">Tu presupuesto</h4>
               </div>
             </div>
@@ -144,15 +141,14 @@
               <div class="col-lg-1"></div>
             </div>
             <div class="row text-left">
-              <div class="col-lg-1">
+              <div class="col-lg-12">
                 <span class="round_number orange">
                   <span>3</span>
                 </span>
-              </div>
-              <div class="col-lg-11">
                 <h4 class="quote_section_title">Tu mecanico, ya!</h4>
               </div>
             </div>
+            <div class="row">&nbsp;</div>
             <div class="row text-left">
               <div class="col-lg-1"></div>
               <div class="col-lg-10">
@@ -163,15 +159,16 @@
             <div class="row">&nbsp;</div>
             <div class="row">
               <div class="col-lg-1"></div>
-              <div class="col-lg-4 col-xs-6">
-                <button type="button" class="previous animation-button js_saver js_quote_answer" data-title="GRACIAS POR TU FEEDBACK" data-fieldset="step_1" data-next-fieldset="step_2" value="refused">No gracias</button>
+              <div class="col-lg-6 col-xs-7">
+                <button type="button" class="next go_next animation-button js_saver js_quote_answer" data-title="TU MECANICO, YA!" data-fieldset="step_1" data-next-fieldset="step_2" value="accepted">Estoy interesado</button>
               </div>
-              <div class="col-lg-6 col-xs-6">
-              <button type="button" class="next go_next animation-button js_saver js_quote_answer" data-title="TU MECANICO, YA!" data-fieldset="step_1" data-next-fieldset="step_2" value="accepted">Estoy interesado</button>
+              <div class="col-lg-4 col-xs-5">
+                <button type="button" class="previous animation-button js_saver js_quote_answer" data-title="GRACIAS POR TU FEEDBACK" data-fieldset="step_1" data-next-fieldset="step_2" value="refused">No gracias</button>
               </div>
               <div class="col-lg-1"></div>
             </div>
           </div>
+          <div class="row">&nbsp;</div>
         </div>
       </fieldset>
       <fieldset id="step_2">
@@ -181,55 +178,71 @@
               <h1 class="fs-title js_quote_answer_page_title"><h1>
             </div>
           </div>
-          <div class="row text-left js_refused_landing">
+          <div class="js_refused_landing">
             <div class="panel panel-default">
               <div class="panel-body text-left">
-                <?php echo get_field('quote_refused_up'); ?>
-                <?php echo get_field('quote_refused_bottom'); ?>
+                <div class="row text-left">
+                  <div class="col-lg-12">
+                    <?php echo get_field('quote_refused_up'); ?>
+                  </div>
+                </div>
+                <div class="row text-left">
+                  <div class="col-lg-12">
+                    <?php echo get_field('quote_refused_bottom'); ?>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="row text-left js_garage_data_landing">
+          <div class="text-left js_garage_data_landing">
               <div class="panel panel-default">
                 <div class="panel-body text-left">
-                  <div class="col-lg-12">
-                    <?php echo get_field('quote_accepted_up'); ?>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <?php echo get_field('quote_accepted_up'); ?>
+                    </div>
                   </div>
-                  <div class="col-lg-6">
-                    <img alt="" class="js_garage_map">
+                  <div class="row">&nbsp;</div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <img alt="" class="js_garage_map">
+                    </div>
+                    <div class="col-lg-6">
+                      <ul class="list-unstyled list-info">
+                        <li id="garage_name_line">
+                          <span class="list-icon fa fa-car"></span>
+                          <label>Garage</label>
+                          <span id="garage_name"></span>
+                        </li>
+                        <li id="garage_street_line">
+                          <span class="list-icon fa fa-map-marker"></span>
+                          <label>Dirección</label>
+                          <span id="garage_street"></span>
+                          <span id="garage_zip"></span>
+                        </li>
+                        <li id="garage_email_line">
+                          <span class="list-icon fa fa-envelope"></span>
+                          <label>Email</label>
+                          <span id="garage_email"></span>
+                        </li>
+                        <li id="garage_phone_line">
+                          <span class="list-icon fa fa-phone"></span>
+                          <label>Teléfono</label>
+                          <span id="garage_phone"></span>
+                        </li>
+                        <li id="garage_mobile_line">
+                          <span class="list-icon fa fa-mobile"></span>
+                          <label>Movíl</label>
+                          <span id="garage_mobile"></span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                  <div class="col-lg-6">
-                    <ul class="list-unstyled list-info">
-                      <li id="garage_name_line">
-                        <span class="list-icon fa fa-car"></span>
-                        <label>Garage</label>
-                        <span id="garage_name"></span>
-                      </li>
-                      <li id="garage_street_line">
-                        <span class="list-icon fa fa-map-marker"></span>
-                        <label>Dirección</label>
-                        <span id="garage_street"></span>
-                        <span id="garage_zip"></span>
-                      </li>
-                      <li id="garage_email_line">
-                        <span class="list-icon fa fa-envelope"></span>
-                        <label>Email</label>
-                        <span id="garage_email"></span>
-                      </li>
-                      <li id="garage_phone_line">
-                        <span class="list-icon fa fa-phone"></span>
-                        <label>Teléfono</label>
-                        <span id="garage_phone"></span>
-                      </li>
-                      <li id="garage_mobile_line">
-                        <span class="list-icon fa fa-mobile"></span>
-                        <label>Movíl</label>
-                        <span id="garage_mobile"></span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-lg-12">
-                    <?php echo get_field('quote_accepted_bottom'); ?>
+                  <div class="row">&nbsp;</div>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <?php echo get_field('quote_accepted_bottom'); ?>
+                    </div>
                   </div>
                 </div>
               </div>

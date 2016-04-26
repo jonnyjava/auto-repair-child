@@ -7,6 +7,9 @@ function prefill_form(){
   else{
    load_error_page();
   }
+  setTimeout(function(){
+    animate_container_height($('#step_1'));
+  }, global_animation_time);
 }
 
 function fill_page(response){
@@ -49,6 +52,11 @@ function link_doc(name, doc){
 }
 
 function fill_garage_data(response){
+  var latitude = response.latitude;
+  var longitude = response.longitude;
+  var map_url = 'http://maps.googleapis.com/maps/api/staticmap?center='+latitude+',';
+  map_url = map_url+longitude+'&zoom=18&size=768x400&sensor=true&markers=color:red%7C'+latitude+','+longitude;
+  $('.js_garage_map').attr('src', map_url);
   hide_refuse_landing();
   $.each(response,function(index, value){
     if(value){
@@ -58,9 +66,4 @@ function fill_garage_data(response){
       $('#garage_'+index+'_line').hide();
     }
   });
-  var latitude = response.latitude;
-  var longitude = response.longitude;
-  var map_url = 'http://maps.googleapis.com/maps/api/staticmap?center='+latitude+',';
-  map_url = map_url+longitude+'&zoom=18&size=768x400&sensor=true&markers=color:red%7C'+latitude+','+longitude;
-  $('.js_garage_map').attr('src', map_url);
 }
