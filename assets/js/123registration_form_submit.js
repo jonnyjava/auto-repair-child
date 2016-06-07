@@ -27,7 +27,7 @@ function get_selected_services(){
     return(this.value);
   }).get();
 
-  var garage_service_json = { 'id': garage_id, 'service_categories_ids': garage_services };
+  var garage_service_json = { 'id': garage_id, 'service_ids': garage_services };
   return garage_service_json;
 }
 

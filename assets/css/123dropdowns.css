@@ -64,8 +64,6 @@
   white-space: pre;
 }
 
-/*for multiple choice dropdown*/
-
 .multiple-select-dropdown {
   font-family: 'Nunito';
   font-size: 1em;
@@ -137,11 +135,6 @@ li.selected {
 .multiple-dropdown-options li label input[type=checkbox] {
   visibility: hidden;
 }
-
-
-/**
- * @author zhixin wen <wenzhixin2010@gmail.com>
- */
 
 .ms-parent {
   display: inline-block;
