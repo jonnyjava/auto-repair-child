@@ -27,7 +27,7 @@ function get_selected_services(){
     return(this.value);
   }).get();
 
-  var garage_service_json = { 'id': garage_id, 'service_categories_ids': garage_services };
+  var garage_service_json = { 'id': garage_id, 'service_ids': garage_services };
   return garage_service_json;
 }
 
@@ -48,6 +48,7 @@ function load_second_step_recruiting(response){
   show_next_recruiting_step('step_1', 'step_2');
   activate_button_bar();
   activate_update_garage_info_form_submit();
+  send_to_api('', '/services.json', 'GET', draw_service_multiselects, load_error_page);
 }
 
 function show_errors_tooltips(errors){
@@ -75,4 +76,44 @@ function show_next_recruiting_step(actual_step_id, next_step_id){
 function show_custom_content(step){
   $('#'+step+'_above_container').html($('#'+step+'_above').html());
   $('#'+step+'_below_container').html($('#'+step+'_below').html());
+}
+
+
+function draw_service_multiselects(data){
+  var rows = '';
+  var row = '';
+  var column = '';
+
+  $.each(data, function(key, value){
+    column = '';
+    if (key%3==0){
+      rows += '<div class="row">'+row+'</div>';
+      row = '';
+    }
+    row += '<div class="col-xs-4 halfgutter">';
+    row += build_multiselect_select(value.service_category)
+    row += '</div>';
+  });
+  $('#multiselect_container').html(rows);
+  $('.js_multiple_selector').change(function() {
+      console.log($(this).val());
+  }).multipleSelect({
+      width: '100%'
+  });
+  animate_container_height($('#step_2'));
+}
+
+function build_multiselect_select(service_category){
+  var icon = 'icon-' + service_category.icon;
+  var datalabel = 'data-label=' + service_category.name;
+  var options = build_multiselect_options(service_category.services);
+  return '<select multiple="multiple" class="multiple-select-dropdown '+icon+' js_multiple_selector" '+datalabel+'>'+options+'</select>';
+}
+
+function build_multiselect_options(services){
+  var options = ''
+  $.each(services, function(key, value){
+    options += '<option value="'+value.id+'" class="js_selectable_service">'+value.name+'</option>';
+  });
+  return options;
 }

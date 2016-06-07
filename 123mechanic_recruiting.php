@@ -202,6 +202,7 @@
       </form>
     </fieldset>
     <fieldset id="step_2">
+      <div id="recruitable_service_list"></div>
       <div id="step_2_result_container" class="js_submit_result_container"></div>
       <div id="step_2_submit_result"></div>
     </fieldset>
