@@ -78,42 +78,95 @@ function show_custom_content(step){
   $('#'+step+'_below_container').html($('#'+step+'_below').html());
 }
 
-
 function draw_service_multiselects(data){
+  recruited_garage_services = $('#recruitable_service_list').val().split(' - ');
+  build_multiselect_rows(data);
+  create_multiselect();
+  activate_counter_for_multiselect();
+  count_preselected();
+  animate_container_height($('#step_2'));
+}
+
+function build_multiselect_rows(data){
   var rows = '';
   var row = '';
-  var column = '';
 
   $.each(data, function(key, value){
-    column = '';
-    if (key%3==0){
+  if (key % 3 === 0){
       rows += '<div class="row">'+row+'</div>';
       row = '';
     }
-    row += '<div class="col-xs-4 halfgutter">';
-    row += build_multiselect_select(value.service_category)
-    row += '</div>';
+    row += build_multiselect_cell(value);
   });
   $('#multiselect_container').html(rows);
-  $('.js_multiple_selector').change(function() {
-      console.log($(this).val());
-  }).multipleSelect({
-      width: '100%'
-  });
-  animate_container_height($('#step_2'));
+}
+
+function build_multiselect_cell(value){
+  var cell = '';
+  cell += '<div class="col-xs-4 halfgutter">';
+  cell += build_multiselect_select(value.service_category);
+  cell += '</div>';
+  return cell;
 }
 
 function build_multiselect_select(service_category){
   var icon = 'icon-' + service_category.icon;
-  var datalabel = 'data-label=' + service_category.name;
-  var options = build_multiselect_options(service_category.services);
-  return '<select multiple="multiple" class="multiple-select-dropdown '+icon+' js_multiple_selector" '+datalabel+'>'+options+'</select>';
+  var datalabel = 'data-label="' + service_category.name +'"';
+  var options = build_multiselect_options(service_category.services, recruited_garage_services);
+  var select = '<select id="'+service_category.id+'" multiple="multiple" class="multiple-select-dropdown '+icon+' js_multiple_selector" '+datalabel+'>'+options+'</select>';
+  var counter = '<span class="service_counter"><span id="counter_for_'+service_category.id+'">0</span> / '+service_category.services.length+'</span>';
+  return select + counter;
 }
 
-function build_multiselect_options(services){
+function build_multiselect_options(services, recruited_garage_services){
   var options = ''
+  var is_selected = '';
   $.each(services, function(key, value){
-    options += '<option value="'+value.id+'" class="js_selectable_service">'+value.name+'</option>';
+    var definitions = value.service_definitions;
+    is_selected = preselect_definitions_when_joining(definitions, recruited_garage_services);
+    options += '<option '+is_selected+' id="service_'+value.id+'" value="'+value.id+'" class="js_selectable_service" data-definitions="'+definitions+'">'+value.name+'</option>';
   });
   return options;
+}
+
+function create_multiselect(){
+  $('.js_multiple_selector').multipleSelect({
+    width: '100%'
+  });
+}
+
+function activate_counter_for_multiselect(){
+  $('select.js_multiple_selector').change(function() {
+    selected_services_counter($(this));
+  });
+}
+
+function selected_services_counter(choosen_option){
+  var counter_id = 'counter_for_'+choosen_option.attr('id');
+  var choosen_value = choosen_option.val();
+  var selected = choosen_value ? choosen_value.length : 0;
+  if (selected > 0){
+    $('#'+counter_id).parent().css('background-color','#E67500');
+  }
+  $('#'+counter_id).html(selected);
+}
+
+function preselect_definitions_when_joining(definitions, recruited_garage_services){
+  var has_service = false;
+  for(var i = 0; i< recruited_garage_services.length; i++){
+    if (has_service) { break ; }
+    var service = recruited_garage_services[i];
+    has_service = definitions.indexOf(service) > -1;
+    if (has_service) {
+      recruited_garage_services.splice(i, 1);
+    }
+  }
+  var selected = has_service ? 'selected' : '';
+  return selected;
+}
+
+function count_preselected(){
+  $('select.js_multiple_selector').each(function() {
+    selected_services_counter($(this));
+  });
 }
