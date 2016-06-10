@@ -120,8 +120,8 @@ function build_multiselect_select(service_category){
 
 function build_multiselect_options(services, recruited_garage_services){
   var options = ''
-  var is_selected = '';
   $.each(services, function(key, value){
+    var is_selected = '';
     var definitions = value.service_definitions;
     is_selected = preselect_definitions_when_joining(definitions, recruited_garage_services);
     options += '<option '+is_selected+' id="service_'+value.id+'" value="'+value.id+'" class="js_selectable_service" data-definitions="'+definitions+'">'+value.name+'</option>';
@@ -153,15 +153,20 @@ function selected_services_counter(choosen_option){
 
 function preselect_definitions_when_joining(definitions, recruited_garage_services){
   var has_service = false;
-  for(var i = 0; i< recruited_garage_services.length; i++){
-    if (has_service) { break ; }
-    var service = recruited_garage_services[i];
-    has_service = definitions.indexOf(service) > -1;
-    if (has_service) {
-      recruited_garage_services.splice(i, 1);
+  if (recruited_garage_services.length > 0 ){
+    for(var i = 0; i < recruited_garage_services.length; i++){
+      if (has_service) { break ; }
+      var service = recruited_garage_services[i];
+      has_service = (definitions.indexOf(service) > -1) && service;
+      if (has_service) {
+        recruited_garage_services.splice(i, 1);
+      }
     }
   }
-  var selected = has_service ? 'selected' : '';
+  var selected =  '';
+  if (has_service){
+    selected = 'selected';
+  }
   return selected;
 }
 
